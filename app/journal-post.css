@@ -1,0 +1,94 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   JOURNAL POSTS (bespoke) — ported verbatim from the supplied blog designs and
+   scoped under `.jp` so they're self-contained. The page HTML is injected from
+   content/journal/<slug>.json; the hero photo is set inline as --img-hero on
+   the .jp wrapper. The global absolute masthead sits over the dark .ahead hero.
+   Fonts mapped to the site's self-hosted variables (Marcellus/EB Garamond/Jost).
+   ═══════════════════════════════════════════════════════════════════════ */
+.jp {
+  --read: 680px;
+  background: var(--papyrus);
+  color: var(--encre);
+  font-family: var(--font-body), Georgia, serif;
+  font-size: 20px;
+  line-height: 1.72;
+  -webkit-font-smoothing: antialiased;
+}
+.jp a { color: inherit; }
+.jp .wrap { max-width: 1180px; margin: 0 auto; padding: 0 6vw; }
+.jp .read { max-width: var(--read); margin: 0 auto; padding: 0 6vw; }
+.jp .eyebrow { font-family: var(--font-label), sans-serif; font-weight: 400; font-size: 0.66rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--or); }
+.jp .display { font-family: var(--font-display), serif; font-weight: 400; line-height: 1.1; }
+.jp .btn { display: inline-block; font-family: var(--font-label), sans-serif; font-weight: 400; font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase; padding: 1.05rem 2.4rem; text-decoration: none; border: 1px solid var(--or); color: var(--or); transition: background 0.35s, color 0.35s; background: none; }
+.jp .btn:hover { background: var(--or); color: var(--nuit); }
+.jp .btn.solid { background: var(--or); color: var(--nuit); }
+.jp .btn.solid:hover { background: var(--or-pale); border-color: var(--or-pale); }
+.jp .btn.light { border-color: var(--papyrus); color: var(--papyrus); }
+.jp .btn.light:hover { background: var(--papyrus); color: var(--nuit); }
+
+/* hero */
+.jp .ahead {
+  position: relative;
+  min-height: 76vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: var(--papyrus);
+  overflow: hidden;
+  background-image: linear-gradient(180deg, rgba(11, 21, 18, 0.4) 0%, rgba(11, 21, 18, 0.15) 40%, rgba(11, 21, 18, 0.6) 74%, rgba(12, 23, 20, 0.96) 100%), var(--img-hero);
+  background-size: cover;
+  background-position: center;
+}
+.jp .ahead .wrap { position: relative; z-index: 2; padding-bottom: 7vh; text-align: center; }
+.jp .ahead .crumb { font-family: var(--font-label), sans-serif; font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--eau); margin-bottom: 1.8rem; }
+.jp .ahead .crumb a { text-decoration: none; color: var(--eau); }
+.jp .ahead .crumb a:hover { color: var(--or-pale); }
+.jp .ahead .kicker { display: block; margin-bottom: 1.4rem; font-size: 0.66rem; }
+.jp .ahead h1 { font-size: clamp(2.2rem, 5.4vw, 4.2rem); letter-spacing: 0.02em; color: var(--papyrus); text-shadow: 0 2px 40px rgba(0, 0, 0, 0.45); max-width: 16em; margin: 0 auto; }
+.jp .ahead .dek { max-width: 31em; margin: 1.5rem auto 0; font-size: 1.24rem; line-height: 1.5; font-style: italic; color: var(--papyrus); opacity: 0.92; text-shadow: 0 1px 24px rgba(0, 0, 0, 0.5); }
+.jp .ahead .meta { margin-top: 2rem; font-family: var(--font-label), sans-serif; font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--or-pale); }
+.jp .ahead .meta span { color: var(--eau); }
+
+/* article */
+.jp .article { padding: 5.5rem 0 4rem; background: var(--papyrus); }
+.jp .article p { margin-bottom: 1.35em; }
+.jp .article p:first-of-type::first-letter { font-family: var(--font-display), serif; font-size: 3.8em; float: left; line-height: 0.8; padding: 0.05em 0.12em 0 0; color: var(--or); }
+.jp .article .lead { font-size: 1.16rem; }
+.jp .article h3 { font-family: var(--font-display), serif; font-weight: 400; font-size: 1.5rem; letter-spacing: 0.02em; margin: 2.4rem 0 0.3rem; scroll-margin-top: 1.5rem; }
+.jp .article h3 + .season { font-family: var(--font-label), sans-serif; font-size: 0.6rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--or); margin-bottom: 0.9rem; }
+.jp .article ul { list-style: none; margin: 0 0 1.35em 0; }
+.jp .article ul li { position: relative; padding-left: 1.4rem; margin-bottom: 0.7em; }
+.jp .article ul li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 6px; height: 6px; border-radius: 50%; background: var(--or); }
+.jp .article ul li b { font-weight: 600; }
+/* in-body internal links — make them legible without disturbing the prose */
+.jp .article a { color: #7d6a2f; text-decoration: underline; text-underline-offset: 2px; }
+.jp .article a:hover { color: var(--or); }
+
+.jp .pull { margin: 2.8rem 0; text-align: center; padding: 0 1rem; }
+.jp .pull .rule { display: block; width: 54px; height: 1px; background: var(--or); margin: 0 auto 1.5rem; }
+.jp .pull blockquote { font-family: var(--font-display), serif; font-size: clamp(1.4rem, 2.6vw, 1.9rem); line-height: 1.3; letter-spacing: 0.01em; color: var(--encre); }
+.jp .pull .rule.bot { margin: 1.5rem auto 0; }
+.jp .divider { display: flex; align-items: center; justify-content: center; gap: 1rem; margin: 2.6rem 0; color: var(--or); }
+.jp .divider::before, .jp .divider::after { content: ""; height: 1px; width: 60px; background: var(--hairline-d); }
+.jp .divider span { font-family: var(--font-label), sans-serif; font-size: 0.7rem; letter-spacing: 0.4em; }
+.jp .signoff { margin-top: 2.6rem; font-family: var(--font-label), sans-serif; font-size: 0.64rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--or); }
+
+/* CTA */
+.jp .cta { background: var(--nuit); color: var(--papyrus); text-align: center; padding: 6rem 0; }
+.jp .cta .eyebrow { display: block; margin-bottom: 1.2rem; }
+.jp .cta h2 { font-family: var(--font-display), serif; font-size: clamp(1.8rem, 4vw, 2.8rem); letter-spacing: 0.03em; color: var(--papyrus); }
+.jp .cta h2 em { color: var(--or-pale); font-style: italic; font-family: var(--font-body), serif; }
+.jp .cta p { max-width: 32em; margin: 1.2rem auto 2.4rem; color: var(--eau); }
+
+/* more from the journal */
+.jp .more { background: var(--sable); padding: 5.5rem 0; }
+.jp .more .sec-head { text-align: center; margin-bottom: 3rem; }
+.jp .more .sec-head h2 { font-family: var(--font-display), serif; font-size: 1.8rem; letter-spacing: 0.02em; margin-top: 0.8rem; }
+.jp .mgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.3rem; }
+.jp .mcard { background: var(--papyrus); border: 1px solid var(--hairline); padding: 2rem 1.7rem; display: flex; flex-direction: column; min-height: 12rem; text-decoration: none; color: var(--encre); transition: border-color 0.35s, transform 0.35s; }
+.jp .mcard:hover { border-color: var(--or); transform: translateY(-4px); }
+.jp .mcard .eyebrow { font-size: 0.56rem; margin-bottom: 0.9rem; }
+.jp .mcard h3 { font-family: var(--font-display), serif; font-size: 1.22rem; letter-spacing: 0.02em; margin-bottom: 0.6rem; line-height: 1.2; }
+.jp .mcard p { font-size: 0.95rem; color: #5a635d; line-height: 1.5; flex: 1; }
+@media (max-width: 820px) { .jp .mgrid { grid-template-columns: 1fr; } }
+.jp .sable { background: var(--sable); }

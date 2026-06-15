@@ -1,0 +1,182 @@
+import type { Metadata } from "next";
+import PageHero from "@/components/PageHero";
+import EnquiryForm from "@/components/EnquiryForm";
+import { site } from "@/data/site";
+import { getLocale, localePath } from "@/lib/i18n";
+
+export const metadata: Metadata = {
+  title: "Contact Sillage Égypte",
+  description:
+    "Reach Sillage Égypte by email, phone, or WhatsApp — or send an enquiry and a journey designer will reply within 24 hours.",
+  alternates: { canonical: "/contact" },
+};
+
+const COPY = {
+  en: {
+    eyebrow: "Contact",
+    titleLead: "We’d love to ",
+    titleEm: "hear from you.",
+    subtitle:
+      "By email, by phone, or by WhatsApp — however you prefer to begin. A real person will always reply.",
+    imageLabel: "A calm courtyard with afternoon light",
+    crumbHome: "Home",
+    crumbContact: "Contact",
+    labelEmail: "Email",
+    labelTelephone: "Telephone",
+    labelWhatsapp: "WhatsApp",
+    messageUs: "Message us",
+    sendEyebrow: "Send an enquiry",
+    sendTitleLead: "Or tell us about your ",
+    sendTitleEm: "trip.",
+    responsePromise: "A journey designer replies within 24 hours.",
+  },
+  es: {
+    eyebrow: "Contacto",
+    titleLead: "Nos encantaría ",
+    titleEm: "saber de usted.",
+    subtitle:
+      "Por correo, por teléfono o por WhatsApp — como prefiera comenzar. Siempre le responderá una persona real.",
+    imageLabel: "Un patio sereno con luz de la tarde",
+    crumbHome: "Inicio",
+    crumbContact: "Contacto",
+    labelEmail: "Correo",
+    labelTelephone: "Teléfono",
+    labelWhatsapp: "WhatsApp",
+    messageUs: "Escríbanos",
+    sendEyebrow: "Envíe una consulta",
+    sendTitleLead: "O cuéntenos sobre su ",
+    sendTitleEm: "viaje.",
+    responsePromise: "Un diseñador de viajes le responderá en menos de 24 horas.",
+  },
+  fr: {
+    eyebrow: "Contact",
+    titleLead: "Nous serions ravis de ",
+    titleEm: "vous lire.",
+    subtitle:
+      "Par e-mail, par téléphone ou par WhatsApp — comme il vous plaira de commencer. Une personne réelle vous répondra toujours.",
+    imageLabel: "Une cour paisible baignée de lumière d’après-midi",
+    crumbHome: "Accueil",
+    crumbContact: "Contact",
+    labelEmail: "E-mail",
+    labelTelephone: "Téléphone",
+    labelWhatsapp: "WhatsApp",
+    messageUs: "Écrivez-nous",
+    sendEyebrow: "Envoyer une demande",
+    sendTitleLead: "Ou parlez-nous de votre ",
+    sendTitleEm: "voyage.",
+    responsePromise: "Un concepteur de voyages vous répond sous 24 heures.",
+  },
+  nl: {
+    eyebrow: "Contact",
+    titleLead: "Wij horen graag ",
+    titleEm: "van u.",
+    subtitle:
+      "Per e-mail, per telefoon of via WhatsApp — hoe u ook het liefst begint. Er antwoordt u altijd een echt persoon.",
+    imageLabel: "Een rustige binnenplaats in het middaglicht",
+    crumbHome: "Home",
+    crumbContact: "Contact",
+    labelEmail: "E-mail",
+    labelTelephone: "Telefoon",
+    labelWhatsapp: "WhatsApp",
+    messageUs: "Schrijf ons",
+    sendEyebrow: "Stuur een aanvraag",
+    sendTitleLead: "Of vertel ons over uw ",
+    sendTitleEm: "reis.",
+    responsePromise: "Een reisontwerper antwoordt binnen 24 uur.",
+  },
+  de: {
+    eyebrow: "Kontakt",
+    titleLead: "Wir würden gern ",
+    titleEm: "von Ihnen hören.",
+    subtitle:
+      "Per E-Mail, per Telefon oder über WhatsApp — wie Sie auch immer am liebsten beginnen. Es antwortet Ihnen stets ein echter Mensch.",
+    imageLabel: "Ein stiller Innenhof im Nachmittagslicht",
+    crumbHome: "Start",
+    crumbContact: "Kontakt",
+    labelEmail: "E-Mail",
+    labelTelephone: "Telefon",
+    labelWhatsapp: "WhatsApp",
+    messageUs: "Schreiben Sie uns",
+    sendEyebrow: "Senden Sie eine Anfrage",
+    sendTitleLead: "Oder erzählen Sie uns von Ihrer ",
+    sendTitleEm: "Reise.",
+    responsePromise: "Ein Reisegestalter antwortet innerhalb von 24 Stunden.",
+  },
+} as const;
+
+export default async function ContactPage() {
+  const locale = await getLocale();
+  const t = COPY[locale];
+
+  return (
+    <main>
+      <PageHero
+        eyebrow={t.eyebrow}
+        title={
+          <>
+            {t.titleLead}
+            <em>{t.titleEm}</em>
+          </>
+        }
+        subtitle={t.subtitle}
+        gradient="oasis"
+        imageLabel={t.imageLabel}
+        imageKey="dest-aswan"
+        crumbs={[{ href: localePath(locale, "/"), label: t.crumbHome }, { label: t.crumbContact }]}
+        short
+      />
+
+      <section className="section-sm" style={{ paddingBottom: 0 }}>
+        <div className="container">
+          <div className="contact-grid">
+            <a className="contact-method reveal" href={`mailto:${site.email}`}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4">
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <path d="M3 7l9 6 9-6" strokeLinecap="round" />
+              </svg>
+              <span className="contact-method-label">{t.labelEmail}</span>
+              <span className="contact-method-value">{site.email}</span>
+            </a>
+            <a className="contact-method reveal reveal-delay-1" href={`tel:${site.phoneHref}`}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4">
+                <path d="M5 4h4l2 5-3 2a12 12 0 005 5l2-3 5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" strokeLinejoin="round" />
+              </svg>
+              <span className="contact-method-label">{t.labelTelephone}</span>
+              <span className="contact-method-value">{site.phoneDisplay}</span>
+            </a>
+            <a
+              className="contact-method reveal reveal-delay-2"
+              href={site.whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4">
+                <path d="M12 3a9 9 0 00-7.7 13.6L3 21l4.6-1.2A9 9 0 1012 3z" strokeLinejoin="round" />
+                <path d="M9 8.5c0 4 2.5 6.5 6.5 6.5l-1-2-2 .5-2-2 .5-2-2-1z" strokeLinejoin="round" />
+              </svg>
+              <span className="contact-method-label">{t.labelWhatsapp}</span>
+              <span className="contact-method-value">{t.messageUs}</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <div className="center-col reveal" style={{ marginBottom: "48px" }}>
+            <p className="section-eyebrow">{t.sendEyebrow}</p>
+            <h2 className="section-title">
+              {t.sendTitleLead}<em>{t.sendTitleEm}</em>
+            </h2>
+            <p className="section-body" style={{ margin: "0 auto" }}>
+              {t.responsePromise}
+            </p>
+          </div>
+          <div className="measure reveal reveal-delay-1" style={{ maxWidth: "820px", margin: "0 auto" }}>
+            <EnquiryForm locale={locale} />
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}

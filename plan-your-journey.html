@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan Your Journey | Sillage Égypte</title>
+<meta name="description" content="Every Sillage journey is designed from scratch, around you. Tell us a little, and a journey designer will shape a private proposal — with no obligation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --nuit:#101D18;--foret:#18271F;--papyrus:#F4EDDC;--sable:#E9DfC9;
+  --or:#BFA15F;--or-pale:#D9C490;--encre:#262F2A;--eau:#9FB4A9;
+  --hairline-l:rgba(38,47,42,.22);--hairline-d:rgba(191,161,95,.28);
+  --field:#FBF7EC;--field-border:rgba(38,47,42,.28);
+  --max:1180px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{font-family:'EB Garamond',Georgia,serif;font-size:19px;line-height:1.65;color:var(--encre);background:var(--papyrus);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 6vw}
+.eyebrow{font-family:'Jost',sans-serif;font-weight:400;font-size:.68rem;letter-spacing:.34em;text-transform:uppercase;color:var(--or)}
+.display{font-family:'Marcellus',serif;font-weight:400;line-height:1.08}
+.btn{display:inline-block;font-family:'Jost',sans-serif;font-weight:400;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;padding:1.05rem 2.4rem;text-decoration:none;border:1px solid var(--or);color:var(--or);transition:background .35s,color .35s;cursor:pointer;background:none}
+.btn:hover,.btn:focus-visible{background:var(--or);color:var(--nuit)}
+.btn.solid{background:var(--or);color:var(--nuit)}
+.btn.solid:hover{background:var(--or-pale);border-color:var(--or-pale)}
+.btn.light{border-color:var(--papyrus);color:var(--papyrus)}
+.btn.light:hover{background:var(--papyrus);color:var(--nuit)}
+:focus-visible{outline:2px solid var(--or);outline-offset:3px}
+
+/* masthead */
+header.masthead{position:absolute;top:0;left:0;right:0;z-index:20}
+.masthead .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:2rem;padding-bottom:2rem}
+.logo{font-family:'Marcellus',serif;font-size:1.3rem;letter-spacing:.42em;text-transform:uppercase;color:var(--papyrus);text-decoration:none}
+.logo small{display:block;font-family:'Jost',sans-serif;font-size:.55rem;letter-spacing:.5em;color:var(--or);margin-top:.3rem}
+nav.main{display:flex;gap:2.6rem;align-items:center}
+nav.main a{font-family:'Jost',sans-serif;font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--papyrus);text-decoration:none;opacity:.85;transition:opacity .3s,color .3s}
+nav.main a:hover{opacity:1;color:var(--or-pale)}
+@media(max-width:860px){nav.main a:not(.btn){display:none}}
+
+/* hero */
+.hero{position:relative;min-height:62vh;display:flex;flex-direction:column;justify-content:flex-end;color:var(--papyrus);overflow:hidden;
+  background:radial-gradient(1100px 480px at 74% 110%,rgba(191,161,95,.15),transparent 60%),radial-gradient(800px 400px at 16% 92%,rgba(127,163,150,.10),transparent 65%),linear-gradient(170deg,#0B1512,var(--nuit) 60%,#0C1714)}
+.hero::after{content:"";position:absolute;left:6vw;right:6vw;bottom:0;height:1px;background:linear-gradient(90deg,transparent,var(--or) 16%,var(--or) 84%,transparent);opacity:.45}
+.hero .wrap{position:relative;z-index:2;padding-bottom:5rem;padding-top:9rem}
+.hero .crumb{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--eau);margin-bottom:1.8rem}
+.hero .crumb a{text-decoration:none;color:var(--eau)} .hero .crumb a:hover{color:var(--or-pale)}
+.hero h1{font-size:clamp(2.6rem,6vw,4.6rem);letter-spacing:.04em;color:var(--papyrus)}
+.hero p.lede{max-width:36em;margin-top:1.4rem;font-size:1.24rem;line-height:1.55;font-style:italic;color:var(--eau)}
+
+section{padding:6.5rem 0}
+
+/* how it works */
+.how{background:var(--nuit);color:var(--papyrus);padding-top:5rem;padding-bottom:5rem}
+.how .sec-head{text-align:center;margin-bottom:3.2rem}
+.how .sec-head .eyebrow{display:block;margin-bottom:1rem}
+.how .sec-head h2{font-size:clamp(1.7rem,3vw,2.3rem)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--hairline-d)}
+.step{padding:2.4rem 1.6rem 0;border-left:1px solid var(--hairline-d)}
+.step:first-child{border-left:0;padding-left:0}
+.step .num{font-family:'Marcellus',serif;font-size:1.1rem;color:var(--or);letter-spacing:.1em}
+.step h3{font-family:'Marcellus',serif;font-size:1.25rem;margin:.7rem 0 .6rem;letter-spacing:.02em}
+.step p{font-size:.98rem;line-height:1.58;color:var(--eau)}
+@media(max-width:760px){.steps{grid-template-columns:1fr 1fr}.step{border-left:0;border-top:1px solid var(--hairline-d);padding-top:2rem;padding-left:0;padding-right:1rem}.step:nth-child(-n+2){border-top:0}}
+@media(max-width:440px){.steps{grid-template-columns:1fr}.step:nth-child(2){border-top:1px solid var(--hairline-d)}}
+
+/* ── the enquiry ────────────────────────── */
+.enquiry{background:var(--papyrus)}
+.enquiry .wrap{max-width:60rem}
+.enquiry .intro{text-align:center;margin-bottom:3.4rem}
+.enquiry .intro .eyebrow{display:block;margin-bottom:1rem}
+.enquiry .intro h2{font-size:clamp(1.9rem,3.4vw,2.6rem)}
+.enquiry .intro p{max-width:34em;margin:1.2rem auto 0;color:#4a534d}
+
+.panel{border:1px solid var(--hairline-l);background:#fff;padding:clamp(2rem,5vw,3.6rem)}
+fieldset{border:0;margin:0 0 2.8rem}
+fieldset:last-of-type{margin-bottom:1.5rem}
+legend{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--or);padding-bottom:1.4rem;border-bottom:1px solid var(--hairline-l);width:100%;margin-bottom:1.8rem}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+.row.thirds{grid-template-columns:1fr 1fr 1fr}
+.field{margin-bottom:1.4rem}
+.field.full{grid-column:1/-1}
+.field label{display:block;font-family:'Jost',sans-serif;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:#5a635d;margin-bottom:.55rem}
+.field label .opt{color:#9aa39c;text-transform:none;letter-spacing:.04em;font-size:.86em}
+.field input,.field select,.field textarea{
+  width:100%;font-family:'EB Garamond',serif;font-size:1.06rem;color:var(--encre);
+  background:var(--field);border:1px solid var(--field-border);padding:.85rem 1rem;
+  transition:border-color .25s,box-shadow .25s;border-radius:0;
+}
+.field textarea{resize:vertical;min-height:7rem;line-height:1.55}
+.field input::placeholder,.field textarea::placeholder{color:#9aa39c;font-style:italic}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--or);box-shadow:0 0 0 3px rgba(191,161,95,.14)}
+.field .help{font-size:.92rem;color:#6a7069;font-style:italic;margin-top:.5rem}
+.field select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--or) 50%),linear-gradient(135deg,var(--or) 50%,transparent 50%);background-position:calc(100% - 18px) 1.25rem,calc(100% - 12px) 1.25rem;background-size:6px 6px,6px 6px;background-repeat:no-repeat;cursor:pointer}
+@media(max-width:620px){.row,.row.thirds{grid-template-columns:1fr}}
+
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:.7rem}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;width:0;height:0}
+.chip span{display:inline-block;font-family:'Jost',sans-serif;font-size:.7rem;letter-spacing:.08em;padding:.7rem 1.1rem;border:1px solid var(--field-border);color:#5a635d;cursor:pointer;transition:all .25s;background:var(--field);user-select:none}
+.chip input:checked+span{border-color:var(--or);background:var(--nuit);color:var(--papyrus)}
+.chip input:focus-visible+span{outline:2px solid var(--or);outline-offset:2px}
+
+/* honest note */
+.honest{display:flex;gap:1rem;align-items:flex-start;padding:1.4rem 1.5rem;background:var(--sable);border-left:2px solid var(--or);margin:.5rem 0 2rem}
+.honest .mark{font-family:'Marcellus',serif;color:var(--or);font-size:1.3rem;line-height:1}
+.honest p{font-size:.98rem;color:#3f4842}
+
+.submit-row{display:flex;align-items:center;gap:1.6rem;flex-wrap:wrap;margin-top:.5rem}
+.submit-row .reply{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:#6a7069}
+.submit-row .reply b{color:var(--or);font-weight:400}
+
+/* confirmation */
+.confirm{display:none;text-align:center;padding:clamp(2.5rem,6vw,4.5rem) 2rem}
+.confirm.show{display:block;animation:fade .6s both}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.confirm .seal{width:64px;height:64px;border:1px solid var(--or);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.8rem;font-family:'Marcellus',serif;color:var(--or);font-size:1.6rem}
+.confirm h3{font-family:'Marcellus',serif;font-size:1.9rem;margin-bottom:1rem;letter-spacing:.02em}
+.confirm p{max-width:30em;margin:0 auto;color:#4a534d}
+
+/* prefer to talk */
+.talk{background:var(--sable)}
+.talk .wrap{max-width:60rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.talk h2{font-family:'Marcellus',serif;font-size:clamp(1.6rem,3vw,2.1rem);letter-spacing:.02em;margin-bottom:1rem}
+.talk p{color:#4a534d}
+.talk .lines a{display:flex;gap:1rem;align-items:baseline;padding:1.1rem 0;border-top:1px solid var(--hairline-l);text-decoration:none;font-size:1.08rem;transition:color .25s}
+.talk .lines a:last-child{border-bottom:1px solid var(--hairline-l)}
+.talk .lines a:hover{color:var(--or)}
+.talk .lines .k{font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--or);min-width:6.5rem}
+@media(max-width:760px){.talk .wrap{grid-template-columns:1fr;gap:2.4rem}}
+
+/* reassurance */
+.reassure{background:var(--nuit);color:var(--papyrus);text-align:center;padding:6rem 0}
+.reassure blockquote{max-width:38em;margin:0 auto;font-family:'Marcellus',serif;font-size:clamp(1.4rem,2.6vw,1.9rem);line-height:1.45;letter-spacing:.01em}
+.reassure blockquote em{font-family:'EB Garamond',serif;font-style:italic;color:var(--or)}
+
+/* footer */
+footer{background:#0B1512;color:var(--eau);padding:4.5rem 0 3rem;border-top:1px solid var(--hairline-d)}
+footer .wrap{display:flex;justify-content:space-between;gap:3rem;flex-wrap:wrap}
+footer .logo{color:var(--papyrus);font-size:1.05rem}
+footer p{font-size:.85rem;max-width:24em;margin-top:1rem}
+footer .col h5{font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--or);margin-bottom:1rem}
+footer .col a{display:block;font-size:.92rem;text-decoration:none;color:var(--eau);margin-bottom:.5rem}
+footer .col a:hover{color:var(--or-pale)}
+footer .legal{width:100%;margin-top:3rem;padding-top:1.4rem;border-top:1px solid rgba(191,161,95,.14);font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="logo" href="#">Sillage<small>Égypte</small></a>
+    <nav class="main" aria-label="Primary">
+      <a href="#">Journeys</a><a href="#">Destinations</a><a href="#">The Dahabiya</a><a href="#">Journal</a>
+      <a class="btn" style="padding:.7rem 1.6rem;font-size:.62rem" href="#form">Plan your journey</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <p class="crumb"><a href="#">Home</a> &nbsp;/&nbsp; Plan your journey</p>
+    <h1 class="display">Plan your journey</h1>
+    <p class="lede">Every Sillage journey is designed from scratch, around you. Tell us a little, and a journey designer will shape a private proposal — no template, and no obligation.</p>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">How it works</span>
+      <h2 class="display">Four steps, one conversation</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="num">I</span><h3>You tell us</h3><p>A few details and a sentence about what matters most. That alone is enough to begin.</p></div>
+      <div class="step"><span class="num">II</span><h3>We design</h3><p>A named journey designer shapes a private itinerary — yours alone, never a package off a shelf.</p></div>
+      <div class="step"><span class="num">III</span><h3>We refine, together</h3><p>We adjust until it is right. Most journeys take a conversation or two to settle properly.</p></div>
+      <div class="step"><span class="num">IV</span><h3>You travel</h3><p>Everything handled, door to door. You arrive, and Egypt is read to you.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE ENQUIRY -->
+<section class="enquiry" id="form">
+  <div class="wrap">
+    <div class="intro">
+      <span class="eyebrow">The enquiry</span>
+      <h2 class="display">Tell us about the journey you have in mind</h2>
+      <p>There are no required fields beyond a way to reach you. The more you share, the better the proposal — but a sentence is a fine place to start.</p>
+    </div>
+
+    <div class="panel">
+      <!-- FORM -->
+      <div id="enquiryForm">
+
+        <fieldset>
+          <legend>About you</legend>
+          <div class="row">
+            <div class="field"><label for="name">Your name</label><input id="name" type="text" placeholder="First and last"></div>
+            <div class="field"><label for="email">Email</label><input id="email" type="email" placeholder="you@example.com"></div>
+          </div>
+          <div class="row">
+            <div class="field"><label for="phone">Phone or WhatsApp <span class="opt">— optional</span></label><input id="phone" type="tel" placeholder="With country code"></div>
+            <div class="field"><label for="country">Where you're based <span class="opt">— optional</span></label><input id="country" type="text" placeholder="Country"></div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Your journey</legend>
+          <div class="row thirds">
+            <div class="field">
+              <label for="when">When would you like to travel</label>
+              <select id="when">
+                <option value="">Select…</option>
+                <option>October – April (the classic season)</option>
+                <option>May – September</option>
+                <option>I have specific dates</option>
+                <option>Flexible / not decided yet</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="length">How long</label>
+              <select id="length">
+                <option value="">Select…</option>
+                <option>Around a week</option>
+                <option>Ten days to two weeks</option>
+                <option>Longer than two weeks</option>
+                <option>Not sure — advise me</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="party">Travelling</label>
+              <select id="party">
+                <option value="">Select…</option>
+                <option>Just the two of us</option>
+                <option>A family</option>
+                <option>Solo</option>
+                <option>A small private group</option>
+                <option>A special occasion</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field full" style="margin-top:.6rem">
+            <label>What kind of journey draws you <span class="opt">— choose any</span></label>
+            <div class="chips">
+              <label class="chip"><input type="checkbox"><span>The Nile under sail</span></label>
+              <label class="chip"><input type="checkbox"><span>Ancient sites &amp; temples</span></label>
+              <label class="chip"><input type="checkbox"><span>Cairo &amp; the pyramids</span></label>
+              <label class="chip"><input type="checkbox"><span>The deep south &amp; Abu Simbel</span></label>
+              <label class="chip"><input type="checkbox"><span>Desert &amp; the oases</span></label>
+              <label class="chip"><input type="checkbox"><span>A honeymoon or celebration</span></label>
+              <label class="chip"><input type="checkbox"><span>Not sure — guide me</span></label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>What matters most</legend>
+          <div class="field full">
+            <label for="notes">In your own words</label>
+            <textarea id="notes" placeholder="The trip you're imagining, what you care about, anything you'd want us to know — pace, interests, who you're travelling with, a dream you've held. A sentence is enough; more is welcome."></textarea>
+            <p class="help">This is the most useful thing you can give us. It's what a designer reads first.</p>
+          </div>
+          <div class="field full">
+            <label for="budget">Budget guidance <span class="opt">— optional, per person</span></label>
+            <select id="budget">
+              <option value="">Prefer to discuss</option>
+              <option>Up to £4,000 per person</option>
+              <option>£4,000 – £8,000 per person</option>
+              <option>£8,000 – £15,000 per person</option>
+              <option>Above £15,000 per person</option>
+            </select>
+            <p class="help">Not to set a ceiling — to make sure the first proposal is the right shape, not a guess.</p>
+          </div>
+        </fieldset>
+
+        <div class="honest">
+          <span class="mark">—</span>
+          <p>If your dates or budget don't suit the journey you have in mind, we will say so, and suggest what would. Honest counsel is the point; a proposal you don't need is no use to either of us.</p>
+        </div>
+
+        <div class="submit-row">
+          <button class="btn solid" type="button" id="sendBtn">Send your enquiry</button>
+          <span class="reply">Replied to within <b>24 hours</b>, by a real person</span>
+        </div>
+      </div>
+
+      <!-- CONFIRMATION -->
+      <div class="confirm" id="confirm" role="status" aria-live="polite">
+        <div class="seal">✦</div>
+        <h3>Thank you — it's with us</h3>
+        <p>Your enquiry has reached a journey designer, who will read it properly and reply within 24 hours. Not a form letter — a real response, from a real person who knows this country.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PREFER TO TALK -->
+<section class="talk">
+  <div class="wrap">
+    <div>
+      <h2 class="display">Some journeys are easier begun by voice</h2>
+      <p>If you would rather talk it through than write it down, we are glad to. Call, message, or write — whichever suits you, and at whatever hour works where you are.</p>
+    </div>
+    <div class="lines">
+      <a href="mailto:hello@sillage-egypte.com"><span class="k">Email</span> hello@sillage-egypte.com</a>
+      <a href="tel:+20000000000"><span class="k">Telephone</span> +20 000 000 000</a>
+      <a href="#"><span class="k">WhatsApp</span> Message us directly</a>
+    </div>
+  </div>
+</section>
+
+<!-- REASSURANCE -->
+<section class="reassure">
+  <div class="wrap">
+    <blockquote>You are not booking a tour. You are handing a country to someone who has spent a life learning to <em>read</em> it — and asking them to design the days.</blockquote>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="logo" href="#">Sillage<small>Égypte</small></a>
+      <p>Private journeys designed around you, guided by experts who know every layer of this country.</p>
+    </div>
+    <div class="col"><h5>Explore</h5><a href="#">Journeys</a><a href="#">Destinations</a><a href="#">The Dahabiya</a><a href="#">Journal</a><a href="#">About</a></div>
+    <div class="col"><h5>Contact</h5><a href="mailto:hello@sillage-egypte.com">hello@sillage-egypte.com</a><a href="tel:+20000000000">+20 000 000 000</a><a href="#">WhatsApp enquiries welcome</a></div>
+    <div class="legal"><span>© 2026 Sillage Égypte. All rights reserved.</span><span>Privacy · Terms</span></div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('sendBtn').addEventListener('click', function(){
+    document.getElementById('enquiryForm').style.display = 'none';
+    var c = document.getElementById('confirm');
+    c.classList.add('show');
+    c.scrollIntoView({behavior:'smooth', block:'center'});
+  });
+</script>
+
+</body>
+</html>

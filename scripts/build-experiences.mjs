@@ -1,0 +1,142 @@
+/**
+ * Builds the six experience pages from experiences/Final experiences/,
+ * preserving their exact words. For each file it strips the file's own
+ * masthead + footer, points the placeholder links (breadcrumb, CTA, and the
+ * "where it belongs" journey cards) at real routes, and writes
+ * content/experiences/<slug>.json for the page to inject verbatim.
+ * Also regenerates data/experiences.ts as a thin index for the cards.
+ */
+import { readFile, writeFile, mkdir } from "node:fs/promises";
+import path from "node:path";
+
+const decode = (s) =>
+  s.replace(/&amp;/g, "&").replace(/&nbsp;/g, " ").replace(/&#39;|&rsquo;/g, "’")
+   .replace(/&lsquo;/g, "‘").replace(/&quot;/g, '"').replace(/&ndash;/g, "–")
+   .replace(/&mdash;/g, "—").replace(/&eacute;/g, "é");
+const firstMatch = (re, s, d = "") => { const m = s.match(re); return m ? m[1] : d; };
+const text = (re, s) => decode(firstMatch(re, s, "").replace(/<[^>]*>/g, "")).trim();
+
+// related "where it belongs" cards -> nearest real route on the site
+const CARD_LINKS = {
+  "Aswan": "/destinations/aswan",
+  "Cairo": "/destinations/cairo",
+  "Luxor": "/destinations/luxor",
+  "Siwa": "/destinations",
+  "Siwa & the Great Sand Sea": "/tours/beyond-the-nile",
+  "The Private Nile": "/tours/nile-red-sea",
+  "Ancient Cairo & Luxor": "/tours/egypt-in-brief",
+  "The Complete Egypt": "/tours/complete-egypt",
+  "The Empty Plateau": "/experiences/the-empty-plateau",
+  "The Empty Museum": "/experiences/the-empty-museum",
+};
+
+const POSTS = [
+  { slug: "the-empty-plateau", file: "experience-giza-plateau.html", gradient: "sunset" },
+  { slug: "the-empty-museum", file: "experience-gem-private.html", gradient: "ancient" },
+  { slug: "the-temple-by-river", file: "experience-dendera-by-river.html", gradient: "nile" },
+  { slug: "the-salt-lakes", file: "experience-siwa-salt-lakes.html", gradient: "oasis" },
+  { slug: "tea-on-the-terrace", file: "experience-aswan-terrace-tea.html", gradient: "nile" },
+  { slug: "lunch-under-sail", file: "experience-cairo-felucca-lunch.html", gradient: "nile" },
+];
+
+const SRC = path.resolve("experiences/Final experiences");
+const OUT = path.resolve("content/experiences");
+
+async function processOne(p) {
+  const raw = await readFile(path.join(SRC, p.file), "utf8");
+  const seoTitle = text(/<title>([^<]*)<\/title>/, raw).replace(/\s*\|\s*Sillage Égypte\s*$/, "").trim();
+  const description = text(/<meta name="description" content="([^"]*)"/, raw);
+
+  let body = firstMatch(/<body>([\s\S]*?)<\/body>/, raw);
+
+  const title = text(/<h1[^>]*>([\s\S]*?)<\/h1>/, body);
+  const lede = text(/<p class="lede">([\s\S]*?)<\/p>/, body);
+  const kicker = text(/class="eyebrow kicker">([\s\S]*?)<\/span>/, body);
+  const location = (kicker.split("·").slice(1).join("·") || "").trim() || kicker;
+  const ledger = {};
+  for (const m of body.matchAll(/<div class="k">([\s\S]*?)<\/div>\s*<div class="v">([\s\S]*?)<\/div>/g))
+    ledger[decode(m[1].replace(/<[^>]*>/g, "")).trim().toLowerCase()] = decode(m[2].replace(/<[^>]*>/g, "")).trim();
+  const timing = ledger["duration"] || "";
+
+  // strip chrome
+  body = body.replace(/<header class="masthead">[\s\S]*?<\/header>/, "");
+  body = body.replace(/<footer>[\s\S]*?<\/footer>/, "");
+  body = body.replace(/<script[\s\S]*?<\/script>/g, "");
+
+  // breadcrumb + CTA links
+  body = body
+    .replace(/<a href="#">Home<\/a>/g, '<a href="/">Home</a>')
+    .replace(/<a href="#">Experiences<\/a>/g, '<a href="/experiences">Experiences</a>')
+    .replace(/<a class="btn solid" href="#">/g, '<a class="btn solid" href="/plan">');
+
+  // "where it belongs" journey cards
+  body = body.replace(
+    /<a class="jcard" href="#">([\s\S]*?)<h3>([\s\S]*?)<\/h3>/g,
+    (m, pre, h3) => {
+      const href = CARD_LINKS[decode(h3).replace(/<[^>]*>/g, "").trim()] || "/tours";
+      return `<a class="jcard" href="${href}">${pre}<h3>${h3}</h3>`;
+    }
+  );
+
+  await writeFile(
+    path.join(OUT, `${p.slug}.json`),
+    JSON.stringify({ slug: p.slug, seoTitle, description, title, location, lede, timing, bodyHtml: body.trim() }, null, 2)
+  );
+  return { ...p, seoTitle, description, title, location, lede, timing };
+}
+
+function tsEntry(d) {
+  const j = JSON.stringify;
+  return `  {
+    slug: ${j(d.slug)},
+    title: ${j(d.title)},
+    location: ${j(d.location)},
+    lede: ${j(d.lede)},
+    description: ${j(d.description)},
+    timing: ${j(d.timing)},
+    gradient: ${j(d.gradient)},
+    heroLabel: ${j(d.title)},
+    bespoke: true,
+    seo: { title: ${j(d.seoTitle)}, description: ${j(d.description)} },
+  },`;
+}
+
+async function run() {
+  await mkdir(OUT, { recursive: true });
+  const idx = [];
+  for (const p of POSTS) idx.push(await processOne(p));
+
+  const ts =
+`/** Experiences. Drives /experiences and /experiences/[slug].
+ *  The six experiences are bespoke designs rendered verbatim from
+ *  content/experiences/<slug>.json. This file is a thin index for the cards —
+ *  generated by scripts/build-experiences.mjs. */
+
+import type { GradientVariant } from "./tours";
+
+export interface Experience {
+  slug: string;
+  title: string;
+  location: string;
+  lede: string;
+  description: string;
+  timing: string;
+  gradient: GradientVariant;
+  heroLabel: string;
+  seo: { title: string; description: string };
+  /** Bespoke experiences render verbatim from content/experiences/<slug>.json. */
+  bespoke?: boolean;
+}
+
+export const experiences: Experience[] = [
+${idx.map(tsEntry).join("\n")}
+];
+
+export const getExperience = (slug: string) =>
+  experiences.find((e) => e.slug === slug);
+`;
+  await writeFile(path.resolve("data/experiences.ts"), ts);
+  console.log("Built experiences:", idx.map((d) => d.slug).join(", "));
+}
+
+run().catch((e) => { console.error(e); process.exit(1); });

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Empty Museum — Private Entry to the Grand Egyptian Museum | Sillage Égypte</title>
+<meta name="description" content="Two hours with the Grand Egyptian Museum to yourselves, outside public hours — the complete Tutankhamun, the grand halls, and the Pyramids framed in the window.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --nuit:#101D18;--foret:#18271F;--papyrus:#F4EDDC;--sable:#E9DfC9;
+  --or:#BFA15F;--or-pale:#D9C490;--encre:#262F2A;--eau:#9FB4A9;
+  --hairline-l:rgba(38,47,42,.22);--hairline-d:rgba(191,161,95,.28);
+  --max:1180px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{font-family:'EB Garamond',Georgia,serif;font-size:19px;line-height:1.65;color:var(--encre);background:var(--papyrus);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 6vw}
+.eyebrow{font-family:'Jost',sans-serif;font-weight:400;font-size:.68rem;letter-spacing:.34em;text-transform:uppercase;color:var(--or)}
+.display{font-family:'Marcellus',serif;font-weight:400;line-height:1.08}
+.btn{display:inline-block;font-family:'Jost',sans-serif;font-weight:400;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;padding:1.05rem 2.4rem;text-decoration:none;border:1px solid var(--or);color:var(--or);transition:background .35s,color .35s;cursor:pointer;background:none}
+.btn:hover,.btn:focus-visible{background:var(--or);color:var(--nuit)}
+.btn.solid{background:var(--or);color:var(--nuit)}
+.btn.solid:hover{background:var(--or-pale);border-color:var(--or-pale)}
+:focus-visible{outline:2px solid var(--or);outline-offset:3px}
+
+/* masthead */
+header.masthead{position:absolute;top:0;left:0;right:0;z-index:20}
+.masthead .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:2rem;padding-bottom:2rem}
+.logo{font-family:'Marcellus',serif;font-size:1.3rem;letter-spacing:.42em;text-transform:uppercase;color:var(--papyrus);text-decoration:none}
+.logo small{display:block;font-family:'Jost',sans-serif;font-size:.55rem;letter-spacing:.5em;color:var(--or);margin-top:.3rem}
+nav.main{display:flex;gap:2.6rem;align-items:center}
+nav.main a{font-family:'Jost',sans-serif;font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--papyrus);text-decoration:none;opacity:.85;transition:opacity .3s,color .3s}
+nav.main a:hover{opacity:1;color:var(--or-pale)}
+@media(max-width:860px){nav.main a:not(.btn){display:none}}
+
+/* hero — the museum lit from within at the soft hour; warm alabaster glow */
+.hero{position:relative;min-height:90vh;display:flex;flex-direction:column;justify-content:flex-end;color:var(--papyrus);overflow:hidden;
+  background:radial-gradient(1000px 480px at 50% 116%,rgba(191,161,95,.34),transparent 60%),radial-gradient(760px 520px at 78% 30%,rgba(217,196,144,.12),transparent 60%),linear-gradient(180deg,#0B1411 0%,#101D18 50%,#13110C 100%)}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:21vh;height:1px;background:linear-gradient(90deg,transparent,var(--or) 18%,var(--or) 82%,transparent);opacity:.5}
+.hero .wrap{position:relative;z-index:2;padding-bottom:11vh}
+.hero .crumb{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--eau);margin-bottom:1.8rem}
+.hero .crumb a{text-decoration:none;color:var(--eau)} .hero .crumb a:hover{color:var(--or-pale)}
+.hero .kicker{display:block;margin-bottom:1.4rem;font-size:.66rem}
+.hero h1{font-size:clamp(2.8rem,8vw,6rem);letter-spacing:.04em;color:var(--papyrus);animation:rise 1.1s cubic-bezier(.2,.7,.2,1) both}
+.hero p.lede{max-width:33em;margin-top:1.5rem;font-size:1.28rem;line-height:1.55;font-style:italic;color:var(--eau);animation:rise 1.1s .15s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.hero h1,.hero p.lede{animation:none}}
+
+/* ledger */
+.ledger{background:var(--nuit);color:var(--papyrus);border-top:1px solid var(--hairline-d)}
+.ledger .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.ledger .cell{padding:1.7rem 1.4rem;border-left:1px solid var(--hairline-d)}
+.ledger .cell:first-child{border-left:0;padding-left:0}
+.ledger .k{font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--or);margin-bottom:.45rem}
+.ledger .v{font-family:'Marcellus',serif;font-size:1.05rem;letter-spacing:.02em}
+@media(max-width:760px){.ledger .wrap{grid-template-columns:1fr 1fr}.ledger .cell{border-left:0;border-top:1px solid var(--hairline-d);padding-left:0}.ledger .cell:nth-child(-n+2){border-top:0}}
+
+section{padding:7rem 0}
+.sec-head{margin-bottom:3.2rem}
+.sec-head .eyebrow{display:block;margin-bottom:1rem}
+.sec-head h2{font-size:clamp(1.9rem,3.4vw,2.7rem);letter-spacing:.02em}
+
+/* overview */
+.intro .wrap{display:grid;grid-template-columns:5fr 7fr;gap:5rem;align-items:start}
+.intro h2{font-size:clamp(2rem,3.6vw,2.9rem);max-width:9em}
+.intro .body p+p{margin-top:1.3em}
+.intro .body p:first-child::first-letter{font-family:'Marcellus',serif;font-size:3.6em;float:left;line-height:.82;padding:.06em .12em 0 0;color:var(--or)}
+@media(max-width:860px){.intro .wrap{grid-template-columns:1fr;gap:2.5rem}}
+
+/* ── how the two hours unfold — signature ── */
+.unfold{background:var(--nuit);color:var(--papyrus)}
+.unfold .sec-head{text-align:center}
+.stream{position:relative;max-width:44rem;margin:0 auto;padding-left:3.4rem}
+.stream::before{content:"";position:absolute;left:9px;top:14px;bottom:14px;width:1px;background:linear-gradient(180deg,transparent,var(--or) 5%,var(--or) 95%,transparent)}
+.moment{position:relative;padding:0 0 2.6rem}
+.moment:last-child{padding-bottom:0}
+.moment::before{content:"";position:absolute;left:-3.4rem;top:.45rem;width:19px;height:19px;border:1px solid var(--or);border-radius:50%;background:var(--nuit)}
+.moment::after{content:"";position:absolute;left:-2.9rem;top:.95rem;width:7px;height:7px;border-radius:50%;background:var(--or)}
+.moment .when{font-family:'Jost',sans-serif;font-size:.58rem;letter-spacing:.26em;text-transform:uppercase;color:var(--or);margin-bottom:.5rem}
+.moment h3{font-family:'Marcellus',serif;font-size:1.4rem;letter-spacing:.02em;margin-bottom:.6rem}
+.moment p{color:var(--eau);font-size:1.04rem;line-height:1.66;max-width:34em}
+@media(max-width:560px){.stream{padding-left:2.6rem}.moment::before{left:-2.6rem}.moment::after{left:-2.05rem}}
+
+/* what makes it ours */
+.ours{background:var(--sable)}
+.ours .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:1px solid var(--hairline-l)}
+.ours .item{padding:2.4rem 2.2rem;border-left:1px solid var(--hairline-l);border-top:1px solid var(--hairline-l);background:var(--papyrus)}
+.ours .item:nth-child(-n+2){border-top:0}
+.ours .item:nth-child(odd){border-left:0}
+.ours .item .n{font-family:'Marcellus',serif;font-size:.9rem;color:var(--or);letter-spacing:.1em}
+.ours .item h3{font-family:'Marcellus',serif;font-size:1.28rem;margin:.7rem 0 .55rem;letter-spacing:.02em}
+.ours .item p{font-size:1rem;line-height:1.6;color:#454e48}
+@media(max-width:760px){.ours .grid{grid-template-columns:1fr}.ours .item{border-left:0}.ours .item:nth-child(2){border-top:1px solid var(--hairline-l)}}
+
+/* honest note */
+.know{background:var(--papyrus)}
+.know .wrap{max-width:50rem}
+.know .panel{border:1px solid var(--or);padding:3rem 3rem 2.6rem;position:relative}
+.know .panel::before{content:"";position:absolute;top:0;left:0;width:42px;height:42px;border-top:2px solid var(--or);border-left:2px solid var(--or)}
+.know .eyebrow{display:block;margin-bottom:1rem}
+.know h2{font-family:'Marcellus',serif;font-size:1.7rem;margin-bottom:1.2rem;letter-spacing:.02em}
+.know p+p{margin-top:.9em}
+.know p{font-size:1.04rem;color:#3f4842}
+
+/* included / good to know */
+.incl{background:var(--sable)}
+.incl .wrap{display:grid;grid-template-columns:1fr 1fr;gap:5rem}
+.incl h3{font-family:'Marcellus',serif;font-size:1.4rem;margin-bottom:1.4rem;letter-spacing:.02em}
+.incl ul{list-style:none}
+.incl li{padding:.85rem 0;border-top:1px solid var(--hairline-l);font-size:1.02rem;display:flex;gap:.9rem;align-items:baseline;color:#3f4842}
+.incl li::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--or);margin-top:.55rem}
+.incl .note li::before{background:none;border:1px solid #9aa39c}
+.incl .note li{color:#5a635d}
+@media(max-width:760px){.incl .wrap{grid-template-columns:1fr;gap:3rem}}
+
+/* glimpses */
+.glimpse{background:var(--papyrus)}
+.glimpse .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+.frame{aspect-ratio:3/4;position:relative;overflow:hidden;background:#1c2620}
+.frame .ph{position:absolute;inset:0}
+.frame:nth-child(1) .ph{background:radial-gradient(400px 300px at 50% 55%,rgba(217,196,144,.40),transparent 68%),linear-gradient(180deg,#211a10,#0b1411)}
+.frame:nth-child(2) .ph{background:radial-gradient(360px 300px at 50% 60%,rgba(191,161,95,.42),transparent 66%),linear-gradient(180deg,#1a1408,#070d0b)}
+.frame:nth-child(3) .ph{background:radial-gradient(440px 340px at 50% 80%,rgba(191,141,80,.32),transparent 70%),linear-gradient(180deg,#1d2630,#0b1411)}
+.frame figcaption{position:absolute;left:0;right:0;bottom:0;padding:1rem 1.2rem;font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--or-pale);background:linear-gradient(transparent,rgba(7,13,11,.85))}
+@media(max-width:760px){.glimpse .grid{grid-template-columns:1fr}}
+
+/* where it belongs */
+.belongs{background:var(--nuit);color:var(--papyrus)}
+.belongs .sec-head{text-align:center}
+.belongs .sec-head .eyebrow{display:block;margin-bottom:1rem}
+.belongs .lead{text-align:center;max-width:40em;margin:0 auto 3rem;color:var(--eau);font-style:italic}
+.jgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;max-width:46rem;margin:0 auto}
+.jcard{border:1px solid var(--hairline-d);padding:2.4rem 2rem 2.2rem;display:flex;flex-direction:column;min-height:16rem;background:var(--foret);text-decoration:none;color:var(--papyrus);transition:border-color .35s,transform .35s}
+.jcard:hover{border-color:var(--or);transform:translateY(-4px)}
+.jcard .eyebrow{font-size:.58rem;margin-bottom:1.1rem}
+.jcard h3{font-family:'Marcellus',serif;font-size:1.5rem;letter-spacing:.02em;margin-bottom:.8rem}
+.jcard p{font-size:.98rem;color:var(--eau);line-height:1.6;flex:1}
+.jcard .meta{margin-top:1.6rem;padding-top:1.1rem;border-top:1px solid var(--hairline-d);font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--or-pale)}
+@media(max-width:680px){.jgrid{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.jcard:hover{transform:none}}
+
+/* cta */
+.cta{background:linear-gradient(180deg,var(--nuit),#13110C);color:var(--papyrus);text-align:center;padding:8rem 0}
+.cta h2{font-size:clamp(2.2rem,5vw,3.6rem);letter-spacing:.04em}
+.cta h2 em{color:var(--or);font-style:italic;font-family:'EB Garamond',serif}
+.cta p{max-width:34em;margin:1.4rem auto 2.8rem;color:var(--eau)}
+.cta .note{margin-top:1.6rem;font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--or)}
+
+/* footer */
+footer{background:#070D0B;color:var(--eau);padding:4.5rem 0 3rem;border-top:1px solid var(--hairline-d)}
+footer .wrap{display:flex;justify-content:space-between;gap:3rem;flex-wrap:wrap}
+footer .logo{color:var(--papyrus);font-size:1.05rem}
+footer p{font-size:.85rem;max-width:24em;margin-top:1rem}
+footer .col h5{font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--or);margin-bottom:1rem}
+footer .col a{display:block;font-size:.92rem;text-decoration:none;color:var(--eau);margin-bottom:.5rem}
+footer .col a:hover{color:var(--or-pale)}
+footer .legal{width:100%;margin-top:3rem;padding-top:1.4rem;border-top:1px solid rgba(191,161,95,.14);font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="logo" href="#">Sillage<small>Égypte</small></a>
+    <nav class="main" aria-label="Primary">
+      <a href="#">Journeys</a><a href="#">Destinations</a><a href="#">Experiences</a><a href="#">Journal</a>
+      <a class="btn" style="padding:.7rem 1.6rem;font-size:.62rem" href="#plan">Plan your journey</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <p class="crumb"><a href="#">Home</a> &nbsp;/&nbsp; <a href="#">Experiences</a> &nbsp;/&nbsp; The Empty Museum</p>
+    <span class="eyebrow kicker">A Sillage experience · The Grand Egyptian Museum, Giza</span>
+    <h1 class="display">The Empty Museum</h1>
+    <p class="lede">Two hours with the Grand Egyptian Museum to yourselves, before it opens or after it closes — the whole of Tutankhamun, and no one between you and the gold.</p>
+  </div>
+</div>
+
+<!-- LEDGER -->
+<div class="ledger" role="region" aria-label="This experience at a glance">
+  <div class="wrap">
+    <div class="cell"><div class="k">Duration</div><div class="v">Two hours</div></div>
+    <div class="cell"><div class="k">Where</div><div class="v">The GEM, Giza</div></div>
+    <div class="cell"><div class="k">When</div><div class="v">6–8 am or 6–8 pm</div></div>
+    <div class="cell"><div class="k">Access</div><div class="v">Private, outside public hours</div></div>
+  </div>
+</div>
+
+<!-- OVERVIEW -->
+<section class="intro">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">The experience</span>
+      <h2 class="display" style="margin-top:1rem">The greatest collection on earth, with no one else in it</h2>
+    </div>
+    <div class="body">
+      <p>The Grand Egyptian Museum is the largest in the world devoted to a single civilisation — two decades in the making, and by mid-morning, very full. Few travellers know that it can also be entered when it is closed: a private two hours, from six to eight in the morning before the doors open, or six to eight in the evening once they have shut.</p>
+      <p>In that window the museum is held for your party alone. The complete burial of Tutankhamun, the grand halls, the staircase that climbs toward the Pyramids — all of it lit, silent, and yours. It is the difference between filing past the gold and standing before it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW THE TWO HOURS UNFOLD — signature -->
+<section class="unfold">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">How the two hours unfold</span>
+      <h2 class="display" style="margin-top:1rem">A private path through the great rooms</h2>
+    </div>
+    <div class="stream">
+      <div class="moment">
+        <div class="when">The threshold</div>
+        <h3>Beneath the hanging obelisk</h3>
+        <p>You enter under the suspended obelisk of Ramesses II, raised clear of the ground so you can stand beneath its base and read the cartouche cut there for a king — the first obelisk in the world hung this way.</p>
+      </div>
+      <div class="moment">
+        <div class="when">The Grand Hall</div>
+        <h3>Ramesses, alone</h3>
+        <p>The eleven-metre colossus of Ramesses II stands in the empty atrium, lit and silent — a hall built to hold thousands, holding only you.</p>
+      </div>
+      <div class="moment">
+        <div class="when">The Grand Staircase</div>
+        <h3>Toward the Pyramids</h3>
+        <p>Six storeys of kings and gods climb the Grand Staircase toward a wall of glass — and at its head, framed in the window, the Pyramids themselves on the plateau beyond. At six in the morning, or the close of the evening, it is at its finest.</p>
+      </div>
+      <div class="moment">
+        <div class="when">Tutankhamun</div>
+        <h3>The whole of him</h3>
+        <p>Both galleries of Tutankhamun — more than five thousand objects, the complete burial shown together for the first time since it was sealed — with not a single other visitor between you and the gold.</p>
+      </div>
+      <div class="moment">
+        <div class="when">The solar boat</div>
+        <h3>Khufu's ship</h3>
+        <p>The cedar boat built to carry a pharaoh across the sky, buried beside the Great Pyramid for more than four thousand years and raised again plank by plank.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT MAKES IT OURS -->
+<section class="ours">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Why it's ours</span>
+      <h2 class="display" style="margin-top:1rem">What the daytime visitor never gets</h2>
+    </div>
+    <div class="grid">
+      <div class="item"><span class="n">I</span><h3>The whole museum, in quiet</h3><p>The grand halls and the great collection without the crowd that fills them by ten — the building the world waited twenty years for, held for your party.</p></div>
+      <div class="item"><span class="n">II</span><h3>Tutankhamun, complete</h3><p>All five thousand objects of his burial together at last, his gold without a shoulder in your way.</p></div>
+      <div class="item"><span class="n">III</span><h3>The Pyramids in the window</h3><p>The Grand Staircase ends on a wall of glass that frames Giza. At dawn or dusk, with the museum to yourselves, it is the view the architects intended and almost no one sees in peace.</p></div>
+      <div class="item"><span class="n">IV</span><h3>Read by an Egyptologist</h3><p>Two hours with someone who can choose, from a hundred thousand objects, the dozen that will stay with you for life.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HONEST NOTE -->
+<section class="know">
+  <div class="wrap">
+    <div class="panel">
+      <span class="eyebrow">Before you picture it</span>
+      <h2>Two hours is the headline, not the whole</h2>
+      <p>The Grand Egyptian Museum is vast — more objects than there are days to see them. Two hours is not the entire museum and we would not pretend otherwise; it is a private, curated path through its greatest rooms, shaped to what you most want to see. Your Egyptologist edits, so that the time is spent and not scattered.</p>
+      <p>The access is arranged with the museum by special permission, in the window from six to eight in the morning or six to eight in the evening, and confirmed for your date rather than offered on demand. Individual galleries occasionally close for care, so we tell you in advance what is open. And "private" means the museum is held for your party, with its own staff and guards present — not a building emptied of every soul. What it is not is a crowd, and at the Grand Egyptian Museum that is no small thing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- INCLUDED / GOOD TO KNOW -->
+<section class="incl">
+  <div class="wrap">
+    <div>
+      <h3>What it includes</h3>
+      <ul>
+        <li>The private out-of-hours arrangement, with all permissions and fees</li>
+        <li>A certified Egyptologist for the full two hours</li>
+        <li>A curated route through the headline galleries, shaped to your interests</li>
+        <li>Private transfer to the museum and back, door to door</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Good to know</h3>
+      <ul class="note">
+        <li>Two hours — six to eight in the morning, or six to eight in the evening</li>
+        <li>Confirmed for your date by arrangement, not on demand</li>
+        <li>The evening window catches the museum and the Pyramids lit</li>
+        <li>Pairs naturally with The Empty Plateau, a few minutes away</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- GLIMPSES -->
+<section class="glimpse">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Glimpses</span>
+      <h2 class="display" style="margin-top:1rem">Two hours, three frames</h2>
+    </div>
+    <div class="grid">
+      <figure class="frame"><div class="ph"></div><figcaption>The Grand Staircase at first light</figcaption></figure>
+      <figure class="frame"><div class="ph"></div><figcaption>The gold of Tutankhamun</figcaption></figure>
+      <figure class="frame"><div class="ph"></div><figcaption>The Pyramids through the glass</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- WHERE IT BELONGS -->
+<section class="belongs">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Where it belongs</span>
+      <h2 class="display" style="margin-top:1rem">One half of a Giza morning</h2>
+    </div>
+    <p class="lead">The museum and the plateau stand a few minutes apart, and the same quiet hours open both. Taken together — the empty museum at dawn, the empty plateau before sunset, or the reverse — they make the finest day in Cairo we know how to arrange.</p>
+    <div class="jgrid">
+      <a class="jcard" href="#">
+        <span class="eyebrow">A Sillage experience</span>
+        <h3>The Empty Plateau</h3>
+        <p>Its companion across the road: two private hours with the whole Giza plateau reserved — the Great Pyramid, and the Sphinx at its very paws.</p>
+        <span class="meta">Two hours · Private</span>
+      </a>
+      <a class="jcard" href="#">
+        <span class="eyebrow">Grand journey</span>
+        <h3>The Complete Egypt</h3>
+        <p>Thirteen private days the length of the country, with the Grand Egyptian Museum as the closing chapter — given to you outside the crowd.</p>
+        <span class="meta">13 days · Private only</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="plan">
+  <div class="wrap">
+    <span class="eyebrow">Begin the conversation</span>
+    <h2 class="display" style="margin-top:1.2rem">Have the museum to <em>yourselves</em>.</h2>
+    <p>Tell us your dates and which window you'd choose — the early morning or the evening — and we will arrange the museum around your journey.</p>
+    <a class="btn solid" href="#">Plan your journey</a>
+    <p class="note">We reply within 24 hours</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="logo" href="#">Sillage<small>Égypte</small></a>
+      <p>Private journeys designed around you, guided by experts who know every layer of this country.</p>
+    </div>
+    <div class="col"><h5>Explore</h5><a href="#">Journeys</a><a href="#">Destinations</a><a href="#">Experiences</a><a href="#">Journal</a><a href="#">About</a></div>
+    <div class="col"><h5>Contact</h5><a href="mailto:hello@sillage-egypte.com">hello@sillage-egypte.com</a><a href="tel:+20000000000">+20 000 000 000</a><a href="#">WhatsApp enquiries welcome</a></div>
+    <div class="legal"><span>© 2026 Sillage Égypte. All rights reserved.</span><span>Privacy · Terms</span></div>
+  </div>
+</footer>
+
+</body>
+</html>

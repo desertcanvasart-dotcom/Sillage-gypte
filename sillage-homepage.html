@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sillage Égypte — Private Journeys Through Egypt</title>
+<meta name="description" content="Private, Egyptologist-led journeys through Egypt — read, not merely seen. The Nile under sail, the Valley of the Kings before the crowds, access the convoys never reach.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --nuit:#101D18;--foret:#18271F;--papyrus:#F4EDDC;--sable:#E9DfC9;
+  --or:#BFA15F;--or-pale:#D9C490;--encre:#262F2A;--eau:#9FB4A9;
+  --hairline-l:rgba(38,47,42,.22);--hairline-d:rgba(191,161,95,.28);
+  --max:1180px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{font-family:'EB Garamond',Georgia,serif;font-size:19px;line-height:1.65;color:var(--encre);background:var(--papyrus);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 6vw}
+.eyebrow{font-family:'Jost',sans-serif;font-weight:400;font-size:.68rem;letter-spacing:.34em;text-transform:uppercase;color:var(--or)}
+.display{font-family:'Marcellus',serif;font-weight:400;line-height:1.08}
+.btn{display:inline-block;font-family:'Jost',sans-serif;font-weight:400;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;padding:1.05rem 2.4rem;text-decoration:none;border:1px solid var(--or);color:var(--or);transition:background .35s,color .35s;cursor:pointer;background:none}
+.btn:hover,.btn:focus-visible{background:var(--or);color:var(--nuit)}
+.btn.solid{background:var(--or);color:var(--nuit)}
+.btn.solid:hover{background:var(--or-pale);border-color:var(--or-pale)}
+.btn.light{border-color:var(--papyrus);color:var(--papyrus)}
+.btn.light:hover{background:var(--papyrus);color:var(--nuit)}
+:focus-visible{outline:2px solid var(--or);outline-offset:3px}
+
+/* masthead */
+header.masthead{position:absolute;top:0;left:0;right:0;z-index:20}
+.masthead .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:2rem;padding-bottom:2rem}
+.logo{font-family:'Marcellus',serif;font-size:1.35rem;letter-spacing:.42em;text-transform:uppercase;color:var(--papyrus);text-decoration:none}
+.logo small{display:block;font-family:'Jost',sans-serif;font-size:.55rem;letter-spacing:.5em;color:var(--or);margin-top:.3rem}
+nav.main{display:flex;gap:2.6rem;align-items:center}
+nav.main a{font-family:'Jost',sans-serif;font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--papyrus);text-decoration:none;opacity:.85;transition:opacity .3s,color .3s}
+nav.main a:hover{opacity:1;color:var(--or-pale)}
+@media(max-width:860px){nav.main a:not(.btn){display:none}}
+
+/* ── hero ───────────────────────────────── */
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;color:var(--papyrus);overflow:hidden;
+  background:radial-gradient(1300px 620px at 72% 18%,rgba(191,161,95,.16),transparent 62%),radial-gradient(1000px 520px at 14% 88%,rgba(127,163,150,.12),transparent 66%),linear-gradient(165deg,#0B1512 0%,var(--nuit) 50%,#0C1714 100%)}
+.hero::after{content:"";position:absolute;left:6vw;right:6vw;bottom:16vh;height:1px;background:linear-gradient(90deg,transparent,var(--or) 14%,var(--or) 86%,transparent);opacity:.5}
+.hero .wrap{position:relative;z-index:2;text-align:center;padding-top:8vh}
+.hero .kicker{display:block;margin-bottom:2rem;font-size:.68rem;animation:fade 1.2s both}
+.hero h1{font-size:clamp(2.8rem,7.5vw,6.4rem);letter-spacing:.04em;color:var(--papyrus);animation:rise 1.2s cubic-bezier(.2,.7,.2,1) both}
+.hero h1 em{font-style:italic;color:var(--or);font-family:'EB Garamond',serif}
+.hero p.lede{max-width:33em;margin:1.8rem auto 0;font-size:1.3rem;line-height:1.55;font-style:italic;color:var(--eau);animation:rise 1.2s .15s cubic-bezier(.2,.7,.2,1) both}
+.hero .acts{margin-top:3rem;display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;animation:fade 1.2s .4s both}
+.scrollcue{position:absolute;bottom:5vh;left:50%;transform:translateX(-50%);z-index:2;font-family:'Jost',sans-serif;font-size:.56rem;letter-spacing:.3em;text-transform:uppercase;color:var(--eau);opacity:.7;animation:fade 1.2s .8s both}
+@keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.hero h1,.hero p.lede,.hero .kicker,.hero .acts,.scrollcue{animation:none}}
+
+section{padding:7rem 0}
+
+/* ── manifesto ──────────────────────────── */
+.manifesto{background:var(--papyrus);text-align:center}
+.manifesto .wrap{max-width:46rem}
+.manifesto .eyebrow{display:block;margin-bottom:2rem}
+.manifesto p{font-family:'Marcellus',serif;font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.45;letter-spacing:.01em}
+.manifesto p em{font-family:'EB Garamond',serif;font-style:italic;color:var(--or)}
+
+/* ── the contrast — signature ───────────── */
+.contrast{padding:0}
+.contrast .head{text-align:center;padding:6rem 6vw 4rem;background:var(--sable)}
+.contrast .head h2{font-size:clamp(2rem,3.6vw,2.9rem)}
+.contrast .head p{max-width:34em;margin:1.2rem auto 0;font-style:italic;color:#5a635d}
+.contrast .split{display:grid;grid-template-columns:1fr 1fr;position:relative}
+.contrast .split::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:1px;background:linear-gradient(180deg,transparent,var(--or) 6%,var(--or) 94%,transparent);z-index:3}
+.side{padding:5.5rem 5vw 6rem}
+.side.them{background:var(--sable);color:#6a7069}
+.side.us{background:var(--nuit);color:var(--papyrus)}
+.side .label{font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;margin-bottom:.8rem}
+.side.them .label{color:#9aa39c}
+.side.us .label{color:var(--or)}
+.side h3{font-family:'Marcellus',serif;font-size:1.7rem;letter-spacing:.03em;margin-bottom:2.4rem}
+.side ul{list-style:none}
+.side li{padding:1.1rem 0;border-top:1px solid var(--hairline-l);font-size:1.06rem;line-height:1.5}
+.side.us li{border-top:1px solid var(--hairline-d);color:var(--papyrus)}
+.side.them li{font-style:italic}
+@media(max-width:760px){.contrast .split{grid-template-columns:1fr}.contrast .split::before{display:none}.side.us{border-top:1px solid var(--hairline-d)}}
+
+/* ── destinations ───────────────────────── */
+.dest{background:var(--papyrus)}
+.dest .sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:2rem;flex-wrap:wrap;margin-bottom:3rem}
+.dest .sec-head .eyebrow{display:block;margin-bottom:1rem}
+.dest .sec-head h2{font-size:clamp(1.9rem,3.4vw,2.7rem)}
+.dest .all{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;color:var(--or);text-decoration:none}
+.dgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem}
+.dcard{position:relative;aspect-ratio:3/4.4;overflow:hidden;text-decoration:none;color:var(--papyrus);display:flex;align-items:flex-end;background:#1c2620}
+.dcard .ph{position:absolute;inset:0;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.dcard:nth-child(1) .ph{background:radial-gradient(360px 300px at 50% 30%,rgba(191,161,95,.34),transparent 70%),linear-gradient(180deg,#2a2417,#101d18)}
+.dcard:nth-child(2) .ph{background:radial-gradient(360px 300px at 50% 35%,rgba(127,163,150,.32),transparent 70%),linear-gradient(180deg,#1d2b33,#0d1418)}
+.dcard:nth-child(3) .ph{background:radial-gradient(360px 300px at 50% 30%,rgba(191,141,95,.3),transparent 70%),linear-gradient(180deg,#2e2118,#150f0a)}
+.dcard:nth-child(4) .ph{background:radial-gradient(360px 300px at 50% 35%,rgba(159,180,169,.28),transparent 70%),linear-gradient(180deg,#23332a,#101d18)}
+.dcard:hover .ph{transform:scale(1.06)}
+.dcard .cap{position:relative;z-index:2;padding:1.6rem 1.4rem;width:100%;background:linear-gradient(transparent,rgba(11,19,16,.82))}
+.dcard .cap .eyebrow{font-size:.56rem;color:var(--or-pale);display:block;margin-bottom:.4rem}
+.dcard .cap h3{font-family:'Marcellus',serif;font-size:1.4rem;letter-spacing:.04em}
+@media(max-width:860px){.dgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.dgrid{grid-template-columns:1fr}.dcard{aspect-ratio:3/2}}
+
+/* ── journeys ───────────────────────────── */
+.jour{background:var(--nuit);color:var(--papyrus)}
+.jour .sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:2rem;flex-wrap:wrap;margin-bottom:3rem}
+.jour .sec-head .eyebrow{display:block;margin-bottom:1rem}
+.jour .sec-head h2{font-size:clamp(1.9rem,3.4vw,2.7rem)}
+.jour .all{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;color:var(--or);text-decoration:none}
+.jgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.jcard{border:1px solid var(--hairline-d);padding:2.4rem 2rem 2.2rem;display:flex;flex-direction:column;min-height:22rem;background:var(--foret);text-decoration:none;color:var(--papyrus);transition:border-color .35s,transform .35s}
+.jcard:hover{border-color:var(--or);transform:translateY(-4px)}
+.jcard .eyebrow{font-size:.58rem;margin-bottom:1.2rem}
+.jcard h3{font-family:'Marcellus',serif;font-size:1.5rem;letter-spacing:.02em;margin-bottom:.8rem}
+.jcard p{font-size:.98rem;color:var(--eau);line-height:1.6;flex:1}
+.jcard .meta{margin-top:1.8rem;padding-top:1.1rem;border-top:1px solid var(--hairline-d);font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--or-pale)}
+@media(max-width:860px){.jgrid{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.jcard:hover{transform:none}.dcard:hover .ph{transform:none}}
+
+/* ── pillars ────────────────────────────── */
+.pillars{background:var(--sable)}
+.pillars .sec-head{text-align:center;margin-bottom:3.4rem}
+.pillars .sec-head .eyebrow{display:block;margin-bottom:1rem}
+.pillars .sec-head h2{font-size:clamp(1.9rem,3.4vw,2.7rem)}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--hairline-l)}
+.pillar{padding:2.6rem 1.8rem;border-left:1px solid var(--hairline-l);background:var(--papyrus)}
+.pillar:first-child{border-left:0}
+.pillar .n{font-family:'Marcellus',serif;font-size:1rem;color:var(--or);letter-spacing:.1em}
+.pillar h3{font-family:'Marcellus',serif;font-size:1.25rem;margin:.7rem 0 .7rem;letter-spacing:.02em}
+.pillar p{font-size:.98rem;line-height:1.58;color:#454e48}
+@media(max-width:860px){.pgrid{grid-template-columns:1fr 1fr}.pillar{border-top:1px solid var(--hairline-l)}.pillar:nth-child(-n+2){border-top:0}.pillar:nth-child(odd){border-left:0}}
+@media(max-width:480px){.pgrid{grid-template-columns:1fr}.pillar{border-left:0}.pillar:nth-child(2){border-top:1px solid var(--hairline-l)}}
+
+/* ── quote ──────────────────────────────── */
+.quote{background:var(--nuit);color:var(--papyrus);text-align:center}
+.quote blockquote{max-width:42em;margin:0 auto;font-size:clamp(1.4rem,2.7vw,1.9rem);line-height:1.5;font-style:italic}
+.quote blockquote::before{content:"“";display:block;font-family:'Marcellus',serif;font-size:4rem;color:var(--or);line-height:.4;margin-bottom:1.6rem;font-style:normal}
+.quote cite{display:block;margin-top:2.4rem;font-style:normal;font-family:'Jost',sans-serif;font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--or)}
+
+/* ── the name ───────────────────────────── */
+.name{background:var(--papyrus);text-align:center}
+.name .wrap{max-width:40rem}
+.name .word{font-family:'Marcellus',serif;font-size:clamp(2.4rem,5vw,3.4rem);letter-spacing:.18em;text-transform:uppercase;color:var(--encre)}
+.name .pron{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;color:var(--or);margin:1rem 0 2rem}
+.name p{font-style:italic;color:#5a635d;font-size:1.15rem;line-height:1.6}
+
+/* ── cta ────────────────────────────────── */
+.cta{background:linear-gradient(180deg,var(--nuit),#0B1512);color:var(--papyrus);text-align:center;padding:8.5rem 0}
+.cta h2{font-size:clamp(2.2rem,5vw,3.8rem);letter-spacing:.04em}
+.cta h2 em{color:var(--or);font-style:italic;font-family:'EB Garamond',serif}
+.cta p{max-width:34em;margin:1.4rem auto 2.8rem;color:var(--eau)}
+.cta .note{margin-top:1.6rem;font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--or)}
+
+/* ── footer ─────────────────────────────── */
+footer{background:#0B1512;color:var(--eau);padding:4.5rem 0 3rem;border-top:1px solid var(--hairline-d)}
+footer .wrap{display:flex;justify-content:space-between;gap:3rem;flex-wrap:wrap}
+footer .logo{color:var(--papyrus);font-size:1.1rem}
+footer p{font-size:.85rem;max-width:24em;margin-top:1rem}
+footer .col h5{font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--or);margin-bottom:1rem}
+footer .col a{display:block;font-size:.92rem;text-decoration:none;color:var(--eau);margin-bottom:.5rem}
+footer .col a:hover{color:var(--or-pale)}
+footer .legal{width:100%;margin-top:3rem;padding-top:1.4rem;border-top:1px solid rgba(191,161,95,.14);font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="logo" href="#">Sillage<small>Égypte</small></a>
+    <nav class="main" aria-label="Primary">
+      <a href="#">Journeys</a><a href="#">Destinations</a><a href="#">The Dahabiya</a><a href="#">Journal</a>
+      <a class="btn" style="padding:.7rem 1.6rem;font-size:.62rem" href="#plan">Plan your journey</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <span class="eyebrow kicker">Private journeys through Egypt</span>
+    <h1 class="display">Egypt, <em>read</em> —<br>not merely seen.</h1>
+    <p class="lede">Private journeys with Egyptologists who can actually read the walls — at the pace of the river, with access the convoys never reach.</p>
+    <div class="acts">
+      <a class="btn solid" href="#journeys">View the journeys</a>
+      <a class="btn light" href="#plan">Plan your own</a>
+    </div>
+  </div>
+  <span class="scrollcue">Scroll</span>
+</div>
+
+<!-- MANIFESTO -->
+<section class="manifesto">
+  <div class="wrap">
+    <span class="eyebrow">Our way of travelling</span>
+    <p>Most of Egypt is seen from a coach window, at the same hour as everyone else. We think a country this old deserves to be <em>read</em> — slowly, privately, by someone who has spent a lifetime learning to.</p>
+  </div>
+</section>
+
+<!-- THE CONTRAST — signature -->
+<section class="contrast">
+  <div class="head">
+    <span class="eyebrow">Two ways to see Egypt</span>
+    <h2 class="display" style="margin-top:1rem">The same temples. A different country.</h2>
+    <p>Egypt can be endured in a convoy, or understood in private. The sites are identical. Almost nothing else is.</p>
+  </div>
+  <div class="split">
+    <div class="side them">
+      <div class="label">The convoy</div>
+      <h3>How most of Egypt is sold</h3>
+      <ul>
+        <li>A cabin on a ship of a hundred and fifty</li>
+        <li>The same temple at the same crowded hour as a dozen other groups</li>
+        <li>A guide who meets you at the gate and leaves at the next</li>
+        <li>A fixed schedule that answers to the timetable, not the light</li>
+        <li>The standard ticket, the standard route, the standard photograph</li>
+      </ul>
+    </div>
+    <div class="side us">
+      <div class="label">Sillage</div>
+      <h3>How we travel instead</h3>
+      <ul>
+        <li>Your own boat, your own car, your own itinerary</li>
+        <li>The Valley of the Kings at opening; Kom Ombo at dusk, emptied</li>
+        <li>One Egyptologist, with you from the first day to the last</li>
+        <li>Everything timed to the hour the light is best and the crowds are gone</li>
+        <li>Access beyond the standard route — Nefertari, Seti I, a mooring with no name</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- DESTINATIONS -->
+<section class="dest" id="destinations">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Where we go</span><h2 class="display">Destinations</h2></div>
+      <a class="all" href="#">All destinations →</a>
+    </div>
+    <div class="dgrid">
+      <a class="dcard" href="#"><div class="ph"></div><div class="cap"><span class="eyebrow">West &amp; East Bank</span><h3>Luxor</h3></div></a>
+      <a class="dcard" href="#"><div class="ph"></div><div class="cap"><span class="eyebrow">The frontier</span><h3>Aswan</h3></div></a>
+      <a class="dcard" href="#"><div class="ph"></div><div class="cap"><span class="eyebrow">Four thousand years</span><h3>Cairo</h3></div></a>
+      <a class="dcard" href="#"><div class="ph"></div><div class="cap"><span class="eyebrow">The deep south</span><h3>Abu Simbel</h3></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEYS -->
+<section class="jour" id="journeys">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">How to travel</span><h2 class="display">Signature journeys</h2></div>
+      <a class="all" href="#">All journeys →</a>
+    </div>
+    <div class="jgrid">
+      <a class="jcard" href="#">
+        <span class="eyebrow">Nile journey · Aswan to Luxor</span>
+        <h3>The Private Nile</h3>
+        <p>Seven days down the river under sail, aboard your own dahabiya — temples before the day boats, moorings no schedule allows, an Egyptologist throughout.</p>
+        <span class="meta">7 days · Private dahabiya</span>
+      </a>
+      <a class="jcard" href="#">
+        <span class="eyebrow">Cultural immersion</span>
+        <h3>Ancient Cairo &amp; Luxor</h3>
+        <p>Pyramids before the crowds and the Valley of the Kings with an Egyptologist who has spent twenty years there. The two great chapters of Egypt, in eight days.</p>
+        <span class="meta">8 days · Private only</span>
+      </a>
+      <a class="jcard" href="#">
+        <span class="eyebrow">Grand journey</span>
+        <h3>The Complete Egypt</h3>
+        <p>Fourteen days from Cairo to Abu Simbel — the pyramids, the Nile under sail, the Valley of the Kings, and the deep south. The definitive private journey.</p>
+        <span class="meta">14 days · Private only</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section class="pillars">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Why Sillage</span>
+      <h2 class="display">Four things we will not compromise</h2>
+    </div>
+    <div class="pgrid">
+      <div class="pillar"><span class="n">I</span><h3>Private, always</h3><p>Never a group, never a convoy. Your journey is yours alone — the boat, the car, the guide, the hours.</p></div>
+      <div class="pillar"><span class="n">II</span><h3>Read by an expert</h3><p>Certified Egyptologists who can read the walls, not guides who recite a script. The difference is the whole journey.</p></div>
+      <div class="pillar"><span class="n">III</span><h3>Access beyond the route</h3><p>Tombs past the standard ticket, sites before they open, moorings no itinerary allows. We arrange what most cannot.</p></div>
+      <div class="pillar"><span class="n">IV</span><h3>Honest counsel</h3><p>We will tell you what isn't worth your time, and which journey isn't right for you. Advice, not a sales pitch.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote">
+  <div class="wrap">
+    <blockquote>Most people are shown the Valley of the Kings in an hour and moved on. Give it a morning, with someone who can actually read the walls, and a tomb stops being a corridor of pictures — it becomes the most ambitious thing a civilisation ever attempted.</blockquote>
+    <cite>Dr. Khaled Amin — Senior Egyptologist</cite>
+  </div>
+</section>
+
+<!-- THE NAME -->
+<section class="name">
+  <div class="wrap">
+    <div class="word">Sillage</div>
+    <div class="pron">see-YAZH · French</div>
+    <p>The trail a boat leaves on still water — and the trace of something fine that lingers after it has passed. The name we travel under, and the impression we hope a journey leaves.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="plan">
+  <div class="wrap">
+    <span class="eyebrow">Begin the conversation</span>
+    <h2 class="display" style="margin-top:1.2rem">See Egypt, <em>properly</em>.</h2>
+    <p>Tell us your dates and what matters most to you. A journey designer will shape a private proposal, built around you — with no obligation.</p>
+    <a class="btn solid" href="#">Plan your journey</a>
+    <p class="note">We reply within 24 hours</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="logo" href="#">Sillage<small>Égypte</small></a>
+      <p>Private journeys designed around you, guided by experts who know every layer of this country.</p>
+    </div>
+    <div class="col"><h5>Explore</h5><a href="#">Journeys</a><a href="#">Destinations</a><a href="#">The Dahabiya</a><a href="#">Journal</a><a href="#">About</a></div>
+    <div class="col"><h5>Contact</h5><a href="mailto:hello@sillage-egypte.com">hello@sillage-egypte.com</a><a href="tel:+20000000000">+20 000 000 000</a><a href="#">WhatsApp enquiries welcome</a></div>
+    <div class="legal"><span>© 2026 Sillage Égypte. All rights reserved.</span><span>Privacy · Terms</span></div>
+  </div>
+</footer>
+
+</body>
+</html>

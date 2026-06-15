@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>When to go to Egypt — The Journal | Sillage Égypte</title>
+<meta name="description" content="The short answer is winter. The longer, more useful answer depends on where you're going and what you'll forgive — Egypt season by season, honestly.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<!--
+  ============================================================
+  SILLAGE ÉGYPTE — THE JOURNAL — "When to go to Egypt"
+  Practical season guide. Swap --img-hero for a licensed photo
+  (e.g. the Nile in winter light). Set the date in the meta line.
+  ============================================================
+-->
+<style>
+:root{
+  --nuit:#101D18;--foret:#18271F;--papyrus:#F4EDDC;--sable:#E9DfC9;
+  --or:#BFA15F;--or-pale:#D9C490;--encre:#262F2A;--eau:#9FB4A9;
+  --hairline:rgba(38,47,42,.20);--hairline-d:rgba(191,161,95,.28);
+  --read:680px;
+  --img-hero:radial-gradient(1200px 720px at 62% 24%,rgba(150,180,180,.4),transparent 60%),radial-gradient(900px 600px at 80% 84%,rgba(196,150,80,.34),transparent 60%),linear-gradient(160deg,#10201f 0%,#121712 45%,#0b1410 100%);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{font-family:'EB Garamond',Georgia,serif;font-size:20px;line-height:1.72;color:var(--encre);background:var(--papyrus);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 6vw}
+.read{max-width:var(--read);margin:0 auto;padding:0 6vw}
+.eyebrow{font-family:'Jost',sans-serif;font-weight:400;font-size:.66rem;letter-spacing:.32em;text-transform:uppercase;color:var(--or)}
+.display{font-family:'Marcellus',serif;font-weight:400;line-height:1.1}
+.btn{display:inline-block;font-family:'Jost',sans-serif;font-weight:400;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;padding:1.05rem 2.4rem;text-decoration:none;border:1px solid var(--or);color:var(--or);transition:background .35s,color .35s;background:none}
+.btn:hover{background:var(--or);color:var(--nuit)}
+.btn.solid{background:var(--or);color:var(--nuit)}
+.btn.solid:hover{background:var(--or-pale);border-color:var(--or-pale)}
+.btn.light{border-color:var(--papyrus);color:var(--papyrus)}
+.btn.light:hover{background:var(--papyrus);color:var(--nuit)}
+:focus-visible{outline:2px solid var(--or);outline-offset:3px}
+
+header.masthead{position:absolute;top:0;left:0;right:0;z-index:20}
+.masthead .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:2rem;padding-bottom:2rem}
+.logo{font-family:'Marcellus',serif;font-size:1.3rem;letter-spacing:.42em;text-transform:uppercase;color:var(--papyrus);text-decoration:none}
+.logo small{display:block;font-family:'Jost',sans-serif;font-size:.55rem;letter-spacing:.5em;color:var(--or);margin-top:.3rem}
+nav.main{display:flex;gap:2.6rem;align-items:center}
+nav.main a{font-family:'Jost',sans-serif;font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--papyrus);text-decoration:none;opacity:.9;transition:opacity .3s,color .3s;text-shadow:0 1px 12px rgba(0,0,0,.4)}
+nav.main a:hover{opacity:1;color:var(--or-pale)}
+@media(max-width:980px){nav.main a:not(.btn){display:none}}
+
+.ahead{position:relative;min-height:74vh;display:flex;flex-direction:column;justify-content:flex-end;color:var(--papyrus);overflow:hidden;
+  background-image:linear-gradient(180deg,rgba(11,21,18,.4) 0%,rgba(11,21,18,.15) 40%,rgba(11,21,18,.6) 74%,rgba(12,23,20,.96) 100%),var(--img-hero);
+  background-size:cover;background-position:center}
+.ahead .wrap{position:relative;z-index:2;padding-bottom:7vh;text-align:center}
+.ahead .crumb{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--eau);margin-bottom:1.8rem}
+.ahead .crumb a{text-decoration:none;color:var(--eau)} .ahead .crumb a:hover{color:var(--or-pale)}
+.ahead .kicker{display:block;margin-bottom:1.4rem;font-size:.66rem}
+.ahead h1{font-size:clamp(2.2rem,5.4vw,4.2rem);letter-spacing:.02em;color:var(--papyrus);text-shadow:0 2px 40px rgba(0,0,0,.45);max-width:16em;margin:0 auto}
+.ahead .dek{max-width:31em;margin:1.5rem auto 0;font-size:1.24rem;line-height:1.5;font-style:italic;color:var(--papyrus);opacity:.92;text-shadow:0 1px 24px rgba(0,0,0,.5)}
+.ahead .meta{margin-top:2rem;font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--or-pale)}
+.ahead .meta span{color:var(--eau)}
+
+.article{padding:5.5rem 0 4rem;background:var(--papyrus)}
+.article p{margin-bottom:1.35em}
+.article p:first-of-type::first-letter{font-family:'Marcellus',serif;font-size:3.8em;float:left;line-height:.8;padding:.05em .12em 0 0;color:var(--or)}
+.article .lead{font-size:1.16rem}
+.article h3{font-family:'Marcellus',serif;font-weight:400;font-size:1.5rem;letter-spacing:.02em;margin:2.4rem 0 .3rem;scroll-margin-top:1.5rem}
+.article h3 + .season{font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--or);margin-bottom:.9rem}
+.article ul{list-style:none;margin:0 0 1.35em 0}
+.article ul li{position:relative;padding-left:1.4rem;margin-bottom:.7em}
+.article ul li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--or)}
+.article ul li b{font-weight:600}
+.pull{margin:2.8rem 0;text-align:center;padding:0 1rem}
+.pull .rule{display:block;width:54px;height:1px;background:var(--or);margin:0 auto 1.5rem}
+.pull blockquote{font-family:'Marcellus',serif;font-size:clamp(1.4rem,2.6vw,1.9rem);line-height:1.3;letter-spacing:.01em;color:var(--encre)}
+.pull .rule.bot{margin:1.5rem auto 0}
+.divider{display:flex;align-items:center;justify-content:center;gap:1rem;margin:2.6rem 0;color:var(--or)}
+.divider::before,.divider::after{content:"";height:1px;width:60px;background:var(--hairline-d)}
+.divider span{font-family:'Jost',sans-serif;font-size:.7rem;letter-spacing:.4em}
+.signoff{margin-top:2.6rem;font-family:'Jost',sans-serif;font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;color:var(--or)}
+
+.cta{background:var(--nuit);color:var(--papyrus);text-align:center;padding:6rem 0}
+.cta .eyebrow{display:block;margin-bottom:1.2rem}
+.cta h2{font-family:'Marcellus',serif;font-size:clamp(1.8rem,4vw,2.8rem);letter-spacing:.03em;color:var(--papyrus)}
+.cta h2 em{color:var(--or-pale);font-style:italic;font-family:'EB Garamond',serif}
+.cta p{max-width:32em;margin:1.2rem auto 2.4rem;color:var(--eau)}
+
+.more{background:var(--sable);padding:5.5rem 0}
+.more .sec-head{text-align:center;margin-bottom:3rem}
+.more .sec-head h2{font-family:'Marcellus',serif;font-size:1.8rem;letter-spacing:.02em;margin-top:.8rem}
+.mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.mcard{background:var(--papyrus);border:1px solid var(--hairline);padding:2rem 1.7rem;display:flex;flex-direction:column;min-height:12rem;text-decoration:none;color:var(--encre);transition:border-color .35s,transform .35s}
+.mcard:hover{border-color:var(--or);transform:translateY(-4px)}
+.mcard .eyebrow{font-size:.56rem;margin-bottom:.9rem}
+.mcard h3{font-family:'Marcellus',serif;font-size:1.22rem;letter-spacing:.02em;margin-bottom:.6rem;line-height:1.2}
+.mcard p{font-size:.95rem;color:#5a635d;line-height:1.5;flex:1}
+@media(max-width:820px){.mgrid{grid-template-columns:1fr}}
+
+footer{background:#0B1512;color:var(--eau);padding:4.5rem 0 3rem;border-top:1px solid var(--hairline-d)}
+footer .wrap{display:flex;justify-content:space-between;gap:3rem;flex-wrap:wrap}
+footer .logo{color:var(--papyrus);font-size:1.05rem}
+footer p{font-size:.85rem;max-width:24em;margin-top:1rem}
+footer .col h5{font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--or);margin-bottom:1rem}
+footer .col a{display:block;font-size:.92rem;text-decoration:none;color:var(--eau);margin-bottom:.5rem}
+footer .col a:hover{color:var(--or-pale)}
+footer .legal{width:100%;margin-top:3rem;padding-top:1.4rem;border-top:1px solid rgba(191,161,95,.14);font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="logo" href="#">Sillage<small>Égypte</small></a>
+    <nav class="main" aria-label="Primary">
+      <a href="#">Journeys</a><a href="#">Destinations</a><a href="#">Experiences</a><a href="#">Journal</a>
+      <a class="btn light" style="padding:.7rem 1.6rem;font-size:.62rem" href="#plan">Plan your journey</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ARTICLE HEADER -->
+<div class="ahead">
+  <div class="wrap">
+    <p class="crumb"><a href="#">Home</a> &nbsp;/&nbsp; <a href="#">The Journal</a> &nbsp;/&nbsp; Planning</p>
+    <span class="eyebrow kicker">The Journal · Planning</span>
+    <h1 class="display">When to go to Egypt</h1>
+    <p class="dek">The short answer is winter. The longer answer is the useful one — because the right month depends on where you're going, and what you'll forgive.</p>
+    <p class="meta">Sillage Égypte &nbsp;·&nbsp; <span>June 2026</span> &nbsp;·&nbsp; <span>5 minute read</span></p>
+  </div>
+</div>
+
+<!-- ARTICLE BODY -->
+<article class="article">
+  <div class="read">
+
+    <p class="lead">The honest short answer is that Egypt's best weather runs from October to April, and the best of that is roughly November and March. Cool, dry days; cold-ish nights; light that flatters everything. If you remember only one sentence, remember that one.</p>
+
+    <p>But Egypt is a large country with several climates, and when to go really depends on where you are going and what you are willing to put up with. So here is the longer answer, which is the one worth having.</p>
+
+    <h3>Winter</h3>
+    <p class="season">December to February</p>
+    <p>The peak, and deservedly so. The Nile Valley is at its finest — warm, clear days in the low twenties, perfect for long mornings among the temples. It is also the busiest and most expensive stretch of the year, and the week around Christmas and New Year is a genuine crush at the major sites. Two honest caveats: the nights and early mornings can be properly cold, especially in the desert — the dawn at Abu Simbel and the climb of Mount Sinai both want a warm layer you may not have packed — and the Mediterranean coast turns wet and grey, so this is not the season for Alexandria.</p>
+
+    <h3>Spring</h3>
+    <p class="season">March to early May</p>
+    <p>Often the sweet spot. The days are warm but not yet punishing, the winter crowds have thinned, and prices ease. The one thing to know is the <em>khamsin</em> — a hot, dust-laden wind that blows up out of the desert on occasional days in spring, hazing the sky and putting grit in the air. It passes in a day or two, and is more nuisance than danger, but it is the season's small price.</p>
+
+    <h3>Summer</h3>
+    <p class="season">June to August</p>
+    <p>Hot, and in the south severely so — Luxor, Aswan and Abu Simbel routinely pass forty degrees, and the middle of the day becomes something to hide from. We won't pretend otherwise. But summer is not the write-off people assume. The antiquities are quiet and cheaper, the light is enormous, and a trip built around dawn starts and shaded afternoons works perfectly well for anyone who doesn't mind the discipline. The Red Sea, sea-cooled and breezy, is at its best; and Alexandria and the coast are in their own high season, warm and full of life. If summer is your only window, go — just go early each day, and let us set the pace.</p>
+
+    <h3>Autumn</h3>
+    <p class="season">September to November</p>
+    <p>The other sweet spot, and our quiet favourite. The heat lets go through September and October, the sea stays warm, and the worst of the crowds are still a month or two away. October in particular is hard to better. It also brings the Abu Simbel sun alignment around the 22nd, when the dawn light reaches the inner sanctuary — remarkable, and mobbed, which is exactly why we plan around it on purpose.</p>
+
+    <div class="pull">
+      <span class="rule"></span>
+      <blockquote>There is no bad time to see Egypt. There is only the unplanned time.</blockquote>
+      <span class="rule bot"></span>
+    </div>
+
+    <h3>Egypt is not one climate</h3>
+    <p>The calendar shifts with the map, so the same month means different things in different places:</p>
+    <ul>
+      <li><b>The Nile Valley and the south</b> — Luxor, Aswan, Abu Simbel — keep to October to April, or come in summer on a dawn schedule.</li>
+      <li><b>Cairo</b> follows much the same: hot and hazy in high summer, dusty on a <em>khamsin</em> day in spring, lovely the rest of the cooler half-year.</li>
+      <li><b>The Mediterranean</b> — Alexandria — inverts it: at its best in late spring and autumn, warm and busy in summer, wet and wind-blown in winter.</li>
+      <li><b>The Red Sea</b> — Hurghada and Sharm — is the year-round exception, ideal in spring and autumn and swimmable even in the cooler months.</li>
+    </ul>
+
+    <h3>Dates worth checking</h3>
+    <p>Two things can fall across a trip without your noticing. <b>Ramadan</b> moves about eleven days earlier each year, and through the late 2020s it falls in late winter, around February and March. Travelling then is entirely possible — the sites stay open, and the city after dark has a warmth and life all its own — but daytime rhythms slow, some hours change, and a little patience and planning help. We take care of that for you.</p>
+    <p>And the country's two peaks — the week around Christmas and New Year, and the Abu Simbel sun mornings of roughly 22 February and 22 October — are worth either seeking out on purpose or sidestepping on purpose, but never meeting by accident.</p>
+
+    <h3>The verdict</h3>
+    <p>If you want the simplest good advice: aim for late October into November, or March into April. You get warm days, bearable nights, thinner crowds and fairer prices, very nearly everywhere at once. Choose deep winter if flawless sightseeing weather matters to you more than quiet and cost. Choose summer if the Red Sea is your aim, or if you'll trade heat for low season and an early alarm.</p>
+
+    <p>And the honest truth beneath all of it: there is no bad time to see Egypt, only an unplanned one. Tell us when you are able to travel, and we will build the trip around the season — the hours, the order, the pace — so that whenever you come, it feels like exactly the right time.</p>
+
+    <div class="divider"><span>◆</span></div>
+    <p class="signoff">Sillage Égypte</p>
+
+  </div>
+</article>
+
+<!-- CTA -->
+<section class="cta" id="plan">
+  <div class="wrap">
+    <span class="eyebrow">Begin the conversation</span>
+    <h2>Tell us when you can travel. We'll do the <em>rest</em>.</h2>
+    <p>Whatever the season, we shape the days around it — early to the sites in the heat, the coast when the south is fierce, the river when the light is best.</p>
+    <a class="btn solid" href="#">Plan your journey</a>
+  </div>
+</section>
+
+<!-- MORE FROM THE JOURNAL -->
+<section class="more">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">More from the Journal</span>
+      <h2 class="display">Read on</h2>
+    </div>
+    <div class="mgrid">
+      <a class="mcard" href="#"><span class="eyebrow">First light</span><h3>A morning on the west bank</h3><p>The balloon, the cool, and the hour at Thebes before the coaches arrive.</p></a>
+      <a class="mcard" href="#"><span class="eyebrow">On the river</span><h3>Dahabiya, felucca or cruiser?</h3><p>The three ways down the Nile, and the kind of traveller each one is truly for.</p></a>
+      <a class="mcard" href="#"><span class="eyebrow">On how we work</span><h3>Why we'll sometimes talk you out of a trip</h3><p>Honest advice is the most valuable thing a travel company can give you — even when it costs the booking.</p></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="logo" href="#">Sillage<small>Égypte</small></a>
+      <p>Private journeys designed around you, guided by experts who know every layer of this country.</p>
+    </div>
+    <div class="col"><h5>Explore</h5><a href="#">Journeys</a><a href="#">Destinations</a><a href="#">Experiences</a><a href="#">Journal</a><a href="#">About</a></div>
+    <div class="col"><h5>Contact</h5><a href="mailto:hello@sillage-egypte.com">hello@sillage-egypte.com</a><a href="https://wa.me/201158011600">wa.me/201158011600</a><a href="#">WhatsApp enquiries welcome</a></div>
+    <div class="legal"><span>© 2026 Sillage Égypte · International San Tours. All rights reserved.</span><span>Privacy · Terms</span></div>
+  </div>
+</footer>
+
+</body>
+</html>

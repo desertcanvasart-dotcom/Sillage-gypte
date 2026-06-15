@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hurghada — Destination Guide | Sillage Égypte</title>
+<meta name="description" content="Everything you need to know to travel Hurghada well — the Red Sea reefs and diving, the upscale enclaves worth staying in, the day-trip to Luxor, Hurghada versus Sharm, and the honest practicalities.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<!--
+  ============================================================
+  HOW TO ADD YOUR IMAGES — swap each placeholder gradient in :root.
+      --img-hero   the Red Sea / a reef from above (cover)
+      --img-l1     a coral reef / divers      (under the water)
+      --img-l2     a boat / island / kitesurf (on the water)
+      --img-l3     the Eastern Desert         (into the desert)
+      --img-l4     a temple at Luxor          (the door to the Nile)
+  ============================================================
+-->
+<style>
+:root{
+  --nuit:#101D18;--foret:#18271F;--papyrus:#F4EDDC;--sable:#E9DfC9;
+  --or:#BFA15F;--or-pale:#D9C490;--encre:#262F2A;--eau:#9FB4A9;
+  --hairline-l:rgba(38,47,42,.22);--hairline-d:rgba(191,161,95,.28);
+  --max:1180px;
+  --img-hero:radial-gradient(1200px 720px at 60% 22%,rgba(70,160,180,.5),transparent 60%),radial-gradient(900px 600px at 85% 84%,rgba(191,161,95,.22),transparent 60%),linear-gradient(160deg,#0c2028 0%,#0c1820 45%,#0a1310 100%);
+  --img-l1:radial-gradient(280px 200px at 50% 45%,rgba(70,170,185,.55),transparent 70%),linear-gradient(160deg,#0e3038,#08191f);
+  --img-l2:radial-gradient(280px 200px at 50% 45%,rgba(110,175,190,.5),transparent 70%),linear-gradient(160deg,#12333c,#0a1c22);
+  --img-l3:radial-gradient(280px 200px at 50% 45%,rgba(199,150,90,.5),transparent 70%),linear-gradient(160deg,#281d12,#140e09);
+  --img-l4:radial-gradient(280px 200px at 50% 45%,rgba(191,161,95,.5),transparent 70%),linear-gradient(160deg,#242017,#13110b);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{font-family:'EB Garamond',Georgia,serif;font-size:19px;line-height:1.65;color:var(--encre);background:var(--papyrus);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 6vw}
+.eyebrow{font-family:'Jost',sans-serif;font-weight:400;font-size:.68rem;letter-spacing:.34em;text-transform:uppercase;color:var(--or)}
+.display{font-family:'Marcellus',serif;font-weight:400;line-height:1.08}
+.btn{display:inline-block;font-family:'Jost',sans-serif;font-weight:400;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;padding:1.05rem 2.4rem;text-decoration:none;border:1px solid var(--or);color:var(--or);transition:background .35s,color .35s;cursor:pointer;background:none}
+.btn:hover,.btn:focus-visible{background:var(--or);color:var(--nuit)}
+.btn.solid{background:var(--or);color:var(--nuit)}
+.btn.solid:hover{background:var(--or-pale);border-color:var(--or-pale)}
+.btn.light{border-color:var(--papyrus);color:var(--papyrus)}
+.btn.light:hover{background:var(--papyrus);color:var(--nuit)}
+:focus-visible{outline:2px solid var(--or);outline-offset:3px}
+
+header.masthead{position:absolute;top:0;left:0;right:0;z-index:20}
+.masthead .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:2rem;padding-bottom:2rem}
+.logo{font-family:'Marcellus',serif;font-size:1.3rem;letter-spacing:.42em;text-transform:uppercase;color:var(--papyrus);text-decoration:none}
+.logo small{display:block;font-family:'Jost',sans-serif;font-size:.55rem;letter-spacing:.5em;color:var(--or);margin-top:.3rem}
+nav.main{display:flex;gap:2.6rem;align-items:center}
+nav.main a{font-family:'Jost',sans-serif;font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--papyrus);text-decoration:none;opacity:.9;transition:opacity .3s,color .3s;text-shadow:0 1px 12px rgba(0,0,0,.4)}
+nav.main a:hover{opacity:1;color:var(--or-pale)}
+@media(max-width:980px){nav.main a:not(.btn){display:none}}
+
+.hero{position:relative;min-height:82vh;display:flex;flex-direction:column;justify-content:flex-end;color:var(--papyrus);overflow:hidden;
+  background-image:linear-gradient(180deg,rgba(11,21,18,.32) 0%,rgba(11,21,18,.1) 38%,rgba(11,21,18,.5) 72%,rgba(12,23,20,.95) 100%),var(--img-hero);
+  background-size:cover;background-position:center}
+.hero .wrap{position:relative;z-index:2;padding-bottom:8vh}
+.hero .crumb{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--eau);margin-bottom:2rem}
+.hero .crumb a{text-decoration:none;color:var(--eau)} .hero .crumb a:hover{color:var(--or-pale)}
+.hero .kicker{display:block;margin-bottom:1.4rem;font-size:.66rem}
+.hero h1{font-size:clamp(2.7rem,8vw,6.6rem);letter-spacing:.05em;color:var(--papyrus);text-shadow:0 2px 40px rgba(0,0,0,.45)}
+.hero p.lede{max-width:34em;margin-top:1.4rem;font-size:1.26rem;line-height:1.5;font-style:italic;color:var(--papyrus);opacity:.92;text-shadow:0 1px 24px rgba(0,0,0,.5)}
+
+.ledger{background:var(--nuit);color:var(--papyrus);border-top:1px solid var(--hairline-d)}
+.ledger .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.ledger .cell{padding:1.7rem 1.4rem;border-left:1px solid var(--hairline-d)}
+.ledger .cell:first-child{border-left:0;padding-left:0}
+.ledger .k{font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--or);margin-bottom:.45rem}
+.ledger .v{font-family:'Marcellus',serif;font-size:1.05rem;letter-spacing:.02em}
+@media(max-width:760px){.ledger .wrap{grid-template-columns:1fr 1fr}.ledger .cell{border-left:0;border-top:1px solid var(--hairline-d);padding-left:0}.ledger .cell:nth-child(-n+2){border-top:0}}
+
+.bar{position:sticky;top:0;z-index:30;background:rgba(16,29,24,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--hairline-d)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:.85rem;padding-bottom:.85rem}
+.bar .where{font-family:'Marcellus',serif;color:var(--papyrus);letter-spacing:.16em;text-transform:uppercase;font-size:.8rem}
+.bar nav{display:flex;gap:1.6rem}
+.bar nav a{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--eau);text-decoration:none}
+.bar nav a:hover{color:var(--or-pale)}
+.bar .btn{padding:.55rem 1.4rem;font-size:.6rem}
+@media(max-width:1100px){.bar nav{display:none}}
+
+section{padding:6.5rem 0}
+.sec-head{margin-bottom:3rem}
+.sec-head .eyebrow{display:block;margin-bottom:1rem}
+.sec-head h2{font-size:clamp(1.9rem,3.4vw,2.7rem);letter-spacing:.02em}
+.sec-head p.stand{max-width:42em;margin-top:1rem;color:#4a534d;font-style:italic}
+
+.intro{background:var(--papyrus)}
+.intro .wrap{display:grid;grid-template-columns:5fr 7fr;gap:5rem;align-items:start}
+.intro h2{font-size:clamp(2rem,3.6vw,2.9rem);max-width:9em}
+.intro .body p+p{margin-top:1.3em}
+.intro .body p:first-child::first-letter{font-family:'Marcellus',serif;font-size:3.6em;float:left;line-height:.82;padding:.06em .12em 0 0;color:var(--or)}
+@media(max-width:860px){.intro .wrap{grid-template-columns:1fr;gap:2.5rem}}
+
+.layers{background:var(--nuit);color:var(--papyrus)}
+.layers .sec-head{text-align:center}
+.layers .sec-head h2{color:var(--papyrus)}
+.layers .stand{margin-left:auto;margin-right:auto;text-align:center;color:var(--eau)}
+.lgrid{display:grid;grid-template-columns:1fr 1fr;gap:1.3rem}
+.lcard{border:1px solid var(--hairline-d);overflow:hidden;display:flex;flex-direction:column;background:var(--foret)}
+.lcard .photo{aspect-ratio:21/9;background-size:cover;background-position:center}
+.lcard .photo.l1{background-image:var(--img-l1)} .lcard .photo.l2{background-image:var(--img-l2)}
+.lcard .photo.l3{background-image:var(--img-l3)} .lcard .photo.l4{background-image:var(--img-l4)}
+.lcard .body{padding:1.8rem 1.8rem 2rem}
+.lcard .tag{font-family:'Jost',sans-serif;font-size:.56rem;letter-spacing:.26em;text-transform:uppercase;color:var(--or)}
+.lcard h3{font-family:'Marcellus',serif;font-size:1.5rem;letter-spacing:.02em;margin:.5rem 0 .8rem}
+.lcard p{color:var(--eau);font-size:1rem;line-height:1.6}
+.lcard .note{margin-top:1rem;padding-top:1rem;border-top:1px solid var(--hairline-d);font-size:.92rem;font-style:italic;color:var(--eau)}
+@media(max-width:780px){.lgrid{grid-template-columns:1fr}}
+
+/* versus */
+.versus{background:var(--sable)}
+.versus .sec-head{text-align:center}
+.versus .stand{margin-left:auto;margin-right:auto;text-align:center}
+.vsplit{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--hairline-l);background:var(--papyrus);position:relative}
+.vsplit::after{content:"";position:absolute;top:10%;bottom:10%;left:50%;width:1px;background:linear-gradient(180deg,transparent,var(--or),transparent);transform:translateX(-.5px)}
+.vcol{padding:2.4rem 2.1rem}
+.vcol .tag{font-family:'Jost',sans-serif;font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:var(--or)}
+.vcol h3{font-family:'Marcellus',serif;font-size:1.5rem;letter-spacing:.02em;margin:.4rem 0 .9rem}
+.vcol p{font-size:1rem;line-height:1.62;color:#454e48}
+.vcol.here{background:#f7f1e2}
+.verdict-bar{text-align:center;margin-top:1.6rem;font-style:italic;color:#3f4842;font-size:1.05rem}
+.verdict-bar b{font-style:normal;font-weight:600;color:var(--encre)}
+@media(max-width:720px){.vsplit{grid-template-columns:1fr}.vsplit::after{top:auto;left:10%;right:10%;bottom:50%;width:auto;height:1px;background:linear-gradient(90deg,transparent,var(--or),transparent)}}
+
+.band{background:var(--papyrus)}
+.band.alt{background:var(--sable)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem}
+.cols h3{font-family:'Marcellus',serif;font-size:1.35rem;letter-spacing:.02em;margin-bottom:.9rem}
+.cols p{font-size:1.02rem}.cols p+p{margin-top:.8em}
+@media(max-width:760px){.cols{grid-template-columns:1fr;gap:2.5rem}}
+
+.stay .sgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem}
+.scard{background:var(--papyrus);border:1px solid var(--hairline-l);padding:1.9rem 1.7rem;display:flex;flex-direction:column}
+.scard .tag{font-family:'Jost',sans-serif;font-size:.56rem;letter-spacing:.24em;text-transform:uppercase;color:var(--or);margin-bottom:.7rem}
+.scard h3{font-family:'Marcellus',serif;font-size:1.3rem;letter-spacing:.02em;margin-bottom:.6rem}
+.scard p{font-size:.97rem;line-height:1.58;color:#454e48;flex:1}
+.scard .picks{margin-top:1.1rem;padding-top:.9rem;border-top:1px solid var(--hairline-l);font-size:.92rem;color:#3f4842}
+.scard .picks b{font-weight:400;color:var(--encre)}
+@media(max-width:760px){.stay .sgrid{grid-template-columns:1fr}}
+
+.know{background:var(--nuit);color:var(--papyrus)}
+.know .sec-head{text-align:center}.know .sec-head h2{color:var(--papyrus)}
+.kgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--hairline-d)}
+.kitem{padding:1.9rem 1.7rem;border-left:1px solid var(--hairline-d);border-top:1px solid var(--hairline-d)}
+.kitem:nth-child(-n+3){border-top:0}
+.kitem:nth-child(3n+1){border-left:0}
+.kitem .k{font-family:'Jost',sans-serif;font-size:.58rem;letter-spacing:.26em;text-transform:uppercase;color:var(--or);margin-bottom:.6rem}
+.kitem p{font-size:.96rem;line-height:1.55;color:var(--eau)}
+@media(max-width:820px){.kgrid{grid-template-columns:1fr 1fr}.kitem:nth-child(3n+1){border-left:1px solid var(--hairline-d)}.kitem:nth-child(odd){border-left:0}.kitem:nth-child(2){border-top:0}}
+@media(max-width:520px){.kgrid{grid-template-columns:1fr}.kitem{border-left:0!important;border-top:1px solid var(--hairline-d)!important}.kitem:first-child{border-top:0!important}}
+
+.honest{background:var(--sable)}
+.honest .wrap{max-width:50rem}
+.honest .panel{border:1px solid var(--or);padding:3rem 3rem 2.6rem;position:relative;background:var(--papyrus)}
+.honest .panel::before{content:"";position:absolute;top:0;left:0;width:42px;height:42px;border-top:2px solid var(--or);border-left:2px solid var(--or)}
+.honest .eyebrow{display:block;margin-bottom:1rem}
+.honest h2{font-family:'Marcellus',serif;font-size:1.7rem;margin-bottom:1.2rem;letter-spacing:.02em}
+.honest p+p{margin-top:.9em}.honest p{font-size:1.04rem;color:#3f4842}
+
+.belongs{background:var(--nuit);color:var(--papyrus)}
+.belongs .sec-head{text-align:center}.belongs .sec-head h2{color:var(--papyrus)}
+.jgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.jcard{border:1px solid var(--hairline-d);padding:2.2rem 1.8rem;display:flex;flex-direction:column;min-height:13rem;background:var(--foret);text-decoration:none;color:var(--papyrus);transition:border-color .35s,transform .35s}
+.jcard:hover{border-color:var(--or);transform:translateY(-4px)}
+.jcard .eyebrow{font-size:.56rem;margin-bottom:.9rem}
+.jcard h3{font-family:'Marcellus',serif;font-size:1.3rem;letter-spacing:.02em;margin-bottom:.6rem}
+.jcard p{font-size:.95rem;color:var(--eau);line-height:1.55;flex:1}
+@media(max-width:820px){.jgrid{grid-template-columns:1fr}}
+
+.cta{position:relative;color:var(--papyrus);text-align:center;padding:8rem 0;background:linear-gradient(180deg,var(--nuit),#0B1512)}
+.cta h2{font-size:clamp(2rem,4.6vw,3.3rem);letter-spacing:.04em}
+.cta h2 em{color:var(--or-pale);font-style:italic;font-family:'EB Garamond',serif}
+.cta p{max-width:34em;margin:1.3rem auto 2.6rem;color:var(--eau)}
+
+footer{background:#0B1512;color:var(--eau);padding:4.5rem 0 3rem;border-top:1px solid var(--hairline-d)}
+footer .wrap{display:flex;justify-content:space-between;gap:3rem;flex-wrap:wrap}
+footer .logo{color:var(--papyrus);font-size:1.05rem}
+footer p{font-size:.85rem;max-width:24em;margin-top:1rem}
+footer .col h5{font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--or);margin-bottom:1rem}
+footer .col a{display:block;font-size:.92rem;text-decoration:none;color:var(--eau);margin-bottom:.5rem}
+footer .col a:hover{color:var(--or-pale)}
+footer .legal{width:100%;margin-top:3rem;padding-top:1.4rem;border-top:1px solid rgba(191,161,95,.14);font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="logo" href="#">Sillage<small>Égypte</small></a>
+    <nav class="main" aria-label="Primary">
+      <a href="#">Journeys</a><a href="#">Destinations</a><a href="#">Experiences</a><a href="#">Journal</a>
+      <a class="btn light" style="padding:.7rem 1.6rem;font-size:.62rem" href="#plan">Plan your journey</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <p class="crumb"><a href="#">Home</a> &nbsp;/&nbsp; <a href="#">Destinations</a> &nbsp;/&nbsp; Hurghada</p>
+    <span class="eyebrow kicker">Destination guide · The Red Sea coast</span>
+    <h1 class="display">Hurghada</h1>
+    <p class="lede">Egypt's mainland Red Sea coast — warm sea the year round, coral reefs a fin-kick from shore, and the closest beach to the temples of the Nile.</p>
+  </div>
+</div>
+
+<!-- QUICK FACTS -->
+<div class="ledger" role="region" aria-label="Hurghada at a glance">
+  <div class="wrap">
+    <div class="cell"><div class="k">Best time</div><div class="v">Year-round; spring &amp; autumn best</div></div>
+    <div class="cell"><div class="k">How long</div><div class="v">A few days, or more</div></div>
+    <div class="cell"><div class="k">Getting there</div><div class="v">Fly to Hurghada</div></div>
+    <div class="cell"><div class="k">Known for</div><div class="v">Reefs &amp; the Red Sea</div></div>
+  </div>
+</div>
+
+<!-- STICKY BAR -->
+<div class="bar">
+  <div class="wrap">
+    <span class="where">Hurghada</span>
+    <nav aria-label="Sections">
+      <a href="#about">The Coast</a><a href="#see">What to Do</a><a href="#versus">Hurghada or Sharm</a><a href="#stay">Where to Stay</a><a href="#need">Need to Know</a>
+    </nav>
+    <a class="btn solid" href="#plan">Plan a journey</a>
+  </div>
+</div>
+
+<!-- ORIENTATION -->
+<section class="intro" id="about">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">The coast</span>
+      <h2 class="display" style="margin-top:1rem">A coast for the sea, not the sights</h2>
+    </div>
+    <div class="body">
+      <p>Hurghada is not an ancient city and makes no pretence of being one. It began as a fishing village forty years ago and grew, fast, into Egypt's busiest Red Sea resort — a long ribbon of hotels, marinas and dive centres along a coast of extraordinary water. People come here for one thing, and it is a very good thing: the sea.</p>
+      <p>Be clear-eyed about the place. The town itself sprawls, and much of the strip is mass-market package tourism with little Egyptian character. But the water is genuinely world-class — coral reefs in startling health, warm almost every month of the year — and dotted along the coast are a handful of self-contained luxury enclaves that are a different proposition entirely. Stay in the right one, and Hurghada is the perfect, easy counterpoint to a Nile journey: temples first, then the reef.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT TO DO -->
+<section class="layers" id="see">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">What to do</span>
+      <h2 class="display" style="margin-top:1rem">It all comes back to the water</h2>
+      <p class="stand">There are no temples to see here — the pleasures are active and aquatic. Four of them, and one of those is a door back to the Nile.</p>
+    </div>
+    <div class="lgrid">
+
+      <div class="lcard">
+        <div class="photo l1"></div>
+        <div class="body">
+          <span class="tag">Under the water</span>
+          <h3>Reefs &amp; diving</h3>
+          <p>The main event, and the reason Hurghada exists. Some of the most accessible coral reefs anywhere — healthy, vivid and teeming — with dive centres for every level from a first try-dive to full certification, and snorkelling straight off many house reefs.</p>
+          <div class="note">Honest note: the diving is world-class. We work only with the established, safety-first centres, not the cheapest boat on the marina.</div>
+        </div>
+      </div>
+
+      <div class="lcard">
+        <div class="photo l2"></div>
+        <div class="body">
+          <span class="tag">On the water</span>
+          <h3>Islands &amp; the wind</h3>
+          <p>Boat days out to the offshore islands and their marine park, dolphin grounds, and — this stretch of coast being one of the world's great windsports spots — superb kitesurfing and windsurfing on the reliable afternoon breeze.</p>
+          <div class="note">Honest note: the big group "snorkel boat" trips can be crowded and cheap-feeling. We arrange private or small-boat days instead.</div>
+        </div>
+      </div>
+
+      <div class="lcard">
+        <div class="photo l3"></div>
+        <div class="body">
+          <span class="tag">Into the desert</span>
+          <h3>The Eastern Desert</h3>
+          <p>The Red Sea mountains and the desert rise at your back — room for a private bedouin evening, real stargazing, and a jeep run into empty country away from the coast.</p>
+          <div class="note">Honest note: many "desert safari" excursions here are tacky set-pieces. The real desert, done privately and quietly, is the version worth your time.</div>
+        </div>
+      </div>
+
+      <div class="lcard">
+        <div class="photo l4"></div>
+        <div class="body">
+          <span class="tag">The door to the Nile</span>
+          <h3>A day in Luxor</h3>
+          <p>Hurghada's quiet advantage: it is the closest Red Sea resort to Luxor, about four hours by road, which makes a day among the Valley of the Kings and Karnak genuinely possible from the beach.</p>
+          <div class="note">Honest note: it's a long day — four hours each way. Lovely as a taste, but the temples deserve a proper Nile leg if you can give them one.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HURGHADA OR SHARM -->
+<section class="versus" id="versus">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">The choice everyone faces</span>
+      <h2 class="display" style="margin-top:1rem">Hurghada or Sharm?</h2>
+      <p class="stand">Egypt's two great Red Sea bases sit on opposite shores, and most travellers choose one. The honest distinction:</p>
+    </div>
+    <div class="vsplit">
+      <div class="vcol here">
+        <span class="tag">This coast · the mainland</span>
+        <h3>Hurghada</h3>
+        <p>On the mainland, and far closer to Luxor — the only Red Sea base from which the Nile is a day-trip. A wider spread of enclaves to choose from, world-class windsports, and easy direct flights. The reefs are excellent, if a shade less dramatic than Sinai's.</p>
+      </div>
+      <div class="vcol">
+        <span class="tag">Across the water · Sinai</span>
+        <h3>Sharm el-Sheikh</h3>
+        <p>On the Sinai peninsula, with arguably Egypt's finest reefs — Ras Mohammed and the Straits of Tiran — and dramatic mountain-and-sea scenery. More compact, and close to Mount Sinai and St Catherine's. Less convenient for the Nile.</p>
+      </div>
+    </div>
+    <p class="verdict-bar">In short: <b>for reefs paired with the temples, Hurghada. For the very best diving and Sinai's drama, Sharm.</b></p>
+  </div>
+</section>
+
+<!-- WHERE TO STAY -->
+<section class="band stay" id="stay">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Where to stay</span><h2 class="display" style="margin-top:1rem">Stay in an enclave, not on the strip</h2>
+      <p class="stand">The single most important choice here. Skip Hurghada town itself, and settle into one of the self-contained enclaves spread along the coast — each its own world.</p>
+    </div>
+    <div class="sgrid">
+      <div class="scard">
+        <span class="tag">The stylish one · north</span>
+        <h3>El Gouna</h3>
+        <p>A purpose-built lagoon town just north of Hurghada, laced with canals and a marina — design-led, walkable, with the best restaurants and the liveliest evenings on the coast. The choice for those who want somewhere with a pulse.</p>
+        <div class="picks"><b>Character:</b> chic, social, boutique and design hotels.</div>
+      </div>
+      <div class="scard">
+        <span class="tag">The grand one · south</span>
+        <h3>Sahl Hasheesh</h3>
+        <p>A sweeping bay of large, polished luxury resorts south of town — serene, spacious, and built for doing very little beautifully. Home to some of the coast's finest addresses.</p>
+        <div class="picks"><b>Hotels:</b> the Oberoi, and other grand beach resorts.</div>
+      </div>
+      <div class="scard">
+        <span class="tag">The refined one · peninsula</span>
+        <h3>Soma Bay</h3>
+        <p>A self-contained headland given over to a handful of upscale resorts, a championship golf course and a renowned thalasso spa — quiet, low-key and genuinely restful.</p>
+        <div class="picks"><b>Character:</b> spa, golf, calm; grown-up and unhurried.</div>
+      </div>
+      <div class="scard">
+        <span class="tag">The easy one · family</span>
+        <h3>Makadi Bay</h3>
+        <p>A string of large resorts along a good reef bay south of Hurghada — comfortable, all-inclusive and family-geared, with house reefs straight off the beach.</p>
+        <div class="picks"><b>Character:</b> family resorts, reefs on the doorstep.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHEN & HOW LONG -->
+<section class="band alt" id="when">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">When to go &amp; how long</span><h2 class="display" style="margin-top:1rem">Almost any time, and as long as you like</h2></div>
+    <div class="cols">
+      <div>
+        <h3>When to go</h3>
+        <p>The Red Sea is a year-round coast. Spring and autumn are the sweet spots — warm air, warm water, gentle conditions. Summer is hot but tempered by the sea and a near-constant breeze; the depths of winter cool the water a little, though it stays swimmable, and the air can turn brisk in the evenings.</p>
+        <p>For windsports, the windier months from spring into summer are best; for the calmest snorkelling, the shoulder seasons.</p>
+      </div>
+      <div>
+        <h3>How long</h3>
+        <p>However long suits you — there are no sights to "finish." Most travellers come for three to five days to unwind, dive or simply lie still by the water after a Nile journey.</p>
+        <p>The classic shape is exactly that: the temples and the river first, then the reef to recover. Two or three nights is plenty for a restful coda; longer if the diving has hold of you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEED TO KNOW -->
+<section class="know" id="need">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Need to know</span><h2 class="display" style="margin-top:1rem">The practical essentials</h2></div>
+    <div class="kgrid">
+      <div class="kitem"><div class="k">Getting there</div><p>Fly in to Hurghada — direct international charters in season, or a short domestic hop from Cairo. By road it's roughly five to six hours from Cairo and about four from Luxor; we arrange flights and transfers either way.</p></div>
+      <div class="kitem"><div class="k">The reefs</div><p>Touch nothing, take nothing, stand on nothing — coral is alive and fragile. Use reef-safe sunscreen, and expect marine-park fees on boat trips. Treating the reef well is the price of its being this good.</p></div>
+      <div class="kitem"><div class="k">Diving</div><p>From a first supervised try-dive to full PADI courses. Choose an established, well-run centre over the cheapest boat, and leave 18–24 hours between your last dive and any flight. We match you to the right operator.</p></div>
+      <div class="kitem"><div class="k">The Luxor day-trip</div><p>Possible, and popular — but four hours each way makes for a very long day, often a pre-dawn start. Worthwhile as a single taste of antiquity; no substitute for a planned Nile leg.</p></div>
+      <div class="kitem"><div class="k">Alcohol &amp; Ramadan</div><p>The resorts and enclaves serve alcohol freely and run as normal through Ramadan; the town beyond is more conservative. Dress and behaviour in the resorts are relaxed, in town more modest.</p></div>
+      <div class="kitem"><div class="k">Money</div><p>The resorts are card-friendly and many run all-inclusive; keep cash for tips, taxis and anything in town. Euros are widely taken on the tourist strip, but pounds are better value.</p></div>
+      <div class="kitem"><div class="k">The sun &amp; sea</div><p>The sun is strong and the breeze hides it — burn happens fast on a boat. Hat, shade and water always. The sea can have currents off the reefs; heed the local briefing and flags.</p></div>
+      <div class="kitem"><div class="k">Dress</div><p>Swimwear at the pools and beaches, relaxed resort wear otherwise. Cover up if you head into Hurghada town or a local market, as you would anywhere in Egypt away from the resorts.</p></div>
+      <div class="kitem"><div class="k">Safety</div><p>A calm, secure resort coast, well used to international visitors and watched over within the enclaves. Ordinary care is all that's needed; the sea and the sun are the real things to respect.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HONEST -->
+<section class="honest">
+  <div class="wrap">
+    <div class="panel">
+      <span class="eyebrow">What to expect</span>
+      <h2>A beach coast, plain and simple — and a very good one</h2>
+      <p>We won't dress Hurghada up as something it isn't. It is a resort coast, built for sun and sea, and parts of it are sprawling, package-driven and short on charm. If you are looking for Egyptian culture, atmosphere or beauty in the town itself, this is the wrong place, and we'd point you elsewhere.</p>
+      <p>But taken for what it is, it does its job superbly. The diving and snorkelling are world-class, the upscale enclaves — El Gouna, Sahl Hasheesh, Soma Bay — are genuinely lovely and entirely insulated from the strip, and no other Red Sea base sits so close to the Nile. Come here to unwind after the temples, choose your enclave with care, and let the reef do the rest. That, done well, is exactly what Hurghada is for.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CROSS LINKS -->
+<section class="belongs">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">On the Red Sea, with us</span><h2 class="display" style="margin-top:1rem">How to do it properly</h2></div>
+    <div class="jgrid">
+      <a class="jcard" href="#"><span class="eyebrow">Destination</span><h3>Sharm el-Sheikh</h3><p>The Sinai alternative — Egypt's finest reefs, dramatic desert mountains, and the road to St Catherine's.</p></a>
+      <a class="jcard" href="#"><span class="eyebrow">Journey</span><h3>The Nile &amp; the Red Sea</h3><p>The river by cruiser, then the reef — the classic pairing of temples and sea in a single journey.</p></a>
+      <a class="jcard" href="#"><span class="eyebrow">Destination</span><h3>Luxor</h3><p>The temples within reach of the coast — the densest gathering of ancient monuments on earth.</p></a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="plan">
+  <div class="wrap">
+    <span class="eyebrow">Begin the conversation</span>
+    <h2 class="display" style="margin-top:1.2rem">The reef, done <em>properly</em>.</h2>
+    <p>Tell us your dates and how you like to travel, and we will pair the Red Sea with the Nile in a journey shaped around you — the right enclave, the right operators, the right pace.</p>
+    <a class="btn solid" href="#">Plan your journey</a>
+    <p class="note" style="margin-top:1.6rem;font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--or)">We reply within 24 hours</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="logo" href="#">Sillage<small>Égypte</small></a>
+      <p>Private journeys designed around you, guided by experts who know every layer of this country.</p>
+    </div>
+    <div class="col"><h5>Explore</h5><a href="#">Journeys</a><a href="#">Destinations</a><a href="#">Experiences</a><a href="#">Journal</a><a href="#">About</a></div>
+    <div class="col"><h5>Contact</h5><a href="mailto:hello@sillage-egypte.com">hello@sillage-egypte.com</a><a href="tel:+20000000000">+20 000 000 000</a><a href="#">WhatsApp enquiries welcome</a></div>
+    <div class="legal"><span>© 2026 Sillage Égypte. All rights reserved.</span><span>Privacy · Terms</span></div>
+  </div>
+</footer>
+
+</body>
+</html>

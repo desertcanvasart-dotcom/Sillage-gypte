@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alexandria — Destination Guide | Sillage Égypte</title>
+<meta name="description" content="Everything you need to know to travel Alexandria well — the Greco-Roman remains, the lost Library and Pharos, the great modern library, the Mediterranean and its seafood, and the honest practicalities.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<!--
+  ============================================================
+  HOW TO ADD YOUR IMAGES — swap each placeholder gradient in :root.
+      --img-hero   the Corniche & Qaitbay Citadel, or the Mediterranean (cover)
+      --img-l1     the catacombs / Pompey's Pillar    (Greco-Roman remains)
+      --img-l2     Qaitbay Citadel / the harbour       (the lost wonders)
+      --img-l3     the Bibliotheca Alexandrina          (the modern library)
+      --img-l4     the Corniche / old cafés             (the Mediterranean city)
+  ============================================================
+-->
+<style>
+:root{
+  --nuit:#101D18;--foret:#18271F;--papyrus:#F4EDDC;--sable:#E9DfC9;
+  --or:#BFA15F;--or-pale:#D9C490;--encre:#262F2A;--eau:#9FB4A9;
+  --hairline-l:rgba(38,47,42,.22);--hairline-d:rgba(191,161,95,.28);
+  --max:1180px;
+  --img-hero:radial-gradient(1200px 720px at 64% 20%,rgba(95,150,180,.5),transparent 60%),radial-gradient(900px 600px at 18% 86%,rgba(191,161,95,.24),transparent 60%),linear-gradient(160deg,#0e1c26 0%,#0d1620 45%,#0a1310 100%);
+  --img-l1:radial-gradient(280px 200px at 50% 45%,rgba(191,161,95,.5),transparent 70%),linear-gradient(160deg,#241f15,#13100a);
+  --img-l2:radial-gradient(280px 200px at 50% 45%,rgba(100,150,180,.5),transparent 70%),linear-gradient(160deg,#143038,#0a1a22);
+  --img-l3:radial-gradient(280px 200px at 50% 45%,rgba(170,180,175,.45),transparent 70%),linear-gradient(160deg,#1d2b2c,#0e1817);
+  --img-l4:radial-gradient(280px 200px at 50% 45%,rgba(120,165,185,.5),transparent 70%),linear-gradient(160deg,#122a34,#0a1820);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{font-family:'EB Garamond',Georgia,serif;font-size:19px;line-height:1.65;color:var(--encre);background:var(--papyrus);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 6vw}
+.eyebrow{font-family:'Jost',sans-serif;font-weight:400;font-size:.68rem;letter-spacing:.34em;text-transform:uppercase;color:var(--or)}
+.display{font-family:'Marcellus',serif;font-weight:400;line-height:1.08}
+.btn{display:inline-block;font-family:'Jost',sans-serif;font-weight:400;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;padding:1.05rem 2.4rem;text-decoration:none;border:1px solid var(--or);color:var(--or);transition:background .35s,color .35s;cursor:pointer;background:none}
+.btn:hover,.btn:focus-visible{background:var(--or);color:var(--nuit)}
+.btn.solid{background:var(--or);color:var(--nuit)}
+.btn.solid:hover{background:var(--or-pale);border-color:var(--or-pale)}
+.btn.light{border-color:var(--papyrus);color:var(--papyrus)}
+.btn.light:hover{background:var(--papyrus);color:var(--nuit)}
+:focus-visible{outline:2px solid var(--or);outline-offset:3px}
+
+header.masthead{position:absolute;top:0;left:0;right:0;z-index:20}
+.masthead .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:2rem;padding-bottom:2rem}
+.logo{font-family:'Marcellus',serif;font-size:1.3rem;letter-spacing:.42em;text-transform:uppercase;color:var(--papyrus);text-decoration:none}
+.logo small{display:block;font-family:'Jost',sans-serif;font-size:.55rem;letter-spacing:.5em;color:var(--or);margin-top:.3rem}
+nav.main{display:flex;gap:2.6rem;align-items:center}
+nav.main a{font-family:'Jost',sans-serif;font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--papyrus);text-decoration:none;opacity:.9;transition:opacity .3s,color .3s;text-shadow:0 1px 12px rgba(0,0,0,.4)}
+nav.main a:hover{opacity:1;color:var(--or-pale)}
+@media(max-width:980px){nav.main a:not(.btn){display:none}}
+
+.hero{position:relative;min-height:82vh;display:flex;flex-direction:column;justify-content:flex-end;color:var(--papyrus);overflow:hidden;
+  background-image:linear-gradient(180deg,rgba(11,21,18,.35) 0%,rgba(11,21,18,.1) 38%,rgba(11,21,18,.5) 72%,rgba(12,23,20,.95) 100%),var(--img-hero);
+  background-size:cover;background-position:center}
+.hero .wrap{position:relative;z-index:2;padding-bottom:8vh}
+.hero .crumb{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--eau);margin-bottom:2rem}
+.hero .crumb a{text-decoration:none;color:var(--eau)} .hero .crumb a:hover{color:var(--or-pale)}
+.hero .kicker{display:block;margin-bottom:1.4rem;font-size:.66rem}
+.hero h1{font-size:clamp(2.7rem,8vw,6.6rem);letter-spacing:.05em;color:var(--papyrus);text-shadow:0 2px 40px rgba(0,0,0,.45)}
+.hero p.lede{max-width:34em;margin-top:1.4rem;font-size:1.26rem;line-height:1.5;font-style:italic;color:var(--papyrus);opacity:.92;text-shadow:0 1px 24px rgba(0,0,0,.5)}
+
+.ledger{background:var(--nuit);color:var(--papyrus);border-top:1px solid var(--hairline-d)}
+.ledger .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.ledger .cell{padding:1.7rem 1.4rem;border-left:1px solid var(--hairline-d)}
+.ledger .cell:first-child{border-left:0;padding-left:0}
+.ledger .k{font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--or);margin-bottom:.45rem}
+.ledger .v{font-family:'Marcellus',serif;font-size:1.05rem;letter-spacing:.02em}
+@media(max-width:760px){.ledger .wrap{grid-template-columns:1fr 1fr}.ledger .cell{border-left:0;border-top:1px solid var(--hairline-d);padding-left:0}.ledger .cell:nth-child(-n+2){border-top:0}}
+
+.bar{position:sticky;top:0;z-index:30;background:rgba(16,29,24,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--hairline-d)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:.85rem;padding-bottom:.85rem}
+.bar .where{font-family:'Marcellus',serif;color:var(--papyrus);letter-spacing:.16em;text-transform:uppercase;font-size:.8rem}
+.bar nav{display:flex;gap:1.6rem}
+.bar nav a{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--eau);text-decoration:none}
+.bar nav a:hover{color:var(--or-pale)}
+.bar .btn{padding:.55rem 1.4rem;font-size:.6rem}
+@media(max-width:1100px){.bar nav{display:none}}
+
+section{padding:6.5rem 0}
+.sec-head{margin-bottom:3rem}
+.sec-head .eyebrow{display:block;margin-bottom:1rem}
+.sec-head h2{font-size:clamp(1.9rem,3.4vw,2.7rem);letter-spacing:.02em}
+.sec-head p.stand{max-width:42em;margin-top:1rem;color:#4a534d;font-style:italic}
+
+.intro{background:var(--papyrus)}
+.intro .wrap{display:grid;grid-template-columns:5fr 7fr;gap:5rem;align-items:start}
+.intro h2{font-size:clamp(2rem,3.6vw,2.9rem);max-width:9em}
+.intro .body p+p{margin-top:1.3em}
+.intro .body p:first-child::first-letter{font-family:'Marcellus',serif;font-size:3.6em;float:left;line-height:.82;padding:.06em .12em 0 0;color:var(--or)}
+@media(max-width:860px){.intro .wrap{grid-template-columns:1fr;gap:2.5rem}}
+
+.layers{background:var(--nuit);color:var(--papyrus)}
+.layers .sec-head{text-align:center}
+.layers .sec-head h2{color:var(--papyrus)}
+.layers .stand{margin-left:auto;margin-right:auto;text-align:center;color:var(--eau)}
+.lgrid{display:grid;grid-template-columns:1fr 1fr;gap:1.3rem}
+.lcard{border:1px solid var(--hairline-d);overflow:hidden;display:flex;flex-direction:column;background:var(--foret)}
+.lcard .photo{aspect-ratio:21/9;background-size:cover;background-position:center}
+.lcard .photo.l1{background-image:var(--img-l1)} .lcard .photo.l2{background-image:var(--img-l2)}
+.lcard .photo.l3{background-image:var(--img-l3)} .lcard .photo.l4{background-image:var(--img-l4)}
+.lcard .body{padding:1.8rem 1.8rem 2rem}
+.lcard .tag{font-family:'Jost',sans-serif;font-size:.56rem;letter-spacing:.26em;text-transform:uppercase;color:var(--or)}
+.lcard h3{font-family:'Marcellus',serif;font-size:1.5rem;letter-spacing:.02em;margin:.5rem 0 .8rem}
+.lcard p{color:var(--eau);font-size:1rem;line-height:1.6}
+.lcard .sights{margin-top:1rem;font-size:.95rem;color:var(--papyrus)}
+.lcard .sights b{color:var(--or-pale);font-weight:400}
+.lcard .note{margin-top:1rem;padding-top:1rem;border-top:1px solid var(--hairline-d);font-size:.92rem;font-style:italic;color:var(--eau)}
+@media(max-width:780px){.lgrid{grid-template-columns:1fr}}
+
+.band{background:var(--papyrus)}
+.band.alt{background:var(--sable)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem}
+.cols h3{font-family:'Marcellus',serif;font-size:1.35rem;letter-spacing:.02em;margin-bottom:.9rem}
+.cols p{font-size:1.02rem}.cols p+p{margin-top:.8em}
+@media(max-width:760px){.cols{grid-template-columns:1fr;gap:2.5rem}}
+
+.stay .sgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem}
+.scard{background:var(--papyrus);border:1px solid var(--hairline-l);padding:1.9rem 1.7rem;display:flex;flex-direction:column}
+.scard .tag{font-family:'Jost',sans-serif;font-size:.56rem;letter-spacing:.24em;text-transform:uppercase;color:var(--or);margin-bottom:.7rem}
+.scard h3{font-family:'Marcellus',serif;font-size:1.3rem;letter-spacing:.02em;margin-bottom:.6rem}
+.scard p{font-size:.97rem;line-height:1.58;color:#454e48;flex:1}
+.scard .picks{margin-top:1.1rem;padding-top:.9rem;border-top:1px solid var(--hairline-l);font-size:.92rem;color:#3f4842}
+.scard .picks b{font-weight:400;color:var(--encre)}
+@media(max-width:760px){.stay .sgrid{grid-template-columns:1fr}}
+
+.know{background:var(--nuit);color:var(--papyrus)}
+.know .sec-head{text-align:center}.know .sec-head h2{color:var(--papyrus)}
+.kgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--hairline-d)}
+.kitem{padding:1.9rem 1.7rem;border-left:1px solid var(--hairline-d);border-top:1px solid var(--hairline-d)}
+.kitem:nth-child(-n+3){border-top:0}
+.kitem:nth-child(3n+1){border-left:0}
+.kitem .k{font-family:'Jost',sans-serif;font-size:.58rem;letter-spacing:.26em;text-transform:uppercase;color:var(--or);margin-bottom:.6rem}
+.kitem p{font-size:.96rem;line-height:1.55;color:var(--eau)}
+@media(max-width:820px){.kgrid{grid-template-columns:1fr 1fr}.kitem:nth-child(3n+1){border-left:1px solid var(--hairline-d)}.kitem:nth-child(odd){border-left:0}.kitem:nth-child(2){border-top:0}}
+@media(max-width:520px){.kgrid{grid-template-columns:1fr}.kitem{border-left:0!important;border-top:1px solid var(--hairline-d)!important}.kitem:first-child{border-top:0!important}}
+
+.honest{background:var(--sable)}
+.honest .wrap{max-width:50rem}
+.honest .panel{border:1px solid var(--or);padding:3rem 3rem 2.6rem;position:relative;background:var(--papyrus)}
+.honest .panel::before{content:"";position:absolute;top:0;left:0;width:42px;height:42px;border-top:2px solid var(--or);border-left:2px solid var(--or)}
+.honest .eyebrow{display:block;margin-bottom:1rem}
+.honest h2{font-family:'Marcellus',serif;font-size:1.7rem;margin-bottom:1.2rem;letter-spacing:.02em}
+.honest p+p{margin-top:.9em}.honest p{font-size:1.04rem;color:#3f4842}
+
+.belongs{background:var(--nuit);color:var(--papyrus)}
+.belongs .sec-head{text-align:center}.belongs .sec-head h2{color:var(--papyrus)}
+.jgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.jcard{border:1px solid var(--hairline-d);padding:2.2rem 1.8rem;display:flex;flex-direction:column;min-height:13rem;background:var(--foret);text-decoration:none;color:var(--papyrus);transition:border-color .35s,transform .35s}
+.jcard:hover{border-color:var(--or);transform:translateY(-4px)}
+.jcard .eyebrow{font-size:.56rem;margin-bottom:.9rem}
+.jcard h3{font-family:'Marcellus',serif;font-size:1.3rem;letter-spacing:.02em;margin-bottom:.6rem}
+.jcard p{font-size:.95rem;color:var(--eau);line-height:1.55;flex:1}
+@media(max-width:820px){.jgrid{grid-template-columns:1fr}}
+
+.cta{position:relative;color:var(--papyrus);text-align:center;padding:8rem 0;background:linear-gradient(180deg,var(--nuit),#0B1512)}
+.cta h2{font-size:clamp(2rem,4.6vw,3.3rem);letter-spacing:.04em}
+.cta h2 em{color:var(--or-pale);font-style:italic;font-family:'EB Garamond',serif}
+.cta p{max-width:34em;margin:1.3rem auto 2.6rem;color:var(--eau)}
+
+footer{background:#0B1512;color:var(--eau);padding:4.5rem 0 3rem;border-top:1px solid var(--hairline-d)}
+footer .wrap{display:flex;justify-content:space-between;gap:3rem;flex-wrap:wrap}
+footer .logo{color:var(--papyrus);font-size:1.05rem}
+footer p{font-size:.85rem;max-width:24em;margin-top:1rem}
+footer .col h5{font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--or);margin-bottom:1rem}
+footer .col a{display:block;font-size:.92rem;text-decoration:none;color:var(--eau);margin-bottom:.5rem}
+footer .col a:hover{color:var(--or-pale)}
+footer .legal{width:100%;margin-top:3rem;padding-top:1.4rem;border-top:1px solid rgba(191,161,95,.14);font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="logo" href="#">Sillage<small>Égypte</small></a>
+    <nav class="main" aria-label="Primary">
+      <a href="#">Journeys</a><a href="#">Destinations</a><a href="#">Experiences</a><a href="#">Journal</a>
+      <a class="btn light" style="padding:.7rem 1.6rem;font-size:.62rem" href="#plan">Plan your journey</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <p class="crumb"><a href="#">Home</a> &nbsp;/&nbsp; <a href="#">Destinations</a> &nbsp;/&nbsp; Alexandria</p>
+    <span class="eyebrow kicker">Destination guide · The Mediterranean coast</span>
+    <h1 class="display">Alexandria</h1>
+    <p class="lede">Egypt turned toward the sea — Alexander's capital and Cleopatra's, where the greatest wonders are long lost to the water, and the Mediterranean itself is the reason to come.</p>
+  </div>
+</div>
+
+<!-- QUICK FACTS -->
+<div class="ledger" role="region" aria-label="Alexandria at a glance">
+  <div class="wrap">
+    <div class="cell"><div class="k">Best time</div><div class="v">Spring &amp; autumn</div></div>
+    <div class="cell"><div class="k">How long</div><div class="v">A day, or a night</div></div>
+    <div class="cell"><div class="k">Getting there</div><div class="v">~3 hours from Cairo</div></div>
+    <div class="cell"><div class="k">Known for</div><div class="v">The sea &amp; the lost Library</div></div>
+  </div>
+</div>
+
+<!-- STICKY BAR -->
+<div class="bar">
+  <div class="wrap">
+    <span class="where">Alexandria</span>
+    <nav aria-label="Sections">
+      <a href="#about">The City</a><a href="#see">What to See</a><a href="#when">When &amp; How Long</a><a href="#stay">Where to Stay</a><a href="#need">Need to Know</a>
+    </nav>
+    <a class="btn solid" href="#plan">Plan a journey</a>
+  </div>
+</div>
+
+<!-- ORIENTATION -->
+<section class="intro" id="about">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">The city</span>
+      <h2 class="display" style="margin-top:1rem">The great vanished city, and the sea that remains</h2>
+    </div>
+    <div class="body">
+      <p>Alexandria is Egypt turned the other way — away from the desert and the Nile, out toward the Mediterranean. Alexander the Great founded it in 331 BC; under the Ptolemies and Cleopatra it became the most brilliant city of the ancient world, with the greatest library ever assembled and a lighthouse counted among the Seven Wonders. Almost none of it survives. Earthquakes, fire and the slow rise of the sea took the rest, and much of the classical city now lies beneath the modern one, or under the harbour itself.</p>
+      <p>So this is not a place you come to tick off monuments — there are only a handful, and they are modest beside Luxor's. You come for something harder to photograph: the salt air and the long Corniche, the faded cosmopolitan grandeur of a port that was once Greek and Italian and Levantine all at once, the finest seafood in Egypt, and the strange romance of standing in a great city that is mostly a memory. Set your expectations rightly, and Alexandria is unlike anywhere else in the country.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT TO SEE -->
+<section class="layers" id="see">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">What to see</span>
+      <h2 class="display" style="margin-top:1rem">What remains, and what is only remembered</h2>
+      <p class="stand">Alexandria is a city of fragments and ghosts. A little survives above ground, a little lies beneath the sea, and the rest you visit in the imagination — which is its own pleasure here.</p>
+    </div>
+    <div class="lgrid">
+
+      <div class="lcard">
+        <div class="photo l1"></div>
+        <div class="body">
+          <span class="tag">What survives</span>
+          <h3>The Greco-Roman city</h3>
+          <p>The real remains of ancient Alexandria are modest but strange and worth the time — Roman and Egyptian worlds tangled together underground.</p>
+          <div class="sights"><b>Don't miss:</b> the Catacombs of Kom el-Shoqafa, cut three levels into the rock · the Roman amphitheatre at Kom el-Dikka · Pompey's Pillar · the Graeco-Roman Museum, reopened after a long restoration.</div>
+          <div class="note">Honest note: come for their oddness and depth, not their scale — these are intimate sites, not grand ones.</div>
+        </div>
+      </div>
+
+      <div class="lcard">
+        <div class="photo l2"></div>
+        <div class="body">
+          <span class="tag">What is lost</span>
+          <h3>The wonders that are gone</h3>
+          <p>The things Alexandria is most famous for no longer stand — but you can visit where they were, and in one case dive to what remains.</p>
+          <div class="sights"><b>The ghosts:</b> the Pharos lighthouse, whose fallen stone built the Qaitbay Citadel that now occupies its place · the great Library, gone entirely · Cleopatra's royal quarter, sunk in the eastern harbour and explored by divers.</div>
+          <div class="note">Honest note: this is the idea of Alexandria more than the sight of it. For the keen, the submerged ruins can be dived.</div>
+        </div>
+      </div>
+
+      <div class="lcard">
+        <div class="photo l3"></div>
+        <div class="body">
+          <span class="tag">The modern tribute</span>
+          <h3>The new Library</h3>
+          <p>A vast tilted disc of granite and glass on the seafront, raised in 2002 as a tribute to the library the world lost — a working library, museum and one of the finest modern buildings in Egypt.</p>
+          <div class="sights"><b>Don't miss:</b> the Bibliotheca Alexandrina — the cascading main reading room, and the carved stone wall facing the sea.</div>
+          <div class="note">Honest note: it is not the ancient library — nothing could be — but it is a moving gesture and genuinely worth an hour.</div>
+        </div>
+      </div>
+
+      <div class="lcard">
+        <div class="photo l4"></div>
+        <div class="body">
+          <span class="tag">The living city</span>
+          <h3>The Mediterranean &amp; its ghosts</h3>
+          <p>Alexandria's real pleasure is simply being here — the long curve of the Corniche, the sea air, and the faded cosmopolitan world of Cavafy and Durrell still half-present in the old cafés.</p>
+          <div class="sights"><b>Don't miss:</b> the Corniche and the Qaitbay Citadel at its tip · the gardens of Montaza Palace · the old Belle-Époque cafés · a long seafood lunch by the water.</div>
+          <div class="note">Honest note: give the city an afternoon of wandering. The mood is the monument here.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHEN & HOW LONG -->
+<section class="band" id="when">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">When to go &amp; how long</span><h2 class="display" style="margin-top:1rem">A Mediterranean climate, and a day or two</h2></div>
+    <div class="cols">
+      <div>
+        <h3>When to go</h3>
+        <p>Alexandria keeps a Mediterranean calendar, not an Egyptian one. Spring and autumn are loveliest — mild, bright and uncrowded. Summer is the local beach season, warm and sea-cooled but heaving with Egyptian holidaymakers. Winter is the wildcard: genuinely wet and windy, with real storms off the sea — atmospheric if you like that, less so if you don't.</p>
+        <p>Whenever you come, the city is at its best in the late afternoon, walking the Corniche as the light goes amber over the water.</p>
+      </div>
+      <div>
+        <h3>How long</h3>
+        <p>A full day covers the essentials — the catacombs, Pompey's Pillar, the new Library, the Citadel and a seafood lunch — and most travellers see Alexandria as a long day from Cairo.</p>
+        <p>But the city rewards an overnight more than its sights suggest. Stay, and you catch the part that doesn't fit a day-trip: an evening on the seafront, a slow morning, the melancholy charm that is the whole reason to come.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHERE TO STAY -->
+<section class="band alt stay" id="stay">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Where to stay</span><h2 class="display" style="margin-top:1rem">On the seafront, two ways</h2>
+      <p class="stand">Stay on the water — it is the point of the city. The choice is between polish and romance.</p>
+    </div>
+    <div class="sgrid">
+      <div class="scard">
+        <span class="tag">The polished choice</span>
+        <h3>On the sea at San Stefano</h3>
+        <p>The luxury address in Alexandria — a modern hotel rising over the Mediterranean on the eastern Corniche, with sea-view rooms, good dining and the comforts the older houses lack. The reliable choice for a refined night by the water.</p>
+        <div class="picks"><b>The choice:</b> Four Seasons Hotel Alexandria at San Stefano.</div>
+      </div>
+      <div class="scard">
+        <span class="tag">The romantic choice</span>
+        <h3>The old waterfront grande dame</h3>
+        <p>For those who travel for atmosphere over polish: a storied 1920s hotel on the old harbour, woven through Alexandria's cosmopolitan literary past, with the patina and the quirks of its age. Faded, characterful, and full of ghosts — in the best way.</p>
+        <div class="picks"><b>The choice:</b> the Cecil, on Saad Zaghloul Square by the harbour.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEED TO KNOW -->
+<section class="know" id="need">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Need to know</span><h2 class="display" style="margin-top:1rem">The practical essentials</h2></div>
+    <div class="kgrid">
+      <div class="kitem"><div class="k">Getting there</div><p>Around two and a half to three hours from Cairo by road, or a similar time by train from Ramses station — the train is a pleasant, easy way to arrive. We arrange either, with a car waiting at the other end.</p></div>
+      <div class="kitem"><div class="k">Getting around</div><p>The city runs long and thin along the Corniche; a private car and driver makes light of the distances. The old trams still trundle the seafront — charming, slow, and a sight in themselves.</p></div>
+      <div class="kitem"><div class="k">The weather</div><p>Cooler and wetter than the rest of Egypt — Alexandria actually has a winter, with rain and sea wind. Bring a layer outside high summer, and don't be surprised by grey skies off the Mediterranean.</p></div>
+      <div class="kitem"><div class="k">The sea</div><p>The public beaches are packed and the city water is not its cleanest in summer; this is a city to enjoy the sea beside rather than swim in. For swimming, the hotels and the resorts further along the coast are better.</p></div>
+      <div class="kitem"><div class="k">The underwater ruins</div><p>Cleopatra's sunken quarter lies in the eastern harbour and can be dived with licensed operators, conditions and visibility permitting — a niche pleasure for the experienced, not a casual outing.</p></div>
+      <div class="kitem"><div class="k">Money &amp; tipping</div><p>Egyptian pounds, cash for the cafés, the trams and the small tips. The usual <i>baksheesh</i> habits apply, though Alexandria is a touch less geared to tourism than the Nile towns.</p></div>
+      <div class="kitem"><div class="k">Dress</div><p>Cosmopolitan but conservative — light and relaxed for the coast, modest in the old quarters and away from the seafront. Comfortable shoes for the catacomb steps and the Corniche.</p></div>
+      <div class="kitem"><div class="k">Safety</div><p>Egypt's easy-going second city, safe and walkable with ordinary care. Traffic along the Corniche is the main hazard; otherwise it is a relaxed place to wander.</p></div>
+      <div class="kitem"><div class="k">How it fits</div><p>Alexandria is reached from Cairo and pairs with it — a day excursion or an overnight. We fold it into a wider journey rather than running it alone.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- EAT -->
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">What to eat</span><h2 class="display" style="margin-top:1rem">The best seafood in Egypt — come hungry</h2></div>
+    <div class="cols">
+      <div>
+        <p>This is the reason many Egyptians come to Alexandria at all. It is the country's seafood capital, and the ritual is half the pleasure: at the better fish houses you choose your catch from the ice — sea bass, bream, red mullet, prawns, calamari — and it comes back grilled simply, with bread, salads, tahini and rice. Eaten by the water, it is one of the great meals in Egypt.</p>
+        <p>Alongside the fish, the cosmopolitan inheritance lingers in the old patisseries and cafés — Greek and Levantine pastries, strong coffee, and the faded glamour of another age.</p>
+      </div>
+      <div>
+        <h3>How we steer it</h3>
+        <p>We point you to the seafood houses that locals trust — the ones where the fish is freshest and the room is busy — and to the historic cafés worth a coffee for their atmosphere alone.</p>
+        <p>The usual care holds: choose busy places, bottled water, a little caution with raw shellfish. But the grilled fish, straight from the ice, is the safest and finest thing on any table in the city.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HONEST -->
+<section class="honest">
+  <div class="wrap">
+    <div class="panel">
+      <span class="eyebrow">What to expect</span>
+      <h2>Come for the mood, not the monuments</h2>
+      <p>We will be plain with you, because Alexandria disappoints the travellers who arrive expecting another Luxor. The Library is gone. The Pharos is gone. Cleopatra's city is under the sea. What stands above ground is a handful of modest Greco-Roman sites and one magnificent modern building, scattered through a busy, faded, salt-worn port of five million people.</p>
+      <p>And yet, approached for what it is, Alexandria is one of the most affecting places in Egypt. It is the country's Mediterranean soul — cosmopolitan, melancholy, literary, and entirely unlike the Nile. Walk the Corniche at dusk, eat the sea's best at a table by the water, and stand where the greatest library of the ancient world once was, and you will feel something no temple offers. Just come for that, and not for a checklist.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CROSS LINKS -->
+<section class="belongs">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">On the Mediterranean, with us</span><h2 class="display" style="margin-top:1rem">How to see it properly</h2></div>
+    <div class="jgrid">
+      <a class="jcard" href="#"><span class="eyebrow">Destination</span><h3>Cairo</h3><p>The gateway to Alexandria, three hours south — and a city of four thousand years where most journeys begin.</p></a>
+      <a class="jcard" href="#"><span class="eyebrow">Journey</span><h3>Beyond the Nile</h3><p>Sixteen days to the edges of Egypt — Cairo, Alexandria, the silence of Siwa, and the Nile by cruiser.</p></a>
+      <a class="jcard" href="#"><span class="eyebrow">Tailored</span><h3>Add it to any journey</h3><p>A day or a night from Cairo, folded into a wider trip — the easiest way to give Alexandria its due.</p></a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="plan">
+  <div class="wrap">
+    <span class="eyebrow">Begin the conversation</span>
+    <h2 class="display" style="margin-top:1.2rem">See Alexandria <em>properly</em>.</h2>
+    <p>Tell us your dates and what draws you, and we will fold the Mediterranean city into a journey shaped around you — guided, private, and unhurried.</p>
+    <a class="btn solid" href="#">Plan your journey</a>
+    <p class="note" style="margin-top:1.6rem;font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--or)">We reply within 24 hours</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="logo" href="#">Sillage<small>Égypte</small></a>
+      <p>Private journeys designed around you, guided by experts who know every layer of this country.</p>
+    </div>
+    <div class="col"><h5>Explore</h5><a href="#">Journeys</a><a href="#">Destinations</a><a href="#">Experiences</a><a href="#">Journal</a><a href="#">About</a></div>
+    <div class="col"><h5>Contact</h5><a href="mailto:hello@sillage-egypte.com">hello@sillage-egypte.com</a><a href="tel:+20000000000">+20 000 000 000</a><a href="#">WhatsApp enquiries welcome</a></div>
+    <div class="legal"><span>© 2026 Sillage Égypte. All rights reserved.</span><span>Privacy · Terms</span></div>
+  </div>
+</footer>
+
+</body>
+</html>

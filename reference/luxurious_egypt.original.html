@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxurious Egypt — Private Journeys Across Egypt</title>
+<meta name="description" content="Luxurious Egypt designs private journeys for discerning international travellers who want to experience Egypt on their own terms — guided by experts, built around their interests.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TourOperator",
+  "name": "Luxurious Egypt",
+  "description": "Luxurious Egypt is a private tour operator offering bespoke Nile journeys, desert expeditions, and cultural experiences across Egypt for international travellers.",
+  "url": "https://luxuriousegypt.com",
+  "logo": "https://luxuriousegypt.com/logo.svg",
+  "sameAs": []
+}
+</script>
+
+<style>
+/* ─── DESIGN TOKENS ─────────────────────────────────────────────────── */
+:root {
+  --teal:        #1A6B5A;
+  --teal-dark:   #0F4A3E;
+  --teal-light:  #2A8B74;
+  --sand:        #C8A96E;
+  --sand-light:  #E8D4A8;
+  --off-white:   #F7F4EF;
+  --cream:       #F0EBE0;
+  --ink:         #111111;
+  --mid:         #4A4A44;
+  --soft:        #8A8880;
+  --night:       #0D1F1B;
+  --night-mid:   #162E28;
+
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-inout:  cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* ─── RESET & BASE ──────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--ink);
+  background: var(--off-white);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; width: 100%; height: auto; }
+
+a { color: inherit; text-decoration: none; }
+
+/* ─── UTILITY ───────────────────────────────────────────────────────── */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+@media (max-width: 768px) { .container { padding: 0 24px; } }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap;
+}
+
+/* ─── FADE-IN ANIMATIONS ────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ─── NAVIGATION ────────────────────────────────────────────────────── */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 24px 0;
+  transition: background 0.4s var(--ease-out), padding 0.4s var(--ease-out),
+              box-shadow 0.4s var(--ease-out);
+}
+.nav.scrolled {
+  background: var(--off-white);
+  padding: 16px 0;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 500;
+  color: white;
+  letter-spacing: 0.02em;
+  transition: color 0.3s;
+  white-space: nowrap;
+}
+.nav.scrolled .nav-logo { color: var(--teal); }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.82);
+  transition: color 0.2s;
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0; right: 0;
+  height: 1px;
+  background: var(--sand);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s var(--ease-out);
+}
+.nav-links a:hover { color: white; }
+.nav-links a:hover::after { transform: scaleX(1); }
+.nav.scrolled .nav-links a { color: var(--mid); }
+.nav.scrolled .nav-links a:hover { color: var(--teal); }
+
+.nav-cta {
+  padding: 11px 26px;
+  background: var(--teal);
+  color: white !important;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  transition: background 0.2s, transform 0.2s;
+  white-space: nowrap;
+}
+.nav-cta:hover { background: var(--teal-light); transform: translateY(-1px); }
+.nav-cta::after { display: none !important; }
+
+.nav-mobile-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+}
+.nav-mobile-toggle span {
+  display: block;
+  width: 24px; height: 1.5px;
+  background: white;
+  transition: background 0.3s;
+}
+.nav.scrolled .nav-mobile-toggle span { background: var(--ink); }
+
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .nav-mobile-toggle { display: flex; }
+}
+
+/* ─── HERO ──────────────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 680px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-video-wrap {
+  position: absolute;
+  inset: 0;
+  background: var(--night);
+}
+
+/* Placeholder for video — rich gradient simulating Nile at sunrise */
+.hero-video-placeholder {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 70%, rgba(26,107,90,0.35) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 20% 50%, rgba(200,169,110,0.2) 0%, transparent 50%),
+    linear-gradient(165deg, #0D1F1B 0%, #162E28 30%, #1A3D34 55%, #0D2820 80%, #071510 100%);
+  overflow: hidden;
+}
+
+/* Animated water shimmer effect */
+.hero-video-placeholder::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 45%;
+  background: linear-gradient(180deg,
+    transparent 0%,
+    rgba(26,107,90,0.12) 40%,
+    rgba(10,40,30,0.4) 100%
+  );
+  animation: shimmer 8s ease-in-out infinite;
+}
+.hero-video-placeholder::after {
+  content: '';
+  position: absolute;
+  top: 20%; left: -10%; right: -10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200,169,110,0.3), transparent);
+  animation: horizonGlow 6s ease-in-out infinite;
+}
+@keyframes shimmer {
+  0%, 100% { opacity: 0.6; transform: scaleY(1); }
+  50% { opacity: 1; transform: scaleY(1.04); }
+}
+@keyframes horizonGlow {
+  0%, 100% { opacity: 0.3; transform: scaleX(0.8); }
+  50% { opacity: 0.8; transform: scaleX(1.1); }
+}
+
+/* Floating light particles */
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.particle {
+  position: absolute;
+  width: 2px; height: 2px;
+  border-radius: 50%;
+  background: rgba(200,169,110,0.6);
+  animation: float var(--dur, 8s) ease-in-out infinite var(--delay, 0s);
+}
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.4; }
+  33%  { transform: translate(var(--dx, 10px), -15px) scale(1.3); opacity: 0.8; }
+  66%  { transform: translate(calc(var(--dx, 10px) * -0.5), -8px) scale(0.8); opacity: 0.5; }
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(7,21,16,0.3) 0%,
+    rgba(7,21,16,0.15) 40%,
+    rgba(7,21,16,0.5) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 24px;
+  animation: fadeUp 1.2s var(--ease-out) 0.3s both;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sand);
+  margin-bottom: 24px;
+  animation: fadeIn 1s var(--ease-out) 0.6s both;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(56px, 8vw, 100px);
+  font-weight: 300;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: white;
+  margin-bottom: 28px;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--sand-light);
+}
+
+.hero-subtitle {
+  font-size: clamp(16px, 2vw, 20px);
+  font-weight: 300;
+  color: rgba(255,255,255,0.78);
+  max-width: 560px;
+  margin: 0 auto 48px;
+  line-height: 1.65;
+  animation: fadeUp 1s var(--ease-out) 0.8s both;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 40px;
+  background: var(--teal);
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  transition: background 0.25s, transform 0.25s, gap 0.25s;
+  animation: fadeUp 1s var(--ease-out) 1s both;
+}
+.hero-cta:hover { background: var(--teal-light); transform: translateY(-2px); gap: 14px; }
+.hero-cta svg { transition: transform 0.25s; }
+.hero-cta:hover svg { transform: translateX(2px); }
+
+.hero-scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.45);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  animation: fadeIn 1.5s var(--ease-out) 1.6s both;
+}
+.hero-scroll-line {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+  animation: scrollLine 2s ease-in-out infinite;
+}
+@keyframes scrollLine {
+  0%, 100% { transform: scaleY(1); opacity: 0.6; }
+  50% { transform: scaleY(0.6); opacity: 1; }
+}
+
+/* ─── TRUST STRIP ───────────────────────────────────────────────────── */
+.trust-strip {
+  background: white;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  padding: 20px 0;
+}
+.trust-strip-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 40px;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--mid);
+  letter-spacing: 0.02em;
+  position: relative;
+}
+.trust-item + .trust-item::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 20%; bottom: 20%;
+  width: 1px;
+  background: var(--sand-light);
+}
+.trust-icon {
+  width: 18px; height: 18px;
+  color: var(--teal);
+  flex-shrink: 0;
+}
+.trust-stars { color: var(--sand); letter-spacing: 1px; font-size: 12px; }
+
+/* ─── SECTION COMMON ────────────────────────────────────────────────── */
+.section { padding: 120px 0; }
+.section-sm { padding: 80px 0; }
+
+.section-eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 16px;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+.section-title em { font-style: italic; }
+.section-body {
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--mid);
+  max-width: 560px;
+}
+.section-body-wide { max-width: 720px; }
+
+/* ─── TOURS SECTION ─────────────────────────────────────────────────── */
+.tours-section { background: var(--off-white); }
+
+.tours-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 64px;
+  flex-wrap: wrap;
+}
+.tours-header-left { flex: 1; min-width: 280px; }
+.tours-view-all {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal);
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--teal);
+  transition: gap 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+.tours-view-all:hover { gap: 12px; color: var(--teal-dark); }
+
+.tours-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+@media (max-width: 960px) { .tours-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .tours-grid { grid-template-columns: 1fr; } }
+
+.tour-card {
+  position: relative;
+  overflow: hidden;
+  background: var(--night);
+  cursor: pointer;
+}
+.tour-card-image {
+  width: 100%;
+  padding-bottom: 130%;
+  position: relative;
+  overflow: hidden;
+}
+.tour-card-image-inner {
+  position: absolute;
+  inset: 0;
+  background: var(--night-mid);
+  transition: transform 0.8s var(--ease-out);
+}
+
+/* Unique gradient per card simulating destination photography */
+.tour-card:nth-child(1) .tour-card-image-inner {
+  background:
+    radial-gradient(ellipse 100% 80% at 50% 100%, rgba(26,107,90,0.6) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 70% 20%, rgba(200,169,110,0.3) 0%, transparent 50%),
+    linear-gradient(160deg, #0D2820 0%, #1A4535 40%, #0A2018 70%, #051008 100%);
+}
+/* Wavy lines suggesting Nile water */
+.tour-card:nth-child(1) .tour-card-image-inner::before {
+  content: '';
+  position: absolute;
+  bottom: 30%; left: 0; right: 0; height: 40%;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 12px,
+    rgba(26,107,90,0.08) 12px,
+    rgba(26,107,90,0.08) 13px
+  );
+  animation: waterLines 12s linear infinite;
+}
+@keyframes waterLines {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-26px); }
+}
+
+.tour-card:nth-child(2) .tour-card-image-inner {
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 60%, rgba(200,169,110,0.4) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 30% at 30% 20%, rgba(180,130,60,0.2) 0%, transparent 40%),
+    linear-gradient(170deg, #1A1008 0%, #3A2810 40%, #2A1C08 70%, #100A04 100%);
+}
+
+.tour-card:nth-child(3) .tour-card-image-inner {
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 40%, rgba(90,70,140,0.25) 0%, transparent 50%),
+    radial-gradient(ellipse 90% 70% at 50% 100%, rgba(26,107,90,0.3) 0%, transparent 55%),
+    linear-gradient(175deg, #12101A 0%, #1C1830 40%, #101020 70%, #080810 100%);
+}
+
+.tour-card:hover .tour-card-image-inner {
+  transform: scale(1.06);
+}
+
+/* Faint decorative overlay on card images */
+.tour-card-image-inner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 30%,
+    rgba(5,15,10,0.7) 100%
+  );
+}
+
+.tour-card-content {
+  padding: 28px 32px 32px;
+  background: var(--night);
+}
+.tour-card-type {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sand);
+  margin-bottom: 10px;
+}
+.tour-card-title {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: white;
+  margin-bottom: 12px;
+}
+.tour-card-desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 24px;
+}
+.tour-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  flex-wrap: wrap;
+}
+.tour-meta-item {
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.4);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.tour-meta-item svg { width: 12px; height: 12px; }
+
+.tour-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal-light);
+  margin-top: 20px;
+  transition: gap 0.2s, color 0.2s;
+}
+.tour-card-link:hover { gap: 12px; color: var(--sand); }
+
+/* ─── WHY SECTION ───────────────────────────────────────────────────── */
+.why-section { background: white; }
+
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 120px;
+  align-items: center;
+}
+.why-grid.reversed { direction: rtl; }
+.why-grid.reversed > * { direction: ltr; }
+@media (max-width: 800px) {
+  .why-grid { grid-template-columns: 1fr; gap: 48px; }
+  .why-grid.reversed { direction: ltr; }
+}
+
+.why-image {
+  position: relative;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.why-image-inner {
+  padding-bottom: 115%;
+  position: relative;
+}
+.why-image-bg {
+  position: absolute;
+  inset: 0;
+  border-radius: 2px;
+}
+.why-image-bg-1 {
+  background:
+    radial-gradient(ellipse 80% 80% at 40% 60%, rgba(26,107,90,0.5) 0%, transparent 60%),
+    linear-gradient(145deg, #0F3028 0%, #1A4A38 50%, #0A2018 100%);
+}
+.why-image-bg-2 {
+  background:
+    radial-gradient(ellipse 70% 60% at 60% 40%, rgba(200,169,110,0.45) 0%, transparent 55%),
+    linear-gradient(155deg, #20180A 0%, #3A2C10 50%, #181008 100%);
+}
+.why-image-bg-3 {
+  background:
+    radial-gradient(ellipse 80% 70% at 50% 50%, rgba(80,60,140,0.3) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 50% at 30% 80%, rgba(26,107,90,0.25) 0%, transparent 45%),
+    linear-gradient(150deg, #100C1A 0%, #1C1830 50%, #0C0A14 100%);
+}
+
+.why-image-accent {
+  position: absolute;
+  bottom: -1px; right: -1px;
+  width: 40%;
+  height: 3px;
+  background: var(--sand);
+}
+
+.why-text { padding: 20px 0; }
+.why-number {
+  font-family: var(--font-display);
+  font-size: 80px;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--sand-light);
+  opacity: 0.4;
+  margin-bottom: 16px;
+  letter-spacing: -0.03em;
+}
+.why-title {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--ink);
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+}
+.why-title em { font-style: italic; color: var(--teal); }
+.why-body {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--mid);
+  margin-bottom: 32px;
+}
+
+/* ─── GUIDES SECTION ────────────────────────────────────────────────── */
+.guides-section {
+  background: var(--night);
+  padding: 100px 0;
+}
+.guides-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+.guides-header .section-eyebrow { color: var(--sand); }
+.guides-header .section-title { color: white; }
+
+.guides-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+@media (max-width: 600px) { .guides-grid { grid-template-columns: 1fr; } }
+
+.guide-card {
+  background: var(--night-mid);
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s;
+}
+.guide-card:hover { background: rgba(26,107,90,0.12); }
+
+.guide-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 2px; height: 100%;
+  background: var(--teal);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.4s var(--ease-out);
+}
+.guide-card:hover::before { transform: scaleY(1); }
+
+.guide-avatar {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: var(--teal);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: white;
+  font-weight: 300;
+}
+.guide-name {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 400;
+  color: white;
+  margin-bottom: 4px;
+}
+.guide-title {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--sand);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.guide-bio {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.5);
+}
+
+/* ─── REVIEWS SECTION ───────────────────────────────────────────────── */
+.reviews-section { background: var(--cream); }
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 56px;
+}
+@media (max-width: 768px) { .reviews-grid { grid-template-columns: 1fr; } }
+
+.review-card {
+  background: white;
+  padding: 40px;
+  position: relative;
+}
+.review-stars { color: var(--sand); font-size: 14px; letter-spacing: 2px; margin-bottom: 20px; }
+.review-quote {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--ink);
+  margin-bottom: 28px;
+}
+.review-author {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--soft);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.review-author::before {
+  content: '';
+  display: block;
+  width: 24px; height: 1px;
+  background: var(--sand);
+}
+
+/* ─── FINAL CTA ─────────────────────────────────────────────────────── */
+.final-cta {
+  background: var(--teal);
+  padding: 120px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.final-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 50%, rgba(255,255,255,0.04) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 80% at 10% 50%, rgba(0,0,0,0.1) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 80% at 90% 50%, rgba(0,0,0,0.1) 0%, transparent 60%);
+}
+.final-cta > * { position: relative; z-index: 1; }
+.final-cta .section-eyebrow { color: var(--sand-light); opacity: 0.8; }
+.final-cta .section-title { color: white; max-width: 640px; margin: 0 auto 20px; }
+.final-cta .section-body { color: rgba(255,255,255,0.72); margin: 0 auto 48px; }
+.final-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 48px;
+  background: white;
+  color: var(--teal);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s, transform 0.2s, gap 0.2s;
+}
+.final-cta-btn:hover {
+  background: var(--off-white);
+  transform: translateY(-2px);
+  gap: 14px;
+}
+
+/* ─── FOOTER ────────────────────────────────────────────────────────── */
+.footer {
+  background: var(--night);
+  padding: 80px 0 40px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 64px;
+  margin-bottom: 64px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+@media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr; gap: 40px; } }
+
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 400;
+  color: white;
+  letter-spacing: 0.02em;
+  margin-bottom: 16px;
+}
+.footer-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 28px;
+  max-width: 280px;
+}
+.footer-social {
+  display: flex;
+  gap: 16px;
+}
+.footer-social a {
+  width: 36px; height: 36px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.4);
+  transition: border-color 0.2s, color 0.2s;
+}
+.footer-social a:hover { border-color: var(--sand); color: var(--sand); }
+.footer-col-title {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sand);
+  margin-bottom: 24px;
+}
+.footer-links { list-style: none; }
+.footer-links li { margin-bottom: 12px; }
+.footer-links a {
+  font-size: 14px;
+  color: rgba(255,255,255,0.45);
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: white; }
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.45);
+}
+.footer-contact-item svg { width: 14px; height: 14px; margin-top: 3px; flex-shrink: 0; color: var(--teal-light); }
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: rgba(255,255,255,0.25);
+}
+.footer-bottom a { color: rgba(255,255,255,0.25); transition: color 0.2s; }
+.footer-bottom a:hover { color: rgba(255,255,255,0.5); }
+
+/* ─── BUTTONS ───────────────────────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 36px;
+  background: var(--teal);
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s, gap 0.2s;
+}
+.btn-primary:hover { background: var(--teal-light); transform: translateY(-2px); gap: 14px; }
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 35px;
+  background: transparent;
+  color: var(--teal);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  border: 1.5px solid var(--teal);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.2s, gap 0.2s;
+}
+.btn-outline:hover { background: var(--teal); color: white; transform: translateY(-2px); gap: 14px; }
+
+/* ─── SPEC PANEL ────────────────────────────────────────────────────── */
+.spec-panel {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(7,21,16,0.96);
+  backdrop-filter: blur(16px);
+  padding: 16px 40px;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  border-top: 1px solid rgba(26,107,90,0.3);
+  transform: translateY(0);
+  transition: transform 0.4s var(--ease-out);
+}
+.spec-panel.hidden { transform: translateY(100%); }
+.spec-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--teal-light);
+}
+.spec-chips {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.spec-chip {
+  padding: 4px 12px;
+  border-radius: 2px;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+.spec-chip-teal   { background: rgba(26,107,90,0.2);  color: #4db89a; border: 1px solid rgba(26,107,90,0.3); }
+.spec-chip-sand   { background: rgba(200,169,110,0.15); color: #d4b87c; border: 1px solid rgba(200,169,110,0.25); }
+.spec-chip-font   { background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.1); }
+.spec-dismiss {
+  font-size: 11px;
+  color: rgba(255,255,255,0.3);
+  cursor: pointer;
+  padding: 4px 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 2px;
+  transition: color 0.2s, border-color 0.2s;
+  background: none;
+  white-space: nowrap;
+}
+.spec-dismiss:hover { color: white; border-color: rgba(255,255,255,0.3); }
+
+/* ─── RESPONSIVE ────────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .spec-panel { padding: 12px 20px; }
+  .section, .final-cta { padding: 80px 0; }
+  .hero-cta { padding: 14px 28px; font-size: 12px; }
+  .trust-item { padding: 8px 20px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ─── NAVIGATION ───────────────────────────────────────────────────── -->
+<nav class="nav" id="mainNav" aria-label="Main navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="Luxurious Egypt — home">Luxurious Egypt</a>
+      <ul class="nav-links" role="list">
+        <li><a href="/tours">Tours</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/guides">Guides</a></li>
+        <li><a href="/journal">Journal</a></li>
+        <li><a href="/plan" class="nav-cta" aria-label="Plan your journey with Luxurious Egypt">Plan Your Journey</a></li>
+      </ul>
+      <button class="nav-mobile-toggle" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ─── HERO ─────────────────────────────────────────────────────────── -->
+<section class="hero" aria-label="Hero">
+  <div class="hero-video-wrap">
+    <div class="hero-video-placeholder" role="img" aria-label="Nile at sunrise — aerial view">
+      <!-- Production: replace with looping video element -->
+      <div class="hero-particles" aria-hidden="true">
+        <div class="particle" style="left:15%;top:30%;--dur:9s;--delay:0s;--dx:12px"></div>
+        <div class="particle" style="left:30%;top:60%;--dur:11s;--delay:2s;--dx:-8px"></div>
+        <div class="particle" style="left:55%;top:20%;--dur:8s;--delay:1s;--dx:15px"></div>
+        <div class="particle" style="left:70%;top:50%;--dur:13s;--delay:3s;--dx:-12px"></div>
+        <div class="particle" style="left:82%;top:35%;--dur:10s;--delay:0.5s;--dx:6px"></div>
+        <div class="particle" style="left:45%;top:75%;--dur:12s;--delay:4s;--dx:-10px"></div>
+        <div class="particle" style="left:8%;top:65%;--dur:7s;--delay:2.5s;--dx:18px"></div>
+        <div class="particle" style="left:92%;top:55%;--dur:14s;--delay:1.5s;--dx:-7px"></div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <span class="hero-eyebrow">Private journeys across Egypt</span>
+    <h1 class="hero-title">Egypt, on<br><em>your own terms.</em></h1>
+    <p class="hero-subtitle">Private journeys designed around you, guided by experts who know every layer of this country.</p>
+    <a href="/plan" class="hero-cta">
+      Plan Your Journey
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+
+  <div class="hero-scroll" aria-hidden="true">
+    <div class="hero-scroll-line"></div>
+    <span>Discover</span>
+  </div>
+</section>
+
+<!-- ─── TRUST STRIP ──────────────────────────────────────────────────── -->
+<div class="trust-strip" role="complementary" aria-label="Trust signals">
+  <div class="container">
+    <div class="trust-strip-inner">
+      <div class="trust-item">
+        <svg class="trust-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M10 1l2.39 4.845L18 6.9l-4 3.9.944 5.5L10 13.845 5.056 16.3 6 10.8 2 6.9l5.61-1.055L10 1z" fill="currentColor"/>
+        </svg>
+        <span><span class="trust-stars">★★★★★</span> Rated 4.9 on Google</span>
+      </div>
+      <div class="trust-item">
+        <svg class="trust-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M10 2a6 6 0 100 12A6 6 0 0010 2zM2 10a8 8 0 1116 0A8 8 0 012 10z" fill="currentColor" opacity=".3"/>
+          <path d="M10 6v4l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span>Private tours only — no shared groups</span>
+      </div>
+      <div class="trust-item">
+        <svg class="trust-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M10 2C5.58 2 2 5.58 2 10s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 3a2 2 0 110 4 2 2 0 010-4zm0 10.5a5.99 5.99 0 01-5-2.69C5.02 11.16 8 10.25 10 10.25s4.98.91 5 2.56a5.99 5.99 0 01-5 2.69z" fill="currentColor"/>
+        </svg>
+        <span>Expert-led by certified Egyptologists</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── TOURS SECTION ────────────────────────────────────────────────── -->
+<section class="section tours-section" aria-labelledby="tours-heading">
+  <div class="container">
+    <div class="tours-header">
+      <div class="tours-header-left reveal">
+        <p class="section-eyebrow">Our journeys</p>
+        <h2 class="section-title" id="tours-heading">Journeys<br>we <em>design.</em></h2>
+      </div>
+      <a href="/tours" class="tours-view-all reveal reveal-delay-2">
+        All journeys
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M2.5 7H11.5M11.5 7L7.5 3M11.5 7L7.5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="tours-grid">
+
+      <!-- Tour 1: Nile Journey -->
+      <article class="tour-card reveal">
+        <div class="tour-card-image">
+          <div class="tour-card-image-inner" role="img" aria-label="Private Nile Journey — aerial view of the river at dawn"></div>
+        </div>
+        <div class="tour-card-content">
+          <p class="tour-card-type">Nile journey</p>
+          <h3 class="tour-card-title">The Private Nile</h3>
+          <p class="tour-card-desc">Seven days aboard a private felucca, stopping where no itinerary would take you. Temples at dawn. Silence where it still exists.</p>
+          <div class="tour-card-meta">
+            <span class="tour-meta-item">
+              <svg viewBox="0 0 12 12" fill="none"><path d="M6 1v5.5L9 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1"/></svg>
+              7 days
+            </span>
+            <span class="tour-meta-item">
+              <svg viewBox="0 0 12 12" fill="none"><circle cx="6" cy="4" r="2" stroke="currentColor" stroke-width="1"/><path d="M2 10c0-2.2 1.8-4 4-4s4 1.8 4 4" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg>
+              Private only
+            </span>
+          </div>
+          <a href="/tours/private-nile" class="tour-card-link">
+            Discover this journey
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6H10M10 6L7 3M10 6L7 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Tour 2: Desert Expedition -->
+      <article class="tour-card reveal reveal-delay-1">
+        <div class="tour-card-image">
+          <div class="tour-card-image-inner" role="img" aria-label="Desert and Oasis Expedition — the White Desert at night"></div>
+        </div>
+        <div class="tour-card-content">
+          <p class="tour-card-type">Desert expedition</p>
+          <h3 class="tour-card-title">Desert & Oasis</h3>
+          <p class="tour-card-desc">The White Desert under stars. The Siwa Oasis at its most untouched. A journey through the Egypt that most travellers never find.</p>
+          <div class="tour-card-meta">
+            <span class="tour-meta-item">
+              <svg viewBox="0 0 12 12" fill="none"><path d="M6 1v5.5L9 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1"/></svg>
+              5 days
+            </span>
+            <span class="tour-meta-item">
+              <svg viewBox="0 0 12 12" fill="none"><circle cx="6" cy="4" r="2" stroke="currentColor" stroke-width="1"/><path d="M2 10c0-2.2 1.8-4 4-4s4 1.8 4 4" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg>
+              Private only
+            </span>
+          </div>
+          <a href="/tours/desert-oasis" class="tour-card-link">
+            Discover this journey
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6H10M10 6L7 3M10 6L7 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Tour 3: Ancient Sites -->
+      <article class="tour-card reveal reveal-delay-2">
+        <div class="tour-card-image">
+          <div class="tour-card-image-inner" role="img" aria-label="Ancient Cairo and Luxor Immersion — the Valley of the Kings at dusk"></div>
+        </div>
+        <div class="tour-card-content">
+          <p class="tour-card-type">Cultural immersion</p>
+          <h3 class="tour-card-title">Ancient Cairo & Luxor</h3>
+          <p class="tour-card-desc">Pyramids before the crowds. The Valley of the Kings with an Egyptologist who has spent twenty years here. Cairo as it lives and breathes.</p>
+          <div class="tour-card-meta">
+            <span class="tour-meta-item">
+              <svg viewBox="0 0 12 12" fill="none"><path d="M6 1v5.5L9 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1"/></svg>
+              8 days
+            </span>
+            <span class="tour-meta-item">
+              <svg viewBox="0 0 12 12" fill="none"><circle cx="6" cy="4" r="2" stroke="currentColor" stroke-width="1"/><path d="M2 10c0-2.2 1.8-4 4-4s4 1.8 4 4" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg>
+              Private only
+            </span>
+          </div>
+          <a href="/tours/ancient-cairo-luxor" class="tour-card-link">
+            Discover this journey
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6H10M10 6L7 3M10 6L7 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHY SECTION ──────────────────────────────────────────────────── -->
+<section class="section why-section" aria-labelledby="why-heading">
+  <div class="container">
+    <div class="visually-hidden" id="why-heading">Why Luxurious Egypt</div>
+
+    <!-- Block 1 -->
+    <div class="why-grid" style="margin-bottom: 120px;">
+      <div class="why-image reveal">
+        <div class="why-image-inner">
+          <div class="why-image-bg why-image-bg-1" role="img" aria-label="Expert guide at an ancient Egyptian site"></div>
+        </div>
+        <div class="why-image-accent"></div>
+      </div>
+      <div class="why-text reveal reveal-delay-2">
+        <p class="why-number" aria-hidden="true">01</p>
+        <p class="section-eyebrow">Local expertise</p>
+        <h3 class="why-title">The knowledge<br>that <em>changes</em> what you see</h3>
+        <p class="why-body">Our guides are not tour leaders with a script. They are Egyptologists, historians, and archaeologists who have spent careers here. The difference between a guided visit and an unlocked experience is the person standing beside you.</p>
+        <a href="/guides" class="btn-outline">Meet our guides
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7H11.5M11.5 7L7.5 3M11.5 7L7.5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Block 2 -->
+    <div class="why-grid reversed" style="margin-bottom: 120px;">
+      <div class="why-image reveal reveal-delay-2">
+        <div class="why-image-inner">
+          <div class="why-image-bg why-image-bg-2" role="img" aria-label="Private desert camp at sunset"></div>
+        </div>
+        <div class="why-image-accent"></div>
+      </div>
+      <div class="why-text reveal">
+        <p class="why-number" aria-hidden="true">02</p>
+        <p class="section-eyebrow">Total privacy</p>
+        <h3 class="why-title">No groups.<br>No <em>compromise.</em></h3>
+        <p class="why-body">Every Luxurious Egypt journey is private by design. Your guide, your pace, your interests. We do not offer shared departures. The experience you have is yours alone — not assembled from a fixed menu.</p>
+        <a href="/tours" class="btn-outline">View journeys
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7H11.5M11.5 7L7.5 3M11.5 7L7.5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Block 3 -->
+    <div class="why-grid">
+      <div class="why-image reveal">
+        <div class="why-image-inner">
+          <div class="why-image-bg why-image-bg-3" role="img" aria-label="Ancient temple interior at night with atmospheric lighting"></div>
+        </div>
+        <div class="why-image-accent"></div>
+      </div>
+      <div class="why-text reveal reveal-delay-2">
+        <p class="why-number" aria-hidden="true">03</p>
+        <p class="section-eyebrow">Designed for you</p>
+        <h3 class="why-title">Built around<br><em>your</em> interests</h3>
+        <p class="why-body">Every journey begins with a conversation. What are you curious about? What have you already seen? What do you want to understand more deeply? Your answers shape every detail of what we design for you. Not off-the-shelf. Never off-the-shelf.</p>
+        <a href="/plan" class="btn-primary">Plan your journey
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7H11.5M11.5 7L7.5 3M11.5 7L7.5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── GUIDES SECTION ───────────────────────────────────────────────── -->
+<section class="guides-section" aria-labelledby="guides-heading">
+  <div class="container">
+    <div class="guides-header reveal">
+      <p class="section-eyebrow">The team</p>
+      <h2 class="section-title" id="guides-heading">Guided by people<br>who <em>love</em> Egypt.</h2>
+    </div>
+    <div class="guides-grid">
+      <div class="guide-card reveal">
+        <div class="guide-avatar" aria-hidden="true">KA</div>
+        <p class="guide-name">Dr. Khaled Amin</p>
+        <p class="guide-title">Senior Egyptologist & Journey Designer</p>
+        <p class="guide-bio">PhD in Archaeology from Cairo University. Twenty-two years leading private expeditions across the Valley of the Kings, Luxor, and the Western Desert. Specialist in New Kingdom funerary architecture.</p>
+      </div>
+      <div class="guide-card reveal reveal-delay-1">
+        <div class="guide-avatar" aria-hidden="true">SH</div>
+        <p class="guide-name">Sara Hassan</p>
+        <p class="guide-title">Cultural Historian & Desert Guide</p>
+        <p class="guide-bio">MA in Islamic Art & Architecture. Expert in Fatimid Cairo, Coptic heritage, and desert oasis culture. Fluent in English, Arabic, French, and Japanese. Guide of choice for discerning Japanese travellers.</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top: 48px;" class="reveal reveal-delay-2">
+      <a href="/guides" class="btn-outline" style="color:rgba(255,255,255,0.7); border-color:rgba(255,255,255,0.2);">Meet all guides
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7H11.5M11.5 7L7.5 3M11.5 7L7.5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── REVIEWS SECTION ──────────────────────────────────────────────── -->
+<section class="section reviews-section" aria-labelledby="reviews-heading">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-eyebrow">Traveller reviews</p>
+      <h2 class="section-title" id="reviews-heading">What our travellers <em>say.</em></h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote class="review-quote">"The depth of knowledge our guide brought to each site completely changed how we understood Egypt. Not a tour — a masterclass."</blockquote>
+        <p class="review-author">James & Caroline M. — United Kingdom</p>
+      </div>
+      <div class="review-card reveal reveal-delay-1">
+        <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote class="review-quote">"We've done many private tours around the world. This was different. Every detail, from the first email to the last morning, felt considered."</blockquote>
+        <p class="review-author">Hiroshi T. — Japan</p>
+      </div>
+      <div class="review-card reveal reveal-delay-2">
+        <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote class="review-quote">"We asked for something nobody else would show us. They found it. The White Desert at 3am, under a full moon, completely alone."</blockquote>
+        <p class="review-author">Maria & Thomas K. — Germany</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FINAL CTA ────────────────────────────────────────────────────── -->
+<section class="final-cta" aria-labelledby="cta-heading">
+  <div class="container">
+    <p class="section-eyebrow reveal">Begin the conversation</p>
+    <h2 class="section-title reveal reveal-delay-1" id="cta-heading">Every journey begins<br>with a <em>conversation.</em></h2>
+    <p class="section-body section-body-wide reveal reveal-delay-2">Tell us what you're looking for. What draws you to Egypt. What you want to understand more deeply. We'll design the rest.</p>
+    <div class="reveal reveal-delay-3">
+      <a href="/plan" class="final-cta-btn">
+        Plan Your Journey
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ───────────────────────────────────────────────────────── -->
+<footer class="footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-logo">Luxurious Egypt</p>
+        <p class="footer-desc">Private journeys designed around you, guided by experts who know every layer of this country.</p>
+        <div class="footer-social" aria-label="Social media links">
+          <a href="#" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-title">Navigate</p>
+        <ul class="footer-links" role="list">
+          <li><a href="/tours">Tours</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/guides">Guides</a></li>
+          <li><a href="/journal">Journal</a></li>
+          <li><a href="/plan">Plan Your Journey</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Contact</p>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M1 3.5A1.5 1.5 0 012.5 2h9A1.5 1.5 0 0113 3.5v7A1.5 1.5 0 0111.5 12h-9A1.5 1.5 0 011 10.5v-7z"/><path d="M1 3.5L7 8l6-4.5" stroke-linecap="round"/></svg>
+          hello@luxuriousegypt.com
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 9.5c0 .3-.1.6-.2.9-.1.3-.3.5-.5.7-.4.4-.8.5-1.3.5-.3 0-.7-.1-1.1-.2a10.7 10.7 0 01-1-.4 10 10 0 01-1-.6 9.7 9.7 0 01-.9-.8 9.7 9.7 0 01-.8-.9 10 10 0 01-.6-1c-.2-.3-.3-.7-.4-1C4.1 6.3 4 6 4 5.6c0-.4.1-.8.3-1.1.2-.4.5-.7.9-.9.3-.1.6-.2 1-.2.1 0 .3 0 .4.1.1 0 .3.1.4.3L8 5.4c.1.2.2.3.2.5s-.1.3-.2.5L7.5 7l-.2.3v.1c0 .1 0 .2.1.3l.3.4c.2.2.3.4.5.5.2.2.4.3.5.4l.4.3c.1.1.2.1.3.1h.1l.3-.2c.1-.1.2-.2.5-.3l.7-.6c.2-.1.3-.2.5-.2s.4 0 .5.1l1.7 1.1c.1.1.2.2.3.4.1.1.1.3.1.5z"/></svg>
+          +20 (0) 2 XXXX XXXX
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M7 1.5A5.5 5.5 0 117 12.5 5.5 5.5 0 017 1.5z"/><path d="M7 1.5c-1.5 0-2.5 2.46-2.5 5.5s1 5.5 2.5 5.5 2.5-2.46 2.5-5.5-1-5.5-2.5-5.5z"/><path d="M1.5 7h11"/></svg>
+          WhatsApp enquiries welcome
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Luxurious Egypt. All rights reserved.</span>
+      <nav aria-label="Footer legal links">
+        <a href="/privacy">Privacy Policy</a>
+        &nbsp;&nbsp;·&nbsp;&nbsp;
+        <a href="/terms">Terms</a>
+        &nbsp;&nbsp;·&nbsp;&nbsp;
+        <span>Built on Framer</span>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── SPEC PANEL ────────────────────────────────────────────────────── -->
+<div class="spec-panel" id="specPanel" role="complementary" aria-label="Design specification reference">
+  <div>
+    <p class="spec-label">Design tokens — Luxurious Egypt v1.0</p>
+  </div>
+  <div class="spec-chips" aria-label="Colour tokens">
+    <span class="spec-chip spec-chip-teal">Primary #1A6B5A</span>
+    <span class="spec-chip spec-chip-sand">Accent #C8A96E</span>
+    <span class="spec-chip spec-chip-font">Cormorant Garamond + DM Sans</span>
+    <span class="spec-chip spec-chip-teal">Off-White #F7F4EF</span>
+    <span class="spec-chip spec-chip-teal">Night #0D1F1B</span>
+  </div>
+  <button class="spec-dismiss" id="specDismiss" aria-label="Dismiss specification panel">Dismiss</button>
+</div>
+
+<!-- ─── SCRIPTS ──────────────────────────────────────────────────────── -->
+<script>
+// Navigation scroll behaviour
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => observer.observe(el));
+
+// Spec panel dismiss
+document.getElementById('specDismiss').addEventListener('click', () => {
+  document.getElementById('specPanel').classList.add('hidden');
+});
+
+// Disable spec panel on small screens after 4 seconds
+setTimeout(() => {
+  if (window.innerWidth < 600) {
+    document.getElementById('specPanel').classList.add('hidden');
+  }
+}, 4000);
+</script>
+
+<!-- FAQ Schema — required for AI search citation -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does Luxurious Egypt offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Luxurious Egypt offers fully private tours across Egypt — including Nile journeys, desert and oasis expeditions, and ancient site immersion programmes in Cairo and Luxor. Every tour is designed exclusively for you, with no shared groups."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who are Luxurious Egypt tours designed for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our tours are designed for international travellers — primarily from Europe, North America, and Japan — who want depth, expert knowledge, and total privacy. Travellers who have done the standard tours and now want something that goes further."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are all Luxurious Egypt tours private?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. All Luxurious Egypt journeys are private by design. We do not operate shared group departures. Your guide, your pace, your interests — entirely."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I book a Luxurious Egypt tour?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every journey begins with a conversation. Use the Plan Your Journey form to tell us what you're looking for — preferred dates, interests, group size — and one of our journey designers will be in touch within 24 hours to start the design process."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What destinations does Luxurious Egypt cover?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We design journeys across all major Egyptian destinations: the Nile from Aswan to Cairo, the Valley of the Kings and Luxor temples, the White Desert and Siwa Oasis, Islamic Cairo, and private access to sites not on standard itineraries."
+      }
+    }
+  ]
+}
+</script>
+
+</body>
+</html>

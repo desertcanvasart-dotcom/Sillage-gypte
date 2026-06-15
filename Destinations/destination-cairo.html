@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cairo — Destination Guide | Sillage Égypte</title>
+<meta name="description" content="Everything you need to know to travel Cairo well — the Pyramids and the museums, the Islamic and Coptic city, when to go, how long, where to stay, and the honest practicalities.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<!--
+  ============================================================
+  HOW TO ADD YOUR IMAGES — swap each placeholder gradient in :root.
+      --img-hero   the Pyramids at the city's edge, or the Cairo skyline at dusk
+      --img-l1     Giza / the Pyramids            (Pharaonic Cairo)
+      --img-l2     the Citadel / a minaret        (Islamic Cairo)
+      --img-l3     the Hanging Church             (Coptic Cairo)
+      --img-l4     the Nile / downtown by night   (Modern Cairo)
+  ============================================================
+-->
+<style>
+:root{
+  --nuit:#101D18;--foret:#18271F;--papyrus:#F4EDDC;--sable:#E9DfC9;
+  --or:#BFA15F;--or-pale:#D9C490;--encre:#262F2A;--eau:#9FB4A9;
+  --hairline-l:rgba(38,47,42,.22);--hairline-d:rgba(191,161,95,.28);
+  --max:1180px;
+  --img-hero:radial-gradient(1200px 700px at 70% 20%,rgba(191,141,70,.55),transparent 60%),radial-gradient(900px 600px at 18% 84%,rgba(120,150,150,.28),transparent 60%),linear-gradient(160deg,#1a1408 0%,#13110c 45%,#0b1512 100%);
+  --img-l1:radial-gradient(280px 200px at 50% 45%,rgba(196,150,90,.5),transparent 70%),linear-gradient(160deg,#241a10,#0b1413);
+  --img-l2:radial-gradient(280px 200px at 50% 45%,rgba(191,161,95,.5),transparent 70%),linear-gradient(160deg,#262217,#12100a);
+  --img-l3:radial-gradient(280px 200px at 50% 45%,rgba(159,180,169,.5),transparent 70%),linear-gradient(160deg,#23332a,#101d18);
+  --img-l4:radial-gradient(280px 200px at 50% 45%,rgba(120,160,170,.5),transparent 70%),linear-gradient(160deg,#16262e,#0c1418);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{font-family:'EB Garamond',Georgia,serif;font-size:19px;line-height:1.65;color:var(--encre);background:var(--papyrus);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 6vw}
+.eyebrow{font-family:'Jost',sans-serif;font-weight:400;font-size:.68rem;letter-spacing:.34em;text-transform:uppercase;color:var(--or)}
+.display{font-family:'Marcellus',serif;font-weight:400;line-height:1.08}
+.btn{display:inline-block;font-family:'Jost',sans-serif;font-weight:400;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;padding:1.05rem 2.4rem;text-decoration:none;border:1px solid var(--or);color:var(--or);transition:background .35s,color .35s;cursor:pointer;background:none}
+.btn:hover,.btn:focus-visible{background:var(--or);color:var(--nuit)}
+.btn.solid{background:var(--or);color:var(--nuit)}
+.btn.solid:hover{background:var(--or-pale);border-color:var(--or-pale)}
+.btn.light{border-color:var(--papyrus);color:var(--papyrus)}
+.btn.light:hover{background:var(--papyrus);color:var(--nuit)}
+:focus-visible{outline:2px solid var(--or);outline-offset:3px}
+
+header.masthead{position:absolute;top:0;left:0;right:0;z-index:20}
+.masthead .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:2rem;padding-bottom:2rem}
+.logo{font-family:'Marcellus',serif;font-size:1.3rem;letter-spacing:.42em;text-transform:uppercase;color:var(--papyrus);text-decoration:none}
+.logo small{display:block;font-family:'Jost',sans-serif;font-size:.55rem;letter-spacing:.5em;color:var(--or);margin-top:.3rem}
+nav.main{display:flex;gap:2.6rem;align-items:center}
+nav.main a{font-family:'Jost',sans-serif;font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--papyrus);text-decoration:none;opacity:.9;transition:opacity .3s,color .3s;text-shadow:0 1px 12px rgba(0,0,0,.4)}
+nav.main a:hover{opacity:1;color:var(--or-pale)}
+@media(max-width:980px){nav.main a:not(.btn){display:none}}
+
+/* hero */
+.hero{position:relative;min-height:82vh;display:flex;flex-direction:column;justify-content:flex-end;color:var(--papyrus);overflow:hidden;
+  background-image:linear-gradient(180deg,rgba(11,21,18,.35) 0%,rgba(11,21,18,.12) 38%,rgba(11,21,18,.55) 72%,rgba(12,23,20,.95) 100%),var(--img-hero);
+  background-size:cover;background-position:center}
+.hero .wrap{position:relative;z-index:2;padding-bottom:8vh}
+.hero .crumb{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--eau);margin-bottom:2rem}
+.hero .crumb a{text-decoration:none;color:var(--eau)} .hero .crumb a:hover{color:var(--or-pale)}
+.hero .kicker{display:block;margin-bottom:1.4rem;font-size:.66rem}
+.hero h1{font-size:clamp(3rem,9vw,7rem);letter-spacing:.05em;color:var(--papyrus);text-shadow:0 2px 40px rgba(0,0,0,.45)}
+.hero p.lede{max-width:33em;margin-top:1.4rem;font-size:1.26rem;line-height:1.5;font-style:italic;color:var(--papyrus);opacity:.92;text-shadow:0 1px 24px rgba(0,0,0,.5)}
+
+/* quick facts ledger */
+.ledger{background:var(--nuit);color:var(--papyrus);border-top:1px solid var(--hairline-d)}
+.ledger .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.ledger .cell{padding:1.7rem 1.4rem;border-left:1px solid var(--hairline-d)}
+.ledger .cell:first-child{border-left:0;padding-left:0}
+.ledger .k{font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--or);margin-bottom:.45rem}
+.ledger .v{font-family:'Marcellus',serif;font-size:1.05rem;letter-spacing:.02em}
+@media(max-width:760px){.ledger .wrap{grid-template-columns:1fr 1fr}.ledger .cell{border-left:0;border-top:1px solid var(--hairline-d);padding-left:0}.ledger .cell:nth-child(-n+2){border-top:0}}
+
+/* sticky bar */
+.bar{position:sticky;top:0;z-index:30;background:rgba(16,29,24,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--hairline-d)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:.85rem;padding-bottom:.85rem}
+.bar .where{font-family:'Marcellus',serif;color:var(--papyrus);letter-spacing:.16em;text-transform:uppercase;font-size:.8rem}
+.bar nav{display:flex;gap:1.6rem}
+.bar nav a{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--eau);text-decoration:none}
+.bar nav a:hover{color:var(--or-pale)}
+.bar .btn{padding:.55rem 1.4rem;font-size:.6rem}
+@media(max-width:1100px){.bar nav{display:none}}
+
+section{padding:6.5rem 0}
+.sec-head{margin-bottom:3rem}
+.sec-head .eyebrow{display:block;margin-bottom:1rem}
+.sec-head h2{font-size:clamp(1.9rem,3.4vw,2.7rem);letter-spacing:.02em}
+.sec-head p.stand{max-width:40em;margin-top:1rem;color:#4a534d;font-style:italic}
+
+/* orientation */
+.intro{background:var(--papyrus)}
+.intro .wrap{display:grid;grid-template-columns:5fr 7fr;gap:5rem;align-items:start}
+.intro h2{font-size:clamp(2rem,3.6vw,2.9rem);max-width:9em}
+.intro .body p+p{margin-top:1.3em}
+.intro .body p:first-child::first-letter{font-family:'Marcellus',serif;font-size:3.6em;float:left;line-height:.82;padding:.06em .12em 0 0;color:var(--or)}
+@media(max-width:860px){.intro .wrap{grid-template-columns:1fr;gap:2.5rem}}
+
+/* four cairos */
+.layers{background:var(--nuit);color:var(--papyrus)}
+.layers .sec-head{text-align:center}
+.layers .sec-head h2,.layers .sec-head .eyebrow{color:var(--papyrus)} .layers .sec-head .eyebrow{color:var(--or)}
+.lgrid{display:grid;grid-template-columns:1fr 1fr;gap:1.3rem}
+.lcard{border:1px solid var(--hairline-d);overflow:hidden;display:flex;flex-direction:column;background:var(--foret)}
+.lcard .photo{aspect-ratio:21/9;background-size:cover;background-position:center}
+.lcard .photo.l1{background-image:var(--img-l1)} .lcard .photo.l2{background-image:var(--img-l2)}
+.lcard .photo.l3{background-image:var(--img-l3)} .lcard .photo.l4{background-image:var(--img-l4)}
+.lcard .body{padding:1.8rem 1.8rem 2rem}
+.lcard .tag{font-family:'Jost',sans-serif;font-size:.56rem;letter-spacing:.26em;text-transform:uppercase;color:var(--or)}
+.lcard h3{font-family:'Marcellus',serif;font-size:1.5rem;letter-spacing:.02em;margin:.5rem 0 .8rem}
+.lcard p{color:var(--eau);font-size:1rem;line-height:1.6}
+.lcard .sights{margin-top:1rem;font-size:.95rem;color:var(--papyrus)}
+.lcard .sights b{color:var(--or-pale);font-weight:400}
+.lcard .note{margin-top:1rem;padding-top:1rem;border-top:1px solid var(--hairline-d);font-size:.92rem;font-style:italic;color:var(--eau)}
+@media(max-width:780px){.lgrid{grid-template-columns:1fr}}
+
+/* generic prose band */
+.band{background:var(--papyrus)}
+.band.alt{background:var(--sable)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem}
+.cols h3{font-family:'Marcellus',serif;font-size:1.35rem;letter-spacing:.02em;margin-bottom:.9rem}
+.cols p{font-size:1.02rem}.cols p+p{margin-top:.8em}
+@media(max-width:760px){.cols{grid-template-columns:1fr;gap:2.5rem}}
+
+/* where to stay */
+.stay .sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.scard{background:var(--papyrus);border:1px solid var(--hairline-l);padding:1.9rem 1.7rem;display:flex;flex-direction:column}
+.scard .tag{font-family:'Jost',sans-serif;font-size:.56rem;letter-spacing:.24em;text-transform:uppercase;color:var(--or);margin-bottom:.7rem}
+.scard h3{font-family:'Marcellus',serif;font-size:1.3rem;letter-spacing:.02em;margin-bottom:.6rem}
+.scard p{font-size:.97rem;line-height:1.58;color:#454e48;flex:1}
+.scard .picks{margin-top:1.1rem;padding-top:.9rem;border-top:1px solid var(--hairline-l);font-size:.92rem;color:#3f4842}
+.scard .picks b{font-weight:400;color:var(--encre)}
+@media(max-width:820px){.stay .sgrid{grid-template-columns:1fr}}
+
+/* need to know grid */
+.know{background:var(--nuit);color:var(--papyrus)}
+.know .sec-head{text-align:center}
+.know .sec-head h2{color:var(--papyrus)}
+.kgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--hairline-d)}
+.kitem{padding:1.9rem 1.7rem;border-left:1px solid var(--hairline-d);border-top:1px solid var(--hairline-d)}
+.kitem:nth-child(-n+3){border-top:0}
+.kitem:nth-child(3n+1){border-left:0}
+.kitem .k{font-family:'Jost',sans-serif;font-size:.58rem;letter-spacing:.26em;text-transform:uppercase;color:var(--or);margin-bottom:.6rem}
+.kitem p{font-size:.96rem;line-height:1.55;color:var(--eau)}
+@media(max-width:820px){.kgrid{grid-template-columns:1fr 1fr}.kitem:nth-child(3n+1){border-left:1px solid var(--hairline-d)}.kitem:nth-child(odd){border-left:0}.kitem:nth-child(2){border-top:0}}
+@media(max-width:520px){.kgrid{grid-template-columns:1fr}.kitem{border-left:0!important;border-top:1px solid var(--hairline-d)!important}.kitem:first-child{border-top:0!important}}
+
+/* honest panel */
+.honest{background:var(--sable)}
+.honest .wrap{max-width:50rem}
+.honest .panel{border:1px solid var(--or);padding:3rem 3rem 2.6rem;position:relative;background:var(--papyrus)}
+.honest .panel::before{content:"";position:absolute;top:0;left:0;width:42px;height:42px;border-top:2px solid var(--or);border-left:2px solid var(--or)}
+.honest .eyebrow{display:block;margin-bottom:1rem}
+.honest h2{font-family:'Marcellus',serif;font-size:1.7rem;margin-bottom:1.2rem;letter-spacing:.02em}
+.honest p+p{margin-top:.9em}.honest p{font-size:1.04rem;color:#3f4842}
+
+/* cross links */
+.belongs{background:var(--nuit);color:var(--papyrus)}
+.belongs .sec-head{text-align:center}.belongs .sec-head h2{color:var(--papyrus)}
+.jgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.jcard{border:1px solid var(--hairline-d);padding:2.2rem 1.8rem;display:flex;flex-direction:column;min-height:13rem;background:var(--foret);text-decoration:none;color:var(--papyrus);transition:border-color .35s,transform .35s}
+.jcard:hover{border-color:var(--or);transform:translateY(-4px)}
+.jcard .eyebrow{font-size:.56rem;margin-bottom:.9rem}
+.jcard h3{font-family:'Marcellus',serif;font-size:1.3rem;letter-spacing:.02em;margin-bottom:.6rem}
+.jcard p{font-size:.95rem;color:var(--eau);line-height:1.55;flex:1}
+@media(max-width:820px){.jgrid{grid-template-columns:1fr}}
+
+/* cta */
+.cta{position:relative;color:var(--papyrus);text-align:center;padding:8rem 0;background:linear-gradient(180deg,var(--nuit),#0B1512)}
+.cta h2{font-size:clamp(2rem,4.6vw,3.3rem);letter-spacing:.04em}
+.cta h2 em{color:var(--or-pale);font-style:italic;font-family:'EB Garamond',serif}
+.cta p{max-width:34em;margin:1.3rem auto 2.6rem;color:var(--eau)}
+
+footer{background:#0B1512;color:var(--eau);padding:4.5rem 0 3rem;border-top:1px solid var(--hairline-d)}
+footer .wrap{display:flex;justify-content:space-between;gap:3rem;flex-wrap:wrap}
+footer .logo{color:var(--papyrus);font-size:1.05rem}
+footer p{font-size:.85rem;max-width:24em;margin-top:1rem}
+footer .col h5{font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--or);margin-bottom:1rem}
+footer .col a{display:block;font-size:.92rem;text-decoration:none;color:var(--eau);margin-bottom:.5rem}
+footer .col a:hover{color:var(--or-pale)}
+footer .legal{width:100%;margin-top:3rem;padding-top:1.4rem;border-top:1px solid rgba(191,161,95,.14);font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="logo" href="#">Sillage<small>Égypte</small></a>
+    <nav class="main" aria-label="Primary">
+      <a href="#">Journeys</a><a href="#">Destinations</a><a href="#">Experiences</a><a href="#">Journal</a>
+      <a class="btn light" style="padding:.7rem 1.6rem;font-size:.62rem" href="#plan">Plan your journey</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <p class="crumb"><a href="#">Home</a> &nbsp;/&nbsp; <a href="#">Destinations</a> &nbsp;/&nbsp; Cairo</p>
+    <span class="eyebrow kicker">Destination guide · Lower Egypt</span>
+    <h1 class="display">Cairo</h1>
+    <p class="lede">Not a sight but a city — vast, loud, four thousand years deep — with the Pyramids standing at the edge of it, not out in empty desert.</p>
+  </div>
+</div>
+
+<!-- QUICK FACTS -->
+<div class="ledger" role="region" aria-label="Cairo at a glance">
+  <div class="wrap">
+    <div class="cell"><div class="k">Best time</div><div class="v">October–April</div></div>
+    <div class="cell"><div class="k">How long</div><div class="v">3 days, ideally 4</div></div>
+    <div class="cell"><div class="k">Getting around</div><div class="v">Private car &amp; driver</div></div>
+    <div class="cell"><div class="k">Known for</div><div class="v">The Pyramids of Giza</div></div>
+  </div>
+</div>
+
+<!-- STICKY BAR -->
+<div class="bar">
+  <div class="wrap">
+    <span class="where">Cairo</span>
+    <nav aria-label="Sections">
+      <a href="#about">The City</a><a href="#see">What to See</a><a href="#when">When &amp; How Long</a><a href="#stay">Where to Stay</a><a href="#need">Need to Know</a>
+    </nav>
+    <a class="btn solid" href="#plan">Plan a journey</a>
+  </div>
+</div>
+
+<!-- ORIENTATION -->
+<section class="intro" id="about">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">The city</span>
+      <h2 class="display" style="margin-top:1rem">Four thousand years, stacked and still alive</h2>
+    </div>
+    <div class="body">
+      <p>Cairo is one of the largest cities on earth — more than twenty million people — and it does not ease you in. It is loud, dense, dusty and magnificent, a place where a medieval mosque, a Roman fort, a sixty-storey tower and the oldest stone monuments on the planet all stand within a few miles of one another. First-time visitors are often overwhelmed before they are won over. Almost everyone is won over.</p>
+      <p>Two things to understand at the start. The Pyramids are not far out in the desert — Giza is a district of the city, and its streets run nearly to the foot of them. And Cairo rewards the guided and overwhelms the unguided: with a car, a driver and someone who knows the way, the chaos becomes texture rather than obstacle. The Nile runs through the middle of all of it, and it is on the river that the city finally goes quiet.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOUR CAIROS -->
+<section class="layers" id="see">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">What to see</span>
+      <h2 class="display" style="margin-top:1rem">Four cities in one</h2>
+      <p class="stand" style="margin-left:auto;margin-right:auto;text-align:center;color:var(--eau)">Cairo is easiest to understand as four cities layered on the same ground — pharaonic, Islamic, Coptic and modern. See a little of each and the place makes sense.</p>
+    </div>
+    <div class="lgrid">
+
+      <div class="lcard">
+        <div class="photo l1"></div>
+        <div class="body">
+          <span class="tag">Pharaonic Cairo</span>
+          <h3>The Pyramids &amp; the museums</h3>
+          <p>The reason most people come, and it lives up to it. Giza first — the three pyramids, the Sphinx and the granite Valley Temple — then the older pyramids beyond the city at Saqqara and Dahshur, where the form was worked out.</p>
+          <div class="sights"><b>Don't miss:</b> Giza plateau · the Grand Egyptian Museum, now home to the complete treasure of Tutankhamun · Saqqara &amp; the Step Pyramid · Dahshur · the Royal Mummies at the National Museum of Egyptian Civilization.</div>
+          <div class="note">Honest note: Giza sits at the city's edge, with hawkers and camel-ride touts at the gates. With a guide it is calm and easy; alone it can be wearing.</div>
+        </div>
+      </div>
+
+      <div class="lcard">
+        <div class="photo l2"></div>
+        <div class="body">
+          <span class="tag">Islamic Cairo</span>
+          <h3>The medieval city</h3>
+          <p>A thousand years of mosques, gates and bazaars, much of it still lived in. Best in the late afternoon, when the light softens the stone and the lanes fill.</p>
+          <div class="sights"><b>Don't miss:</b> the Citadel of Saladin &amp; the alabaster Mosque of Muhammad Ali · al-Muizz Street · Khan el-Khalili bazaar · the mosques of Sultan Hassan and Ibn Tulun.</div>
+          <div class="note">Honest note: dress modestly for the mosques — shoulders and knees covered, a scarf for women — and you remove your shoes to enter.</div>
+        </div>
+      </div>
+
+      <div class="lcard">
+        <div class="photo l3"></div>
+        <div class="body">
+          <span class="tag">Coptic Cairo</span>
+          <h3>The old Christian quarter</h3>
+          <p>A quiet few streets of churches, a synagogue and a museum — the layer most itineraries rush, and the calmest corner of the old city.</p>
+          <div class="sights"><b>Don't miss:</b> the Hanging Church · the church of St Sergius · the Ben Ezra synagogue · the Coptic Museum.</div>
+          <div class="note">Honest note: small and walkable, and easily paired with a morning elsewhere — half a morning is enough to do it justice.</div>
+        </div>
+      </div>
+
+      <div class="lcard">
+        <div class="photo l4"></div>
+        <div class="body">
+          <span class="tag">Modern Cairo</span>
+          <h3>The river &amp; the city today</h3>
+          <p>Downtown's faded Belle-Époque grandeur, the leafy island of Zamalek, and the Nile itself — best met from the water, on a felucca at dusk.</p>
+          <div class="sights"><b>Don't miss:</b> the Egyptian Museum on Tahrir (dim, crowded, wonderful) · the Nile Corniche &amp; a felucca sail · Zamalek · the Cairo Tower.</div>
+          <div class="note">Honest note: the old Tahrir museum has lost its star pieces to the newer museums, but keeps an atmosphere they can't match.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHEN & HOW LONG -->
+<section class="band" id="when">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">When to go &amp; how long</span><h2 class="display" style="margin-top:1rem">The cooler months, and three full days</h2></div>
+    <div class="cols">
+      <div>
+        <h3>When to go</h3>
+        <p>October to April is the season: warm, dry days and cool evenings, ideal for the sites. May to September is genuinely hot — 35–40°C and higher — and the middle of the day at Giza becomes an endurance. If you come in summer, we start at dawn and rest through the afternoon.</p>
+        <p>Ramadan shifts each year and is worth knowing about: the city slows by day and comes alive after dark, some hours change, and the atmosphere is special — but it asks for a little patience and planning, which we handle.</p>
+      </div>
+      <div>
+        <h3>How long</h3>
+        <p>Three full days covers Cairo well: one for Giza and the Grand Egyptian Museum, one for the Islamic and Coptic city, and one for Saqqara, Dahshur and the older pyramids. Four lets you slow down and add the Nile and a quieter pace.</p>
+        <p>Two days is possible but tight, and means choosing. One day is enough only for Giza and the museum — a glimpse, not the city. Most of our journeys give Cairo its proper three.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHERE TO STAY -->
+<section class="band alt stay" id="stay">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Where to stay</span><h2 class="display" style="margin-top:1rem">Three parts of the city, three kinds of stay</h2>
+      <p class="stand">Where you sleep shapes the trip. The short version: the river for the museums and the old city, the Pyramids for the view, Zamalek for quiet.</p>
+    </div>
+    <div class="sgrid">
+      <div class="scard">
+        <span class="tag">On the Nile · central</span>
+        <h3>Garden City &amp; the Corniche</h3>
+        <p>The best base for most visits — on the river, minutes from the Egyptian Museum and the old city, with the grand international hotels and the finest dining.</p>
+        <div class="picks"><b>Hotels:</b> Four Seasons Nile Plaza · Four Seasons at First Residence · St. Regis · Nile Ritz-Carlton.</div>
+      </div>
+      <div class="scard">
+        <span class="tag">Giza · pyramid-side</span>
+        <h3>At the foot of the Pyramids</h3>
+        <p>For the view, and there is nothing like waking to it. The trade-off is distance: Giza is forty minutes or more from downtown in traffic, so it suits the start or end of a trip more than its middle.</p>
+        <div class="picks"><b>Hotels:</b> Marriott Mena House, at the very foot of the plateau.</div>
+      </div>
+      <div class="scard">
+        <span class="tag">Zamalek · leafy island</span>
+        <h3>The quiet island</h3>
+        <p>An island in the Nile, greener and calmer than the centre, with embassies, galleries and good restaurants — a gentler base for those who want the city at arm's length.</p>
+        <div class="picks"><b>Character:</b> residential and refined, a short hop from downtown.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEED TO KNOW -->
+<section class="know" id="need">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Need to know</span><h2 class="display" style="margin-top:1rem">The practical essentials</h2></div>
+    <div class="kgrid">
+      <div class="kitem"><div class="k">Getting around</div><p>A private car and driver is the only sensible way — Cairo traffic is heavy and addresses are hard. Uber and Careem work well and are cheap for short hops. Don't drive yourself; the metro is cheap but crowded and limited.</p></div>
+      <div class="kitem"><div class="k">Visa</div><p>Most nationalities need a visa — an e-visa online before you travel, or visa-on-arrival at Cairo airport. We arrange it for you; rules vary by passport, so it's worth confirming yours.</p></div>
+      <div class="kitem"><div class="k">Money</div><p>The Egyptian pound (EGP). Cash still rules for tips, markets and small shops; cards are fine in hotels and larger places. Rates move a good deal — change a little on arrival and check the day's rate.</p></div>
+      <div class="kitem"><div class="k">Tipping</div><p>Small tips — <i>baksheesh</i> — are woven into daily life: a few notes for help, doors, washrooms, drivers and guides. Keep small notes handy; it smooths the whole day.</p></div>
+      <div class="kitem"><div class="k">Dress &amp; etiquette</div><p>Relaxed in hotels and Zamalek; modest in the old city and mosques — shoulders and knees covered, a scarf for women in mosques, shoes off to enter. Comfortable closed shoes for dusty, uneven sites.</p></div>
+      <div class="kitem"><div class="k">Safety</div><p>Cairo is generally safe for visitors with ordinary city sense — mind bags in crowds, use Uber or agreed fares. The real nuisance is persistent vendors at the big sites, not danger; a guide deflects most of it.</p></div>
+      <div class="kitem"><div class="k">Health &amp; water</div><p>Drink bottled water only, never the tap, and use it for brushing teeth. Sun protection is essential most of the year. Bring any personal medication with you.</p></div>
+      <div class="kitem"><div class="k">Language</div><p>Arabic is the language; English is widely understood in hotels and tourism. A word or two of Arabic — <i>shukran</i>, thank you — is always welcomed.</p></div>
+      <div class="kitem"><div class="k">The week</div><p>The weekend is Friday–Saturday, and Friday is the holy day — the midday prayer is busy and a few things slow, but the sights stay open. Markets are liveliest in the late afternoon.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- EAT -->
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">What to eat</span><h2 class="display" style="margin-top:1rem">Honest food, generously given</h2></div>
+    <div class="cols">
+      <div>
+        <p>Egyptian cooking is hearty and bean-led rather than refined, and the better for it. <b>Koshari</b> — rice, lentils, pasta and fried onion under a spiced tomato sauce — is the national dish and a meal in itself. <b>Ful medames</b> (slow-cooked fava beans) and <b>ta'ameya</b> (Egypt's falafel, made of fava not chickpea) are the breakfast of the country.</p>
+        <p>Beyond that: grilled <b>kofta</b> and <b>kebab</b>, <b>molokhia</b>, stuffed vegetables (<b>mahshi</b>), and warm flatbread (<b>aish baladi</b>) with everything. For something sweet, <b>om ali</b>, <b>basbousa</b> and <b>konafa</b>.</p>
+      </div>
+      <div>
+        <h3>How we steer it</h3>
+        <p>Street food is one of the joys of Cairo, but choose busy, well-run places — we point you to the good ones and keep you from the rest. The grand hotels do excellent Egyptian menus alongside the international, if you'd rather ease in.</p>
+        <p>And the standing rule: bottled water only, and be a little careful with raw salads and ice outside the better establishments. Fresh juice — mango, sugarcane, hibiscus — is a highlight, and safe where it's busy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HONEST -->
+<section class="honest">
+  <div class="wrap">
+    <div class="panel">
+      <span class="eyebrow">What to expect</span>
+      <h2>Overwhelming at first — and worth every minute</h2>
+      <p>We will be honest with you, because it makes the trip better: Cairo is a lot. The traffic is heavy, the air can be hazy, the crowds are constant, and at the Pyramids you will be offered a camel, a scarf and a photograph more times than you can count. None of it is dangerous. All of it is far easier with a guide and a car between you and the friction.</p>
+      <p>Set your expectations rightly and the city is one of the great experiences of travel. The Pyramids have a living city at their feet, not silent desert — and somehow that makes them more astonishing, not less. The old museum is crowded; Khan el-Khalili is touristy in parts; the good and the chaotic sit side by side. Lean into it. Four thousand years are still going on around you.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CROSS LINKS -->
+<section class="belongs">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">In Cairo, with us</span><h2 class="display" style="margin-top:1rem">How to see it properly</h2></div>
+    <div class="jgrid">
+      <a class="jcard" href="#"><span class="eyebrow">Experience</span><h3>The Empty Plateau</h3><p>Private, out-of-hours access to the whole Giza plateau — the Pyramids before the gates open to anyone else.</p></a>
+      <a class="jcard" href="#"><span class="eyebrow">Experience</span><h3>Lunch Under Sail</h3><p>A private felucca on the Nile — the one quiet place in a city of twenty million, with lunch aboard.</p></a>
+      <a class="jcard" href="#"><span class="eyebrow">Journey</span><h3>Cairo, Two Views</h3><p>Three refined nights seen from the city's two great windows — the Nile, and the Pyramids.</p></a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="plan">
+  <div class="wrap">
+    <span class="eyebrow">Begin the conversation</span>
+    <h2 class="display" style="margin-top:1.2rem">See Cairo <em>properly</em>.</h2>
+    <p>Tell us your dates and what draws you, and we will build the city into a journey shaped around you — guided, private, and unhurried.</p>
+    <a class="btn solid" href="#">Plan your journey</a>
+    <p class="note" style="margin-top:1.6rem;font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--or)">We reply within 24 hours</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="logo" href="#">Sillage<small>Égypte</small></a>
+      <p>Private journeys designed around you, guided by experts who know every layer of this country.</p>
+    </div>
+    <div class="col"><h5>Explore</h5><a href="#">Journeys</a><a href="#">Destinations</a><a href="#">Experiences</a><a href="#">Journal</a><a href="#">About</a></div>
+    <div class="col"><h5>Contact</h5><a href="mailto:hello@sillage-egypte.com">hello@sillage-egypte.com</a><a href="tel:+20000000000">+20 000 000 000</a><a href="#">WhatsApp enquiries welcome</a></div>
+    <div class="legal"><span>© 2026 Sillage Égypte. All rights reserved.</span><span>Privacy · Terms</span></div>
+  </div>
+</footer>
+
+</body>
+</html>

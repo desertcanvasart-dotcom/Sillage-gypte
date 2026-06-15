@@ -1,0 +1,116 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   LEGAL PAGES — Privacy & Cookie Policy + Terms & Conditions, ported verbatim
+   from the supplied designs and scoped under `.legal` so they're self-contained.
+   The page HTML is injected from content/legal/<slug>.json (exact words). The
+   global absolute masthead sits over a short dark band added at the top here.
+   Fonts mapped to the site's self-hosted variables (Marcellus/EB Garamond/Jost).
+   ═══════════════════════════════════════════════════════════════════════ */
+.legal {
+  --sable: #e9dfc9;
+  --max: 760px;
+  --hairline-legal: rgba(38, 47, 42, 0.2);
+  position: relative;
+  background: var(--papyrus);
+  color: var(--encre);
+  font-family: var(--font-body), Georgia, serif;
+  font-size: 18px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+/* dark band behind the global (absolute) masthead */
+.legal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6.6rem;
+  background: var(--nuit);
+  z-index: 0;
+}
+.legal > .wrap:first-of-type { padding-top: 7rem; }
+
+.legal a { color: #7d6a2f; text-decoration: underline; text-underline-offset: 2px; }
+.legal a:hover { color: var(--or); }
+.legal .wrap { max-width: var(--max); margin: 0 auto; padding-left: 6vw; padding-right: 6vw; }
+.legal .eyebrow {
+  font-family: var(--font-label), sans-serif;
+  font-weight: 400;
+  font-size: 0.66rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--or);
+}
+
+/* title block */
+.legal .titleblock { padding: 4.5rem 0 2.5rem; border-bottom: 1px solid var(--hairline-legal); }
+.legal .titleblock h1 {
+  font-family: var(--font-display), serif;
+  font-weight: 400;
+  font-size: clamp(2.1rem, 5vw, 3rem);
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  margin: 1rem 0 0.8rem;
+}
+.legal .titleblock .meta {
+  font-family: var(--font-label), sans-serif;
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #6a7069;
+}
+.legal .titleblock .meta span { color: var(--encre); }
+
+/* disclaimer callout */
+.legal .callout { margin: 2.5rem 0; border: 1px solid var(--or); background: #faf4e3; padding: 1.6rem 1.8rem; position: relative; }
+.legal .callout::before { content: ""; position: absolute; top: 0; left: 0; width: 34px; height: 34px; border-top: 2px solid var(--or); border-left: 2px solid var(--or); }
+.legal .callout h4 { font-family: var(--font-label), sans-serif; font-size: 0.66rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--or); margin-bottom: 0.6rem; }
+.legal .callout p { font-size: 0.96rem; color: #3f4842; }
+.legal .callout p + p { margin-top: 0.6em; }
+
+/* summary box */
+.legal .summary { margin: 2.5rem 0; background: var(--sable); padding: 1.8rem 2rem; border-left: 2px solid var(--or); }
+.legal .summary h4 { font-family: var(--font-display), serif; font-size: 1.1rem; letter-spacing: 0.02em; margin-bottom: 0.8rem; }
+.legal .summary ul { list-style: none; margin: 0; }
+.legal .summary li { padding: 0.4rem 0; font-size: 0.97rem; color: #3f4842; display: flex; gap: 0.7rem; align-items: baseline; }
+.legal .summary li::before { content: ""; flex: none; width: 5px; height: 5px; border-radius: 50%; background: var(--or); margin-top: 0.6rem; }
+
+/* table of contents */
+.legal .toc { margin: 3rem 0; padding: 1.8rem 2rem; border: 1px solid var(--hairline-legal); background: #fbf6e8; }
+.legal .toc h4 { font-family: var(--font-label), sans-serif; font-size: 0.64rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--or); margin-bottom: 1rem; }
+.legal .toc ol { margin: 0; padding-left: 1.2rem; columns: 2; column-gap: 2.5rem; }
+.legal .toc li { margin-bottom: 0.5rem; font-size: 0.95rem; }
+.legal .toc a { text-decoration: none; color: var(--encre); }
+.legal .toc a:hover { color: var(--or); }
+@media (max-width: 560px) { .legal .toc ol { columns: 1; } }
+
+/* body content */
+.legal main { padding: 1rem 0 4rem; }
+.legal section.s { padding: 2.4rem 0; border-top: 1px solid var(--hairline-legal); }
+.legal section.s h2 { font-family: var(--font-display), serif; font-weight: 400; font-size: 1.5rem; letter-spacing: 0.02em; margin-bottom: 1.1rem; scroll-margin-top: 1.5rem; }
+.legal section.s h2 .num { color: var(--or); font-size: 1.1rem; margin-right: 0.6rem; }
+.legal section.s h3 { font-family: var(--font-display), serif; font-weight: 400; font-size: 1.12rem; letter-spacing: 0.02em; margin: 1.6rem 0 0.6rem; }
+.legal section.s p { margin-bottom: 1em; }
+.legal section.s ul, .legal section.s ol { margin: 0 0 1em 1.3rem; }
+.legal section.s li { margin-bottom: 0.5em; }
+.legal section.s ul.plain { list-style: none; margin-left: 0; }
+.legal section.s ul.plain li { padding-left: 1.3rem; position: relative; }
+.legal section.s ul.plain li::before { content: "—"; position: absolute; left: 0; color: var(--or); }
+.legal .lead-in { font-weight: 600; color: var(--encre); }
+.legal .fill { background: #f0e6c8; padding: 0 0.25em; border-radius: 2px; font-style: italic; color: #5a4d22; }
+.legal .editable { border-bottom: 1px dashed var(--or); }
+
+/* tables */
+.legal .tablewrap { overflow-x: auto; margin: 1.2rem 0; }
+.legal table { border-collapse: collapse; width: 100%; font-size: 0.88rem; min-width: 480px; }
+.legal th, .legal td { text-align: left; padding: 0.7rem 0.8rem; border: 1px solid var(--hairline-legal); vertical-align: top; }
+.legal th { font-family: var(--font-label), sans-serif; font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--or); background: var(--sable); font-weight: 400; }
+.legal td { color: #3f4842; }
+.legal tr:nth-child(even) td { background: #fbf6e8; }
+
+/* rights grid (privacy §9) */
+.legal .rights { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--hairline-legal); border: 1px solid var(--hairline-legal); margin: 1.2rem 0; }
+.legal .rights .r { background: var(--papyrus); padding: 1.1rem 1.2rem; }
+.legal .rights .r h4 { font-family: var(--font-display), serif; font-size: 1rem; letter-spacing: 0.02em; margin-bottom: 0.3rem; }
+.legal .rights .r p { font-size: 0.9rem; margin: 0; color: #454e48; }
+@media (max-width: 600px) { .legal .rights { grid-template-columns: 1fr; } }

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lunch Under Sail — A Felucca in Cairo | Sillage Égypte</title>
+<meta name="description" content="Two hours under sail on a private felucca on the Nile in Cairo, with an Egyptian lunch aboard — the one quiet place in a city of twenty million.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --nuit:#101D18;--foret:#18271F;--papyrus:#F4EDDC;--sable:#E9DfC9;
+  --or:#BFA15F;--or-pale:#D9C490;--encre:#262F2A;--eau:#9FB4A9;
+  --hairline-l:rgba(38,47,42,.22);--hairline-d:rgba(191,161,95,.28);
+  --max:1180px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{font-family:'EB Garamond',Georgia,serif;font-size:19px;line-height:1.65;color:var(--encre);background:var(--papyrus);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 6vw}
+.eyebrow{font-family:'Jost',sans-serif;font-weight:400;font-size:.68rem;letter-spacing:.34em;text-transform:uppercase;color:var(--or)}
+.display{font-family:'Marcellus',serif;font-weight:400;line-height:1.08}
+.btn{display:inline-block;font-family:'Jost',sans-serif;font-weight:400;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;padding:1.05rem 2.4rem;text-decoration:none;border:1px solid var(--or);color:var(--or);transition:background .35s,color .35s;cursor:pointer;background:none}
+.btn:hover,.btn:focus-visible{background:var(--or);color:var(--nuit)}
+.btn.solid{background:var(--or);color:var(--nuit)}
+.btn.solid:hover{background:var(--or-pale);border-color:var(--or-pale)}
+:focus-visible{outline:2px solid var(--or);outline-offset:3px}
+
+/* masthead */
+header.masthead{position:absolute;top:0;left:0;right:0;z-index:20}
+.masthead .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:2rem;padding-bottom:2rem}
+.logo{font-family:'Marcellus',serif;font-size:1.3rem;letter-spacing:.42em;text-transform:uppercase;color:var(--papyrus);text-decoration:none}
+.logo small{display:block;font-family:'Jost',sans-serif;font-size:.55rem;letter-spacing:.5em;color:var(--or);margin-top:.3rem}
+nav.main{display:flex;gap:2.6rem;align-items:center}
+nav.main a{font-family:'Jost',sans-serif;font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--papyrus);text-decoration:none;opacity:.85;transition:opacity .3s,color .3s}
+nav.main a:hover{opacity:1;color:var(--or-pale)}
+@media(max-width:860px){nav.main a:not(.btn){display:none}}
+
+/* hero — bright daytime Nile gold, the city as a low warm haze */
+.hero{position:relative;min-height:90vh;display:flex;flex-direction:column;justify-content:flex-end;color:var(--papyrus);overflow:hidden;
+  background:radial-gradient(1050px 480px at 56% 116%,rgba(196,158,100,.32),transparent 60%),radial-gradient(840px 460px at 24% 90%,rgba(120,160,150,.16),transparent 62%),linear-gradient(180deg,#0B1512 0%,#101D18 50%,#13120C 100%)}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:21vh;height:1px;background:linear-gradient(90deg,transparent,var(--or) 18%,var(--or) 82%,transparent);opacity:.5}
+.hero .wrap{position:relative;z-index:2;padding-bottom:11vh}
+.hero .crumb{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--eau);margin-bottom:1.8rem}
+.hero .crumb a{text-decoration:none;color:var(--eau)} .hero .crumb a:hover{color:var(--or-pale)}
+.hero .kicker{display:block;margin-bottom:1.4rem;font-size:.66rem}
+.hero h1{font-size:clamp(2.8rem,8vw,6rem);letter-spacing:.04em;color:var(--papyrus);animation:rise 1.1s cubic-bezier(.2,.7,.2,1) both}
+.hero p.lede{max-width:32em;margin-top:1.5rem;font-size:1.28rem;line-height:1.55;font-style:italic;color:var(--eau);animation:rise 1.1s .15s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.hero h1,.hero p.lede{animation:none}}
+
+/* ledger */
+.ledger{background:var(--nuit);color:var(--papyrus);border-top:1px solid var(--hairline-d)}
+.ledger .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.ledger .cell{padding:1.7rem 1.4rem;border-left:1px solid var(--hairline-d)}
+.ledger .cell:first-child{border-left:0;padding-left:0}
+.ledger .k{font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--or);margin-bottom:.45rem}
+.ledger .v{font-family:'Marcellus',serif;font-size:1.05rem;letter-spacing:.02em}
+@media(max-width:760px){.ledger .wrap{grid-template-columns:1fr 1fr}.ledger .cell{border-left:0;border-top:1px solid var(--hairline-d);padding-left:0}.ledger .cell:nth-child(-n+2){border-top:0}}
+
+section{padding:7rem 0}
+.sec-head{margin-bottom:3.2rem}
+.sec-head .eyebrow{display:block;margin-bottom:1rem}
+.sec-head h2{font-size:clamp(1.9rem,3.4vw,2.7rem);letter-spacing:.02em}
+
+/* overview */
+.intro .wrap{display:grid;grid-template-columns:5fr 7fr;gap:5rem;align-items:start}
+.intro h2{font-size:clamp(2rem,3.6vw,2.9rem);max-width:9em}
+.intro .body p+p{margin-top:1.3em}
+.intro .body p:first-child::first-letter{font-family:'Marcellus',serif;font-size:3.6em;float:left;line-height:.82;padding:.06em .12em 0 0;color:var(--or)}
+@media(max-width:860px){.intro .wrap{grid-template-columns:1fr;gap:2.5rem}}
+
+/* ── how the afternoon unfolds — signature ── */
+.unfold{background:var(--nuit);color:var(--papyrus)}
+.unfold .sec-head{text-align:center}
+.stream{position:relative;max-width:44rem;margin:0 auto;padding-left:3.4rem}
+.stream::before{content:"";position:absolute;left:9px;top:14px;bottom:14px;width:1px;background:linear-gradient(180deg,transparent,var(--or) 5%,var(--or) 95%,transparent)}
+.moment{position:relative;padding:0 0 2.6rem}
+.moment:last-child{padding-bottom:0}
+.moment::before{content:"";position:absolute;left:-3.4rem;top:.45rem;width:19px;height:19px;border:1px solid var(--or);border-radius:50%;background:var(--nuit)}
+.moment::after{content:"";position:absolute;left:-2.9rem;top:.95rem;width:7px;height:7px;border-radius:50%;background:var(--or)}
+.moment .when{font-family:'Jost',sans-serif;font-size:.58rem;letter-spacing:.26em;text-transform:uppercase;color:var(--or);margin-bottom:.5rem}
+.moment h3{font-family:'Marcellus',serif;font-size:1.4rem;letter-spacing:.02em;margin-bottom:.6rem}
+.moment p{color:var(--eau);font-size:1.04rem;line-height:1.66;max-width:34em}
+@media(max-width:560px){.stream{padding-left:2.6rem}.moment::before{left:-2.6rem}.moment::after{left:-2.05rem}}
+
+/* what makes it special */
+.ours{background:var(--sable)}
+.ours .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:1px solid var(--hairline-l)}
+.ours .item{padding:2.4rem 2.2rem;border-left:1px solid var(--hairline-l);border-top:1px solid var(--hairline-l);background:var(--papyrus)}
+.ours .item:nth-child(-n+2){border-top:0}
+.ours .item:nth-child(odd){border-left:0}
+.ours .item .n{font-family:'Marcellus',serif;font-size:.9rem;color:var(--or);letter-spacing:.1em}
+.ours .item h3{font-family:'Marcellus',serif;font-size:1.28rem;margin:.7rem 0 .55rem;letter-spacing:.02em}
+.ours .item p{font-size:1rem;line-height:1.6;color:#454e48}
+@media(max-width:760px){.ours .grid{grid-template-columns:1fr}.ours .item{border-left:0}.ours .item:nth-child(2){border-top:1px solid var(--hairline-l)}}
+
+/* honest note */
+.know{background:var(--papyrus)}
+.know .wrap{max-width:50rem}
+.know .panel{border:1px solid var(--or);padding:3rem 3rem 2.6rem;position:relative}
+.know .panel::before{content:"";position:absolute;top:0;left:0;width:42px;height:42px;border-top:2px solid var(--or);border-left:2px solid var(--or)}
+.know .eyebrow{display:block;margin-bottom:1rem}
+.know h2{font-family:'Marcellus',serif;font-size:1.7rem;margin-bottom:1.2rem;letter-spacing:.02em}
+.know p+p{margin-top:.9em}
+.know p{font-size:1.04rem;color:#3f4842}
+
+/* included / good to know */
+.incl{background:var(--sable)}
+.incl .wrap{display:grid;grid-template-columns:1fr 1fr;gap:5rem}
+.incl h3{font-family:'Marcellus',serif;font-size:1.4rem;margin-bottom:1.4rem;letter-spacing:.02em}
+.incl ul{list-style:none}
+.incl li{padding:.85rem 0;border-top:1px solid var(--hairline-l);font-size:1.02rem;display:flex;gap:.9rem;align-items:baseline;color:#3f4842}
+.incl li::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--or);margin-top:.55rem}
+.incl .note li::before{background:none;border:1px solid #9aa39c}
+.incl .note li{color:#5a635d}
+@media(max-width:760px){.incl .wrap{grid-template-columns:1fr;gap:3rem}}
+
+/* glimpses */
+.glimpse{background:var(--papyrus)}
+.glimpse .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+.frame{aspect-ratio:3/4;position:relative;overflow:hidden;background:#1c2620}
+.frame .ph{position:absolute;inset:0}
+.frame:nth-child(1) .ph{background:radial-gradient(380px 300px at 50% 50%,rgba(196,158,100,.36),transparent 68%),linear-gradient(180deg,#23332a,#0b1512)}
+.frame:nth-child(2) .ph{background:radial-gradient(360px 280px at 50% 48%,rgba(224,214,196,.30),transparent 70%),linear-gradient(180deg,#26231b,#0d1210)}
+.frame:nth-child(3) .ph{background:radial-gradient(440px 340px at 52% 78%,rgba(191,141,80,.34),transparent 70%),linear-gradient(180deg,#1d2630,#0b1512)}
+.frame figcaption{position:absolute;left:0;right:0;bottom:0;padding:1rem 1.2rem;font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--or-pale);background:linear-gradient(transparent,rgba(7,13,11,.85))}
+@media(max-width:760px){.glimpse .grid{grid-template-columns:1fr}}
+
+/* where it belongs */
+.belongs{background:var(--nuit);color:var(--papyrus)}
+.belongs .sec-head{text-align:center}
+.belongs .sec-head .eyebrow{display:block;margin-bottom:1rem}
+.belongs .lead{text-align:center;max-width:40em;margin:0 auto 3rem;color:var(--eau);font-style:italic}
+.jgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;max-width:46rem;margin:0 auto}
+.jcard{border:1px solid var(--hairline-d);padding:2.4rem 2rem 2.2rem;display:flex;flex-direction:column;min-height:16rem;background:var(--foret);text-decoration:none;color:var(--papyrus);transition:border-color .35s,transform .35s}
+.jcard:hover{border-color:var(--or);transform:translateY(-4px)}
+.jcard .eyebrow{font-size:.58rem;margin-bottom:1.1rem}
+.jcard h3{font-family:'Marcellus',serif;font-size:1.5rem;letter-spacing:.02em;margin-bottom:.8rem}
+.jcard p{font-size:.98rem;color:var(--eau);line-height:1.6;flex:1}
+.jcard .meta{margin-top:1.6rem;padding-top:1.1rem;border-top:1px solid var(--hairline-d);font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--or-pale)}
+@media(max-width:680px){.jgrid{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.jcard:hover{transform:none}}
+
+/* cta */
+.cta{background:linear-gradient(180deg,var(--nuit),#13120C);color:var(--papyrus);text-align:center;padding:8rem 0}
+.cta h2{font-size:clamp(2.2rem,5vw,3.6rem);letter-spacing:.04em}
+.cta h2 em{color:var(--or);font-style:italic;font-family:'EB Garamond',serif}
+.cta p{max-width:34em;margin:1.4rem auto 2.8rem;color:var(--eau)}
+.cta .note{margin-top:1.6rem;font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--or)}
+
+/* footer */
+footer{background:#070D0B;color:var(--eau);padding:4.5rem 0 3rem;border-top:1px solid var(--hairline-d)}
+footer .wrap{display:flex;justify-content:space-between;gap:3rem;flex-wrap:wrap}
+footer .logo{color:var(--papyrus);font-size:1.05rem}
+footer p{font-size:.85rem;max-width:24em;margin-top:1rem}
+footer .col h5{font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--or);margin-bottom:1rem}
+footer .col a{display:block;font-size:.92rem;text-decoration:none;color:var(--eau);margin-bottom:.5rem}
+footer .col a:hover{color:var(--or-pale)}
+footer .legal{width:100%;margin-top:3rem;padding-top:1.4rem;border-top:1px solid rgba(191,161,95,.14);font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="logo" href="#">Sillage<small>Égypte</small></a>
+    <nav class="main" aria-label="Primary">
+      <a href="#">Journeys</a><a href="#">Destinations</a><a href="#">Experiences</a><a href="#">Journal</a>
+      <a class="btn" style="padding:.7rem 1.6rem;font-size:.62rem" href="#plan">Plan your journey</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <p class="crumb"><a href="#">Home</a> &nbsp;/&nbsp; <a href="#">Experiences</a> &nbsp;/&nbsp; Lunch Under Sail</p>
+    <span class="eyebrow kicker">A Sillage experience · Cairo</span>
+    <h1 class="display">Lunch Under Sail</h1>
+    <p class="lede">Two hours under sail on a private felucca in the middle of Cairo — lunch aboard, and the city's noise falling away behind the sail.</p>
+  </div>
+</div>
+
+<!-- LEDGER -->
+<div class="ledger" role="region" aria-label="This experience at a glance">
+  <div class="wrap">
+    <div class="cell"><div class="k">Duration</div><div class="v">Two hours under sail</div></div>
+    <div class="cell"><div class="k">Where</div><div class="v">Cairo, on the Nile</div></div>
+    <div class="cell"><div class="k">Setting</div><div class="v">A private felucca</div></div>
+    <div class="cell"><div class="k">Aboard</div><div class="v">Lunch, with the crew</div></div>
+  </div>
+</div>
+
+<!-- OVERVIEW -->
+<section class="intro">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">The experience</span>
+      <h2 class="display" style="margin-top:1rem">The one quiet place in Cairo is on the water</h2>
+    </div>
+    <div class="body">
+      <p>Cairo is twenty million people, and almost nowhere in it is quiet — except the river running through its middle. A felucca, the small lateen-sailed boat that has worked this Nile for centuries, is the oldest way onto that water, and still the best. For a couple of hours it is yours alone: your own boat, a crew to sail it, and a table set on deck.</p>
+      <p>You are collected from your hotel and brought to the river. The sail goes up, the bank slides away, and the horns and heat of the city soften into the sound of water and canvas. Lunch comes aboard — Egyptian, properly done, with sweets and something cold — and the afternoon is simply the river, the sail, and the great restless city held at a distance.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW THE AFTERNOON UNFOLDS — signature -->
+<section class="unfold">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">How the afternoon unfolds</span>
+      <h2 class="display" style="margin-top:1rem">Off the city, onto the river</h2>
+    </div>
+    <div class="stream">
+      <div class="moment">
+        <div class="when">Beforehand</div>
+        <h3>From your hotel</h3>
+        <p>Collected an hour ahead and driven to the river — the only part of the day you'll spend in Cairo's traffic, and the last of it.</p>
+      </div>
+      <div class="moment">
+        <div class="when">Casting off</div>
+        <h3>Onto the felucca</h3>
+        <p>Your own boat, the crew, the table laid on deck. The sail goes up, fills, and you push off from the bank.</p>
+      </div>
+      <div class="moment">
+        <div class="when">On the water</div>
+        <h3>The city falls away</h3>
+        <p>The noise drops to water and wind, and Cairo becomes a skyline rather than a crowd — bridges, palms, the odd fisherman, the great river carrying you slowly.</p>
+      </div>
+      <div class="moment">
+        <div class="when">Midday</div>
+        <h3>Lunch aboard</h3>
+        <p>An Egyptian lunch brought out as you sail — your choice of meat, chicken or vegetable, with sweets and a cold drink — eaten with the river going by.</p>
+      </div>
+      <div class="moment">
+        <div class="when">Later</div>
+        <h3>The turn for home</h3>
+        <p>The felucca comes about and drifts back, the light a little lower on the water, the city waiting where you left it.</p>
+      </div>
+      <div class="moment">
+        <div class="when">After</div>
+        <h3>Back to your hotel</h3>
+        <p>Set ashore and driven back — a calm couple of hours behind you, in the middle of one of the loudest cities on earth.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT MAKES IT SPECIAL -->
+<section class="ours">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Why the felucca</span>
+      <h2 class="display" style="margin-top:1rem">Small, private, and exactly enough</h2>
+    </div>
+    <div class="grid">
+      <div class="item"><span class="n">I</span><h3>Your own boat</h3><p>Not a seat on a crowded dinner cruiser, but a private felucca, its crew, and the whole deck to yourselves.</p></div>
+      <div class="item"><span class="n">II</span><h3>Quiet in the heart of Cairo</h3><p>The river is the one calm place in a city of twenty million. Two hours on it resets the whole day.</p></div>
+      <div class="item"><span class="n">III</span><h3>Lunch under sail</h3><p>A proper Egyptian lunch aboard — meat, chicken or vegetable, with sweets and cold drinks — eaten on the water as you go.</p></div>
+      <div class="item"><span class="n">IV</span><h3>No Cairo to navigate</h3><p>Private transfers from your hotel and back, both ways. The only traffic you'll meet is the river's.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HONEST NOTE -->
+<section class="know">
+  <div class="wrap">
+    <div class="panel">
+      <span class="eyebrow">Before you book</span>
+      <h2>A city sail, and the better for it</h2>
+      <p>This is a sail in the middle of Cairo, and the city is all around it — bridges, other boats, the skyline, the call to prayer carrying across the water. That contrast, calm river against vast city, is the whole pleasure of it. It is not the empty desert Nile of a dahabiya, and we would not pretend it is.</p>
+      <p>A felucca runs on wind. On a breezy day you sail properly; on a still one you drift gently, and the crew keeps you on the prettiest stretch either way. Both are their own kind of slow, and neither is hurried. It is a couple of hours — a pause, not an expedition — and the food is honest Egyptian home cooking, generous and good rather than haute cuisine.</p>
+      <p>For an occasion — a proposal, a birthday, an anniversary — we can dress the boat with flowers and bring a cake. Tell us, and it will be quietly arranged. And while lunch is the usual choice, the same sail can be taken for breakfast, or as a dinner under the city's lights.</p>
+    </div>
+  </div>
+</section>
+
+<!-- INCLUDED / GOOD TO KNOW -->
+<section class="incl">
+  <div class="wrap">
+    <div>
+      <h3>What it includes</h3>
+      <ul>
+        <li>Private hotel transfers both ways, Cairo or Giza</li>
+        <li>Two hours' private felucca sail, with crew</li>
+        <li>An Egyptian lunch aboard, with dessert</li>
+        <li>Tea, coffee, soft drinks and water</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Good to know</h3>
+      <ul class="note">
+        <li>Around two hours on the water; half a day with transfers</li>
+        <li>Lunch by default; breakfast or dinner on request</li>
+        <li>Meat, chicken or vegetarian — chosen in advance</li>
+        <li>Wind-dependent — a sail or a gentle drift; flowers and cake on request</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- GLIMPSES -->
+<section class="glimpse">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Glimpses</span>
+      <h2 class="display" style="margin-top:1rem">An afternoon, in three frames</h2>
+    </div>
+    <div class="grid">
+      <figure class="frame"><div class="ph"></div><figcaption>The sail against the city</figcaption></figure>
+      <figure class="frame"><div class="ph"></div><figcaption>The table on deck</figcaption></figure>
+      <figure class="frame"><div class="ph"></div><figcaption>The river through Cairo</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- WHERE IT BELONGS -->
+<section class="belongs">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Where it belongs</span>
+      <h2 class="display" style="margin-top:1rem">The quiet hour of a Cairo day</h2>
+    </div>
+    <p class="lead">Cairo is loud, vast and wonderful, and it gives little rest. A felucca lunch is the hour we fold into a Cairo stay to put the river — and a little quiet — back into the day. It sits easily either side of a morning at the Pyramids or the Grand Egyptian Museum.</p>
+    <div class="jgrid">
+      <a class="jcard" href="#">
+        <span class="eyebrow">Destination</span>
+        <h3>Cairo</h3>
+        <p>Four thousand years stacked on one city — the pyramids, the great museum, the old quarters, and the river that runs through the middle of it all.</p>
+        <span class="meta">Lower Egypt · Private</span>
+      </a>
+      <a class="jcard" href="#">
+        <span class="eyebrow">Cultural immersion</span>
+        <h3>Ancient Cairo &amp; Luxor</h3>
+        <p>Cairo and Thebes in eight private days, with room for an hour on the water between the great sites.</p>
+        <span class="meta">8 days · Private only</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="plan">
+  <div class="wrap">
+    <span class="eyebrow">Begin the conversation</span>
+    <h2 class="display" style="margin-top:1.2rem">Take Cairo to the <em>water</em>.</h2>
+    <p>Tell us your dates in Cairo, and we will set the felucca into your day — for lunch, or whichever hour suits you.</p>
+    <a class="btn solid" href="#">Plan your journey</a>
+    <p class="note">We reply within 24 hours</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="logo" href="#">Sillage<small>Égypte</small></a>
+      <p>Private journeys designed around you, guided by experts who know every layer of this country.</p>
+    </div>
+    <div class="col"><h5>Explore</h5><a href="#">Journeys</a><a href="#">Destinations</a><a href="#">Experiences</a><a href="#">Journal</a><a href="#">About</a></div>
+    <div class="col"><h5>Contact</h5><a href="mailto:hello@sillage-egypte.com">hello@sillage-egypte.com</a><a href="tel:+20000000000">+20 000 000 000</a><a href="#">WhatsApp enquiries welcome</a></div>
+    <div class="legal"><span>© 2026 Sillage Égypte. All rights reserved.</span><span>Privacy · Terms</span></div>
+  </div>
+</footer>
+
+</body>
+</html>

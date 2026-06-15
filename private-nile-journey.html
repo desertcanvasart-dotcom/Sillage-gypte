@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Private Nile — Seven Days Under Sail | Sillage Égypte</title>
+<meta name="description" content="Seven days down the Nile aboard a private dahabiya, Aswan to Luxor — temples before the day boats, moorings no schedule allows, an Egyptologist throughout.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --nuit:#101D18;--foret:#18271F;--papyrus:#F4EDDC;--sable:#E9DfC9;
+  --or:#BFA15F;--or-pale:#D9C490;--encre:#262F2A;--eau:#9FB4A9;
+  --hairline-l:rgba(38,47,42,.22);--hairline-d:rgba(191,161,95,.28);
+  --max:1180px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{font-family:'EB Garamond',Georgia,serif;font-size:19px;line-height:1.65;color:var(--encre);background:var(--papyrus);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 6vw}
+.eyebrow{font-family:'Jost',sans-serif;font-weight:400;font-size:.68rem;letter-spacing:.34em;text-transform:uppercase;color:var(--or)}
+.display{font-family:'Marcellus',serif;font-weight:400;line-height:1.08}
+.btn{display:inline-block;font-family:'Jost',sans-serif;font-weight:400;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;padding:1.05rem 2.4rem;text-decoration:none;border:1px solid var(--or);color:var(--or);transition:background .35s,color .35s;cursor:pointer;background:none}
+.btn:hover,.btn:focus-visible{background:var(--or);color:var(--nuit)}
+.btn.solid{background:var(--or);color:var(--nuit)}
+.btn.solid:hover{background:var(--or-pale);border-color:var(--or-pale)}
+:focus-visible{outline:2px solid var(--or);outline-offset:3px}
+
+/* masthead */
+header.masthead{position:absolute;top:0;left:0;right:0;z-index:20}
+.masthead .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:2rem;padding-bottom:2rem}
+.logo{font-family:'Marcellus',serif;font-size:1.25rem;letter-spacing:.42em;text-transform:uppercase;color:var(--papyrus);text-decoration:none}
+.logo small{display:block;font-family:'Jost',sans-serif;font-size:.55rem;letter-spacing:.5em;color:var(--or);margin-top:.3rem}
+nav.main{display:flex;gap:2.6rem;align-items:center}
+nav.main a{font-family:'Jost',sans-serif;font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--papyrus);text-decoration:none;opacity:.85;transition:opacity .3s,color .3s}
+nav.main a:hover{opacity:1;color:var(--or-pale)}
+@media(max-width:860px){nav.main{display:none}}
+
+/* hero */
+.hero{position:relative;min-height:88vh;display:flex;flex-direction:column;justify-content:flex-end;color:var(--papyrus);overflow:hidden;
+  background:radial-gradient(1100px 480px at 75% 108%,rgba(191,161,95,.17),transparent 60%),radial-gradient(820px 400px at 18% 92%,rgba(127,163,150,.10),transparent 65%),linear-gradient(180deg,#0B1512 0%,var(--nuit) 55%,#0C1714 100%)}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:22vh;height:1px;background:linear-gradient(90deg,transparent,var(--or) 18%,var(--or) 82%,transparent);opacity:.55}
+.hero .wrap{position:relative;z-index:2;padding-bottom:11vh}
+.hero .crumb{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--eau);margin-bottom:2rem}
+.hero .crumb a{text-decoration:none;color:var(--eau)} .hero .crumb a:hover{color:var(--or-pale)}
+.hero .kicker{display:block;margin-bottom:1.4rem;font-size:.66rem}
+.hero h1{font-size:clamp(3rem,8.5vw,7rem);letter-spacing:.06em;color:var(--papyrus);animation:rise 1.1s cubic-bezier(.2,.7,.2,1) both}
+.hero p.lede{max-width:30em;margin-top:1.5rem;font-size:1.28rem;line-height:1.55;font-style:italic;color:var(--eau);animation:rise 1.1s .15s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.hero h1,.hero p.lede{animation:none}}
+
+/* ledger */
+.ledger{background:var(--nuit);color:var(--papyrus);border-top:1px solid var(--hairline-d)}
+.ledger .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.ledger .cell{padding:1.7rem 1.4rem;border-left:1px solid var(--hairline-d)}
+.ledger .cell:first-child{border-left:0;padding-left:0}
+.ledger .k{font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--or);margin-bottom:.45rem}
+.ledger .v{font-family:'Marcellus',serif;font-size:1.05rem;letter-spacing:.02em}
+@media(max-width:760px){.ledger .wrap{grid-template-columns:1fr 1fr}.ledger .cell{border-left:0;border-top:1px solid var(--hairline-d);padding-left:0}.ledger .cell:nth-child(-n+2){border-top:0}}
+
+/* sticky bar */
+.journeybar{position:sticky;top:0;z-index:30;background:rgba(16,29,24,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--hairline-d)}
+.journeybar .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:.85rem;padding-bottom:.85rem}
+.journeybar .where{font-family:'Marcellus',serif;color:var(--papyrus);letter-spacing:.16em;text-transform:uppercase;font-size:.8rem}
+.journeybar nav{display:flex;gap:1.7rem}
+.journeybar nav a{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--eau);text-decoration:none}
+.journeybar nav a:hover{color:var(--or-pale)}
+.journeybar .btn{padding:.55rem 1.4rem;font-size:.6rem}
+@media(max-width:980px){.journeybar nav{display:none}}
+
+section{padding:7rem 0}
+.sec-head{margin-bottom:3.2rem}
+.sec-head .eyebrow{display:block;margin-bottom:1rem}
+.sec-head h2{font-size:clamp(1.9rem,3.4vw,2.7rem);letter-spacing:.02em}
+
+/* the journey (overview) */
+.intro .wrap{display:grid;grid-template-columns:5fr 7fr;gap:5rem;align-items:start}
+.intro h2{font-size:clamp(2rem,3.6vw,2.9rem);max-width:8em}
+.intro .body p+p{margin-top:1.3em}
+.intro .body p:first-child::first-letter{font-family:'Marcellus',serif;font-size:3.6em;float:left;line-height:.82;padding:.06em .12em 0 0;color:var(--or)}
+@media(max-width:860px){.intro .wrap{grid-template-columns:1fr;gap:2.5rem}}
+
+/* what makes it different */
+.diff{background:var(--sable)}
+.diff .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:1px solid var(--hairline-l)}
+.diff .item{padding:2.4rem 2.2rem;border-left:1px solid var(--hairline-l);border-top:1px solid var(--hairline-l);background:var(--papyrus)}
+.diff .item:nth-child(-n+2){border-top:0}
+.diff .item:nth-child(odd){border-left:0}
+.diff .item .n{font-family:'Marcellus',serif;font-size:.9rem;color:var(--or);letter-spacing:.1em}
+.diff .item h3{font-family:'Marcellus',serif;font-size:1.3rem;margin:.7rem 0 .6rem;letter-spacing:.02em}
+.diff .item p{font-size:1rem;line-height:1.6;color:#454e48}
+@media(max-width:760px){.diff .grid{grid-template-columns:1fr}.diff .item{border-left:0}.diff .item:nth-child(2){border-top:1px solid var(--hairline-l)}}
+
+/* ── THE RIVER — signature itinerary ─────── */
+.river{background:var(--nuit);color:var(--papyrus)}
+.river .sec-head{text-align:center}
+.river .compass{display:block;margin:0 auto 2.6rem;text-align:center;font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--eau)}
+.river .compass b{color:var(--or)}
+.stream{position:relative;max-width:48rem;margin:0 auto;padding-left:3.2rem}
+.stream::before{content:"";position:absolute;left:9px;top:14px;bottom:14px;width:1px;background:linear-gradient(180deg,transparent,var(--or) 5%,var(--or) 95%,transparent)}
+.day{position:relative;padding:0 0 .4rem}
+.day+.day{margin-top:.2rem}
+.day::before{content:"";position:absolute;left:-3.2rem;top:1.55rem;width:19px;height:19px;border:1px solid var(--or);border-radius:50%;background:var(--nuit);transition:background .3s,box-shadow .3s}
+.day::after{content:"";position:absolute;left:-2.7rem;top:2rem;width:7px;height:7px;border-radius:50%;background:var(--or);opacity:.5;transition:opacity .3s}
+.day[open]::before{box-shadow:0 0 0 4px rgba(191,161,95,.15)}
+.day[open]::after{opacity:1}
+.day summary{cursor:pointer;list-style:none;display:flex;align-items:baseline;gap:1.4rem;padding:1.2rem 0;border-bottom:1px solid var(--hairline-d)}
+.day summary::-webkit-details-marker{display:none}
+.day .dlabel{font-family:'Jost',sans-serif;font-size:.58rem;letter-spacing:.26em;text-transform:uppercase;color:var(--or);white-space:nowrap;padding-top:.35rem}
+.day .dtitle{font-family:'Marcellus',serif;font-size:1.34rem;letter-spacing:.02em;flex:1}
+.day summary .mark{font-family:'EB Garamond',serif;font-size:1.4rem;color:var(--or);transition:transform .3s}
+.day[open] summary .mark{transform:rotate(45deg)}
+.day .dbody{padding:1rem 0 1.6rem;max-width:40em;color:var(--eau);font-size:1.04rem;line-height:1.66}
+.day .dbody .moor{display:block;margin-top:.8rem;font-family:'Jost',sans-serif;font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--or-pale)}
+@media(max-width:560px){.stream{padding-left:2.4rem}.day::before{left:-2.4rem}.day::after{left:-1.95rem}.day summary{flex-wrap:wrap;gap:.4rem}}
+
+/* good to know — honest caveat */
+.know{background:var(--papyrus)}
+.know .wrap{max-width:50rem}
+.know .panel{border:1px solid var(--or);padding:3rem 3rem 2.6rem;position:relative}
+.know .panel::before{content:"";position:absolute;top:0;left:0;width:42px;height:42px;border-top:2px solid var(--or);border-left:2px solid var(--or)}
+.know .eyebrow{display:block;margin-bottom:1rem}
+.know h2{font-family:'Marcellus',serif;font-size:1.7rem;margin-bottom:1.2rem;letter-spacing:.02em}
+.know p+p{margin-top:.9em}
+.know p{font-size:1.04rem;color:#3f4842}
+
+/* included */
+.incl .wrap{display:grid;grid-template-columns:1fr 1fr;gap:5rem}
+.incl h3{font-family:'Marcellus',serif;font-size:1.4rem;margin-bottom:1.4rem;letter-spacing:.02em}
+.incl ul{list-style:none}
+.incl li{padding:.85rem 0;border-top:1px solid var(--hairline-l);font-size:1.02rem;display:flex;gap:.9rem;align-items:baseline}
+.incl li::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--or);margin-top:.55rem}
+.incl .out li::before{background:none;border:1px solid #9aa39c}
+.incl .out li{color:#6a7069}
+@media(max-width:760px){.incl .wrap{grid-template-columns:1fr;gap:3rem}}
+
+/* glimpses */
+.glimpse{background:var(--sable)}
+.glimpse .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+.frame{aspect-ratio:3/4;position:relative;overflow:hidden;background:#1c2620}
+.frame .ph{position:absolute;inset:0}
+.frame:nth-child(1) .ph{background:radial-gradient(420px 300px at 50% 65%,rgba(191,161,95,.32),transparent 70%),linear-gradient(165deg,#23332a,#101d18)}
+.frame:nth-child(2) .ph{background:radial-gradient(420px 300px at 45% 35%,rgba(127,163,150,.3),transparent 70%),linear-gradient(195deg,#1d2b33,#0d1418)}
+.frame:nth-child(3) .ph{background:radial-gradient(420px 300px at 55% 40%,rgba(217,196,144,.3),transparent 70%),linear-gradient(160deg,#2a2417,#14110a)}
+.frame figcaption{position:absolute;left:0;right:0;bottom:0;padding:1rem 1.2rem;font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--or-pale);background:linear-gradient(transparent,rgba(11,19,16,.82))}
+@media(max-width:760px){.glimpse .grid{grid-template-columns:1fr}}
+
+/* guide */
+.guide{background:var(--nuit);color:var(--papyrus)}
+.guide .wrap{display:grid;grid-template-columns:auto 1fr;gap:3rem;align-items:center;max-width:60rem}
+.guide .avatar{width:120px;height:120px;border-radius:50%;border:1px solid var(--or);display:flex;align-items:center;justify-content:center;font-family:'Marcellus',serif;font-size:2rem;color:var(--or);letter-spacing:.05em;flex:none}
+.guide .eyebrow{display:block;margin-bottom:.8rem}
+.guide h3{font-family:'Marcellus',serif;font-size:1.7rem;letter-spacing:.02em;margin-bottom:.3rem}
+.guide .role{font-style:italic;color:var(--eau);margin-bottom:1.1rem}
+.guide p{color:var(--eau);font-size:1.04rem;max-width:38em}
+@media(max-width:680px){.guide .wrap{grid-template-columns:1fr;text-align:center;gap:1.6rem}.guide .avatar{margin:0 auto}.guide p{margin:0 auto}}
+
+/* related */
+.related .sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:2rem;flex-wrap:wrap}
+.related .all{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;color:var(--or);text-decoration:none}
+.jgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.jcard{border:1px solid var(--hairline-l);padding:2.4rem 2rem 2.2rem;display:flex;flex-direction:column;min-height:20rem;background:var(--papyrus);text-decoration:none;color:var(--encre);transition:border-color .35s,transform .35s}
+.jcard:hover{border-color:var(--or);transform:translateY(-4px)}
+.jcard .eyebrow{font-size:.58rem;margin-bottom:1.2rem}
+.jcard h3{font-family:'Marcellus',serif;font-size:1.45rem;letter-spacing:.02em;margin-bottom:.8rem}
+.jcard p{font-size:.98rem;color:#4a534d;line-height:1.6;flex:1}
+.jcard .meta{margin-top:1.8rem;padding-top:1.1rem;border-top:1px solid var(--hairline-l);font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--or)}
+@media(max-width:860px){.jgrid{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.jcard:hover,.day:hover{transform:none}}
+
+/* cta */
+.cta{background:linear-gradient(180deg,var(--nuit),#0B1512);color:var(--papyrus);text-align:center;padding:8rem 0}
+.cta h2{font-size:clamp(2.2rem,5vw,3.6rem);letter-spacing:.04em}
+.cta h2 em{color:var(--or);font-style:italic;font-family:'EB Garamond',serif}
+.cta p{max-width:34em;margin:1.4rem auto 2.8rem;color:var(--eau)}
+.cta .note{margin-top:1.6rem;font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--or)}
+
+/* footer */
+footer{background:#0B1512;color:var(--eau);padding:4.5rem 0 3rem;border-top:1px solid var(--hairline-d)}
+footer .wrap{display:flex;justify-content:space-between;gap:3rem;flex-wrap:wrap}
+footer .logo{color:var(--papyrus);font-size:1rem}
+footer p{font-size:.85rem;max-width:24em;margin-top:1rem}
+footer .col h5{font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--or);margin-bottom:1rem}
+footer .col a{display:block;font-size:.92rem;text-decoration:none;color:var(--eau);margin-bottom:.5rem}
+footer .col a:hover{color:var(--or-pale)}
+footer .legal{width:100%;margin-top:3rem;padding-top:1.4rem;border-top:1px solid rgba(191,161,95,.14);font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="logo" href="#">Sillage<small>Égypte</small></a>
+    <nav class="main" aria-label="Primary">
+      <a href="#">Journeys</a><a href="#">Destinations</a><a href="#">The Dahabiya</a><a href="#">Journal</a>
+      <a class="btn" style="padding:.7rem 1.6rem;font-size:.62rem" href="#plan">Plan your journey</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <p class="crumb"><a href="#">Home</a> &nbsp;/&nbsp; <a href="#">Journeys</a> &nbsp;/&nbsp; The Private Nile</p>
+    <span class="eyebrow kicker">Nile journey · Aswan to Luxor</span>
+    <h1 class="display">The Private Nile</h1>
+    <p class="lede">Seven days down the river under sail, at the pace of the wind — and yours.</p>
+  </div>
+</div>
+
+<!-- LEDGER -->
+<div class="ledger" role="region" aria-label="This journey at a glance">
+  <div class="wrap">
+    <div class="cell"><div class="k">Duration</div><div class="v">7 days</div></div>
+    <div class="cell"><div class="k">Route</div><div class="v">Aswan → Luxor</div></div>
+    <div class="cell"><div class="k">Style</div><div class="v">Private dahabiya</div></div>
+    <div class="cell"><div class="k">Pace</div><div class="v">Tailored to you</div></div>
+  </div>
+</div>
+
+<!-- STICKY BAR -->
+<div class="journeybar">
+  <div class="wrap">
+    <span class="where">The Private Nile</span>
+    <nav aria-label="Page sections">
+      <a href="#journey">The Journey</a><a href="#different">Why It Differs</a><a href="#river">Day by Day</a><a href="#included">Included</a><a href="#guide">Your Guide</a>
+    </nav>
+    <a class="btn solid" href="#plan">Plan this journey</a>
+  </div>
+</div>
+
+<!-- THE JOURNEY -->
+<section class="intro" id="journey">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">The journey</span>
+      <h2 class="display" style="margin-top:1rem">A river the convoys never see</h2>
+    </div>
+    <div class="body">
+      <p>Most Nile cruises move in convoy — a hundred and fifty cabins to a hull, the same temples at the same hour as a dozen other ships. The Private Nile moves at the pace of the wind and your curiosity. You sail a private dahabiya, the shallow-draught sailing boat that carried travellers up this river before the steamer existed, crewed by men who have lived on the Nile their whole lives.</p>
+      <p>It is the small scale that changes everything. A dahabiya can moor where the great ships cannot — at a sandbank with no name, off a village with no dock, below a temple before the day boats have left their berths. You reach Kom Ombo at dusk when it has emptied, Edfu at dawn before it fills. And an Egyptologist sails with you the whole way, so the temples are read, not merely seen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT MAKES IT DIFFERENT -->
+<section class="diff" id="different">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Why it differs</span>
+      <h2 class="display" style="margin-top:1rem">Four things a convoy can't give you</h2>
+    </div>
+    <div class="grid">
+      <div class="item"><span class="n">I</span><h3>Your own dahabiya</h3><p>Not a cabin on a cruise ship — the whole boat, with a dedicated crew and chef, sailing your itinerary and no one else's.</p></div>
+      <div class="item"><span class="n">II</span><h3>Temples off the clock</h3><p>Philae, Kom Ombo and Edfu timed to the hours the day boats aren't there — early, late, and sometimes alone.</p></div>
+      <div class="item"><span class="n">III</span><h3>Moorings no schedule allows</h3><p>Sandbanks, islands and village landings reserved for you — the nights are as much the journey as the days.</p></div>
+      <div class="item"><span class="n">IV</span><h3>An Egyptologist throughout</h3><p>The same expert from embarkation to Karnak, who can actually read the walls, not a guide who meets you at the gate.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE RIVER — signature day-by-day -->
+<section class="river" id="river">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Day by day</span>
+      <h2 class="display" style="margin-top:1rem">Downstream</h2>
+    </div>
+    <p class="compass">The Nile flows north — so the journey runs <b>downstream</b>, Aswan to Luxor, the current with you the whole way.</p>
+    <div class="stream">
+
+      <details class="day" open>
+        <summary><span class="dlabel">Day 1</span><span class="dtitle">Aswan — embarkation</span><span class="mark">+</span></summary>
+        <div class="dbody">Met at the airport and brought to your dahabiya. As the city lights come on, you cast off for an evening sail past Elephantine Island — the first hour on the water, and already the convoys are somewhere else.<span class="moor">Moored off Aswan</span></div>
+      </details>
+
+      <details class="day">
+        <summary><span class="dlabel">Day 2</span><span class="dtitle">Philae &amp; the southern temples</span><span class="mark">+</span></summary>
+        <div class="dbody">The Temple of Isis on its island, reached by private launch before the day boats arrive. Then back to the river and the long, quiet sail north, the Western Desert on one bank and the green strip of cultivation on the other.<span class="moor">Moored below Gebel el-Silsila</span></div>
+      </details>
+
+      <details class="day">
+        <summary><span class="dlabel">Day 3</span><span class="dtitle">Kom Ombo at dusk</span><span class="mark">+</span></summary>
+        <div class="dbody">The double temple to Sobek and Horus sits right at the water's edge. We arrange it for the end of the day, when the cruise ships have gone and the stone turns gold — the way it was meant to be seen.<span class="moor">Moored at a Nile sandbank</span></div>
+      </details>
+
+      <details class="day">
+        <summary><span class="dlabel">Day 4</span><span class="dtitle">Edfu at first light</span><span class="mark">+</span></summary>
+        <div class="dbody">The Temple of Horus — the most completely preserved temple in Egypt — entered at opening, while the colour is still cool and the courtyards are empty. The afternoon is yours: read on deck, swim off the boat, watch the bank slide past.<span class="moor">Moored near Edfu</span></div>
+      </details>
+
+      <details class="day">
+        <summary><span class="dlabel">Day 5</span><span class="dtitle">Esna &amp; the river villages</span><span class="mark">+</span></summary>
+        <div class="dbody">Through the Esna lock — the one stretch every boat must share — and into the gentler river beyond. We moor by villages most travellers only glimpse from a top deck, and you step ashore where the day boats never stop.<span class="moor">Moored off a river village</span></div>
+      </details>
+
+      <details class="day">
+        <summary><span class="dlabel">Day 6</span><span class="dtitle">Luxor — the West Bank</span><span class="mark">+</span></summary>
+        <div class="dbody">Arrival at Thebes. We cross to the necropolis for the Valley of the Kings at opening and Hatshepsut's temple against its cliff — the tombs read properly, with time, before the heat and the coaches.<span class="moor">Moored at Luxor</span></div>
+      </details>
+
+      <details class="day">
+        <summary><span class="dlabel">Day 7</span><span class="dtitle">Karnak &amp; departure</span><span class="mark">+</span></summary>
+        <div class="dbody">Karnak in the clear light of early morning — the Hypostyle Hall before the day fills it. Then a private transfer to the airport, the river behind you and the journey complete.<span class="moor">Disembark · Luxor</span></div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- GOOD TO KNOW — honest caveat -->
+<section class="know">
+  <div class="wrap">
+    <div class="panel">
+      <span class="eyebrow">Before you book</span>
+      <h2>This is a slow journey, on purpose</h2>
+      <p>A dahabiya sails when the wind allows, which means the river sets part of the rhythm, not the timetable. Some afternoons are long and unhurried — deck chairs, a book, the bank passing at walking pace. If you want to tick every site at speed, a faster itinerary suits you better, and we will tell you so.</p>
+      <p>But if seven slow days on the water — temples read carefully, nights under a sky with no city in it — is the holiday you're after, there is nothing in Egypt quite like it. We would rather you arrive knowing exactly which one this is.</p>
+    </div>
+  </div>
+</section>
+
+<!-- INCLUDED -->
+<section class="incl" id="included">
+  <div class="wrap">
+    <div>
+      <h3>What's included</h3>
+      <ul>
+        <li>Private dahabiya with dedicated crew and onboard chef</li>
+        <li>Certified Egyptologist throughout the journey</li>
+        <li>All site entry and special-access fees</li>
+        <li>All meals and soft drinks aboard</li>
+        <li>Private airport transfers, door to deck</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Not included</h3>
+      <ul class="out">
+        <li>International and domestic flights (we arrange them; they're billed at cost)</li>
+        <li>Egypt entry visa</li>
+        <li>Gratuities for crew and guide, at your discretion</li>
+        <li>Travel insurance — required, and we'll point you to it</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- GLIMPSES -->
+<section class="glimpse">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Glimpses</span>
+      <h2 class="display" style="margin-top:1rem">Seven days, three frames</h2>
+    </div>
+    <div class="grid">
+      <figure class="frame"><div class="ph"></div><figcaption>The dahabiya under sail</figcaption></figure>
+      <figure class="frame"><div class="ph"></div><figcaption>Kom Ombo at dusk</figcaption></figure>
+      <figure class="frame"><div class="ph"></div><figcaption>A sandbank mooring</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDE -->
+<section class="guide" id="guide">
+  <div class="wrap">
+    <div class="avatar">KA</div>
+    <div>
+      <span class="eyebrow">Your guide</span>
+      <h3>Dr. Khaled Amin</h3>
+      <p class="role">Senior Egyptologist &amp; Journey Designer</p>
+      <p>A PhD in archaeology from Cairo University and twenty-two years leading private expeditions through the Valley of the Kings, Luxor, and the Western Desert. A specialist in New Kingdom funerary architecture — and the person who designed this itinerary mooring by mooring.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="related">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Related journeys</span><h2 class="display" style="margin-top:1rem">If this one moves you</h2></div>
+      <a class="all" href="#">All journeys →</a>
+    </div>
+    <div class="jgrid">
+      <a class="jcard" href="#"><span class="eyebrow">Cultural immersion</span><h3>Ancient Cairo &amp; Luxor</h3><p>Pyramids before the crowds and the Valley of the Kings with an Egyptologist who has spent twenty years there. Cairo as it lives and breathes.</p><span class="meta">8 days · Private only</span></a>
+      <a class="jcard" href="#"><span class="eyebrow">Deep south</span><h3>Nubia &amp; the South</h3><p>Abu Simbel at sunrise, the temples of Lake Nasser, and the colour and music of Nubian culture along the southern river.</p><span class="meta">6 days · Private only</span></a>
+      <a class="jcard" href="#"><span class="eyebrow">Grand journey</span><h3>The Complete Egypt</h3><p>Fourteen days from Cairo to Abu Simbel — the pyramids, the Nile under sail, the Valley of the Kings, and the deep south.</p><span class="meta">14 days · Private only</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="plan">
+  <div class="wrap">
+    <span class="eyebrow">Begin the conversation</span>
+    <h2 class="display" style="margin-top:1.2rem">Sail the Nile, <em>properly</em>.</h2>
+    <p>Tell us your dates and what matters most to you. A journey designer will shape a private proposal — with no obligation.</p>
+    <a class="btn solid" href="#">Plan this journey</a>
+    <p class="note">We reply within 24 hours</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="logo" href="#">Sillage<small>Égypte</small></a>
+      <p>Private journeys designed around you, guided by experts who know every layer of this country.</p>
+    </div>
+    <div class="col"><h5>Explore</h5><a href="#">Journeys</a><a href="#">Destinations</a><a href="#">The Dahabiya</a><a href="#">Journal</a><a href="#">About</a></div>
+    <div class="col"><h5>Contact</h5><a href="mailto:hello@sillage-egypte.com">hello@sillage-egypte.com</a><a href="tel:+20000000000">+20 000 000 000</a><a href="#">WhatsApp enquiries welcome</a></div>
+    <div class="legal"><span>© 2026 Sillage Égypte. All rights reserved.</span><span>Privacy · Terms</span></div>
+  </div>
+</footer>
+
+</body>
+</html>

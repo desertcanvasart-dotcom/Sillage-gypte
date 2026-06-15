@@ -1,0 +1,41 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   WARM EXPERIENCE DETAIL (scoped under .warm). Reuses the warm system
+   (whero, ledger, intro, river/stream, diff, know, incl, glimpse, cta,
+   jcard) and adds only the moment timeline and the "where it belongs" block.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* "How it unfolds" — static timeline of moments (sits on the .stream line) */
+.warm .moment { position: relative; padding: 0 0 2.6rem; }
+.warm .moment:last-child { padding-bottom: 0; }
+.warm .moment::before {
+  content: ""; position: absolute; left: -3.2rem; top: 0.45rem;
+  width: 19px; height: 19px; border: 1px solid var(--or); border-radius: 50%; background: var(--nuit);
+}
+.warm .moment::after {
+  content: ""; position: absolute; left: -2.7rem; top: 0.95rem;
+  width: 7px; height: 7px; border-radius: 50%; background: var(--or);
+}
+.warm .moment .when {
+  font-family: var(--font-jost), sans-serif; font-size: 0.58rem; letter-spacing: 0.26em;
+  text-transform: uppercase; color: var(--or); margin-bottom: 0.5rem;
+}
+.warm .moment h3 { font-family: var(--font-marcellus), serif; font-size: 1.4rem; letter-spacing: 0.02em; margin-bottom: 0.6rem; }
+.warm .moment p { color: var(--eau); font-size: 1.04rem; line-height: 1.66; max-width: 34em; }
+@media (max-width: 560px) {
+  .warm .moment::before { left: -2.4rem; }
+  .warm .moment::after { left: -1.95rem; }
+}
+
+/* "Where it belongs" — closing related cards, two-up on a dark band */
+.warm .belongs { background: var(--nuit); color: var(--papyrus); }
+.warm .belongs .sec-head { text-align: center; }
+.warm .belongs-lead { text-align: center; max-width: 38em; margin: 0 auto 3rem; color: var(--eau); font-style: italic; }
+.warm .belongs .jgrid { grid-template-columns: repeat(2, 1fr); max-width: 46rem; margin: 0 auto; }
+.warm .belongs .jcard { border: 1px solid var(--hairline-d); background: var(--foret); color: var(--papyrus); min-height: 16rem; }
+.warm .belongs .jcard p { color: var(--eau); }
+.warm .belongs .jcard .meta { border-top: 1px solid var(--hairline-d); color: var(--or-pale); }
+@media (max-width: 680px) { .warm .belongs .jgrid { grid-template-columns: 1fr; } }
+
+/* the "good to know" list (second column of .incl) — outline bullets */
+.warm .incl .note li { color: #5a635d; }
+.warm .incl .note li::before { background: none; border: 1px solid #9aa39c; }

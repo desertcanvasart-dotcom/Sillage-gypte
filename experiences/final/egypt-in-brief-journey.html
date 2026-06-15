@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Egypt in Brief — 6 Days | Sillage Égypte</title>
+<meta name="description" content="Six private days for the two essentials — Cairo and Luxor — seen properly, without the rush of a short trip. The pyramids, the museum, and the temples and royal tombs of Thebes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<!--
+  ============================================================
+  HOW TO ADD YOUR IMAGES
+  Replace each placeholder gradient in :root below with your own
+  licensed photograph, e.g.  --img-hero: url('images/karnak-dusk.jpg');
+  Recommended shots:
+      --img-hero   the Pyramids or Karnak at dusk (cover)
+      --img-days   a temple / the Nile (sits darkened behind the day list)
+      --img-cta    the Pyramids at sunset (closing full-bleed)
+      --img-h1     Four Seasons Cairo / the Nile
+      --img-h2     the Winter Palace, Luxor — gardens and the Nile
+  ============================================================
+-->
+<style>
+:root{
+  --nuit:#101D18;--foret:#18271F;--papyrus:#F4EDDC;--sable:#E9DfC9;
+  --or:#BFA15F;--or-pale:#D9C490;--encre:#262F2A;--eau:#9FB4A9;
+  --hairline-l:rgba(38,47,42,.22);--hairline-d:rgba(191,161,95,.28);
+  --max:1180px;
+
+  /* ---- IMAGE SLOTS (swap each for url('…')) ---- */
+  --img-hero:radial-gradient(1200px 700px at 68% 18%,rgba(191,141,70,.55),transparent 60%),radial-gradient(900px 600px at 18% 82%,rgba(120,150,150,.30),transparent 60%),linear-gradient(160deg,#1a1408 0%,#13110c 45%,#0b1512 100%);
+  --img-days:radial-gradient(900px 600px at 30% 20%,rgba(127,163,150,.25),transparent 60%),radial-gradient(1000px 700px at 80% 90%,rgba(191,161,95,.22),transparent 60%),linear-gradient(160deg,#0d1a16,#0b1512);
+  --img-cta:radial-gradient(1100px 600px at 50% 30%,rgba(196,140,70,.5),transparent 62%),linear-gradient(180deg,#160f08,#0b1512);
+  --img-h1:radial-gradient(300px 220px at 50% 40%,rgba(191,161,95,.5),transparent 70%),linear-gradient(160deg,#22271b,#0d1418);
+  --img-h2:radial-gradient(300px 220px at 50% 40%,rgba(159,180,169,.5),transparent 70%),linear-gradient(160deg,#23332a,#101d18);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{font-family:'EB Garamond',Georgia,serif;font-size:19px;line-height:1.65;color:var(--encre);background:var(--papyrus);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 6vw}
+.eyebrow{font-family:'Jost',sans-serif;font-weight:400;font-size:.68rem;letter-spacing:.34em;text-transform:uppercase;color:var(--or)}
+.display{font-family:'Marcellus',serif;font-weight:400;line-height:1.08}
+.btn{display:inline-block;font-family:'Jost',sans-serif;font-weight:400;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;padding:1.05rem 2.4rem;text-decoration:none;border:1px solid var(--or);color:var(--or);transition:background .35s,color .35s;cursor:pointer;background:none}
+.btn:hover,.btn:focus-visible{background:var(--or);color:var(--nuit)}
+.btn.solid{background:var(--or);color:var(--nuit)}
+.btn.solid:hover{background:var(--or-pale);border-color:var(--or-pale)}
+.btn.light{border-color:var(--papyrus);color:var(--papyrus)}
+.btn.light:hover{background:var(--papyrus);color:var(--nuit)}
+:focus-visible{outline:2px solid var(--or);outline-offset:3px}
+
+header.masthead{position:absolute;top:0;left:0;right:0;z-index:20}
+.masthead .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:2rem;padding-bottom:2rem}
+.logo{font-family:'Marcellus',serif;font-size:1.3rem;letter-spacing:.42em;text-transform:uppercase;color:var(--papyrus);text-decoration:none}
+.logo small{display:block;font-family:'Jost',sans-serif;font-size:.55rem;letter-spacing:.5em;color:var(--or);margin-top:.3rem}
+nav.main{display:flex;gap:2.6rem;align-items:center}
+nav.main a{font-family:'Jost',sans-serif;font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--papyrus);text-decoration:none;opacity:.9;transition:opacity .3s,color .3s;text-shadow:0 1px 12px rgba(0,0,0,.4)}
+nav.main a:hover{opacity:1;color:var(--or-pale)}
+@media(max-width:980px){nav.main a:not(.btn){display:none}}
+
+/* ── hero — full-bleed image ── */
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;color:var(--papyrus);overflow:hidden;
+  background-image:linear-gradient(180deg,rgba(11,21,18,.35) 0%,rgba(11,21,18,.12) 38%,rgba(11,21,18,.55) 72%,rgba(12,23,20,.95) 100%),var(--img-hero);
+  background-size:cover;background-position:center}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:22vh;height:1px;background:linear-gradient(90deg,transparent,var(--or) 18%,var(--or) 82%,transparent);opacity:.55}
+.hero .wrap{position:relative;z-index:2;padding-bottom:10vh}
+.hero .crumb{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--eau);margin-bottom:2rem}
+.hero .crumb a{text-decoration:none;color:var(--eau)} .hero .crumb a:hover{color:var(--or-pale)}
+.hero .kicker{display:block;margin-bottom:1.4rem;font-size:.66rem}
+.hero h1{font-size:clamp(3rem,8.5vw,7rem);letter-spacing:.04em;color:var(--papyrus);text-shadow:0 2px 40px rgba(0,0,0,.45);animation:rise 1.1s cubic-bezier(.2,.7,.2,1) both}
+.hero p.lede{max-width:33em;margin-top:1.5rem;font-size:1.28rem;line-height:1.55;font-style:italic;color:var(--papyrus);opacity:.92;text-shadow:0 1px 24px rgba(0,0,0,.5);animation:rise 1.1s .15s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.hero h1,.hero p.lede{animation:none}}
+
+/* ledger */
+.ledger{background:var(--nuit);color:var(--papyrus);border-top:1px solid var(--hairline-d)}
+.ledger .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.ledger .cell{padding:1.7rem 1.4rem;border-left:1px solid var(--hairline-d)}
+.ledger .cell:first-child{border-left:0;padding-left:0}
+.ledger .k{font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--or);margin-bottom:.45rem}
+.ledger .v{font-family:'Marcellus',serif;font-size:1.05rem;letter-spacing:.02em}
+@media(max-width:760px){.ledger .wrap{grid-template-columns:1fr 1fr}.ledger .cell{border-left:0;border-top:1px solid var(--hairline-d);padding-left:0}.ledger .cell:nth-child(-n+2){border-top:0}}
+
+/* sticky bar */
+.journeybar{position:sticky;top:0;z-index:30;background:rgba(16,29,24,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--hairline-d)}
+.journeybar .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:.85rem;padding-bottom:.85rem}
+.journeybar .where{font-family:'Marcellus',serif;color:var(--papyrus);letter-spacing:.16em;text-transform:uppercase;font-size:.8rem}
+.journeybar nav{display:flex;gap:1.7rem}
+.journeybar nav a{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--eau);text-decoration:none}
+.journeybar nav a:hover{color:var(--or-pale)}
+.journeybar .btn{padding:.55rem 1.4rem;font-size:.6rem}
+@media(max-width:1040px){.journeybar nav{display:none}}
+
+section{padding:7rem 0}
+.sec-head{margin-bottom:3.2rem}
+.sec-head .eyebrow{display:block;margin-bottom:1rem}
+.sec-head h2{font-size:clamp(1.9rem,3.4vw,2.7rem);letter-spacing:.02em}
+
+/* overview */
+.intro{background:var(--papyrus)}
+.intro .wrap{display:grid;grid-template-columns:5fr 7fr;gap:5rem;align-items:start}
+.intro h2{font-size:clamp(2rem,3.6vw,2.9rem);max-width:9em}
+.intro .body p+p{margin-top:1.3em}
+.intro .body p:first-child::first-letter{font-family:'Marcellus',serif;font-size:3.6em;float:left;line-height:.82;padding:.06em .12em 0 0;color:var(--or)}
+@media(max-width:860px){.intro .wrap{grid-template-columns:1fr;gap:2.5rem}}
+
+/* ── an idea, made yours ── */
+.yours{background:var(--papyrus);padding:0 0 6.5rem}
+.yours .wrap{max-width:42rem;text-align:center;border-top:1px solid var(--hairline-l);padding-top:4.5rem}
+.yours .rule{display:block;width:58px;height:1px;background:var(--or);margin:0 auto 1.7rem}
+.yours .eyebrow{display:block;margin-bottom:1.3rem}
+.yours .line{font-family:'Marcellus',serif;font-size:clamp(1.5rem,3.1vw,2.15rem);line-height:1.22;letter-spacing:.01em;color:var(--encre)}
+.yours .sub{margin:1.4rem auto 2.3rem;max-width:34em;color:#4a534d;font-size:1.05rem}
+.river .frame{text-align:center;font-style:italic;color:var(--eau);font-size:1.02rem;margin:0 auto 1.2rem}
+
+/* ── day by day — image background, darkened ── */
+.river{position:relative;color:var(--papyrus);
+  background-image:linear-gradient(rgba(13,22,19,.93),rgba(11,21,18,.95)),var(--img-days);
+  background-size:cover;background-position:center}
+.river .sec-head{text-align:center}
+.river .compass{display:block;margin:0 auto 2.6rem;text-align:center;font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--eau)}
+.river .compass b{color:var(--or)}
+.stream{position:relative;max-width:48rem;margin:0 auto;padding-left:3.2rem}
+.stream::before{content:"";position:absolute;left:9px;top:14px;bottom:14px;width:1px;background:linear-gradient(180deg,transparent,var(--or) 4%,var(--or) 96%,transparent)}
+.day{position:relative;padding:0 0 .4rem}
+.day+.day{margin-top:.2rem}
+.day::before{content:"";position:absolute;left:-3.2rem;top:1.55rem;width:19px;height:19px;border:1px solid var(--or);border-radius:50%;background:#0d1916;transition:box-shadow .3s}
+.day::after{content:"";position:absolute;left:-2.7rem;top:2rem;width:7px;height:7px;border-radius:50%;background:var(--or);opacity:.5;transition:opacity .3s}
+.day[open]::before{box-shadow:0 0 0 4px rgba(191,161,95,.15)}
+.day[open]::after{opacity:1}
+.day summary{cursor:pointer;list-style:none;display:flex;align-items:baseline;gap:1.4rem;padding:1.2rem 0;border-bottom:1px solid var(--hairline-d)}
+.day summary::-webkit-details-marker{display:none}
+.day .dlabel{font-family:'Jost',sans-serif;font-size:.58rem;letter-spacing:.26em;text-transform:uppercase;color:var(--or);white-space:nowrap;padding-top:.35rem;min-width:3.4rem}
+.day .dtitle{font-family:'Marcellus',serif;font-size:1.28rem;letter-spacing:.02em;flex:1}
+.day summary .mark{font-family:'EB Garamond',serif;font-size:1.4rem;color:var(--or);transition:transform .3s}
+.day[open] summary .mark{transform:rotate(45deg)}
+.day .dbody{padding:1rem 0 1.6rem;max-width:42em;color:var(--eau);font-size:1.04rem;line-height:1.66}
+.day .dbody .stayline{display:block;margin-top:.8rem;font-family:'Jost',sans-serif;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--or-pale)}
+@media(max-width:560px){.stream{padding-left:2.4rem}.day::before{left:-2.4rem}.day::after{left:-1.95rem}.day summary{flex-wrap:wrap;gap:.4rem}}
+
+/* ── where you stay — photo cards ── */
+.stay{background:var(--sable)}
+.stay .sec-head{text-align:center}
+.stay .lead{text-align:center;max-width:40em;margin:0 auto 3.2rem;color:#5a635d;font-style:italic}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.scard{background:var(--papyrus);border:1px solid var(--hairline-l);display:flex;flex-direction:column;overflow:hidden;transition:border-color .35s,transform .35s}
+.scard:hover{border-color:var(--or);transform:translateY(-3px)}
+.scard .photo{aspect-ratio:16/10;background-size:cover;background-position:center;position:relative}
+.scard .photo .where{position:absolute;left:1rem;bottom:.8rem;font-family:'Jost',sans-serif;font-size:.56rem;letter-spacing:.24em;text-transform:uppercase;color:var(--papyrus);padding:.3rem .2rem 0;text-shadow:0 1px 8px rgba(0,0,0,.6)}
+.scard .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(11,19,16,.55))}
+.scard .body{padding:1.7rem 1.6rem;display:flex;flex-direction:column;flex:1}
+.scard h3{font-family:'Marcellus',serif;font-size:1.26rem;letter-spacing:.02em;margin-bottom:.7rem}
+.scard p{font-size:.96rem;line-height:1.58;color:#454e48;flex:1}
+.scard .nights{margin-top:1.2rem;padding-top:.9rem;border-top:1px solid var(--hairline-l);font-family:'Jost',sans-serif;font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:#6a7069}
+.scard.summary{background:var(--nuit);color:var(--papyrus);justify-content:center;text-align:center;padding:2.4rem 1.8rem}
+.scard.summary h3{color:var(--papyrus)} .scard.summary p{color:var(--eau)}
+.scard .photo.p1{background-image:var(--img-h1)} .scard .photo.p2{background-image:var(--img-h2)}
+@media(max-width:860px){.sgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.sgrid{grid-template-columns:1fr}}
+
+/* included */
+.incl{background:var(--papyrus)}
+.incl .wrap{display:grid;grid-template-columns:1fr 1fr;gap:5rem}
+.incl h3{font-family:'Marcellus',serif;font-size:1.4rem;margin-bottom:1.4rem;letter-spacing:.02em}
+.incl ul{list-style:none}
+.incl li{padding:.85rem 0;border-top:1px solid var(--hairline-l);font-size:1.02rem;display:flex;gap:.9rem;align-items:baseline}
+.incl li::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--or);margin-top:.55rem}
+.incl .out li::before{background:none;border:1px solid #9aa39c}
+.incl .out li{color:#6a7069}
+@media(max-width:760px){.incl .wrap{grid-template-columns:1fr;gap:3rem}}
+
+/* before you book */
+.know{background:var(--sable)}
+.know .wrap{max-width:50rem}
+.know .panel{border:1px solid var(--or);padding:3rem 3rem 2.6rem;position:relative;background:var(--papyrus)}
+.know .panel::before{content:"";position:absolute;top:0;left:0;width:42px;height:42px;border-top:2px solid var(--or);border-left:2px solid var(--or)}
+.know .eyebrow{display:block;margin-bottom:1rem}
+.know h2{font-family:'Marcellus',serif;font-size:1.7rem;margin-bottom:1.2rem;letter-spacing:.02em}
+.know p+p{margin-top:.9em}
+.know p{font-size:1.04rem;color:#3f4842}
+
+/* ── cta — full-bleed image ── */
+.cta{position:relative;color:var(--papyrus);text-align:center;padding:9rem 0;
+  background-image:linear-gradient(180deg,rgba(11,21,18,.7),rgba(11,21,18,.82)),var(--img-cta);
+  background-size:cover;background-position:center}
+.cta h2{font-size:clamp(2.2rem,5vw,3.6rem);letter-spacing:.04em;text-shadow:0 2px 30px rgba(0,0,0,.5)}
+.cta h2 em{color:var(--or-pale);font-style:italic;font-family:'EB Garamond',serif}
+.cta p{max-width:34em;margin:1.4rem auto 2.8rem;color:var(--papyrus);opacity:.9;text-shadow:0 1px 18px rgba(0,0,0,.5)}
+.cta .note{margin-top:1.6rem;font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--or-pale)}
+
+footer{background:#0B1512;color:var(--eau);padding:4.5rem 0 3rem;border-top:1px solid var(--hairline-d)}
+footer .wrap{display:flex;justify-content:space-between;gap:3rem;flex-wrap:wrap}
+footer .logo{color:var(--papyrus);font-size:1.05rem}
+footer p{font-size:.85rem;max-width:24em;margin-top:1rem}
+footer .col h5{font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--or);margin-bottom:1rem}
+footer .col a{display:block;font-size:.92rem;text-decoration:none;color:var(--eau);margin-bottom:.5rem}
+footer .col a:hover{color:var(--or-pale)}
+footer .legal{width:100%;margin-top:3rem;padding-top:1.4rem;border-top:1px solid rgba(191,161,95,.14);font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="logo" href="#">Sillage<small>Égypte</small></a>
+    <nav class="main" aria-label="Primary">
+      <a href="#">Journeys</a><a href="#">Destinations</a><a href="#">Experiences</a><a href="#">Journal</a>
+      <a class="btn light" style="padding:.7rem 1.6rem;font-size:.62rem" href="#plan">Plan your journey</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <p class="crumb"><a href="#">Home</a> &nbsp;/&nbsp; <a href="#">Journeys</a> &nbsp;/&nbsp; Egypt in Brief</p>
+    <span class="eyebrow kicker">Short journey · Cairo &amp; Luxor</span>
+    <h1 class="display">Egypt in Brief</h1>
+    <p class="lede">Six private days for the two things you cannot miss — Cairo and Luxor — seen properly, without the rush that usually comes with a short trip.</p>
+  </div>
+</div>
+
+<!-- LEDGER -->
+<div class="ledger" role="region" aria-label="This journey at a glance">
+  <div class="wrap">
+    <div class="cell"><div class="k">Duration</div><div class="v">6 days / 5 nights</div></div>
+    <div class="cell"><div class="k">Route</div><div class="v">Cairo &amp; Luxor</div></div>
+    <div class="cell"><div class="k">Style</div><div class="v">Private throughout</div></div>
+    <div class="cell"><div class="k">Best for</div><div class="v">A first, short visit</div></div>
+  </div>
+</div>
+
+<!-- STICKY BAR -->
+<div class="journeybar">
+  <div class="wrap">
+    <span class="where">Egypt in Brief</span>
+    <nav aria-label="Page sections">
+      <a href="#journey">The Journey</a><a href="#days">Day by Day</a><a href="#stay">Where You Stay</a><a href="#included">Included</a><a href="#book">Before You Book</a>
+    </nav>
+    <a class="btn solid" href="#plan">Plan this journey</a>
+  </div>
+</div>
+
+<!-- THE JOURNEY -->
+<section class="intro" id="journey">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">The journey</span>
+      <h2 class="display" style="margin-top:1rem">Short on days, not on Egypt</h2>
+    </div>
+    <div class="body">
+      <p>Not everyone has a fortnight. This is the short journey for those who don't — Cairo and Luxor, the two essentials, in six days. It leaves out Aswan, Abu Simbel and the Nile, and makes no pretence otherwise; what it keeps, it does properly, and never at a run.</p>
+      <p>Cairo gives you the whole sweep of the pyramid — from Saqqara's first step-pyramid to Giza — and the treasure of Tutankhamun in its new museum. Luxor gives you the temples and the royal tombs of Thebes, including, when it opens, the loveliest painted tomb in Egypt. Two cities, two short flights, and a great house of the Nile to come back to each evening.</p>
+    </div>
+  </div>
+</section>
+
+<!-- AN IDEA, MADE YOURS -->
+<section class="yours">
+  <div class="wrap">
+    <span class="rule"></span>
+    <span class="eyebrow">An idea, not a package</span>
+    <p class="line">This is one way the journey could run.<br>The rest is a conversation.</p>
+    <p class="sub">Every day here is a suggestion — lengthen it, swap it, leave it out. Tell us how you like to travel, and we'll reshape it until it is unmistakably yours.</p>
+    <a class="btn solid" href="#plan">Make it yours</a>
+  </div>
+</section>
+
+<!-- DAY BY DAY -->
+<section class="river" id="days">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Day by day</span>
+      <h2 class="display" style="margin-top:1rem">Six days</h2>
+    </div>
+    <p class="frame">One way the days might run — yours to change.</p>
+    <p class="compass">Cairo &amp; the pyramids · two days in <b>Luxor</b> · the medieval and Coptic city · home</p>
+    <div class="stream">
+
+      <details class="day" open>
+        <summary><span class="dlabel">Day 1</span><span class="dtitle">Cairo, arrival</span><span class="mark">+</span></summary>
+        <div class="dbody">Met inside the terminal, walked through immigration and the bags, and driven to the Four Seasons at First Residence. The rest of the day is left free — Cairo is a great deal to land into, and tomorrow is long.<span class="stayline">Stay · Four Seasons Cairo, First Residence</span></div>
+      </details>
+
+      <details class="day">
+        <summary><span class="dlabel">Day 2</span><span class="dtitle">Giza, Saqqara &amp; the Grand Egyptian Museum</span><span class="mark">+</span></summary>
+        <div class="dbody">The whole story of the pyramid in a day. Saqqara first, and the Step Pyramid of Djoser — the oldest large stone building in the world. Then Giza: the Pyramids of Khufu, Khafre and Menkaure, the Sphinx and the granite Valley Temple. Lunch, and the Grand Egyptian Museum, with the complete treasure of Tutankhamun now under one roof. A full day; we pace it, but come rested.<span class="stayline">Stay · Four Seasons Cairo, First Residence</span></div>
+      </details>
+
+      <details class="day">
+        <summary><span class="dlabel">Day 3</span><span class="dtitle">To Luxor, and the temples of Thebes</span><span class="mark">+</span></summary>
+        <div class="dbody">A morning flight south to ancient Thebes. Karnak — two thousand years of building in one enclosure, with its hall of 134 columns — and Luxor Temple in the middle of the modern town, with the Avenue of Sphinxes that once ran between them, lately uncovered along its whole length. To the Winter Palace as the day cools.<span class="stayline">Stay · Mandarin Oriental Winter Palace, Luxor</span></div>
+      </details>
+
+      <details class="day">
+        <summary><span class="dlabel">Day 4</span><span class="dtitle">The west bank, and the royal tombs</span><span class="mark">+</span></summary>
+        <div class="dbody">The necropolis of Thebes — the finest day of painted tombs in Egypt. The Valley of the Kings, with Tutankhamun's tomb (small and nearly bare, but his) and the separate ticket for Seti I, the longest and finest in the valley. Hatshepsut's temple against its cliff, and the Colossi of Memnon. And, when the schedule allows, the Valley of the Queens and the tomb of Nefertari — the most beautiful painted tomb in the country, opened to only a few each day and closed when the authorities judge it needs rest. We secure it where we can, and never promise what they may not open.<span class="stayline">Stay · Mandarin Oriental Winter Palace, Luxor</span></div>
+      </details>
+
+      <details class="day">
+        <summary><span class="dlabel">Day 5</span><span class="dtitle">Cairo, the medieval city</span><span class="mark">+</span></summary>
+        <div class="dbody">A morning flight back to Cairo, and the Islamic city: the Citadel of Saladin and the alabaster Mosque of Muhammad Ali above the rooftops, then al-Muizz Street and the lanes of Khan el-Khalili as the day cools. Back to the Four Seasons for the last night.<span class="stayline">Stay · Four Seasons Cairo, First Residence</span></div>
+      </details>
+
+      <details class="day">
+        <summary><span class="dlabel">Day 6</span><span class="dtitle">Coptic Cairo &amp; departure</span><span class="mark">+</span></summary>
+        <div class="dbody">As your flight allows, the oldest Christian quarter in the city: the Hanging Church, the church of St Sergius, and the Ben Ezra synagogue, all within a few quiet streets. Then you are driven to the airport and seen through to your gate.<span class="stayline">Depart · Cairo</span></div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHERE YOU STAY -->
+<section class="stay" id="stay">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Where you stay</span>
+      <h2 class="display" style="margin-top:1rem">Two addresses, both on the Nile</h2>
+    </div>
+    <p class="lead">A calm city hotel to bookend the trip, and the grande dame of Luxor in between.</p>
+    <div class="sgrid">
+      <div class="scard">
+        <div class="photo p1"><span class="where">Cairo · first &amp; last</span></div>
+        <div class="body">
+          <h3>Four Seasons, First Residence</h3>
+          <p>A calm, polished base by the Nile and the old botanical gardens, away from the busiest streets — the easy landing at the start, and the soft close at the end.</p>
+          <div class="nights">3 nights (2 + 1)</div>
+        </div>
+      </div>
+      <div class="scard">
+        <div class="photo p2"><span class="where">Luxor</span></div>
+        <div class="body">
+          <h3>Mandarin Oriental Winter Palace, Luxor</h3>
+          <p>The grande dame of the east bank, opened in 1907 — gardens, high ceilings, and the Nile across the road from the temples of Thebes.</p>
+          <div class="nights">2 nights</div>
+        </div>
+      </div>
+      <div class="scard summary">
+        <h3>Five nights in all</h3>
+        <p>Three at the Four Seasons, either end · two in Luxor, on the river.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INCLUDED -->
+<section class="incl" id="included">
+  <div class="wrap">
+    <div>
+      <h3>What's included</h3>
+      <ul>
+        <li>A private welcome at Cairo airport — met inside the terminal and walked through arrivals</li>
+        <li>Your Egyptian entry visa, arranged in advance</li>
+        <li>A certified Egyptologist throughout, from first day to last — and our team reachable at any hour</li>
+        <li>All sightseeing in private, air-conditioned cars</li>
+        <li>Both domestic flights — Cairo to Luxor, and Luxor to Cairo</li>
+        <li>Five nights at the houses above</li>
+        <li>All meals shown in the itinerary</li>
+        <li>Every site entrance in the day-by-day — including the separate ticket for Seti I in the Valley of the Kings and, when it is open, Nefertari in the Valley of the Queens</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Not included</h3>
+      <ul class="out">
+        <li>International flights to and from Cairo</li>
+        <li>Anything not named in the day-by-day</li>
+        <li>Gratuities for guide and drivers, at your discretion</li>
+        <li>Travel insurance — required, and we'll point you to it</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE YOU BOOK -->
+<section class="know" id="book">
+  <div class="wrap">
+    <div class="panel">
+      <span class="eyebrow">Before you book</span>
+      <h2>The short version, honestly drawn</h2>
+      <p>Six days buys you two cities and no more. This journey gives you Cairo and Luxor — the pyramids, the museum, the great temples and the royal tombs — and deliberately leaves out Aswan, Abu Simbel and the Nile itself. If you have even three or four days more, they are worth adding, and we'll happily show you how; but if six is what you have, this is the most of Egypt you can see well without spending the trip in a hurry.</p>
+      <p>Two honest notes. Day 2 is a big one — Saqqara, Giza and the museum together — so arrive rested, and we'll pace it. And Nefertari's tomb, the loveliest in Egypt, opens to only a handful of visitors a day and closes whenever the authorities decide it needs rest; we hold a place when the schedule allows, and tell you plainly if it cannot be done on your dates.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="plan">
+  <div class="wrap">
+    <span class="eyebrow">Begin the conversation</span>
+    <h2 class="display" style="margin-top:1.2rem">A short trip, done <em>properly</em>.</h2>
+    <p>Tell us your dates and what matters most to you, and we will shape this journey around you — these hotels, or others to suit.</p>
+    <a class="btn solid" href="#">Plan this journey</a>
+    <p class="note">We reply within 24 hours</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="logo" href="#">Sillage<small>Égypte</small></a>
+      <p>Private journeys designed around you, guided by experts who know every layer of this country.</p>
+    </div>
+    <div class="col"><h5>Explore</h5><a href="#">Journeys</a><a href="#">Destinations</a><a href="#">Experiences</a><a href="#">Journal</a><a href="#">About</a></div>
+    <div class="col"><h5>Contact</h5><a href="mailto:hello@sillage-egypte.com">hello@sillage-egypte.com</a><a href="tel:+20000000000">+20 000 000 000</a><a href="#">WhatsApp enquiries welcome</a></div>
+    <div class="legal"><span>© 2026 Sillage Égypte. All rights reserved.</span><span>Privacy · Terms</span></div>
+  </div>
+</footer>
+
+</body>
+</html>
