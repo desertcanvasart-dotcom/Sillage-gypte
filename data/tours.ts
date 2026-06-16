@@ -36,6 +36,8 @@ export interface Tour {
   notIncluded?: string[];
   /** Bespoke journeys render verbatim from content/tours/<slug>.json. */
   bespoke?: boolean;
+  /** "From" price per person in EUR, shown on the journey cards. */
+  fromPrice?: number;
 }
 
 export const DEFAULT_NOT_INCLUDED = [
@@ -66,6 +68,7 @@ export const tours: Tour[] = [
     guideSlug: "khaled-amin",
     galleryLabels: [],
     route: "Cairo & Giza",
+    fromPrice: 2190,
     bespoke: true,
     seo: { title: "Cairo, Two Views — 4 Days", description: "Three refined nights in Cairo, seen from its two great vantage points — the Nile and the Pyramids. Giza, Saqqara and Dahshur, the Grand Egyptian Museum, and a felucca at dusk." },
   },
@@ -112,6 +115,7 @@ export const tours: Tour[] = [
     guideSlug: "khaled-amin",
     galleryLabels: [],
     route: "Cairo · Abu Simbel · Aswan · Luxor",
+    fromPrice: 5850,
     bespoke: true,
     seo: { title: "The Grand Tour — 10 Days", description: "Ten private days through the whole arc of ancient Egypt — Cairo, a night beside the temples of Abu Simbel, Aswan and three unhurried days in Luxor — staying in the great houses of the Nile." },
   },
@@ -135,6 +139,7 @@ export const tours: Tour[] = [
     guideSlug: "khaled-amin",
     galleryLabels: [],
     route: "Cairo · Luxor · Aswan · Abu Simbel",
+    fromPrice: 7500,
     bespoke: true,
     seo: { title: "The Complete Egypt — 13 Days", description: "Thirteen private days the length of Egypt — Cairo, Luxor, five nights under sail on a dahabiya, Aswan and Abu Simbel — with the Pyramids held for the end." },
   },
@@ -158,6 +163,7 @@ export const tours: Tour[] = [
     guideSlug: "sara-hassan",
     galleryLabels: [],
     route: "Cairo · Aswan to Luxor · Red Sea",
+    fromPrice: 7999,
     bespoke: true,
     seo: { title: "The Nile & the Red Sea — 12 Days", description: "Twelve private days in two halves — Cairo, the Pyramids and the temples of the Nile by luxury cruiser, then four unhurried days on the Red Sea." },
   },
@@ -181,6 +187,7 @@ export const tours: Tour[] = [
     guideSlug: "khaled-amin",
     galleryLabels: [],
     route: "Coast · desert · the Nile",
+    fromPrice: 11650,
     bespoke: true,
     seo: { title: "Beyond the Nile — 16 Days", description: "Sixteen private days across the whole of Egypt — Cairo, Alexandria on the Mediterranean, the silence of Siwa and the Great Sand Sea, then six nights down the Nile by cruiser to Luxor, by way of Abu Simbel." },
   },

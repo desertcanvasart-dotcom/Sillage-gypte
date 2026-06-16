@@ -23,7 +23,7 @@ const I = (f) => `url("/images/${f}")`;
 const POSTS = [
   {
     slug: "cairo-two-views", file: "cairo-two-views-journey.html",
-    regions: ["cairo"], guideSlug: "khaled-amin", gradient: "ancient", featured: true,
+    regions: ["cairo"], guideSlug: "khaled-amin", gradient: "ancient", featured: true, price: 2190,
     img: { hero: "dest-cairo.jpg", days: "exp-felucca-at-sunset.jpg", cta: "exp-dawn-at-the-pyramids.jpg", h1: "dest-cairo-1.jpg", h2: "dest-cairo-2.jpg" },
   },
   {
@@ -33,22 +33,22 @@ const POSTS = [
   },
   {
     slug: "grand-tour", file: "grand-tour-journey.html",
-    regions: ["cairo", "luxor", "aswan", "abu-simbel"], guideSlug: "khaled-amin", gradient: "nile", featured: true,
+    regions: ["cairo", "luxor", "aswan", "abu-simbel"], guideSlug: "khaled-amin", gradient: "nile", featured: true, price: 5850,
     img: { hero: "tour-the-complete-egypt-2.jpg", days: "exp-felucca-at-sunset.jpg", cta: "dest-abu-simbel.jpg", h1: "dest-cairo-1.jpg", h2: "dest-luxor-1.jpg", h3: "dest-aswan-2.jpg", h4: "dest-abu-simbel-1.jpg" },
   },
   {
     slug: "complete-egypt", file: "complete-egypt-journey.html",
-    regions: ["cairo", "luxor", "aswan", "abu-simbel", "the-nile"], guideSlug: "khaled-amin", gradient: "nile", featured: false,
+    regions: ["cairo", "luxor", "aswan", "abu-simbel", "the-nile"], guideSlug: "khaled-amin", gradient: "nile", featured: false, price: 7500,
     img: { hero: "tour-the-complete-egypt.jpg", days: "tour-private-nile.jpg", cta: "tour-the-complete-egypt-1.jpg", h1: "dest-cairo.jpg", h2: "dest-luxor.jpg", h3: "dest-aswan-2.jpg", h4: "dest-abu-simbel.jpg" },
   },
   {
     slug: "nile-red-sea", file: "nile-red-sea-journey-.html",
-    regions: ["luxor", "aswan", "the-nile", "red-sea"], guideSlug: "sara-hassan", gradient: "nile", featured: false,
+    regions: ["luxor", "aswan", "the-nile", "red-sea"], guideSlug: "sara-hassan", gradient: "nile", featured: false, price: 7999,
     img: { hero: "tour-red-sea-and-sinai.jpg", days: "tour-private-nile.jpg", cta: "dest-sharm-el-sheikh.jpg", h1: "dest-luxor.jpg", h2: "dest-aswan-4.jpg", h3: "dest-sharm-el-sheikh-2.jpg", h4: "tour-red-sea-and-sinai-1.jpg" },
   },
   {
     slug: "beyond-the-nile", file: "beyond-the-nile-journey.html",
-    regions: ["cairo", "luxor", "aswan", "abu-simbel", "the-nile"], guideSlug: "khaled-amin", gradient: "desert", featured: false,
+    regions: ["cairo", "luxor", "aswan", "abu-simbel", "the-nile"], guideSlug: "khaled-amin", gradient: "desert", featured: false, price: 11650,
     img: { hero: "tour-nubia-and-the-south.jpg", days: "tour-private-nile-1.jpg", cta: "dest-abu-simbel.jpg", h1: "dest-cairo.jpg", h2: "dest-luxor.jpg", h3: "dest-aswan-2.jpg", h4: "dest-abu-simbel-1.jpg" },
   },
 ];
@@ -122,7 +122,7 @@ function tsEntry(d) {
     guideSlug: ${j(d.guideSlug)},
     galleryLabels: [],
     route: ${j(d.where)},
-    bespoke: true,
+    bespoke: true,${d.price ? `\n    fromPrice: ${d.price},` : ""}
     seo: { title: ${j(d.seoTitle)}, description: ${j(d.description)} },
   },`;
 }

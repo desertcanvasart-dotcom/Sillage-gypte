@@ -5,7 +5,8 @@ import { ArrowRight, ClockIcon, PrivateIcon } from "./icons";
 import { getLocale, localePath } from "@/lib/i18n";
 import { loadContent } from "@/lib/content";
 
-const DISCOVER: Record<string, string> = { en: "Discover this journey", es: "Descubre este viaje", fr: "Découvrir ce voyage" };
+const DISCOVER: Record<string, string> = { en: "Discover this journey", es: "Descubre este viaje", fr: "Découvrir ce voyage", nl: "Ontdek deze reis", de: "Diese Reise entdecken" };
+const FROM: Record<string, string> = { en: "From", es: "Desde", fr: "À partir de", nl: "Vanaf", de: "ab" };
 
 /**
  * The signature journey card. Used on the homepage and the /tours index so
@@ -19,6 +20,10 @@ export default async function TourCard({ tour, index = 0 }: { tour: Tour; index?
   const delay = index % 3; // 0,1,2 → reveal-delay cascade
   const revealClass = delay === 0 ? "reveal" : `reveal reveal-delay-${delay}`;
   const discover = DISCOVER[locale] ?? DISCOVER.en;
+  const fromLabel = FROM[locale] ?? FROM.en;
+  const priceText = tour.fromPrice
+    ? new Intl.NumberFormat(locale, { style: "currency", currency: "EUR", maximumFractionDigits: 0 }).format(tour.fromPrice)
+    : null;
 
   return (
     <article className={`tour-card ${revealClass}`}>
@@ -44,6 +49,11 @@ export default async function TourCard({ tour, index = 0 }: { tour: Tour; index?
             {tour.groupType}
           </span>
         </div>
+        {priceText && (
+          <p className="tour-card-price">
+            {fromLabel} <strong>{priceText}</strong> <span className="pp">/ pp</span>
+          </p>
+        )}
         <Link href={localePath(locale, `/tours/${tour.slug}`)} className="tour-card-link">
           {discover}
           <ArrowRight size={12} />

@@ -33,20 +33,20 @@ const url = (web) => `url("${web}")`;
 
 /* ── manifest keys (cards + PageHero heroes) ─────────────────────────── */
 const MANIFEST = {
-  "home-hero": pick("cairo", "giza-pyramids-and-sphinx", 0),
-  "dest-cairo": pick("cairo", "giza-pyramids-and-sphinx", 1),
-  "dest-luxor": pick("luxor", "karnak-temple", 0),
-  "dest-aswan": pick("aswan", "philae-temple", 0),
-  "dest-abu-simbel": pick("abu-simbel", "abu-simbel-temples", 0),
-  "dest-sharm-el-sheikh": pick("red-sea", "red-sea-beach-and-resort", 0),
-  "dest-alexandria": pick("alexandria", "library-of-alexandria", 0),
-  "dest-hurghada": pick("hurghada", "orange-bay-giftun-island", 0),
-  "tour-cairo-two-views": pick("cairo", "giza-pyramids-and-sphinx", 2),
-  "tour-egypt-in-brief": pick("luxor", "luxor-temple", 0),
-  "tour-grand-tour": pick("abu-simbel", "abu-simbel-temples", 1),
-  "tour-complete-egypt": pick("nile-river", "nile-cruise", 0),
-  "tour-nile-red-sea": pick("red-sea", "red-sea-beach-and-resort", 1),
-  "tour-beyond-the-nile": pick("aswan", "nubian-village", 0),
+  "home-hero": pick("cairo", "giza-pyramids-and-sphinx", 16), // iconic Sphinx + Khafre
+  "dest-cairo": pick("cairo", "giza-pyramids-and-sphinx", 7), // Giza panorama, Sphinx + 3 pyramids
+  "dest-luxor": pick("luxor", "karnak-temple", 4), // Karnak hypostyle hall columns
+  "dest-aswan": pick("aswan", "aswan-nile-river", 5), // feluccas on the Nile by the dunes
+  "dest-abu-simbel": pick("abu-simbel", "abu-simbel-temples", 3), // colossi (clean)
+  "dest-sharm-el-sheikh": pick("red-sea", "underwater-and-coral-reef", 5), // coral reef + fish
+  "dest-alexandria": pick("alexandria", "stanley-bridge", 0), // Stanley Bridge
+  "dest-hurghada": pick("red-sea", "red-sea-beach-and-resort", 4), // turquoise lagoon (moved from Nile & Red Sea card)
+  "tour-cairo-two-views": pick("cairo", "giza-pyramids-and-sphinx", 6), // Sphinx + Khafre
+  "tour-egypt-in-brief": pick("luxor", "luxor-temple", 7), // Luxor temple at sunset
+  "tour-grand-tour": pick("abu-simbel", "abu-simbel-temples", 3), // Abu Simbel colossi
+  "tour-complete-egypt": pick("aswan", "aswan-nile-river", 3), // dahabiya under full sail
+  "tour-nile-red-sea": pick("red-sea", "underwater-and-coral-reef", 7), // sea turtle over the reef
+  "tour-beyond-the-nile": pick("aswan", "philae-temple", 5), // Philae, Kiosk of Trajan reflected
   "exp-the-empty-plateau": pick("cairo", "giza-pyramids-and-sphinx", 3),
   "exp-the-empty-museum": pick("cairo", "grand-egyptian-museum", 0),
   "exp-the-temple-by-river": pick("dendera", "dendera-temple", 0),

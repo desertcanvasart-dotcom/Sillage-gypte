@@ -618,6 +618,27 @@ a { color: inherit; text-decoration: none; }
   border-top: 1px solid rgba(255,255,255,0.08);
   flex-wrap: wrap;
 }
+/* "From €X" on the journey cards */
+.tour-card-price {
+  margin-top: 16px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-family: var(--font-label), sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+}
+.tour-card-price strong {
+  font-family: var(--font-display), serif;
+  font-weight: 400;
+  font-size: 19px;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--or, #bfa15f);
+}
+.tour-card-price .pp { font-size: 10px; letter-spacing: 0.1em; color: rgba(255,255,255,0.35); }
 .tour-meta-item {
   font-size: 12px;
   letter-spacing: 0.06em;
