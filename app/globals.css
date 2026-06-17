@@ -603,12 +603,22 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.2;
   color: white;
   margin-bottom: 12px;
+  /* reserve up to 2 lines so 1- and 2-line titles align across cards */
+  min-height: 2.4em;
 }
 .tour-card-desc {
   font-size: 14px;
   line-height: 1.65;
   color: rgba(255,255,255,0.55);
   margin-bottom: 24px;
+  /* fixed-height blurb: clamp every card's description to 3 lines so all
+     cards in a row are the same height */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: calc(1.65em * 3);
 }
 .tour-card-meta {
   display: flex;

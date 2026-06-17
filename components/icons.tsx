@@ -63,7 +63,7 @@ export function CheckIcon() {
 
 export function PinIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true" style={{ flex: "none" }}>
       <path
         d="M12 21s7-6.3 7-11a7 7 0 10-14 0c0 4.7 7 11 7 11z"
         stroke="currentColor"
