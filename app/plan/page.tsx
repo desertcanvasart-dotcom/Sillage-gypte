@@ -224,7 +224,7 @@ export default async function PlanPage({
       ? t.interestedDest(destName)
       : "";
 
-  const planHero = getImage("home-hero");
+  const planHero = getImage("hero-plan");
 
   return (
     <main className="warm">

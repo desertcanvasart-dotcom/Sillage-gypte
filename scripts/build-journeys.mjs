@@ -28,7 +28,7 @@ const POSTS = [
   },
   {
     slug: "egypt-in-brief", file: "egypt-in-brief-journey.html",
-    regions: ["cairo", "luxor"], guideSlug: "sara-hassan", gradient: "sunset", featured: true,
+    regions: ["cairo", "luxor"], guideSlug: "sara-hassan", gradient: "sunset", featured: true, price: 4675,
     img: { hero: "tour-ancient-cairo-luxor.jpg", days: "exp-balloon-over-luxor.jpg", cta: "dest-luxor.jpg", h1: "dest-cairo.jpg", h2: "dest-luxor-1.jpg" },
   },
   {

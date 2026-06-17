@@ -34,6 +34,7 @@ const url = (web) => `url("${web}")`;
 /* ── manifest keys (cards + PageHero heroes) ─────────────────────────── */
 const MANIFEST = {
   "home-hero": pick("cairo", "giza-pyramids-and-sphinx", 16), // iconic Sphinx + Khafre
+  "hero-plan": pick("luxor", "luxor-temple", 6), // Luxor Temple illuminated at night (distinct /plan hero)
   "dest-cairo": pick("cairo", "giza-pyramids-and-sphinx", 7), // Giza panorama, Sphinx + 3 pyramids
   "dest-luxor": pick("luxor", "karnak-temple", 4), // Karnak hypostyle hall columns
   "dest-aswan": pick("aswan", "aswan-nile-river", 5), // feluccas on the Nile by the dunes

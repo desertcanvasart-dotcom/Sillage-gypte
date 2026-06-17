@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Photo from "@/components/Photo";
+import TourCard from "@/components/TourCard";
 import { getDestination } from "@/data/destinations";
 import { getTour } from "@/data/tours";
 import { getLocale, localePath } from "@/lib/i18n";
@@ -7,7 +8,8 @@ import { loadContent } from "@/lib/content";
 import { getDict } from "@/lib/dictionaries";
 
 const HOME_DESTINATIONS = ["luxor", "aswan", "cairo", "abu-simbel"];
-const HOME_JOURNEYS = ["cairo-two-views", "egypt-in-brief", "grand-tour"];
+// The three longest journeys, shown with image + price (TourCard handles locale).
+const HOME_JOURNEYS = ["beyond-the-nile", "complete-egypt", "nile-red-sea"];
 
 export default async function HomePage() {
   const locale = await getLocale();
@@ -20,13 +22,7 @@ export default async function HomePage() {
       return { slug, data: d, name: c?.title ?? d.name };
     })
   );
-  const journeys = await Promise.all(
-    HOME_JOURNEYS.map(async (s) => {
-      const j = getTour(s)!;
-      const c = await loadContent<{ title?: string; tagline?: string }>("tours", s, locale);
-      return { ...j, title: c?.title ?? j.title, description: c?.tagline ?? j.description };
-    })
-  );
+  const journeys = HOME_JOURNEYS.map((s) => getTour(s)!);
 
   return (
     <main className="warm">
@@ -136,16 +132,9 @@ export default async function HomePage() {
               {t.home.allJour}
             </Link>
           </div>
-          <div className="jgrid">
-            {journeys.map((j) => (
-              <Link className="jcard" href={p(`/tours/${j.slug}`)} key={j.slug}>
-                <span className="eyebrow">{j.route ? `${j.type} · ${j.route}` : j.type}</span>
-                <h3>{j.title}</h3>
-                <p>{j.description}</p>
-                <span className="meta">
-                  {j.duration} · {j.groupType}
-                </span>
-              </Link>
+          <div className="tours-grid">
+            {journeys.map((j, i) => (
+              <TourCard key={j.slug} tour={j} index={i} />
             ))}
           </div>
         </div>

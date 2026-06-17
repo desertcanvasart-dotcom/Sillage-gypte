@@ -92,6 +92,7 @@ export const tours: Tour[] = [
     guideSlug: "sara-hassan",
     galleryLabels: [],
     route: "Cairo & Luxor",
+    fromPrice: 4675,
     bespoke: true,
     seo: { title: "Egypt in Brief — 6 Days", description: "Six private days for the two essentials — Cairo and Luxor — seen properly, without the rush of a short trip. The pyramids, the museum, and the temples and royal tombs of Thebes." },
   },
