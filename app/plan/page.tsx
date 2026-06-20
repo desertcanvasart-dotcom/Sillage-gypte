@@ -234,7 +234,7 @@ export default async function PlanPage({
         style={
           planHero
             ? {
-                backgroundImage: `linear-gradient(170deg, rgba(11,21,18,.62), rgba(16,29,24,.82) 70%, #0c1714), url(${planHero})`,
+                backgroundImage: `linear-gradient(170deg, rgba(11,21,18,.42), rgba(16,29,24,.62) 70%, rgba(12,23,20,.78)), url(${planHero})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }
