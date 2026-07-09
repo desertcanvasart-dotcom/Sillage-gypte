@@ -59,37 +59,6 @@ export const brand = {
   ],
 };
 
-// Header navigation. Guides and About live in the footer, not the header.
-export const primaryNav = [
-  { href: "/tours", label: "Journeys" },
-  { href: "/destinations", label: "Destinations" },
-  { href: "/experiences", label: "Experiences" },
-  { href: "/journal", label: "Journal" },
-];
-
-// Secondary links shown in the footer (in addition to primaryNav).
-export const footerExtraNav = [
-  { href: "/guides", label: "Guides" },
-  { href: "/about", label: "About" },
-];
-
-export const footerNav = [
-  {
-    title: "Explore",
-    links: [
-      { href: "/tours", label: "Journeys" },
-      { href: "/destinations", label: "Destinations" },
-      { href: "/experiences", label: "Experiences" },
-      { href: "/guides", label: "Guides" },
-    ],
-  },
-  {
-    title: "Company",
-    links: [
-      { href: "/about", label: "About" },
-      { href: "/journal", label: "Journal" },
-      { href: "/contact", label: "Contact" },
-      { href: "/plan", label: "Plan Your Journey" },
-    ],
-  },
-];
+// Navigation lives in the components that render it — WarmMasthead and
+// WarmFooter — where it is locale-aware. Keep it there; a duplicate list here
+// silently drifts out of sync with what users can actually reach.

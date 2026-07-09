@@ -16,6 +16,8 @@ export default async function WarmFooter() {
     { href: p("/journal"), label: t.nav.journal },
     { href: p("/about"), label: t.footer.about },
     { href: p("/guides"), label: t.footer.guides },
+    { href: p("/contact"), label: t.footer.contact },
+    { href: p("/plan"), label: t.nav.plan },
   ];
 
   return (

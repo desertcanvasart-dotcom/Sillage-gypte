@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { site } from "@/data/site";
 
 type Status = "idle" | "submitting" | "error";
 type Locale = "en" | "es" | "fr" | "nl" | "de";
@@ -10,8 +11,7 @@ const DICT = {
     confirmTitle: "Thank you — it’s with us",
     confirmBody:
       "Your enquiry has reached a journey designer, who will read it properly and reply within 24 hours. Not a form letter — a real response, from a real person who knows this country.",
-    errorBanner:
-      "Something went wrong sending your enquiry. Please try again, or email us at hello@luxuriousegypt.com.",
+    errorBanner: `Something went wrong sending your enquiry. Please try again, or email us at ${site.email}.`,
     aboutYou: "About you",
     yourName: "Your name",
     yourNamePh: "First and last",
@@ -26,6 +26,7 @@ const DICT = {
     when: "Planned date",
     select: "Select…",
     whenOpts: ["October – April (the classic season)", "May – September", "I have specific dates", "Flexible / not decided yet"],
+    exactDate: "If you have specific dates",
     length: "How long",
     lengthOpts: ["Around a week", "Ten days to two weeks", "Longer than two weeks", "Not sure — advise me"],
     party: "Travelling",
@@ -69,8 +70,7 @@ const DICT = {
     confirmTitle: "Gracias — ya está con nosotros",
     confirmBody:
       "Su consulta ha llegado a un diseñador de viajes, que la leerá con atención y responderá en menos de 24 horas. No una carta tipo — una respuesta real, de una persona real que conoce este país.",
-    errorBanner:
-      "Algo salió mal al enviar su consulta. Inténtelo de nuevo o escríbanos a hello@luxuriousegypt.com.",
+    errorBanner: `Algo salió mal al enviar su consulta. Inténtelo de nuevo o escríbanos a ${site.email}.`,
     aboutYou: "Sobre usted",
     yourName: "Su nombre",
     yourNamePh: "Nombre y apellido",
@@ -85,6 +85,7 @@ const DICT = {
     when: "Fecha prevista",
     select: "Seleccione…",
     whenOpts: ["Octubre – abril (la temporada clásica)", "Mayo – septiembre", "Tengo fechas concretas", "Flexible / aún sin decidir"],
+    exactDate: "Si tiene fechas concretas",
     length: "¿Cuánto tiempo?",
     lengthOpts: ["Alrededor de una semana", "De diez días a dos semanas", "Más de dos semanas", "No estoy seguro — aconséjeme"],
     party: "Viaja",
@@ -128,8 +129,7 @@ const DICT = {
     confirmTitle: "Merci — c’est entre nos mains",
     confirmBody:
       "Votre demande est parvenue à un concepteur de voyages, qui la lira attentivement et répondra sous 24 heures. Pas une lettre type — une vraie réponse, d’une personne réelle qui connaît ce pays.",
-    errorBanner:
-      "Une erreur est survenue lors de l’envoi de votre demande. Veuillez réessayer ou nous écrire à hello@luxuriousegypt.com.",
+    errorBanner: `Une erreur est survenue lors de l’envoi de votre demande. Veuillez réessayer ou nous écrire à ${site.email}.`,
     aboutYou: "À propos de vous",
     yourName: "Votre nom",
     yourNamePh: "Prénom et nom",
@@ -144,6 +144,7 @@ const DICT = {
     when: "Date prévue",
     select: "Sélectionner…",
     whenOpts: ["Octobre – avril (la saison classique)", "Mai – septembre", "J’ai des dates précises", "Flexible / pas encore décidé"],
+    exactDate: "Si vous avez des dates précises",
     length: "Pour combien de temps",
     lengthOpts: ["Environ une semaine", "De dix jours à deux semaines", "Plus de deux semaines", "Je ne sais pas — conseillez-moi"],
     party: "Vous voyagez",
@@ -187,8 +188,7 @@ const DICT = {
     confirmTitle: "Dank u — het is bij ons",
     confirmBody:
       "Uw aanvraag heeft een reisontwerper bereikt, die haar zorgvuldig zal lezen en binnen 24 uur antwoordt. Geen standaardbrief — een echt antwoord, van een echt persoon die dit land kent.",
-    errorBanner:
-      "Er ging iets mis bij het versturen van uw aanvraag. Probeer het opnieuw, of schrijf ons op hello@luxuriousegypt.com.",
+    errorBanner: `Er ging iets mis bij het versturen van uw aanvraag. Probeer het opnieuw, of schrijf ons op ${site.email}.`,
     aboutYou: "Over u",
     yourName: "Uw naam",
     yourNamePh: "Voor- en achternaam",
@@ -203,6 +203,7 @@ const DICT = {
     when: "Geplande datum",
     select: "Selecteer…",
     whenOpts: ["Oktober – april (het klassieke seizoen)", "Mei – september", "Ik heb specifieke data", "Flexibel / nog niet besloten"],
+    exactDate: "Als u specifieke data heeft",
     length: "Hoe lang",
     lengthOpts: ["Ongeveer een week", "Tien dagen tot twee weken", "Langer dan twee weken", "Niet zeker — adviseer mij"],
     party: "U reist",
@@ -246,8 +247,7 @@ const DICT = {
     confirmTitle: "Vielen Dank — es ist bei uns",
     confirmBody:
       "Ihre Anfrage hat einen Reisegestalter erreicht, der sie aufmerksam lesen und innerhalb von 24 Stunden antworten wird. Kein Standardschreiben — eine echte Antwort, von einem echten Menschen, der dieses Land kennt.",
-    errorBanner:
-      "Beim Senden Ihrer Anfrage ist etwas schiefgegangen. Bitte versuchen Sie es erneut oder schreiben Sie uns an hello@luxuriousegypt.com.",
+    errorBanner: `Beim Senden Ihrer Anfrage ist etwas schiefgegangen. Bitte versuchen Sie es erneut oder schreiben Sie uns an ${site.email}.`,
     aboutYou: "Über Sie",
     yourName: "Ihr Name",
     yourNamePh: "Vor- und Nachname",
@@ -262,6 +262,7 @@ const DICT = {
     when: "Geplantes Datum",
     select: "Auswählen…",
     whenOpts: ["Oktober – April (die klassische Saison)", "Mai – September", "Ich habe konkrete Daten", "Flexibel / noch nicht entschieden"],
+    exactDate: "Falls Sie konkrete Daten haben",
     length: "Wie lange",
     lengthOpts: ["Etwa eine Woche", "Zehn Tage bis zwei Wochen", "Länger als zwei Wochen", "Nicht sicher — beraten Sie mich"],
     party: "Sie reisen",
@@ -332,6 +333,7 @@ export default function WarmEnquiryForm({
     const interests = data.getAll("interest").map(String);
     const notes = String(data.get("notes") ?? "").trim();
     const when = String(data.get("when") ?? "");
+    const exactDate = String(data.get("exactDate") ?? "");
     const length = String(data.get("length") ?? "");
     const party = String(data.get("party") ?? "");
     const budget = String(data.get("budget") ?? "");
@@ -342,6 +344,7 @@ export default function WarmEnquiryForm({
       [
         interests.length ? `Interested in: ${interests.join(", ")}.` : "",
         when ? `When: ${when}.` : "",
+        exactDate ? `Specific date: ${exactDate}.` : "",
         length ? `Length: ${length}.` : "",
         party ? `Travelling: ${party}.` : "",
       ]
@@ -360,6 +363,7 @@ export default function WarmEnquiryForm({
           phone: data.get("phone"),
           country: data.get("country"),
           when,
+          exactDate,
           length,
           party,
           interests,
@@ -454,6 +458,13 @@ export default function WarmEnquiryForm({
               ))}
             </select>
           </div>
+        </div>
+
+        <div className="field" style={{ marginTop: "0.6rem" }}>
+          <label htmlFor="exactDate">
+            {T.exactDate} <span className="opt">{T.optional}</span>
+          </label>
+          <input id="exactDate" name="exactDate" type="month" />
         </div>
 
         <div className="field full" style={{ marginTop: "0.6rem" }}>

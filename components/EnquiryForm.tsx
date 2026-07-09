@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ArrowRight, CheckIcon } from "./icons";
 import { tours } from "@/data/tours";
+import { site } from "@/data/site";
 
 type Status = "idle" | "submitting" | "error";
 type Locale = "en" | "es" | "fr" | "nl" | "de";
@@ -21,7 +22,7 @@ const DICT = {
     errEmailInvalid: "That email address doesn't look right.",
     errMessage: "A line or two about your trip helps us begin.",
     errorBanner:
-      "Something went wrong sending your enquiry. Please try again, or email us directly at hello@luxuriousegypt.com.",
+      `Something went wrong sending your enquiry. Please try again, or email us directly at ${site.email}.`,
     successTitle: "Thank you — your enquiry is with us.",
     successBody:
       "A journey designer will reply personally within 24 hours to begin shaping your trip. We look forward to it.",
@@ -52,7 +53,7 @@ const DICT = {
     errEmailInvalid: "Ese correo no parece correcto.",
     errMessage: "Una o dos líneas sobre su viaje nos ayudan a empezar.",
     errorBanner:
-      "Algo salió mal al enviar su consulta. Inténtelo de nuevo o escríbanos directamente a hello@luxuriousegypt.com.",
+      `Algo salió mal al enviar su consulta. Inténtelo de nuevo o escríbanos directamente a ${site.email}.`,
     successTitle: "Gracias — su consulta está con nosotros.",
     successBody:
       "Un diseñador de viajes le responderá personalmente en menos de 24 horas para empezar a dar forma a su viaje. Lo esperamos con ilusión.",
@@ -83,7 +84,7 @@ const DICT = {
     errEmailInvalid: "Cette adresse e-mail ne semble pas correcte.",
     errMessage: "Une ligne ou deux sur votre voyage nous aident à commencer.",
     errorBanner:
-      "Une erreur est survenue lors de l’envoi de votre demande. Veuillez réessayer ou nous écrire directement à hello@luxuriousegypt.com.",
+      `Une erreur est survenue lors de l’envoi de votre demande. Veuillez réessayer ou nous écrire directement à ${site.email}.`,
     successTitle: "Merci — votre demande est entre nos mains.",
     successBody:
       "Un concepteur de voyages vous répondra personnellement sous 24 heures pour commencer à façonner votre voyage. Nous nous en réjouissons.",
@@ -114,7 +115,7 @@ const DICT = {
     errEmailInvalid: "Dat e-mailadres lijkt niet te kloppen.",
     errMessage: "Een regel of twee over uw reis helpt ons te beginnen.",
     errorBanner:
-      "Er ging iets mis bij het versturen van uw aanvraag. Probeer het opnieuw, of schrijf ons rechtstreeks op hello@luxuriousegypt.com.",
+      `Er ging iets mis bij het versturen van uw aanvraag. Probeer het opnieuw, of schrijf ons rechtstreeks op ${site.email}.`,
     successTitle: "Dank u — uw aanvraag is bij ons.",
     successBody:
       "Een reisontwerper antwoordt persoonlijk binnen 24 uur om uw reis vorm te geven. Wij kijken ernaar uit.",
@@ -145,7 +146,7 @@ const DICT = {
     errEmailInvalid: "Diese E-Mail-Adresse scheint nicht korrekt zu sein.",
     errMessage: "Ein, zwei Zeilen über Ihre Reise helfen uns anzufangen.",
     errorBanner:
-      "Beim Senden Ihrer Anfrage ist etwas schiefgegangen. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an hello@luxuriousegypt.com.",
+      `Beim Senden Ihrer Anfrage ist etwas schiefgegangen. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an ${site.email}.`,
     successTitle: "Vielen Dank — Ihre Anfrage ist bei uns.",
     successBody:
       "Ein Reisegestalter antwortet Ihnen persönlich innerhalb von 24 Stunden, um Ihre Reise zu gestalten. Wir freuen uns darauf.",

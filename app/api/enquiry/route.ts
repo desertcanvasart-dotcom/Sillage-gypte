@@ -57,9 +57,14 @@ export async function POST(request: Request) {
   const phone = String(body.phone ?? "").trim();
   const country = String(body.country ?? "").trim();
   const when = String(body.when ?? "").trim();
+  const exactDate = String(body.exactDate ?? "").trim();
   const length = String(body.length ?? "").trim();
   const party = String(body.party ?? "").trim();
   const budget = String(body.budget ?? "").trim();
+  // Fields sent by the /contact form (components/EnquiryForm).
+  const dates = String(body.dates ?? "").trim();
+  const groupSize = String(body.groupSize ?? "").trim();
+  const journey = String(body.journey ?? "").trim();
   const interests = Array.isArray(body.interests)
     ? (body.interests as unknown[]).map(String).filter(Boolean)
     : [];
@@ -74,8 +79,12 @@ export async function POST(request: Request) {
         ${row("Phone / WhatsApp", phone)}
         ${row("Based in", country)}
         ${row("Planned date", when)}
+        ${row("Specific date", exactDate)}
+        ${row("Dates", dates)}
         ${row("Length", length)}
         ${row("Travelling", party)}
+        ${row("Group size", groupSize)}
+        ${row("Journey", journey)}
         ${row("Interests", interests.join(", "))}
         ${row("Budget", budget)}
       </table>
@@ -93,8 +102,12 @@ export async function POST(request: Request) {
     phone && `Phone / WhatsApp: ${phone}`,
     country && `Based in: ${country}`,
     when && `Planned date: ${when}`,
+    exactDate && `Specific date: ${exactDate}`,
+    dates && `Dates: ${dates}`,
     length && `Length: ${length}`,
     party && `Travelling: ${party}`,
+    groupSize && `Group size: ${groupSize}`,
+    journey && `Journey: ${journey}`,
     interests.length && `Interests: ${interests.join(", ")}`,
     budget && `Budget: ${budget}`,
     ``,

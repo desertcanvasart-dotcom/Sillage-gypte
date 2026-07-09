@@ -19,6 +19,7 @@ export default async function WarmMasthead() {
           <Link href={p("/tours")}>{t.nav.journeys}</Link>
           <Link href={p("/destinations")}>{t.nav.destinations}</Link>
           <Link href={p("/experiences")}>{t.nav.experiences}</Link>
+          <Link href={p("/guides")}>{t.footer.guides}</Link>
           <Link href={p("/journal")}>{t.nav.journal}</Link>
           <LangSwitcher />
           <Link className="wbtn" style={{ padding: ".7rem 1.6rem", fontSize: ".62rem" }} href={p("/plan")}>
