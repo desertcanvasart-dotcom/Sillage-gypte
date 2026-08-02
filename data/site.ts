@@ -16,9 +16,9 @@ export const site = {
   whatsappHref: "https://wa.me/201098471928",
   responsePromise: "A journey designer replies within 24 hours.",
   social: {
-    instagram: "https://instagram.com/luxuriousegypt",
-    facebook: "https://facebook.com/luxuriousegypt",
-    youtube: "https://youtube.com/@luxuriousegypt",
+    instagram: "https://instagram.com/sillage-egypte",
+    facebook: "https://facebook.com/sillage-egypte",
+    youtube: "https://youtube.com/@sillage-egypte",
   },
 };
 

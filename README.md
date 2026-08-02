@@ -123,9 +123,8 @@ Implemented against the AI-Readable Website brief:
 `data/site.ts` → `brand` and `data/reviews.ts` contain **PLACEHOLDER** values.
 Replace these with verified facts before launch — schema must match reality:
 
-1. Social URLs (currently `@luxuriousegypt` handles) → confirm the real
-   handles and update `site.social`. Domain and email are done
-   (`sillage-egypte.com` / `hello@sillage-egypte.com`).
+1. Domain, email, and social URLs are done (`sillage-egypte.com` /
+   `hello@sillage-egypte.com` / `@sillage-egypte` handles).
 2. Founding date and founder name(s)/titles.
 3. Registered office postal address.
 4. Industry accreditations / memberships.
