@@ -1162,11 +1162,22 @@ address { font-style: normal; }
 /* masthead */
 .masthead { position: absolute; top: 0; left: 0; right: 0; z-index: 40; }
 .masthead .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: 2rem; padding-bottom: 2rem; }
+.masthead .logo { flex-shrink: 0; margin-right: clamp(1.5rem, 3vw, 4rem); }
 .logo { font-family: var(--font-display), serif; font-size: 1.25rem; letter-spacing: 0.42em; text-transform: uppercase; color: var(--papyrus); }
 .logo small { display: block; font-family: var(--font-label), sans-serif; font-size: 0.55rem; letter-spacing: 0.5em; color: var(--or); margin-top: 0.3rem; }
-nav.main { display: flex; gap: 2.6rem; align-items: center; }
-nav.main a { font-family: var(--font-label), sans-serif; font-size: 0.68rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--papyrus); opacity: 0.85; transition: opacity 0.3s, color 0.3s; }
+nav.main { display: flex; gap: clamp(1.2rem, 2.3vw, 2.6rem); align-items: center; }
+nav.main a { font-family: var(--font-label), sans-serif; font-size: 0.68rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--papyrus); opacity: 0.85; transition: opacity 0.3s, color 0.3s; white-space: nowrap; }
 nav.main a:hover { opacity: 1; color: var(--or-pale); }
+/* The CTA must never wrap to two lines or get squeezed by the link row. */
+nav.main .wbtn { flex-shrink: 0; white-space: nowrap; }
+/* Longer locales (DE/NL) need tighter tracking before the mobile cutoff. */
+@media (max-width: 1520px) {
+  nav.main a { letter-spacing: 0.2em; }
+}
+@media (max-width: 1180px) {
+  nav.main { gap: 1.1rem; }
+  nav.main a { letter-spacing: 0.16em; }
+}
 @media (max-width: 860px) { nav.main { display: none; } }
 /* language switcher (dropdown, in masthead nav) */
 .langswitch { position: relative; }
