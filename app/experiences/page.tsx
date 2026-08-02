@@ -6,15 +6,19 @@ import CtaBand from "@/components/CtaBand";
 import { ArrowRight, PinIcon } from "@/components/icons";
 import { experiences } from "@/data/experiences";
 import { getLocale, localePath } from "@/lib/i18n";
+import { getMetaDict, localeAlternates } from "@/lib/meta-dict";
 import { loadContent } from "@/lib/content";
 import { getPagesDict } from "@/lib/pages-dict";
 
-export const metadata: Metadata = {
-  title: "Signature Experiences in Egypt",
-  description:
-    "Single, designed moments to shape or punctuate any journey — the Giza plateau to yourselves, the Grand Egyptian Museum out of hours, Dendera by river, and the salt lakes of Siwa.",
-  alternates: { canonical: "/experiences" },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const m = getMetaDict(locale).experiences;
+  return {
+    title: m.title,
+    description: m.description,
+    alternates: localeAlternates(locale, "/experiences"),
+  };
+}
 
 export default async function ExperiencesPage() {
   const locale = await getLocale();

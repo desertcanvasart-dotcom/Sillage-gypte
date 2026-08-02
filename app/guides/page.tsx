@@ -5,15 +5,19 @@ import CtaBand from "@/components/CtaBand";
 import { ArrowRight } from "@/components/icons";
 import { guides } from "@/data/guides";
 import { getLocale, localePath } from "@/lib/i18n";
+import { getMetaDict, localeAlternates } from "@/lib/meta-dict";
 import { loadContent } from "@/lib/content";
 import { getGuidesAboutDict } from "@/lib/guides-about-dict";
 
-export const metadata: Metadata = {
-  title: "Our Guides — Egyptologists & Specialists",
-  description:
-    "Meet the Egyptologists, historians, and desert specialists who lead Sillage Égypte's private journeys — the people who change what you see.",
-  alternates: { canonical: "/guides" },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const m = getMetaDict(locale).guides;
+  return {
+    title: m.title,
+    description: m.description,
+    alternates: localeAlternates(locale, "/guides"),
+  };
+}
 
 export default async function GuidesPage() {
   const locale = await getLocale();

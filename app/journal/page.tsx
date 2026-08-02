@@ -6,15 +6,19 @@ import CtaBand from "@/components/CtaBand";
 import { ArrowRight } from "@/components/icons";
 import { sortedJournal } from "@/data/journal";
 import { getLocale, localePath } from "@/lib/i18n";
+import { getMetaDict, localeAlternates } from "@/lib/meta-dict";
 import { loadContent } from "@/lib/content";
 import { getPagesDict } from "@/lib/pages-dict";
 
-export const metadata: Metadata = {
-  title: "The Journal — Travel Notes on Egypt",
-  description:
-    "Considered writing on travelling Egypt well — when to go, how long to stay, and the places worth going deeper. Notes from the people who guide here.",
-  alternates: { canonical: "/journal" },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const m = getMetaDict(locale).journal;
+  return {
+    title: m.title,
+    description: m.description,
+    alternates: localeAlternates(locale, "/journal"),
+  };
+}
 
 export default async function JournalPage() {
   const locale = await getLocale();

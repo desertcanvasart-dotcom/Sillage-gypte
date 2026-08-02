@@ -6,13 +6,17 @@ import { getDestination } from "@/data/destinations";
 import { getImage } from "@/lib/images";
 import { site } from "@/data/site";
 import { getLocale, localePath } from "@/lib/i18n";
+import { getMetaDict, localeAlternates } from "@/lib/meta-dict";
 
-export const metadata: Metadata = {
-  title: "Plan Your Journey",
-  description:
-    "Every Sillage Égypte journey is designed from scratch, around you. Tell us a little, and a journey designer will shape a private proposal — with no obligation.",
-  alternates: { canonical: "/plan" },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const m = getMetaDict(locale).plan;
+  return {
+    title: m.title,
+    description: m.description,
+    alternates: localeAlternates(locale, "/plan"),
+  };
+}
 
 const COPY = {
   en: {

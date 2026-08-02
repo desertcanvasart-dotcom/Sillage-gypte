@@ -4,14 +4,18 @@ import PageHero from "@/components/PageHero";
 import CtaBand from "@/components/CtaBand";
 import { ArrowRight } from "@/components/icons";
 import { getLocale, localePath } from "@/lib/i18n";
+import { getMetaDict, localeAlternates } from "@/lib/meta-dict";
 import { getGuidesAboutDict } from "@/lib/guides-about-dict";
 
-export const metadata: Metadata = {
-  title: "About Sillage Égypte",
-  description:
-    "We are a small team of Egyptologists and journey designers who build private journeys across Egypt — one traveller, one conversation, one country at a time.",
-  alternates: { canonical: "/about" },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const m = getMetaDict(locale).about;
+  return {
+    title: m.title,
+    description: m.description,
+    alternates: localeAlternates(locale, "/about"),
+  };
+}
 
 export default async function AboutPage() {
   const locale = await getLocale();

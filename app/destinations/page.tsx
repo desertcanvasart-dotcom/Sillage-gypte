@@ -5,15 +5,19 @@ import CtaBand from "@/components/CtaBand";
 import Photo from "@/components/Photo";
 import { destinations } from "@/data/destinations";
 import { getLocale, localePath } from "@/lib/i18n";
+import { getMetaDict, localeAlternates } from "@/lib/meta-dict";
 import { loadContent } from "@/lib/content";
 import { getPagesDict } from "@/lib/pages-dict";
 
-export const metadata: Metadata = {
-  title: "Destinations in Egypt",
-  description:
-    "Where we travel — Cairo, Luxor, Aswan, the Nile, the Red Sea, and Alexandria. The places that make up a Sillage Égypte journey.",
-  alternates: { canonical: "/destinations" },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const m = getMetaDict(locale).destinations;
+  return {
+    title: m.title,
+    description: m.description,
+    alternates: localeAlternates(locale, "/destinations"),
+  };
+}
 
 export default async function DestinationsPage() {
   const locale = await getLocale();

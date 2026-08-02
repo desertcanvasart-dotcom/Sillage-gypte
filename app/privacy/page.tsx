@@ -1,16 +1,18 @@
 export const dynamic = "force-dynamic";
 import type { Metadata } from "next";
 import { getLocale } from "@/lib/i18n";
+import { localeAlternates } from "@/lib/meta-dict";
 import { loadContent } from "@/lib/content";
 
 interface Legal { title: string; description: string; bodyHtml: string }
 
 export async function generateMetadata(): Promise<Metadata> {
-  const doc = await loadContent<Legal>("legal", "privacy", await getLocale());
+  const locale = await getLocale();
+  const doc = await loadContent<Legal>("legal", "privacy", locale);
   return {
     title: doc?.title ?? "Privacy & Cookie Policy",
     description: doc?.description,
-    alternates: { canonical: "/privacy" },
+    alternates: localeAlternates(locale, "/privacy"),
     robots: { index: true, follow: true },
   };
 }

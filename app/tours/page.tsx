@@ -4,14 +4,18 @@ import TourCard from "@/components/TourCard";
 import CtaBand from "@/components/CtaBand";
 import { tours } from "@/data/tours";
 import { getLocale } from "@/lib/i18n";
+import { getMetaDict, localeAlternates } from "@/lib/meta-dict";
 import { getPagesDict } from "@/lib/pages-dict";
 
-export const metadata: Metadata = {
-  title: "Private Journeys Across Egypt",
-  description:
-    "Our signature private journeys — the Nile under sail, the Western Desert, the Valley of the Kings, and the far south. Every one designed exclusively for you.",
-  alternates: { canonical: "/tours" },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const m = getMetaDict(locale).tours;
+  return {
+    title: m.title,
+    description: m.description,
+    alternates: localeAlternates(locale, "/tours"),
+  };
+}
 
 export default async function ToursPage() {
   const locale = await getLocale();

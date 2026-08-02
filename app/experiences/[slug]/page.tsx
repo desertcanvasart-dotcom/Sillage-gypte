@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import JsonLd from "@/components/JsonLd";
 import { experiences, getExperience } from "@/data/experiences";
 import { getLocale } from "@/lib/i18n";
+import { localeAlternates } from "@/lib/meta-dict";
 import { loadContent } from "@/lib/content";
 import { SITE_URL, orgRef } from "@/lib/structured-data";
 
@@ -26,7 +27,7 @@ export async function generateMetadata({
   return {
     title: doc?.seoTitle ?? exp.seo.title,
     description: doc?.description ?? exp.seo.description,
-    alternates: { canonical: `/experiences/${exp.slug}` },
+    alternates: localeAlternates(locale, `/experiences/${exp.slug}`),
     openGraph: {
       title: doc?.seoTitle ?? exp.seo.title,
       description: doc?.description ?? exp.seo.description,

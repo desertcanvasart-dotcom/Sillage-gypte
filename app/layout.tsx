@@ -17,6 +17,7 @@ import WarmMasthead from "@/components/warm/WarmMasthead";
 import WarmFooter from "@/components/warm/WarmFooter";
 import { getLocale, localePath } from "@/lib/i18n";
 import { getDict } from "@/lib/dictionaries";
+import { getMetaDict, localeAlternates } from "@/lib/meta-dict";
 import Script from "next/script";
 import CookieConsent from "@/components/CookieConsent";
 
@@ -62,63 +63,69 @@ const jost = Jost({
 });
 
 /* ─── METADATA (SEO + social/GEO) ─────────────────────────────────────── */
-export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
-  title: {
-    default: "Sillage Égypte — Private Journeys Across Egypt",
-    template: "%s · Sillage Égypte",
-  },
-  description:
-    "Sillage Égypte designs private journeys for discerning international travellers who want to experience Egypt on their own terms — guided by experts, built around their interests.",
-  keywords: [
-    "luxury Egypt tours",
-    "private Egypt travel",
-    "Nile journey",
-    "Egyptologist guided tours",
-    "bespoke Egypt itinerary",
-    "Cairo Luxor private tour",
-    "White Desert expedition",
-  ],
-  authors: [{ name: "Sillage Égypte" }],
-  alternates: {
-    canonical: "/",
-    languages: { en: "/", es: "/es", "x-default": "/" },
-  },
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: SITE_URL,
-    siteName: "Sillage Égypte",
-    title: "Sillage Égypte — Private Journeys Across Egypt",
-    description:
-      "Private journeys designed around you, guided by experts who know every layer of this country.",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Sillage Égypte — private journeys across Egypt",
-      },
+const OG_LOCALES: Record<string, string> = {
+  en: "en_US",
+  es: "es_ES",
+  fr: "fr_FR",
+  nl: "nl_NL",
+  de: "de_DE",
+};
+
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const m = getMetaDict(locale);
+  return {
+    metadataBase: new URL(SITE_URL),
+    title: {
+      default: m.root.title,
+      template: "%s · Sillage Égypte",
+    },
+    description: m.root.description,
+    keywords: [
+      "luxury Egypt tours",
+      "private Egypt travel",
+      "Nile journey",
+      "Egyptologist guided tours",
+      "bespoke Egypt itinerary",
+      "Cairo Luxor private tour",
+      "White Desert expedition",
     ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Sillage Égypte — Private Journeys Across Egypt",
-    description:
-      "Private journeys designed around you, guided by experts who know every layer of this country.",
-    images: ["/og-image.jpg"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
+    authors: [{ name: "Sillage Égypte" }],
+    alternates: localeAlternates(locale, "/"),
+    openGraph: {
+      type: "website",
+      locale: OG_LOCALES[locale],
+      url: SITE_URL,
+      siteName: "Sillage Égypte",
+      title: m.root.title,
+      description: m.ogDescription,
+      images: [
+        {
+          url: "/og-image.jpg",
+          width: 1200,
+          height: 630,
+          alt: "Sillage Égypte — private journeys across Egypt",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: m.root.title,
+      description: m.ogDescription,
+      images: ["/og-image.jpg"],
+    },
+    robots: {
       index: true,
       follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
     },
-  },
-};
+  };
+}
 
 export default async function RootLayout({
   children,

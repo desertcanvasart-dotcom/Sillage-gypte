@@ -3,13 +3,17 @@ import PageHero from "@/components/PageHero";
 import EnquiryForm from "@/components/EnquiryForm";
 import { site } from "@/data/site";
 import { getLocale, localePath } from "@/lib/i18n";
+import { getMetaDict, localeAlternates } from "@/lib/meta-dict";
 
-export const metadata: Metadata = {
-  title: "Contact Sillage Égypte",
-  description:
-    "Reach Sillage Égypte by email, phone, or WhatsApp — or send an enquiry and a journey designer will reply within 24 hours.",
-  alternates: { canonical: "/contact" },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const m = getMetaDict(locale).contact;
+  return {
+    title: m.title,
+    description: m.description,
+    alternates: localeAlternates(locale, "/contact"),
+  };
+}
 
 const COPY = {
   en: {

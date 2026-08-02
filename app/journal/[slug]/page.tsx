@@ -9,6 +9,7 @@ import JsonLd from "@/components/JsonLd";
 import { ArrowRight } from "@/components/icons";
 import { journal, getPost, sortedJournal } from "@/data/journal";
 import { getLocale, localePath } from "@/lib/i18n";
+import { localeAlternates } from "@/lib/meta-dict";
 import { loadContent } from "@/lib/content";
 import { SITE_URL, orgRef } from "@/lib/structured-data";
 
@@ -31,7 +32,7 @@ export async function generateMetadata({
   return {
     title: doc?.seoTitle ?? post.seo.title,
     description: doc?.description ?? post.seo.description,
-    alternates: { canonical: `/journal/${post.slug}` },
+    alternates: localeAlternates(locale, `/journal/${post.slug}`),
     openGraph: {
       type: "article",
       title: doc?.seoTitle ?? post.seo.title,
