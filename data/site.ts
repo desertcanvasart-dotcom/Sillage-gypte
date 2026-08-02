@@ -9,7 +9,7 @@ export const site = {
   description:
     "Private journeys designed around you, guided by experts who know every layer of this country.",
   url: "https://sillage-egypte.com",
-  email: "hello@luxuriousegypt.com",
+  email: "hello@sillage-egypte.com",
   phoneDisplay: "+20 109 847 1928",
   phoneHref: "+201098471928",
   whatsappDisplay: "WhatsApp enquiries welcome",
