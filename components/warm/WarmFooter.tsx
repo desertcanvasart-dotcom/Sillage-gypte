@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CookieSettingsLink from "@/components/CookieSettingsLink";
 import { site } from "@/data/site";
 import { getLocale, localePath } from "@/lib/i18n";
 import { getDict } from "@/lib/dictionaries";
@@ -49,7 +50,8 @@ export default async function WarmFooter() {
           <span>© 2026 {site.name}. {t.footer.rights}</span>
           <span>
             <Link href={p("/privacy")}>{t.footer.privacy}</Link> ·{" "}
-            <Link href={p("/terms")}>{t.footer.terms}</Link>
+            <Link href={p("/terms")}>{t.footer.terms}</Link> ·{" "}
+            <CookieSettingsLink label={t.footer.cookies} />
           </span>
         </div>
       </div>

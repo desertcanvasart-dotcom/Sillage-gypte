@@ -373,3 +373,11 @@
 .wconsent button.solid:hover, .wconsent button.solid:focus-visible { background: #d9c490; border-color: #d9c490; }
 .wconsent button.ghost:hover, .wconsent button.ghost:focus-visible { background: rgba(191, 161, 95, 0.14); }
 .wconsent button:focus-visible { outline: 2px solid #bfa15f; outline-offset: 2px; }
+
+/* Footer "Cookie settings" — a button that must read as the sibling links. */
+.wfooter .cookie-settings {
+  background: none; border: none; padding: 0; margin: 0;
+  font: inherit; color: inherit; cursor: pointer;
+  text-decoration: none;
+}
+.wfooter .cookie-settings:hover, .wfooter .cookie-settings:focus-visible { color: #d9c490; }
