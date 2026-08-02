@@ -11,6 +11,7 @@ export interface Dict {
     tagline: string; explore: string; contact: string;
     about: string; guides: string; rights: string; privacy: string; terms: string;
   };
+  consent: { message: string; accept: string; decline: string; privacy: string };
   langName: string;
   home: {
     kicker: string; h1a: string; h1em: string; h1b: string; lede: string;
@@ -31,6 +32,7 @@ export interface Dict {
 const en: Dict = {
   nav: { journeys: "Journeys", destinations: "Destinations", experiences: "Experiences", journal: "Journal", plan: "Plan your journey" },
   footer: { tagline: "Private journeys designed around you, guided by experts who know every layer of this country.", explore: "Explore", contact: "Contact", about: "About", guides: "Guides", rights: "All rights reserved.", privacy: "Privacy", terms: "Terms" },
+  consent: { message: "We use a single analytics cookie to understand how the site is used — no advertising, no profiling. Is that all right?", accept: "Accept", decline: "Decline", privacy: "Privacy policy" },
   langName: "English",
   home: {
     kicker: "Private journeys through Egypt",
@@ -68,6 +70,7 @@ const en: Dict = {
 const es: Dict = {
   nav: { journeys: "Viajes", destinations: "Destinos", experiences: "Experiencias", journal: "Diario", plan: "Planifica tu viaje" },
   footer: { tagline: "Viajes privados diseñados a tu medida, guiados por expertos que conocen cada capa de este país.", explore: "Explorar", contact: "Contacto", about: "Quiénes somos", guides: "Guías", rights: "Todos los derechos reservados.", privacy: "Privacidad", terms: "Términos" },
+  consent: { message: "Utilizamos una única cookie analítica para entender cómo se usa el sitio: sin publicidad ni perfiles. ¿Le parece bien?", accept: "Aceptar", decline: "Rechazar", privacy: "Política de privacidad" },
   langName: "Español",
   home: {
     kicker: "Viajes privados por Egipto",
@@ -105,6 +108,7 @@ const es: Dict = {
 const fr: Dict = {
   nav: { journeys: "Voyages", destinations: "Destinations", experiences: "Expériences", journal: "Journal", plan: "Composez votre voyage" },
   footer: { tagline: "Des voyages privés conçus autour de vous, guidés par des experts qui connaissent chaque strate de ce pays.", explore: "Explorer", contact: "Contact", about: "À propos", guides: "Guides", rights: "Tous droits réservés.", privacy: "Confidentialité", terms: "Conditions" },
+  consent: { message: "Nous utilisons un seul cookie d\u2019analyse pour comprendre l\u2019usage du site — ni publicité, ni profilage. Êtes-vous d\u2019accord ?", accept: "Accepter", decline: "Refuser", privacy: "Politique de confidentialité" },
   langName: "Français",
   home: {
     kicker: "Voyages privés à travers l'Égypte",
@@ -142,6 +146,7 @@ const fr: Dict = {
 const nl: Dict = {
   nav: { journeys: "Reizen", destinations: "Bestemmingen", experiences: "Ervaringen", journal: "Journaal", plan: "Stel uw reis samen" },
   footer: { tagline: "Privéreizen, ontworpen rond u, begeleid door experts die elke laag van dit land kennen.", explore: "Ontdek", contact: "Contact", about: "Over ons", guides: "Gidsen", rights: "Alle rechten voorbehouden.", privacy: "Privacy", terms: "Voorwaarden" },
+  consent: { message: "We gebruiken één analytische cookie om te zien hoe de site wordt gebruikt — geen advertenties, geen profilering. Vindt u dat goed?", accept: "Accepteren", decline: "Weigeren", privacy: "Privacybeleid" },
   langName: "Nederlands",
   home: {
     kicker: "Privéreizen door Egypte",
@@ -179,6 +184,7 @@ const nl: Dict = {
 const de: Dict = {
   nav: { journeys: "Reisen", destinations: "Reiseziele", experiences: "Erlebnisse", journal: "Journal", plan: "Stellen Sie Ihre Reise zusammen" },
   footer: { tagline: "Private Reisen, ganz um Sie herum gestaltet, geführt von Experten, die jede Schicht dieses Landes kennen.", explore: "Entdecken", contact: "Kontakt", about: "Über uns", guides: "Reiseführer", rights: "Alle Rechte vorbehalten.", privacy: "Datenschutz", terms: "Bedingungen" },
+  consent: { message: "Wir verwenden ein einziges Analyse-Cookie, um zu verstehen, wie die Website genutzt wird — keine Werbung, kein Profiling. Sind Sie einverstanden?", accept: "Akzeptieren", decline: "Ablehnen", privacy: "Datenschutzerklärung" },
   langName: "Deutsch",
   home: {
     kicker: "Private Reisen durch Ägypten",

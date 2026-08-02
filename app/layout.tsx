@@ -15,8 +15,10 @@ import { organizationSchema, websiteSchema, SITE_URL } from "@/lib/structured-da
 import ScrollReveal from "@/components/ScrollReveal";
 import WarmMasthead from "@/components/warm/WarmMasthead";
 import WarmFooter from "@/components/warm/WarmFooter";
-import { getLocale } from "@/lib/i18n";
+import { getLocale, localePath } from "@/lib/i18n";
+import { getDict } from "@/lib/dictionaries";
 import Script from "next/script";
+import CookieConsent from "@/components/CookieConsent";
 
 /* Locale is resolved per request (middleware → x-locale header), so the whole
    tree renders dynamically. Output stays server-rendered HTML — fully crawlable. */
@@ -124,6 +126,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const locale = await getLocale();
+  const t = getDict(locale);
   return (
     <html
       lang={locale}
@@ -148,6 +151,13 @@ export default async function RootLayout({
         {children}
         <WarmFooter />
         <ScrollReveal />
+        <CookieConsent
+          message={t.consent.message}
+          accept={t.consent.accept}
+          decline={t.consent.decline}
+          privacyLabel={t.consent.privacy}
+          privacyHref={localePath(locale, "/privacy")}
+        />
         {/* Google tag (gtag.js) */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-2LXTS9TX7W"
@@ -156,6 +166,14 @@ export default async function RootLayout({
         <Script id="gtag-init" strategy="afterInteractive">
           {`window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
+            var sillageConsent = null;
+            try { sillageConsent = localStorage.getItem('sillage-consent'); } catch (e) {}
+            gtag('consent', 'default', {
+              ad_storage: 'denied',
+              ad_user_data: 'denied',
+              ad_personalization: 'denied',
+              analytics_storage: sillageConsent === 'granted' ? 'granted' : 'denied'
+            });
             gtag('js', new Date());
             gtag('config', 'G-2LXTS9TX7W');`}
         </Script>

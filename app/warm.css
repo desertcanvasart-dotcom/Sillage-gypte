@@ -333,3 +333,43 @@
 .warm .wfooter .col a { display: block; font-size: 0.92rem; color: var(--eau); margin-bottom: 0.5rem; }
 .warm .wfooter .col a:hover { color: var(--or-pale); }
 .warm .wfooter .legal { width: 100%; margin-top: 3rem; padding-top: 1.4rem; border-top: 1px solid rgba(191, 161, 95, 0.14); font-family: var(--font-jost), sans-serif; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+
+/* ── Cookie consent banner ─────────────────────────────────────────────
+   Lives in <body> outside `.warm`, so it carries its own palette values
+   (nuit / papyrus / gold — same as the tokens above). */
+.wconsent {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 90;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem 2.2rem;
+  padding: 1.05rem 6vw;
+  background: #101d18;
+  color: #f4eddc;
+  border-top: 1px solid rgba(191, 161, 95, 0.28);
+  font-family: var(--font-jost), sans-serif;
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+.wconsent p { margin: 0; max-width: 62ch; }
+.wconsent a { color: #d9c490; text-decoration: underline; text-underline-offset: 2px; }
+.wconsent .acts { display: flex; gap: 0.7rem; flex-shrink: 0; }
+.wconsent button {
+  font-family: var(--font-jost), sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.6rem 1.4rem;
+  border: 1px solid #bfa15f;
+  background: transparent;
+  color: #bfa15f;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.wconsent button.solid { background: #bfa15f; color: #101d18; }
+.wconsent button.solid:hover, .wconsent button.solid:focus-visible { background: #d9c490; border-color: #d9c490; }
+.wconsent button.ghost:hover, .wconsent button.ghost:focus-visible { background: rgba(191, 161, 95, 0.14); }
+.wconsent button:focus-visible { outline: 2px solid #bfa15f; outline-offset: 2px; }
