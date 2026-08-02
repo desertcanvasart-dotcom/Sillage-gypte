@@ -16,6 +16,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import WarmMasthead from "@/components/warm/WarmMasthead";
 import WarmFooter from "@/components/warm/WarmFooter";
 import { getLocale } from "@/lib/i18n";
+import Script from "next/script";
 
 /* Locale is resolved per request (middleware → x-locale header), so the whole
    tree renders dynamically. Output stays server-rendered HTML — fully crawlable. */
@@ -147,6 +148,17 @@ export default async function RootLayout({
         {children}
         <WarmFooter />
         <ScrollReveal />
+        {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-2LXTS9TX7W"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-2LXTS9TX7W');`}
+        </Script>
       </body>
     </html>
   );
