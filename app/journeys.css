@@ -152,3 +152,9 @@
 .jny .cta h2 em { color: var(--or-pale); font-style: italic; font-family: var(--font-body), serif; }
 .jny .cta p { max-width: 34em; margin: 1.4rem auto 2.8rem; color: var(--papyrus); opacity: 0.9; text-shadow: 0 1px 18px rgba(0,0,0,.5); }
 .jny .cta .note { margin-top: 1.6rem; font-family: var(--font-label), sans-serif; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--or-pale); }
+
+/* Subtle photo zoom on the journey cards (pairs with the lift above). */
+@media (prefers-reduced-motion: no-preference) {
+  .jny .scard .photo { transition: transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1); }
+  .jny .scard:hover .photo { transform: scale(1.04); }
+}
