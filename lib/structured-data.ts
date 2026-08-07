@@ -29,7 +29,9 @@ export const organizationSchema = {
   image: `${SITE_URL}/og-image.jpg`,
   description:
     "Sillage Égypte is a private tour operator offering bespoke Nile journeys, desert expeditions, and cultural experiences across Egypt for international travellers.",
-  foundingDate: brand.foundingDate,
+  legalName: brand.legalName,
+  // Omit rather than emit an empty value for anything not yet verified.
+  ...(brand.foundingDate ? { foundingDate: brand.foundingDate } : {}),
   founder: brand.founders.map((f) => ({
     "@type": "Person",
     name: f.name,
@@ -40,7 +42,7 @@ export const organizationSchema = {
     streetAddress: brand.address.streetAddress,
     addressLocality: brand.address.addressLocality,
     addressRegion: brand.address.addressRegion,
-    postalCode: brand.address.postalCode,
+    ...(brand.address.postalCode ? { postalCode: brand.address.postalCode } : {}),
     addressCountry: brand.address.addressCountry,
   },
   telephone: site.phoneDisplay,
@@ -58,23 +60,34 @@ export const organizationSchema = {
   areaServed: brand.areaServed.map((name) => ({ "@type": "Place", name })),
   memberOf: brand.memberships.map((name) => ({ "@type": "Organization", name })),
   priceRange: brand.priceRange,
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: aggregateRating.ratingValue,
-    reviewCount: aggregateRating.reviewCount,
-    bestRating: aggregateRating.bestRating,
-  },
-  review: reviews.map((r) => ({
-    "@type": "Review",
-    author: { "@type": "Person", name: r.author },
-    datePublished: r.datePublished,
-    reviewBody: r.quote,
-    reviewRating: {
-      "@type": "Rating",
-      ratingValue: r.rating,
-      bestRating: 5,
-    },
-  })),
+  // Ratings and reviews are claimed only when real ones exist. Asserting them
+  // otherwise is against Google's structured-data policy, and review stars are
+  // exactly what it shows in results — see data/reviews.ts.
+  ...(aggregateRating
+    ? {
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: aggregateRating.ratingValue,
+          reviewCount: aggregateRating.reviewCount,
+          bestRating: aggregateRating.bestRating,
+        },
+      }
+    : {}),
+  ...(reviews.length
+    ? {
+        review: reviews.map((r) => ({
+          "@type": "Review",
+          author: { "@type": "Person", name: r.author },
+          datePublished: r.datePublished,
+          reviewBody: r.quote,
+          reviewRating: {
+            "@type": "Rating",
+            ratingValue: r.rating,
+            bestRating: 5,
+          },
+        })),
+      }
+    : {}),
 };
 
 export const websiteSchema = {

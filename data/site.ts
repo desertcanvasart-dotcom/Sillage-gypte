@@ -23,23 +23,23 @@ export const site = {
 };
 
 /**
- * PLACEHOLDER brand facts used to build schema.org structured data.
- * REPLACE every value here with verified details before launch — see the
- * "Brand information to gather" section of README.md. These must match
- * reality: schema that contradicts the truth can be penalised.
+ * Verified brand facts used to build schema.org structured data. These must
+ * match reality: schema that contradicts the truth can be penalised, so add a
+ * value here only once it is confirmed. Anything still unknown is left out
+ * rather than guessed — the schema omits absent fields.
  */
 export const brand = {
   alternateName: "Sillage Égypte — Private Journeys",
-  foundingDate: "2014", // PLACEHOLDER
-  founders: [
-    { name: "Karim Mansour", jobTitle: "Founder & Managing Director" }, // PLACEHOLDER
-  ],
+  /** The operating company; Sillage Égypte is its trading name. */
+  legalName: "Capital Travel Services",
+  foundingDate: "2010",
+  founders: [{ name: "Islam Hussein", jobTitle: "Founder" }],
   address: {
-    // PLACEHOLDER — replace with the real registered office
-    streetAddress: "12 Road 9, Maadi",
-    addressLocality: "Cairo",
-    addressRegion: "Cairo Governorate",
-    postalCode: "11431",
+    streetAddress: "1 Farouk Mahmoud St",
+    addressLocality: "Giza",
+    addressRegion: "Cairo",
+    /** Unknown — supply the real postcode to publish it. */
+    postalCode: undefined as string | undefined,
     addressCountry: "EG",
   },
   priceRange: "$$$$",
@@ -54,8 +54,8 @@ export const brand = {
   ],
   areaServed: ["Egypt", "Cairo", "Luxor", "Aswan", "Sinai", "Western Desert"],
   memberships: [
-    "Egyptian Travel Agents Association (ETAA)", // PLACEHOLDER
-    "IATA accredited", // PLACEHOLDER
+    "Egyptian Travel Agents Association (ETAA) — 2179",
+    "IATA accredited",
   ],
 };
 

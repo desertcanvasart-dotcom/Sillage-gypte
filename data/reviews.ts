@@ -1,4 +1,4 @@
-/** Traveller reviews. Drives the homepage reviews section AND its Review /
+/** Traveller reviews. Drive the reviews section AND its Review /
  *  AggregateRating structured data, so the two never drift apart. */
 
 export interface Review {
@@ -9,36 +9,21 @@ export interface Review {
   datePublished: string; // ISO
 }
 
-// PLACEHOLDER aggregate — replace with verified totals from your review source.
-export const aggregateRating = {
-  ratingValue: 4.9,
-  reviewCount: 127,
-  bestRating: 5,
-};
+/**
+ * Verified totals from the review source, or null while there are none.
+ * An invented rating is against Google's structured-data policy and is the
+ * figure shown as review stars in results, so this stays null until the
+ * numbers are real. The schema omits AggregateRating entirely while it is.
+ */
+export const aggregateRating: {
+  ratingValue: number;
+  reviewCount: number;
+  bestRating: number;
+} | null = null;
 
-export const reviews: Review[] = [
-  {
-    author: "James & Caroline M.",
-    location: "United Kingdom",
-    rating: 5,
-    datePublished: "2026-03-18",
-    quote:
-      "The depth of knowledge our guide brought to each site completely changed how we understood Egypt. Not a tour — a masterclass.",
-  },
-  {
-    author: "Hiroshi T.",
-    location: "Japan",
-    rating: 5,
-    datePublished: "2026-02-02",
-    quote:
-      "We've done many private tours around the world. This was different. Every detail, from the first email to the last morning, felt considered.",
-  },
-  {
-    author: "Maria & Thomas K.",
-    location: "Germany",
-    rating: 5,
-    datePublished: "2026-01-15",
-    quote:
-      "We asked for something nobody else would show us. They found it. The White Desert at 3am, under a full moon, completely alone.",
-  },
-];
+/**
+ * Empty until real, attributable traveller reviews are available. The ones
+ * that were here were invented, and they only ever reached Google as Review
+ * schema — no page renders them.
+ */
+export const reviews: Review[] = [];
