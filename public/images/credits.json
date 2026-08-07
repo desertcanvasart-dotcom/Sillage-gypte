@@ -1,35 +1,11 @@
 [
   {
-    "key": "home-hero",
-    "path": "/images/home-hero.jpg",
-    "title": "Egypt (Aswan) A sunset view of a Mosque and feluccas on the Nile River (25743016964)",
-    "artist": "Güldem Üstün from Istanbul, TURKEY",
-    "license": "CC BY 2.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Egypt_(Aswan)_A_sunset_view_of_a_Mosque_and_feluccas_on_the_Nile_River_(25743016964).jpg"
-  },
-  {
-    "key": "dest-cairo",
-    "path": "/images/dest-cairo.jpg",
-    "title": "Pyramids of Giza, Egypt - Cairo skyline in the background - panoramio",
-    "artist": "David Broad",
-    "license": "CC BY 3.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Pyramids_of_Giza,_Egypt_-_Cairo_skyline_in_the_background_-_panoramio.jpg"
-  },
-  {
     "key": "dest-luxor",
     "path": "/images/dest-luxor.jpg",
     "title": "Columns at Hypostyle hall of Karnak Temple in Luxor Egypt",
     "artist": "Tim Adams",
     "license": "CC BY 3.0",
     "source": "https://commons.wikimedia.org/wiki/File:Columns_at_Hypostyle_hall_of_Karnak_Temple_in_Luxor_Egypt.jpg"
-  },
-  {
-    "key": "dest-abu-simbel",
-    "path": "/images/dest-abu-simbel.jpg",
-    "title": "Templo de Nefertari, Abu Simbel, Egipto, 2022-04-02, DD 153",
-    "artist": "Diego Delso",
-    "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Templo_de_Nefertari,_Abu_Simbel,_Egipto,_2022-04-02,_DD_153.jpg"
   },
   {
     "key": "dest-siwa",
@@ -400,22 +376,6 @@
     "source": "https://commons.wikimedia.org/wiki/File:Tomb_of_Sennedjem_(ceiling)_DSCF3579.jpg"
   },
   {
-    "key": "dest-sharm-el-sheikh",
-    "path": "/images/dest-sharm-el-sheikh.jpg",
-    "title": "Coral (Annella mollis), parque nacional Ras Muhammad, Egipto, 2022-03-28, DD 108",
-    "artist": "Diego Delso",
-    "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Coral_(Annella_mollis),_parque_nacional_Ras_Muhammad,_Egipto,_2022-03-28,_DD_108.jpg"
-  },
-  {
-    "key": "dest-alexandria",
-    "path": "/images/dest-alexandria.jpg",
-    "title": "القلعة اسكندرية",
-    "artist": "Summering2018",
-    "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:%D8%A7%D9%84%D9%82%D9%84%D8%B9%D8%A9_%D8%A7%D8%B3%D9%83%D9%86%D8%AF%D8%B1%D9%8A%D8%A9.jpg"
-  },
-  {
     "key": "dest-cairo-1",
     "path": "/images/dest-cairo-1.jpg",
     "title": "The dawn of civilization- Egypt and Chaldaea (1897) (14577074868)",
@@ -544,14 +504,6 @@
     "source": "https://commons.wikimedia.org/wiki/File:Great_Sphinx_(%D8%A3%D8%A8%D9%88_%D8%A7%D9%84%D9%87%D9%88%D9%84).jpg"
   },
   {
-    "key": "exp-the-empty-museum",
-    "path": "/images/exp-the-empty-museum.jpg",
-    "title": "Grand Egyptian Museum 2025",
-    "artist": "Amr F.Nagy",
-    "license": "Public domain",
-    "source": "https://commons.wikimedia.org/wiki/File:Grand_Egyptian_Museum_2025.jpg"
-  },
-  {
     "key": "exp-the-empty-museum-1",
     "path": "/images/exp-the-empty-museum-1.jpg",
     "title": "Temple fragment, Grand Staircase in Grand Egyptian Museum",
@@ -632,27 +584,11 @@
     "source": "https://commons.wikimedia.org/wiki/File:Mountain_of_the_Dead_(Gebel_al-Mawta).jpg"
   },
   {
-    "key": "exp-the-temple-by-river",
-    "path": "/images/exp-the-temple-by-river.jpg",
-    "title": "Temple of Hathor at Dendera (2)",
-    "artist": "Hamerani",
-    "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Temple_of_Hathor_at_Dendera_(2).jpg"
-  },
-  {
     "key": "exp-the-temple-by-river-2",
     "path": "/images/exp-the-temple-by-river-2.jpg",
     "title": "Dendera Tempel Zodiak 06",
     "artist": "Olaf Tausch",
     "license": "CC BY 3.0",
     "source": "https://commons.wikimedia.org/wiki/File:Dendera_Tempel_Zodiak_06.jpg"
-  },
-  {
-    "key": "exp-the-salt-lakes",
-    "path": "/images/exp-the-salt-lakes.jpg",
-    "title": "Siwa Salt pools09",
-    "artist": "ولاء",
-    "license": "Public domain",
-    "source": "https://commons.wikimedia.org/wiki/File:Siwa_Salt_pools09.jpg"
   }
 ]
