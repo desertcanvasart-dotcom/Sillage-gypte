@@ -17,6 +17,14 @@ export default function Photo({
   const src = getImage(k);
   if (!src) return null;
   // Local /public asset; plain <img> keeps the gradient fallback trivial.
-  // eslint-disable-next-line @next/next/no-img-element
-  return <img src={src} alt={alt} className={className} loading="lazy" decoding="async" />;
+  // scripts/optimize-images.mjs writes a .webp beside every .jpg — offer it
+  // first and let the browser fall back to the jpg it already knows.
+  const webp = src.replace(/\.jpe?g$/i, ".webp");
+  return (
+    <picture>
+      {webp !== src && <source srcSet={webp} type="image/webp" />}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={src} alt={alt} className={className} loading="lazy" decoding="async" />
+    </picture>
+  );
 }
