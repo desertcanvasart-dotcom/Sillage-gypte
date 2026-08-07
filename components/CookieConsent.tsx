@@ -15,10 +15,22 @@ import Link from "next/link";
 
 const STORAGE_KEY = "sillage-consent";
 
-/** Same queue-pushing stub gtag.js reads — safe before the library loads. */
+/**
+ * Same queue-pushing stub gtag.js reads — safe before the library loads.
+ *
+ * The command must reach dataLayer as an `arguments` object, exactly as the
+ * canonical snippet in app/layout.tsx pushes it. gtag.js ignores a plain
+ * array, so pushing `args` silently dropped every command made from here.
+ */
 function gtag(...args: unknown[]) {
-  const w = window as unknown as { dataLayer?: unknown[] };
-  (w.dataLayer = w.dataLayer ?? []).push(args as unknown as IArguments);
+  const w = window as unknown as { dataLayer?: unknown[]; gtag?: (...a: unknown[]) => void };
+  // Prefer the real gtag once the library has defined it.
+  if (typeof w.gtag === "function") {
+    w.gtag(...args);
+    return;
+  }
+  // eslint-disable-next-line prefer-rest-params
+  (w.dataLayer = w.dataLayer ?? []).push(arguments);
 }
 
 export default function CookieConsent({
@@ -50,6 +62,18 @@ export default function CookieConsent({
     localStorage.setItem(STORAGE_KEY, granted ? "granted" : "denied");
     if (granted) {
       gtag("consent", "update", { analytics_storage: "granted" });
+      // The page_view for this page already went out under the denied default,
+      // as a cookieless ping that never reaches Realtime or the standard
+      // reports, and updating consent does not resend it — so a visitor who
+      // accepts and then leaves without navigating goes unrecorded entirely.
+      //
+      // Reloading is the reliable way to recover that view: the init script in
+      // app/layout.tsx re-reads the stored choice, sets the consent default to
+      // granted before gtag('config'), and the page is counted normally. A
+      // gtag('event','page_view') here is accepted into dataLayer but gtag
+      // never turns it into a request, so the view stays lost.
+      window.location.reload();
+      return;
     }
     setVisible(false);
   };
