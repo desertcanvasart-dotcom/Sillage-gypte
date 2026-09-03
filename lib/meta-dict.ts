@@ -1,4 +1,5 @@
 import { locales, localePath, type Locale } from "./i18n";
+import { SITE_URL } from "./structured-data";
 
 /**
  * Localized <title> / meta description for the root layout and the static
@@ -35,6 +36,11 @@ export function localeAlternates(locale: Locale, path: string) {
       "x-default": path,
     },
   };
+}
+
+/** Absolute URL for metadata and structured data on the active locale route. */
+export function localizedUrl(locale: Locale, path: string): string {
+  return `${SITE_URL}${localePath(locale, path)}`;
 }
 
 const en: MetaDict = {

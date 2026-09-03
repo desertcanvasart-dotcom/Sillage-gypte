@@ -4,9 +4,9 @@ import { notFound } from "next/navigation";
 import JsonLd from "@/components/JsonLd";
 import { tours, getTour } from "@/data/tours";
 import { getLocale } from "@/lib/i18n";
-import { localeAlternates } from "@/lib/meta-dict";
+import { localeAlternates, localizedUrl } from "@/lib/meta-dict";
 import { loadContent } from "@/lib/content";
-import { SITE_URL, orgRef } from "@/lib/structured-data";
+import { orgRef } from "@/lib/structured-data";
 
 interface Journey { seoTitle?: string; description?: string; imgVars: Record<string, string>; bodyHtml: string }
 
@@ -31,7 +31,7 @@ export async function generateMetadata({
     openGraph: {
       title: doc?.seoTitle ?? tour.seo.title,
       description: doc?.description ?? tour.seo.description,
-      url: `${SITE_URL}/tours/${tour.slug}`,
+      url: localizedUrl(locale, `/tours/${tour.slug}`),
     },
   };
 }
@@ -52,14 +52,15 @@ export default async function TourDetailPage({
   const tripSchema = {
     "@context": "https://schema.org",
     "@type": "TouristTrip",
-    name: tour.title,
+    name: doc.seoTitle ?? tour.title,
     description: doc.description ?? tour.seo.description,
-    url: `${SITE_URL}/tours/${tour.slug}`,
+    url: localizedUrl(locale, `/tours/${tour.slug}`),
+    inLanguage: locale,
     touristType: "Private travellers",
     offers: {
       "@type": "Offer",
       availability: "https://schema.org/InStock",
-      url: `${SITE_URL}/plan?journey=${tour.slug}`,
+      url: localizedUrl(locale, `/plan?journey=${tour.slug}`),
       description:
         "Each journey is priced individually to its design. Contact us to plan; no online booking.",
     },

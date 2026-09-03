@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { destinations } from "@/data/destinations";
 import { getLocale } from "@/lib/i18n";
-import { localeAlternates } from "@/lib/meta-dict";
+import { localeAlternates, localizedUrl } from "@/lib/meta-dict";
 import { loadContent } from "@/lib/content";
 
 interface Guide {
@@ -31,7 +31,11 @@ export async function generateMetadata({
     title: g.title,
     description: g.description,
     alternates: localeAlternates(locale, `/destinations/${slug}`),
-    openGraph: { title: g.title, description: g.description, url: `/destinations/${slug}` },
+    openGraph: {
+      title: g.title,
+      description: g.description,
+      url: localizedUrl(locale, `/destinations/${slug}`),
+    },
   };
 }
 
