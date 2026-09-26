@@ -1,5 +1,7 @@
+import type { Metadata } from "next";
 import { locales, localePath, type Locale } from "./i18n";
 import { SITE_URL } from "./structured-data";
+import { getImage } from "./images";
 
 /**
  * Localized <title> / meta description for the root layout and the static
@@ -12,8 +14,6 @@ export interface PageMeta {
 
 export interface MetaDict {
   root: PageMeta;
-  /** Short description used for OpenGraph/Twitter cards. */
-  ogDescription: string;
   tours: PageMeta;
   destinations: PageMeta;
   experiences: PageMeta;
@@ -40,7 +40,95 @@ export function localeAlternates(locale: Locale, path: string) {
 
 /** Absolute URL for metadata and structured data on the active locale route. */
 export function localizedUrl(locale: Locale, path: string): string {
-  return `${SITE_URL}${localePath(locale, path)}`;
+  const p = localePath(locale, path);
+  return p === "/" ? SITE_URL : `${SITE_URL}${p}`;
+}
+
+export const SITE_NAME = "Sillage Égypte";
+/** Matches the title template in app/layout.tsx. */
+const TITLE_SUFFIX = ` · ${SITE_NAME}`;
+
+/** OpenGraph locale per site locale. EN keeps the en_US it has always used. */
+export const OG_LOCALES: Record<Locale, string> = {
+  en: "en_US",
+  es: "es_ES",
+  fr: "fr_FR",
+  nl: "nl_NL",
+  de: "de_DE",
+};
+
+const DEFAULT_OG_IMAGE = {
+  url: "/og-image.jpg",
+  width: 1200,
+  height: 630,
+  alt: "Sillage Égypte — private journeys across Egypt",
+};
+
+/**
+ * Resolve a page's hero image to a site-relative URL. Accepts an image-manifest
+ * key ("dest-cairo"), a CSS `url("…")` value from a content file's imgVars, or
+ * a plain path.
+ */
+export function heroImage(ref: string | undefined): string | undefined {
+  if (!ref) return undefined;
+  const css = ref.match(/url\((["']?)(.+?)\1\)/);
+  if (css) return css[2];
+  if (ref.startsWith("/") || ref.startsWith("http")) return ref;
+  return getImage(ref);
+}
+
+interface PageMetaInput {
+  locale: Locale;
+  /** Locale-neutral path, e.g. "/tours/grand-tour". */
+  path: string;
+  title: string;
+  description?: string;
+  /** Manifest key, imgVars value or path of the page's hero image. */
+  image?: string;
+  imageAlt?: string;
+  /** Use the title as-is instead of appending the site name (homepage). */
+  absoluteTitle?: boolean;
+  type?: "website" | "article";
+  publishedTime?: string;
+  authors?: string[];
+}
+
+/**
+ * Complete metadata for one page: title, description, self-referencing
+ * canonical, hreflang set, and OpenGraph/Twitter tags that describe this page,
+ * not the homepage. Every route builds its metadata here. Next.js merges
+ * `openGraph` and `twitter` shallowly, so a page that sets only part of them
+ * would inherit the rest from the layout.
+ */
+export function pageMetadata(i: PageMetaInput): Metadata {
+  const fullTitle = i.absoluteTitle ? i.title : `${i.title}${TITLE_SUFFIX}`;
+  const url = localizedUrl(i.locale, i.path);
+  const src = heroImage(i.image);
+  const image = src ? { url: src, alt: i.imageAlt ?? i.title } : DEFAULT_OG_IMAGE;
+  return {
+    title: i.absoluteTitle ? { absolute: i.title } : i.title,
+    description: i.description,
+    alternates: localeAlternates(i.locale, i.path),
+    openGraph: {
+      type: i.type ?? "website",
+      siteName: SITE_NAME,
+      locale: OG_LOCALES[i.locale],
+      alternateLocale: locales.filter((l) => l !== i.locale).map((l) => OG_LOCALES[l]),
+      url,
+      title: fullTitle,
+      description: i.description,
+      images: [image],
+      ...(i.type === "article"
+        ? { publishedTime: i.publishedTime, authors: i.authors }
+        : {}),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: fullTitle,
+      description: i.description,
+      images: [image.url],
+    },
+  };
 }
 
 const en: MetaDict = {
@@ -49,8 +137,6 @@ const en: MetaDict = {
     description:
       "Sillage Égypte designs private journeys for discerning international travellers who want to experience Egypt on their own terms — guided by experts, built around their interests.",
   },
-  ogDescription:
-    "Private journeys designed around you, guided by experts who know every layer of this country.",
   tours: {
     title: "Private Journeys Across Egypt",
     description:
@@ -77,12 +163,12 @@ const en: MetaDict = {
       "Considered writing on travelling Egypt well — when to go, how long to stay, and the places worth going deeper. Notes from the people who guide here.",
   },
   about: {
-    title: "About Sillage Égypte",
+    title: "About us",
     description:
       "We are a small team of Egyptologists and journey designers who build private journeys across Egypt — one traveller, one conversation, one country at a time.",
   },
   contact: {
-    title: "Contact Sillage Égypte",
+    title: "Contact us",
     description:
       "Reach Sillage Égypte by email, phone, or WhatsApp — or send an enquiry and a journey designer will reply within 24 hours.",
   },
@@ -99,8 +185,6 @@ const es: MetaDict = {
     description:
       "Sillage Égypte diseña viajes privados para viajeros internacionales exigentes que quieren vivir Egipto a su manera — guiados por expertos y construidos en torno a sus intereses.",
   },
-  ogDescription:
-    "Viajes privados diseñados a tu medida, guiados por expertos que conocen cada capa de este país.",
   tours: {
     title: "Viajes privados por Egipto",
     description:
@@ -127,12 +211,12 @@ const es: MetaDict = {
       "Escritura reflexiva sobre viajar bien por Egipto — cuándo ir, cuánto quedarse y los lugares que merecen más tiempo. Notas de quienes guían aquí.",
   },
   about: {
-    title: "Quiénes somos — Sillage Égypte",
+    title: "Quiénes somos",
     description:
       "Somos un pequeño equipo de egiptólogos y diseñadores de viajes que crea viajes privados por Egipto — un viajero, una conversación, un país cada vez.",
   },
   contact: {
-    title: "Contacto — Sillage Égypte",
+    title: "Contacto",
     description:
       "Contacta con Sillage Égypte por correo, teléfono o WhatsApp — o envía una consulta y un diseñador de viajes te responderá en 24 horas.",
   },
@@ -149,8 +233,6 @@ const fr: MetaDict = {
     description:
       "Sillage Égypte conçoit des voyages privés pour des voyageurs internationaux exigeants qui veulent vivre l'Égypte selon leurs propres termes — guidés par des experts, construits autour de leurs envies.",
   },
-  ogDescription:
-    "Des voyages privés conçus autour de vous, guidés par des experts qui connaissent chaque strate de ce pays.",
   tours: {
     title: "Voyages privés à travers l'Égypte",
     description:
@@ -177,12 +259,12 @@ const fr: MetaDict = {
       "Des textes réfléchis sur l'art de bien voyager en Égypte — quand partir, combien de temps rester, et les lieux qui méritent qu'on s'y attarde. Notes de ceux qui guident ici.",
   },
   about: {
-    title: "À propos de Sillage Égypte",
+    title: "À propos",
     description:
       "Nous sommes une petite équipe d'égyptologues et de concepteurs de voyages qui bâtit des voyages privés à travers l'Égypte — un voyageur, une conversation, un pays à la fois.",
   },
   contact: {
-    title: "Contact — Sillage Égypte",
+    title: "Contact",
     description:
       "Contactez Sillage Égypte par e-mail, téléphone ou WhatsApp — ou envoyez une demande et un concepteur de voyages vous répondra sous 24 heures.",
   },
@@ -199,8 +281,6 @@ const nl: MetaDict = {
     description:
       "Sillage Égypte ontwerpt privéreizen voor veeleisende internationale reizigers die Egypte op hun eigen voorwaarden willen ervaren — begeleid door experts, gebouwd rond hun interesses.",
   },
-  ogDescription:
-    "Privéreizen, ontworpen rond u, begeleid door experts die elke laag van dit land kennen.",
   tours: {
     title: "Privéreizen door Egypte",
     description:
@@ -227,12 +307,12 @@ const nl: MetaDict = {
       "Doordachte teksten over goed reizen door Egypte — wanneer te gaan, hoe lang te blijven en de plekken die meer tijd verdienen. Notities van wie hier gidst.",
   },
   about: {
-    title: "Over Sillage Égypte",
+    title: "Over ons",
     description:
       "Wij zijn een klein team van egyptologen en reisontwerpers dat privéreizen door Egypte bouwt — één reiziger, één gesprek, één land tegelijk.",
   },
   contact: {
-    title: "Contact — Sillage Égypte",
+    title: "Contact",
     description:
       "Bereik Sillage Égypte per e-mail, telefoon of WhatsApp — of stuur een aanvraag en een reisontwerper antwoordt binnen 24 uur.",
   },
@@ -249,8 +329,6 @@ const de: MetaDict = {
     description:
       "Sillage Égypte entwirft private Reisen für anspruchsvolle internationale Reisende, die Ägypten zu ihren eigenen Bedingungen erleben möchten — geführt von Experten, gebaut um ihre Interessen.",
   },
-  ogDescription:
-    "Private Reisen, ganz um Sie herum gestaltet, geführt von Experten, die jede Schicht dieses Landes kennen.",
   tours: {
     title: "Private Reisen durch Ägypten",
     description:
@@ -277,12 +355,12 @@ const de: MetaDict = {
       "Durchdachte Texte über das gute Reisen in Ägypten — wann man fährt, wie lange man bleibt und welche Orte mehr Zeit verdienen. Notizen von denen, die hier führen.",
   },
   about: {
-    title: "Über Sillage Égypte",
+    title: "Über uns",
     description:
       "Wir sind ein kleines Team aus Ägyptologen und Reisedesignern, das private Reisen durch Ägypten baut — ein Reisender, ein Gespräch, ein Land nach dem anderen.",
   },
   contact: {
-    title: "Kontakt — Sillage Égypte",
+    title: "Kontakt",
     description:
       "Erreichen Sie Sillage Égypte per E-Mail, Telefon oder WhatsApp — oder senden Sie eine Anfrage, und ein Reisedesigner antwortet innerhalb von 24 Stunden.",
   },

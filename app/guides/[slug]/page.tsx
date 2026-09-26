@@ -11,7 +11,7 @@ import { guides, getGuide } from "@/data/guides";
 import { tours } from "@/data/tours";
 import { SITE_URL, orgRef } from "@/lib/structured-data";
 import { getLocale, localePath } from "@/lib/i18n";
-import { localeAlternates } from "@/lib/meta-dict";
+import { pageMetadata } from "@/lib/meta-dict";
 import { loadContent } from "@/lib/content";
 import { getGuidesAboutDict } from "@/lib/guides-about-dict";
 
@@ -28,11 +28,13 @@ export async function generateMetadata({
   const guide = getGuide(slug);
   if (!guide) return { title: "Guide not found" };
   const locale = await getLocale();
-  return {
-    title: `${guide.name} — ${guide.title}`,
-    description: guide.shortBio,
-    alternates: localeAlternates(locale, `/guides/${guide.slug}`),
-  };
+  const c = await loadContent<{ title?: string; shortBio?: string }>("guides", guide.slug, locale);
+  return pageMetadata({
+    locale,
+    path: `/guides/${guide.slug}`,
+    title: `${guide.name} — ${c?.title ?? guide.title}`,
+    description: c?.shortBio ?? guide.shortBio,
+  });
 }
 
 export default async function GuideDetailPage({

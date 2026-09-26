@@ -5,18 +5,20 @@ import CtaBand from "@/components/CtaBand";
 import { ArrowRight } from "@/components/icons";
 import { guides } from "@/data/guides";
 import { getLocale, localePath } from "@/lib/i18n";
-import { getMetaDict, localeAlternates } from "@/lib/meta-dict";
+import { getMetaDict, pageMetadata } from "@/lib/meta-dict";
 import { loadContent } from "@/lib/content";
 import { getGuidesAboutDict } from "@/lib/guides-about-dict";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const m = getMetaDict(locale).guides;
-  return {
+  return pageMetadata({
+    locale,
+    path: "/guides",
     title: m.title,
     description: m.description,
-    alternates: localeAlternates(locale, "/guides"),
-  };
+    image: "dest-luxor",
+  });
 }
 
 export default async function GuidesPage() {

@@ -10,6 +10,8 @@ export interface Dict {
   footer: {
     tagline: string; explore: string; contact: string;
     about: string; guides: string; rights: string; privacy: string; terms: string; cookies: string;
+    /** Legal-identity line under the contact block: "Operated by …". */
+    operatedBy: string; motLicence: string;
   };
   consent: { message: string; accept: string; decline: string; privacy: string };
   langName: string;
@@ -31,7 +33,7 @@ export interface Dict {
 
 const en: Dict = {
   nav: { journeys: "Journeys", destinations: "Destinations", experiences: "Experiences", journal: "Journal", plan: "Plan your journey" },
-  footer: { tagline: "Private journeys designed around you, guided by experts who know every layer of this country.", explore: "Explore", contact: "Contact", about: "About", guides: "Guides", rights: "All rights reserved.", privacy: "Privacy", terms: "Terms", cookies: "Cookie settings" },
+  footer: { tagline: "Private journeys designed around you, guided by experts who know every layer of this country.", explore: "Explore", contact: "Contact", about: "About", guides: "Guides", rights: "All rights reserved.", privacy: "Privacy", terms: "Terms", cookies: "Cookie settings", operatedBy: "Operated by", motLicence: "Ministry of Tourism licence" },
   consent: { message: "We use a single analytics cookie to understand how the site is used — no advertising, no profiling. Is that all right?", accept: "Accept", decline: "Decline", privacy: "Privacy policy" },
   langName: "English",
   home: {
@@ -55,7 +57,7 @@ const en: Dict = {
     pillars: [
       { h: "Private, always", p: "Never a group, never a convoy. Your journey is yours alone — the boat, the car, the guide, the hours." },
       { h: "Read by an expert", p: "Certified Egyptologists who can read the walls, not guides who recite a script. The difference is the whole journey." },
-      { h: "Access beyond the route", p: "Tombs past the standard ticket, sites before they open, moorings no itinerary allows. We arrange what most cannot." },
+      { h: "Access beyond the route", p: "Tombs past the standard ticket, sites at the hour they open, moorings away from the usual stops. Where special permission is needed, we confirm it before you book." },
       { h: "Honest counsel", p: "We will tell you what isn't worth your time, and which journey isn't right for you. Advice, not a sales pitch." },
     ],
     quote: "Most people are shown the Valley of the Kings in an hour and moved on. Give it a morning, with someone who can actually read the walls, and a tomb stops being a corridor of pictures — it becomes the most ambitious thing a civilisation ever attempted.",
@@ -69,7 +71,7 @@ const en: Dict = {
 
 const es: Dict = {
   nav: { journeys: "Viajes", destinations: "Destinos", experiences: "Experiencias", journal: "Diario", plan: "Planifica tu viaje" },
-  footer: { tagline: "Viajes privados diseñados a tu medida, guiados por expertos que conocen cada capa de este país.", explore: "Explorar", contact: "Contacto", about: "Quiénes somos", guides: "Guías", rights: "Todos los derechos reservados.", privacy: "Privacidad", terms: "Términos", cookies: "Configuración de cookies" },
+  footer: { tagline: "Viajes privados diseñados a tu medida, guiados por expertos que conocen cada capa de este país.", explore: "Explorar", contact: "Contacto", about: "Quiénes somos", guides: "Guías", rights: "Todos los derechos reservados.", privacy: "Privacidad", terms: "Términos", cookies: "Configuración de cookies", operatedBy: "Operado por", motLicence: "Licencia del Ministerio de Turismo" },
   consent: { message: "Utilizamos una única cookie analítica para entender cómo se usa el sitio: sin publicidad ni perfiles. ¿Le parece bien?", accept: "Aceptar", decline: "Rechazar", privacy: "Política de privacidad" },
   langName: "Español",
   home: {
@@ -93,7 +95,7 @@ const es: Dict = {
     pillars: [
       { h: "Privado, siempre", p: "Nunca un grupo, nunca una caravana. Tu viaje es solo tuyo — el barco, el coche, el guía, las horas." },
       { h: "Leído por un experto", p: "Egiptólogos titulados capaces de leer los muros, no guías que recitan un guion. La diferencia es el viaje entero." },
-      { h: "Acceso más allá de la ruta", p: "Tumbas más allá de la entrada estándar, lugares antes de abrir, amarres que ningún itinerario permite. Organizamos lo que casi nadie puede." },
+      { h: "Acceso más allá de la ruta", p: "Tumbas más allá de la entrada estándar, lugares a la hora en que abren, amarres lejos de las paradas habituales. Cuando hace falta un permiso especial, lo confirmamos antes de que reserve." },
       { h: "Consejo honesto", p: "Te diremos qué no merece tu tiempo y qué viaje no es para ti. Consejo, no una venta." },
     ],
     quote: "A casi todos les enseñan el Valle de los Reyes en una hora y siguen adelante. Dedícale una mañana, con alguien que sepa leer de verdad los muros, y una tumba deja de ser un pasillo de imágenes — se convierte en lo más ambicioso que una civilización intentó jamás.",
@@ -107,7 +109,7 @@ const es: Dict = {
 
 const fr: Dict = {
   nav: { journeys: "Voyages", destinations: "Destinations", experiences: "Expériences", journal: "Journal", plan: "Composez votre voyage" },
-  footer: { tagline: "Des voyages privés conçus autour de vous, guidés par des experts qui connaissent chaque strate de ce pays.", explore: "Explorer", contact: "Contact", about: "À propos", guides: "Guides", rights: "Tous droits réservés.", privacy: "Confidentialité", terms: "Conditions", cookies: "Réglages des cookies" },
+  footer: { tagline: "Des voyages privés conçus autour de vous, guidés par des experts qui connaissent chaque strate de ce pays.", explore: "Explorer", contact: "Contact", about: "À propos", guides: "Guides", rights: "Tous droits réservés.", privacy: "Confidentialité", terms: "Conditions", cookies: "Réglages des cookies", operatedBy: "Exploité par", motLicence: "Licence du ministère du Tourisme" },
   consent: { message: "Nous utilisons un seul cookie d\u2019analyse pour comprendre l\u2019usage du site — ni publicité, ni profilage. Êtes-vous d\u2019accord ?", accept: "Accepter", decline: "Refuser", privacy: "Politique de confidentialité" },
   langName: "Français",
   home: {
@@ -131,7 +133,7 @@ const fr: Dict = {
     pillars: [
       { h: "Privé, toujours", p: "Jamais un groupe, jamais un convoi. Votre voyage n'appartient qu'à vous — le bateau, la voiture, le guide, les heures." },
       { h: "Lu par un expert", p: "Des égyptologues diplômés capables de lire les murs, non des guides qui récitent un script. La différence, c'est tout le voyage." },
-      { h: "Un accès au-delà de l'itinéraire", p: "Des tombes au-delà du billet standard, des sites avant l'ouverture, des mouillages qu'aucun itinéraire ne permet. Nous organisons ce que presque personne ne peut." },
+      { h: "Un accès au-delà de l'itinéraire", p: "Des tombes au-delà du billet standard, des sites dès leur ouverture, des mouillages à l'écart des escales habituelles. Lorsqu'une autorisation spéciale est nécessaire, nous la confirmons avant votre réservation." },
       { h: "Un conseil honnête", p: "Nous vous dirons ce qui ne vaut pas votre temps, et quel voyage n'est pas pour vous. Un conseil, pas un argumentaire." },
     ],
     quote: "On montre à la plupart des gens la Vallée des Rois en une heure, puis on passe à autre chose. Accordez-lui une matinée, avec quelqu'un qui sait vraiment lire les murs, et une tombe cesse d'être un couloir d'images — elle devient la chose la plus ambitieuse qu'une civilisation ait jamais tentée.",
@@ -145,7 +147,7 @@ const fr: Dict = {
 
 const nl: Dict = {
   nav: { journeys: "Reizen", destinations: "Bestemmingen", experiences: "Ervaringen", journal: "Journaal", plan: "Stel uw reis samen" },
-  footer: { tagline: "Privéreizen, ontworpen rond u, begeleid door experts die elke laag van dit land kennen.", explore: "Ontdek", contact: "Contact", about: "Over ons", guides: "Gidsen", rights: "Alle rechten voorbehouden.", privacy: "Privacy", terms: "Voorwaarden", cookies: "Cookie-instellingen" },
+  footer: { tagline: "Privéreizen, ontworpen rond u, begeleid door experts die elke laag van dit land kennen.", explore: "Ontdek", contact: "Contact", about: "Over ons", guides: "Gidsen", rights: "Alle rechten voorbehouden.", privacy: "Privacy", terms: "Voorwaarden", cookies: "Cookie-instellingen", operatedBy: "Beheerd door", motLicence: "Vergunning van het Ministerie van Toerisme" },
   consent: { message: "We gebruiken één analytische cookie om te zien hoe de site wordt gebruikt — geen advertenties, geen profilering. Vindt u dat goed?", accept: "Accepteren", decline: "Weigeren", privacy: "Privacybeleid" },
   langName: "Nederlands",
   home: {
@@ -169,7 +171,7 @@ const nl: Dict = {
     pillars: [
       { h: "Privé, altijd", p: "Nooit een groep, nooit een konvooi. Uw reis is van u alleen — de boot, de auto, de gids, de uren." },
       { h: "Gelezen door een expert", p: "Gediplomeerde egyptologen die de muren kunnen lezen, geen gidsen die een script opzeggen. Het verschil is de hele reis." },
-      { h: "Toegang voorbij de route", p: "Graven voorbij het standaardticket, plekken vóór ze opengaan, aanlegplaatsen die geen enkele route toestaat. Wij regelen wat vrijwel niemand kan." },
+      { h: "Toegang voorbij de route", p: "Graven voorbij het standaardticket, plekken op het uur dat ze opengaan, aanlegplaatsen buiten de gebruikelijke stops. Waar speciale toestemming nodig is, bevestigen wij die voordat u boekt." },
       { h: "Eerlijk advies", p: "Wij zeggen u wat uw tijd niet waard is, en welke reis niet bij u past. Advies, geen verkooppraatje." },
     ],
     quote: "De meeste mensen krijgen het Dal der Koningen in een uur te zien en reizen weer verder. Gun het een ochtend, met iemand die de muren werkelijk kan lezen, en een graf houdt op een gang vol afbeeldingen te zijn — het wordt het meest ambitieuze dat een beschaving ooit heeft ondernomen.",
@@ -183,7 +185,7 @@ const nl: Dict = {
 
 const de: Dict = {
   nav: { journeys: "Reisen", destinations: "Reiseziele", experiences: "Erlebnisse", journal: "Journal", plan: "Stellen Sie Ihre Reise zusammen" },
-  footer: { tagline: "Private Reisen, ganz um Sie herum gestaltet, geführt von Experten, die jede Schicht dieses Landes kennen.", explore: "Entdecken", contact: "Kontakt", about: "Über uns", guides: "Reiseführer", rights: "Alle Rechte vorbehalten.", privacy: "Datenschutz", terms: "Bedingungen", cookies: "Cookie-Einstellungen" },
+  footer: { tagline: "Private Reisen, ganz um Sie herum gestaltet, geführt von Experten, die jede Schicht dieses Landes kennen.", explore: "Entdecken", contact: "Kontakt", about: "Über uns", guides: "Reiseführer", rights: "Alle Rechte vorbehalten.", privacy: "Datenschutz", terms: "Bedingungen", cookies: "Cookie-Einstellungen", operatedBy: "Betrieben von", motLicence: "Lizenz des Tourismusministeriums" },
   consent: { message: "Wir verwenden ein einziges Analyse-Cookie, um zu verstehen, wie die Website genutzt wird — keine Werbung, kein Profiling. Sind Sie einverstanden?", accept: "Akzeptieren", decline: "Ablehnen", privacy: "Datenschutzerklärung" },
   langName: "Deutsch",
   home: {
@@ -207,7 +209,7 @@ const de: Dict = {
     pillars: [
       { h: "Privat, immer", p: "Niemals eine Gruppe, niemals ein Konvoi. Ihre Reise gehört Ihnen allein — das Boot, der Wagen, der Führer, die Stunden." },
       { h: "Gelesen von einem Experten", p: "Diplomierte Ägyptologen, welche die Wände lesen können, keine Führer, die ein Skript aufsagen. Der Unterschied ist die ganze Reise." },
-      { h: "Zugang jenseits der Route", p: "Gräber jenseits des Standardtickets, Stätten, bevor sie öffnen, Liegeplätze, die keine Route erlaubt. Wir arrangieren, was fast niemand kann." },
+      { h: "Zugang jenseits der Route", p: "Gräber jenseits des Standardtickets, Stätten zur Stunde ihrer Öffnung, Liegeplätze abseits der üblichen Halte. Wo eine Sondergenehmigung nötig ist, bestätigen wir sie, bevor Sie buchen." },
       { h: "Ehrlicher Rat", p: "Wir sagen Ihnen, was Ihre Zeit nicht wert ist und welche Reise nicht zu Ihnen passt. Rat, kein Verkaufsgespräch." },
     ],
     quote: "Den meisten Menschen zeigt man das Tal der Könige in einer Stunde und reist dann weiter. Gönnen Sie ihm einen Morgen, mit jemandem, der die Wände wirklich lesen kann, und ein Grab hört auf, ein Gang voller Bilder zu sein — es wird zum Ehrgeizigsten, was eine Zivilisation je unternommen hat.",

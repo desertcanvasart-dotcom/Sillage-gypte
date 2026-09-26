@@ -6,16 +6,18 @@ import { getDestination } from "@/data/destinations";
 import { getImage } from "@/lib/images";
 import { site } from "@/data/site";
 import { getLocale, localePath } from "@/lib/i18n";
-import { getMetaDict, localeAlternates } from "@/lib/meta-dict";
+import { getMetaDict, pageMetadata } from "@/lib/meta-dict";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const m = getMetaDict(locale).plan;
-  return {
+  return pageMetadata({
+    locale,
+    path: "/plan",
     title: m.title,
     description: m.description,
-    alternates: localeAlternates(locale, "/plan"),
-  };
+    image: "hero-plan",
+  });
 }
 
 const COPY = {

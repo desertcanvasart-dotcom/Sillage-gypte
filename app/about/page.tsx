@@ -4,17 +4,19 @@ import PageHero from "@/components/PageHero";
 import CtaBand from "@/components/CtaBand";
 import { ArrowRight } from "@/components/icons";
 import { getLocale, localePath } from "@/lib/i18n";
-import { getMetaDict, localeAlternates } from "@/lib/meta-dict";
+import { getMetaDict, pageMetadata } from "@/lib/meta-dict";
 import { getGuidesAboutDict } from "@/lib/guides-about-dict";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const m = getMetaDict(locale).about;
-  return {
+  return pageMetadata({
+    locale,
+    path: "/about",
     title: m.title,
     description: m.description,
-    alternates: localeAlternates(locale, "/about"),
-  };
+    image: "dest-cairo",
+  });
 }
 
 export default async function AboutPage() {
@@ -65,6 +67,16 @@ export default async function AboutPage() {
                 {t.block1TitlePost}
               </h2>
               <p className="why-body">{t.block1Body}</p>
+              <p className="why-body">{t.block1Since}</p>
+              {/* TODO(trust-fixes): add the relationship line (what Sillage is to
+                  Capital Travel Service) and the "why a separate house" paragraph
+                  once RELATIONSHIP_LINE is confirmed. Shown in development only. */}
+              {process.env.NODE_ENV !== "production" && (
+                <p className="why-body" style={{ border: "1px dashed #b33", padding: "12px", color: "#b33" }}>
+                  TODO (trust fixes): add what Sillage is to Capital Travel Service (RELATIONSHIP_LINE)
+                  and why it is a separate house for private journeys. Waiting on the owner.
+                </p>
+              )}
               <Link href={p("/guides")} className="btn-outline">
                 {t.block1Btn}
                 <ArrowRight size={14} />

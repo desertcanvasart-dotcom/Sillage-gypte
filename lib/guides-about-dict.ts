@@ -18,6 +18,8 @@ export interface GuidesAboutDict {
     block1TitleEm: string;
     block1TitlePost: string;
     block1Body: string;
+    /** Paragraph 2: what the operator's history means for the traveller. */
+    block1Since: string;
     block1Btn: string;
     block2Eyebrow: string;
     block2TitlePre: string;
@@ -87,19 +89,23 @@ const en: GuidesAboutDict = {
       "Most of the world sees Egypt through a window — a coach, a queue, a fixed route. We started Sillage Égypte because the country deserves ",
     leadEm: "better attention than that",
     leadPost: ", and so do the people who travel to see it.",
-    block1Eyebrow: "How we began",
-    block1TitlePre: "Founded by ",
-    block1TitleEm: "guides,",
-    block1TitlePost: " not by a booking desk",
+    block1Eyebrow: "The company",
+    block1TitlePre: "Who stands behind ",
+    block1TitleEm: "Sillage",
+    block1TitlePost: "",
+    // TODO(trust-fixes): the relationship sentence of "Who stands behind Sillage"
+    // and the "why a separate house" paragraph wait on RELATIONSHIP_LINE.
     block1Body:
-      "We came to this work from the field — from years inside the tombs and temples, leading the kind of private journeys we wished existed more widely. Sillage Égypte is the result: a company run by the people who stand beside you at the monument, not by a call centre an ocean away.",
+      "Sillage Égypte is operated by Capital Travel Service, a member of the Egyptian Travel Agents Association (ETAA 2179).",
+    block1Since:
+      "Capital Travel Service has worked on the ground in Egypt since 2003. That means local contracts, and people here who are accountable when something needs putting right.",
     block1Btn: "Meet our guides",
     block2Eyebrow: "How we work",
     block2TitlePre: "One journey at a ",
     block2TitleEm: "time",
     block2TitlePost: "",
     block2Body:
-      "We keep the company deliberately small. We would rather design a handful of journeys properly than process hundreds. That means real conversations, real expertise, and the time to get the details right — because in Egypt, the details are the whole point.",
+      "We keep Sillage deliberately small. We would rather design a handful of journeys properly than process hundreds. That means real conversations, real expertise, and the time to get the details right — because in Egypt, the details are the whole point.",
     block2Btn: "See our journeys",
     promiseEyebrow: "Our promise",
     promiseTitlePre: "Private, expert, and built ",
@@ -169,19 +175,23 @@ const es: GuidesAboutDict = {
       "Casi todo el mundo ve Egipto a través de una ventanilla — un autocar, una cola, una ruta fija. Fundamos Sillage Égypte porque el país merece ",
     leadEm: "una atención mejor que esa",
     leadPost: ", y también quienes viajan para conocerlo.",
-    block1Eyebrow: "Cómo empezamos",
-    block1TitlePre: "Fundada por ",
-    block1TitleEm: "guías,",
-    block1TitlePost: " no por una central de reservas",
+    block1Eyebrow: "La empresa",
+    block1TitlePre: "Quién está detrás de ",
+    block1TitleEm: "Sillage",
+    block1TitlePost: "",
+    // TODO(trust-fixes): the relationship sentence of "Who stands behind Sillage"
+    // and the "why a separate house" paragraph wait on RELATIONSHIP_LINE.
     block1Body:
-      "Llegamos a este oficio desde el terreno — desde años dentro de las tumbas y los templos, guiando la clase de viajes privados que deseábamos que existieran más a menudo. Sillage Égypte es el resultado: una empresa dirigida por las personas que están a su lado ante el monumento, no por un centro de llamadas al otro lado del océano.",
+      "Sillage Égypte está operada por Capital Travel Service, miembro de la Asociación Egipcia de Agentes de Viajes (ETAA 2179).",
+    block1Since:
+      "Capital Travel Service trabaja sobre el terreno en Egipto desde 2003. Eso significa contratos locales, y personas aquí que responden cuando algo necesita arreglarse.",
     block1Btn: "Conozca a nuestros guías",
     block2Eyebrow: "Cómo trabajamos",
     block2TitlePre: "Un viaje a la ",
     block2TitleEm: "vez",
     block2TitlePost: "",
     block2Body:
-      "Mantenemos la empresa deliberadamente pequeña. Preferimos diseñar un puñado de viajes con esmero que procesar cientos. Eso significa conversaciones reales, experiencia real y el tiempo para acertar con los detalles — porque en Egipto, los detalles lo son todo.",
+      "Mantenemos Sillage deliberadamente pequeña. Preferimos diseñar un puñado de viajes con esmero que procesar cientos. Eso significa conversaciones reales, experiencia real y el tiempo para acertar con los detalles — porque en Egipto, los detalles lo son todo.",
     block2Btn: "Vea nuestros viajes",
     promiseEyebrow: "Nuestra promesa",
     promiseTitlePre: "Privado, experto y diseñado ",
@@ -251,19 +261,23 @@ const fr: GuidesAboutDict = {
       "Le monde voit le plus souvent l'Égypte par une vitre — un autocar, une file d'attente, un parcours figé. Nous avons fondé Sillage Égypte parce que le pays mérite ",
     leadEm: "une attention meilleure que cela",
     leadPost: ", tout comme ceux qui voyagent pour le découvrir.",
-    block1Eyebrow: "Nos débuts",
-    block1TitlePre: "Fondée par des ",
-    block1TitleEm: "guides,",
-    block1TitlePost: " non par un comptoir de réservation",
+    block1Eyebrow: "L’entreprise",
+    block1TitlePre: "Qui est derrière ",
+    block1TitleEm: "Sillage",
+    block1TitlePost: "",
+    // TODO(trust-fixes): the relationship sentence of "Who stands behind Sillage"
+    // and the "why a separate house" paragraph wait on RELATIONSHIP_LINE.
     block1Body:
-      "Nous venons à ce métier depuis le terrain — depuis des années passées dans les tombeaux et les temples, à mener le type de voyages privés que nous aurions voulu voir exister plus largement. Sillage Égypte en est le fruit : une maison animée par ceux qui se tiennent à vos côtés devant le monument, et non par un centre d'appels à l'autre bout de l'océan.",
+      "Sillage Égypte est exploitée par Capital Travel Service, membre de l’Association égyptienne des agents de voyages (ETAA 2179).",
+    block1Since:
+      "Capital Travel Service travaille sur le terrain en Égypte depuis 2003. Cela signifie des contrats locaux, et des personnes sur place qui répondent de ce qui doit être rectifié.",
     block1Btn: "Rencontrez nos guides",
     block2Eyebrow: "Notre façon de travailler",
     block2TitlePre: "Un voyage à la ",
     block2TitleEm: "fois",
     block2TitlePost: "",
     block2Body:
-      "Nous gardons la maison délibérément petite. Nous préférons concevoir une poignée de voyages avec soin plutôt qu'en traiter des centaines. Cela suppose de vraies conversations, une véritable expertise et le temps de soigner les détails — car en Égypte, les détails sont l'essentiel.",
+      "Nous gardons Sillage délibérément petite. Nous préférons concevoir une poignée de voyages avec soin plutôt qu'en traiter des centaines. Cela suppose de vraies conversations, une véritable expertise et le temps de soigner les détails — car en Égypte, les détails sont l'essentiel.",
     block2Btn: "Découvrez nos voyages",
     promiseEyebrow: "Notre promesse",
     promiseTitlePre: "Privé, expert et conçu ",
@@ -333,19 +347,23 @@ const nl: GuidesAboutDict = {
       "Het grootste deel van de wereld ziet Egypte door een raam — een touringcar, een wachtrij, een vaste route. Wij richtten Sillage Égypte op omdat het land ",
     leadEm: "betere aandacht verdient dan dat",
     leadPost: ", en de mensen die reizen om het te zien evenzeer.",
-    block1Eyebrow: "Hoe wij begonnen",
-    block1TitlePre: "Opgericht door ",
-    block1TitleEm: "gidsen,",
-    block1TitlePost: " niet door een boekingsbalie",
+    block1Eyebrow: "Het bedrijf",
+    block1TitlePre: "Wie er achter ",
+    block1TitleEm: "Sillage",
+    block1TitlePost: " staat",
+    // TODO(trust-fixes): the relationship sentence of "Who stands behind Sillage"
+    // and the "why a separate house" paragraph wait on RELATIONSHIP_LINE.
     block1Body:
-      "Wij kwamen tot dit vak vanuit het veld — uit jaren binnen de graven en tempels, met het soort privéreizen dat wij vaker hadden willen zien bestaan. Sillage Égypte is het resultaat: een huis gedreven door de mensen die naast u staan bij het monument, niet door een callcenter aan de andere kant van de oceaan.",
+      "Sillage Égypte wordt beheerd door Capital Travel Service, lid van de Egyptische Vereniging van Reisagenten (ETAA 2179).",
+    block1Since:
+      "Capital Travel Service werkt sinds 2003 ter plaatse in Egypte. Dat betekent lokale contracten, en mensen hier die aanspreekbaar zijn als er iets moet worden rechtgezet.",
     block1Btn: "Maak kennis met onze gidsen",
     block2Eyebrow: "Hoe wij werken",
     block2TitlePre: "Eén reis ",
     block2TitleEm: "tegelijk",
     block2TitlePost: "",
     block2Body:
-      "Wij houden het huis bewust klein. Wij ontwerpen liever een handvol reizen met zorg dan er honderden te verwerken. Dat betekent echte gesprekken, echte expertise, en de tijd om de details juist te krijgen — want in Egypte zijn de details waar het om draait.",
+      "Wij houden Sillage bewust klein. Wij ontwerpen liever een handvol reizen met zorg dan er honderden te verwerken. Dat betekent echte gesprekken, echte expertise, en de tijd om de details juist te krijgen — want in Egypte zijn de details waar het om draait.",
     block2Btn: "Bekijk onze reizen",
     promiseEyebrow: "Onze belofte",
     promiseTitlePre: "Privé, deskundig en geheel ",
@@ -415,19 +433,23 @@ const de: GuidesAboutDict = {
       "Der größte Teil der Welt sieht Ägypten durch ein Fenster — einen Reisebus, eine Warteschlange, eine feste Route. Wir gründeten Sillage Égypte, weil das Land ",
     leadEm: "eine bessere Aufmerksamkeit verdient als diese",
     leadPost: ", und die Menschen, die reisen, um es zu sehen, ebenso.",
-    block1Eyebrow: "Wie wir begannen",
-    block1TitlePre: "Gegründet von ",
-    block1TitleEm: "Reiseführern,",
-    block1TitlePost: " nicht von einem Buchungsschalter",
+    block1Eyebrow: "Das Unternehmen",
+    block1TitlePre: "Wer hinter ",
+    block1TitleEm: "Sillage",
+    block1TitlePost: " steht",
+    // TODO(trust-fixes): the relationship sentence of "Who stands behind Sillage"
+    // and the "why a separate house" paragraph wait on RELATIONSHIP_LINE.
     block1Body:
-      "Wir kamen aus dem Feld zu dieser Arbeit — aus Jahren in den Gräbern und Tempeln, in denen wir genau die privaten Reisen führten, die wir uns weiter verbreitet gewünscht hätten. Sillage Égypte ist das Ergebnis: ein Haus, geführt von den Menschen, die am Denkmal an Ihrer Seite stehen, nicht von einem Callcenter jenseits des Ozeans.",
+      "Sillage Égypte wird von Capital Travel Service betrieben, Mitglied des Ägyptischen Reisebüroverbands (ETAA 2179).",
+    block1Since:
+      "Capital Travel Service arbeitet seit 2003 vor Ort in Ägypten. Das bedeutet lokale Verträge — und Menschen hier, die dafür einstehen, wenn etwas in Ordnung gebracht werden muss.",
     block1Btn: "Lernen Sie unsere Reiseführer kennen",
     block2Eyebrow: "Wie wir arbeiten",
     block2TitlePre: "Eine Reise nach der ",
     block2TitleEm: "anderen",
     block2TitlePost: "",
     block2Body:
-      "Wir halten das Haus bewusst klein. Wir gestalten lieber eine Handvoll Reisen mit Sorgfalt, als Hunderte abzuwickeln. Das bedeutet echte Gespräche, echte Sachkenntnis und die Zeit, die Details richtig zu treffen — denn in Ägypten sind die Details das Entscheidende.",
+      "Wir halten Sillage bewusst klein. Wir gestalten lieber eine Handvoll Reisen mit Sorgfalt, als Hunderte abzuwickeln. Das bedeutet echte Gespräche, echte Sachkenntnis und die Zeit, die Details richtig zu treffen — denn in Ägypten sind die Details das Entscheidende.",
     block2Btn: "Sehen Sie unsere Reisen",
     promiseEyebrow: "Unser Versprechen",
     promiseTitlePre: "Privat, fachkundig und ganz ",

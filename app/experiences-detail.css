@@ -43,6 +43,8 @@
 .xp .ledger .k { font-family: var(--font-label), sans-serif; font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--or); margin-bottom: 0.45rem; }
 .xp .ledger .v { font-family: var(--font-display), serif; font-size: 1.05rem; letter-spacing: 0.02em; }
 @media (max-width: 760px) { .xp .ledger .wrap { grid-template-columns: 1fr 1fr; } .xp .ledger .cell { border-left: 0; border-top: 1px solid var(--hairline-d); padding-left: 0; } .xp .ledger .cell:nth-child(-n+2) { border-top: 0; } }
+.xp .access-note { background: var(--nuit); color: var(--papyrus); border-top: 1px solid var(--hairline-d); }
+.xp .access-note p { padding: 1rem 0 1.1rem; font-size: 0.85rem; font-style: italic; letter-spacing: 0.01em; opacity: 0.78; }
 
 .xp section { padding: 7rem 0; }
 .xp .sec-head { margin-bottom: 3.2rem; }

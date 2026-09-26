@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import JsonLd from "@/components/JsonLd";
 import { tours, getTour } from "@/data/tours";
 import { getLocale } from "@/lib/i18n";
-import { localeAlternates, localizedUrl } from "@/lib/meta-dict";
+import { pageMetadata, localizedUrl } from "@/lib/meta-dict";
 import { loadContent } from "@/lib/content";
 import { orgRef } from "@/lib/structured-data";
 
@@ -24,16 +24,13 @@ export async function generateMetadata({
   if (!tour) return { title: "Journey not found" };
   const locale = await getLocale();
   const doc = await loadContent<Journey>("tours", slug, locale);
-  return {
+  return pageMetadata({
+    locale,
+    path: `/tours/${tour.slug}`,
     title: doc?.seoTitle ?? tour.seo.title,
     description: doc?.description ?? tour.seo.description,
-    alternates: localeAlternates(locale, `/tours/${tour.slug}`),
-    openGraph: {
-      title: doc?.seoTitle ?? tour.seo.title,
-      description: doc?.description ?? tour.seo.description,
-      url: localizedUrl(locale, `/tours/${tour.slug}`),
-    },
-  };
+    image: doc?.imgVars?.["--img-hero"],
+  });
 }
 
 export default async function TourDetailPage({

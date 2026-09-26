@@ -58,7 +58,11 @@ export const organizationSchema = {
   knowsAbout: brand.knowsAbout,
   knowsLanguage: ["en", "ar", "fr", "ja"],
   areaServed: brand.areaServed.map((name) => ({ "@type": "Place", name })),
-  memberOf: brand.memberships.map((name) => ({ "@type": "Organization", name })),
+  memberOf: brand.memberships.map((m) => ({
+    "@type": "Organization",
+    name: m.name,
+    ...(m.identifier ? { identifier: m.identifier } : {}),
+  })),
   priceRange: brand.priceRange,
   // Ratings and reviews are claimed only when real ones exist. Asserting them
   // otherwise is against Google's structured-data policy, and review stars are
