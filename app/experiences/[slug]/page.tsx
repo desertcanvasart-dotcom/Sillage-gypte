@@ -3,12 +3,34 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import JsonLd from "@/components/JsonLd";
 import { experiences, getExperience } from "@/data/experiences";
-import { getLocale } from "@/lib/i18n";
+import { getLocale, type Locale } from "@/lib/i18n";
 import { localeAlternates } from "@/lib/meta-dict";
 import { loadContent } from "@/lib/content";
 import { SITE_URL, orgRef } from "@/lib/structured-data";
 
 interface Doc { seoTitle?: string; description?: string; title?: string; bodyHtml: string; imgVars?: Record<string, string> }
+
+/**
+ * Neutral access caveat shown on every experience page. None of the six has
+ * had its delivery conditions (permit, extra cost, notice period,
+ * availability) confirmed by the operator yet. When one is confirmed, replace
+ * this with a "How this works" note built from those conditions. Unpublish an
+ * experience that turns out not to be deliverable.
+ */
+const ACCESS_NOTE: Record<Locale, string> = {
+  en: "Subject to special permission and availability; we confirm the conditions and cost before you book.",
+  es: "Sujeto a permiso especial y a disponibilidad; confirmamos las condiciones y el coste antes de que reserve.",
+  fr: "Sous réserve d’une autorisation spéciale et de disponibilité ; nous confirmons les conditions et le coût avant votre réservation.",
+  nl: "Onder voorbehoud van speciale toestemming en beschikbaarheid; wij bevestigen de voorwaarden en de kosten voordat u boekt.",
+  de: "Vorbehaltlich einer Sondergenehmigung und der Verfügbarkeit; wir bestätigen die Bedingungen und die Kosten, bevor Sie buchen.",
+};
+
+/** Place the caveat directly under the at-a-glance ledger, where access is stated. */
+function withAccessNote(html: string, note: string): string {
+  const block = `<div class="access-note"><div class="wrap"><p>${note}</p></div></div>\n\n`;
+  const anchor = "<!-- OVERVIEW -->";
+  return html.includes(anchor) ? html.replace(anchor, block + anchor) : block + html;
+}
 
 export function generateStaticParams() {
   return experiences.map((e) => ({ slug: e.slug }));
@@ -64,7 +86,7 @@ export default async function ExperienceDetailPage({
       <div
         className={`xp xp-${slug}`}
         style={doc.imgVars as React.CSSProperties}
-        dangerouslySetInnerHTML={{ __html: doc.bodyHtml }}
+        dangerouslySetInnerHTML={{ __html: withAccessNote(doc.bodyHtml, ACCESS_NOTE[locale]) }}
       />
     </>
   );
