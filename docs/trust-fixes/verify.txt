@@ -1,6 +1,6 @@
-verify-trust-fixes · 2026-09-26T17:57:11.813Z
+verify-trust-fixes · 2026-09-26T18:19:08.529Z
 base: http://localhost:3100
-old-phone check: off (PHONE_DECISION not REPLACE)
+old-phone check: ON (PHONE_DECISION=REPLACE)
 
 sitemap.xml: HTTP 200, 190 URLs
 sitemap: 38 pages × 5 locales, hreflang alternates complete

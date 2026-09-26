@@ -11,6 +11,7 @@
  *
  * Environment:
  *   PHONE_DECISION=REPLACE     also fail on any appearance of the old phone number
+ *                              (the phone was replaced; always pass this now)
  *   REMOVED_URLS="/a,/b"       locale-neutral paths that must now 301 (all locales)
  */
 
@@ -20,6 +21,7 @@ const LOCALES = ["en", "es", "fr", "nl", "de"];
 const HREFLANGS = [...LOCALES, "x-default"];
 const OPERATOR_LINE = /Capital Travel Service · ETAA 2179 · 1 Farouk Mahmoud St, Giza, Cairo/;
 const OLD_PHONE = /\+?20 ?109 ?847 ?1928|201098471928/;
+const OLD_ADDRESS = /Panorama Pyramids|El-Ahramat/;
 const REPLACE_PHONE = (process.env.PHONE_DECISION || "").toUpperCase() === "REPLACE";
 const REMOVED = (process.env.REMOVED_URLS || "").split(",").map((s) => s.trim()).filter(Boolean);
 
@@ -118,6 +120,7 @@ async function main() {
     if (!OPERATOR_LINE.test(html.replace(/<!-- -->/g, ""))) problems.push("footer operator line missing");
     if (/luxuriousegypt/i.test(html)) problems.push("luxuriousegypt present");
     if (REPLACE_PHONE && OLD_PHONE.test(html)) problems.push("old phone present");
+    if (OLD_ADDRESS.test(html)) problems.push("old registered-office address present");
     if ((title.match(/Sillage Égypte/g) || []).length > 1) problems.push(`brand repeated in title: "${title}"`);
 
     if (title) titles.set(title, [...(titles.get(title) || []), url]);

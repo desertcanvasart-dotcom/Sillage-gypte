@@ -7,7 +7,7 @@ The work is on branch **`claude/funny-pascal-by8x43`**. The brief asked for `fix
 | Fix | Status | Summary |
 | --- | --- | --- |
 | 0 Discovery | **done** | `docs/trust-fixes/discovery.md` |
-| 1 Legal identity | **partial** (waiting on `PHONE_DECISION` and `MOT_LICENCE`) | The operator line is in the footer on every page and locale. The operator block is on the contact page. JSON-LD has `legalName: Capital Travel Service` and ETAA `identifier: 2179`. The phone is unchanged, and so are Terms and Privacy. |
+| 1 Legal identity | **partial** (waiting on `MOT_LICENCE`) | The operator line is in the footer on every page and locale. The operator block is on the contact page. JSON-LD has `legalName: Capital Travel Service` and ETAA `identifier: 2179`. **Phone replaced** (owner decision: REPLACE): `+20 115 801 1600` / `+201158011600` in the footer, contact and plan pages, `tel:` and `wa.me` links, JSON-LD `telephone`, and the WhatsApp link in all 10 Terms/Privacy files. **Terms/Privacy registered office** now reads 1 Farouk Mahmoud St, Giza, Cairo (owner instruction). |
 | 2 About story | **partial, not deploy-ready as the final story** (waiting on `RELATIONSHIP_LINE`) | "Founded by guides, not by a booking desk" and "a call centre an ocean away" are removed in all 5 locales. The new "Who stands behind Sillage" section states the operator fact (ETAA 2179) and, per `OPERATING_SINCE = 2003`, the paragraph on what that history means for the traveller. The relationship sentence and the "why a separate house" paragraph wait on `RELATIONSHIP_LINE`; a TODO marks them and is visible in development builds only. |
 | 3 Guides | **blocked** (all 5 guide inputs are `{{…}}`) | No changes. As the brief directs, a guide whose input is empty is left alone. This covers Sara Hassan's Japanese line and the Dr. Khaled Amin homepage quote. |
 | 4 Experiences | **partial** (all 6 experience inputs are `{{…}}`) | The neutral caveat is on all 6 experience pages in 5 locales. The homepage "Access beyond the route" pillar is softened. Nothing is unpublished. |
@@ -109,7 +109,7 @@ This paragraph deliberately does not say "licensed" (`MOT_LICENCE` is still blan
 
 | Input | Blocked |
 | --- | --- |
-| `PHONE_DECISION` | Every phone change: footer, contact, plan page, `tel:` and `wa.me` links, and JSON-LD `telephone`. `+20 109 847 1928` is still live everywhere. Note that `wa.me/201098471928` is also hard-coded in all 10 legal JSON files, so REPLACE means editing the legal pages too (a contact detail, not a legal term). |
+| `PHONE_DECISION` | Resolved: REPLACE. The old number `+20 109 847 1928` no longer appears anywhere the site renders; the verify script now runs with `PHONE_DECISION=REPLACE`. |
 | `MOT_LICENCE` | The licence suffix on the footer line. Set `data/site.ts#operator.motLicence` and it appears in the footer and on the contact page in every locale, using the translated label above. |
 | `RELATIONSHIP_LINE` | The About section's relationship sentence (what Sillage is to Capital Travel Service) and the "why a separate house" paragraph. A dev-only TODO marks the gap. (`OPERATING_SINCE` has since been supplied: 2003.) |
 | `TERMS_CONTRACTING_PARTY_IS_OPERATOR` | Any edit to Terms and Privacy. None was needed to *add* the operator, since both already name it (see below). |
@@ -118,7 +118,7 @@ This paragraph deliberately does not say "licensed" (`MOT_LICENCE` is still blan
 
 ## Unexpected findings
 
-1. **The Terms and Privacy registered office differs from `ADDRESS`.** All 10 legal files give "Flat 6, Floor 1, Block 1, Panorama Pyramids Building, El-Ahramat St., Giza, Egypt". The footer, contact page and JSON-LD now say "1 Farouk Mahmoud St, Giza, Cairo". Both pages already name *Capital Travel Service, trading as Sillage Égypte, ETAA member no. 2179* as the contracting party and data controller. Terms and Privacy weren't changed. The owner should confirm which address is the registered office.
+1. **Terms and Privacy registered office (resolved).** All 10 legal files gave "Flat 6, Floor 1, Block 1, Panorama Pyramids Building, El-Ahramat St., Giza". On the owner's instruction they now give "1 Farouk Mahmoud St, Giza, Cairo", followed by the country in each language, matching the footer, contact page and JSON-LD. Only the address and the WhatsApp number changed; no legal terms were edited. The verify script now fails if the old address reappears.
 2. **Privacy is unfinished.** The effective date is still the placeholder `[EFFECTIVE DATE]` in all 5 locales. It names a data-protection contact, "Mostafa Salah", who appears nowhere else.
 3. **Facts in JSON-LD that aren't in the Inputs** come from an earlier commit (57e947e): founder "Islam Hussein" and "IATA accredited". They were left as they were. That commit's `foundingDate: 2010` was wrong; the owner has confirmed **2003**, now used for both `foundingDate` and `OPERATING_SINCE`.
 4. **"Japanese" outside the guides pages.** It appears in JSON-LD `contactPoint.availableLanguage` and `knowsLanguage: "ja"`, in `public/llms.txt` ("guides in English, Arabic, French, and Japanese"), and in `public/llms-full.txt`. All of these depend on Sara Hassan's input and weren't changed.
