@@ -32,7 +32,7 @@ export const brand = {
   alternateName: "Sillage Égypte — Private Journeys",
   /** The operating company; Sillage Égypte is its trading name. */
   legalName: "Capital Travel Service",
-  foundingDate: "2010",
+  foundingDate: "2003",
   founders: [{ name: "Islam Hussein", jobTitle: "Founder" }],
   address: {
     streetAddress: "1 Farouk Mahmoud St",

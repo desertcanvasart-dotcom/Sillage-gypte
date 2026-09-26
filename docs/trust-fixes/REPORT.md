@@ -8,7 +8,7 @@ The work is on branch **`claude/funny-pascal-by8x43`**. The brief asked for `fix
 | --- | --- | --- |
 | 0 Discovery | **done** | `docs/trust-fixes/discovery.md` |
 | 1 Legal identity | **partial** (waiting on `PHONE_DECISION` and `MOT_LICENCE`) | The operator line is in the footer on every page and locale. The operator block is on the contact page. JSON-LD has `legalName: Capital Travel Service` and ETAA `identifier: 2179`. The phone is unchanged, and so are Terms and Privacy. |
-| 2 About story | **partial, not deploy-ready as the final story** (waiting on `RELATIONSHIP_LINE` and `OPERATING_SINCE`) | "Founded by guides, not by a booking desk" and "a call centre an ocean away" are removed in all 5 locales. The new "Who stands behind Sillage" section currently states only the operator fact. A TODO marks the missing paragraphs and is visible in development builds only. |
+| 2 About story | **partial, not deploy-ready as the final story** (waiting on `RELATIONSHIP_LINE`) | "Founded by guides, not by a booking desk" and "a call centre an ocean away" are removed in all 5 locales. The new "Who stands behind Sillage" section states the operator fact (ETAA 2179) and, per `OPERATING_SINCE = 2003`, the paragraph on what that history means for the traveller. The relationship sentence and the "why a separate house" paragraph wait on `RELATIONSHIP_LINE`; a TODO marks them and is visible in development builds only. |
 | 3 Guides | **blocked** (all 5 guide inputs are `{{…}}`) | No changes. As the brief directs, a guide whose input is empty is left alone. This covers Sara Hassan's Japanese line and the Dr. Khaled Amin homepage quote. |
 | 4 Experiences | **partial** (all 6 experience inputs are `{{…}}`) | The neutral caveat is on all 6 experience pages in 5 locales. The homepage "Access beyond the route" pillar is softened. Nothing is unpublished. |
 | 5 Technical metadata | **done** | Metadata now renders in `<head>` (root cause below). Every page in every locale has its own title, description, self-referencing canonical, hreflang ×5 plus x-default, and `og:url` equal to the canonical. OG and Twitter tags match the page and use its hero image. `og:locale` and `og:locale:alternate` are set. `meta keywords` is removed. The sitemap was already complete. |
@@ -34,7 +34,7 @@ Build: `npm run build` passes. Type-check: `tsc --noEmit` passes. Lint: `npm run
 | `/experiences/*` (all 6) | Neutral access caveat under the ledger. Localised `og:url`. The hero is the OG image. |
 | `/guides/*` (all 5) | Title and description now localised (they were English in every locale). |
 | `/tours/*`, `/destinations/*`, `/journal/*`, and the index pages `/tours`, `/destinations`, `/experiences`, `/guides`, `/journal`, `/plan`, `/privacy`, `/terms` | Full per-page OG and Twitter tags with a hero image. `og:url` is localised on journal pages. |
-| Site-wide JSON-LD | `legalName` changed from "Capital Travel Services" to "Capital Travel Service". `memberOf` ETAA now carries `identifier: "2179"`. |
+| Site-wide JSON-LD | `legalName` changed from "Capital Travel Services" to "Capital Travel Service". `memberOf` ETAA now carries `identifier: "2179"`. `foundingDate` corrected from 2010 to **2003** (owner-confirmed). |
 
 ## Translated strings, for native review
 
@@ -65,6 +65,16 @@ Build: `npm run build` passes. Type-check: `tsc --noEmit` passes. Lint: `npm run
 | FR | L’entreprise | Qui est derrière *Sillage* |
 | NL | Het bedrijf | Wie er achter *Sillage* staat |
 | DE | Das Unternehmen | Wer hinter *Sillage* steht |
+
+**About: "Who stands behind Sillage", paragraph 2** (`about.block1Since`, from `OPERATING_SINCE = 2003`)
+
+* EN: Capital Travel Service has worked on the ground in Egypt since 2003. That means local contracts, and people here who are accountable when something needs putting right.
+* ES: Capital Travel Service trabaja sobre el terreno en Egipto desde 2003. Eso significa contratos locales, y personas aquí que responden cuando algo necesita arreglarse.
+* FR: Capital Travel Service travaille sur le terrain en Égypte depuis 2003. Cela signifie des contrats locaux, et des personnes sur place qui répondent de ce qui doit être rectifié.
+* NL: Capital Travel Service werkt sinds 2003 ter plaatse in Egypte. Dat betekent lokale contracten, en mensen hier die aanspreekbaar zijn als er iets moet worden rechtgezet.
+* DE: Capital Travel Service arbeitet seit 2003 vor Ort in Ägypten. Das bedeutet lokale Verträge — und Menschen hier, die dafür einstehen, wenn etwas in Ordnung gebracht werden muss.
+
+This paragraph deliberately does not say "licensed" (`MOT_LICENCE` is still blank) or "its own guides and drivers" (the guide inputs are still blank). Add either once confirmed.
 
 **About: "One journey at a time", first sentence**
 
@@ -101,8 +111,7 @@ Build: `npm run build` passes. Type-check: `tsc --noEmit` passes. Lint: `npm run
 | --- | --- |
 | `PHONE_DECISION` | Every phone change: footer, contact, plan page, `tel:` and `wa.me` links, and JSON-LD `telephone`. `+20 109 847 1928` is still live everywhere. Note that `wa.me/201098471928` is also hard-coded in all 10 legal JSON files, so REPLACE means editing the legal pages too (a contact detail, not a legal term). |
 | `MOT_LICENCE` | The licence suffix on the footer line. Set `data/site.ts#operator.motLicence` and it appears in the footer and on the contact page in every locale, using the translated label above. |
-| `OPERATING_SINCE` | About paragraph 2 ("a licensed Egyptian operator on the ground since …"). |
-| `RELATIONSHIP_LINE` | About paragraph 1. The About section currently holds only the operator sentence plus a dev-only TODO. |
+| `RELATIONSHIP_LINE` | The About section's relationship sentence (what Sillage is to Capital Travel Service) and the "why a separate house" paragraph. A dev-only TODO marks the gap. (`OPERATING_SINCE` has since been supplied: 2003.) |
 | `TERMS_CONTRACTING_PARTY_IS_OPERATOR` | Any edit to Terms and Privacy. None was needed to *add* the operator, since both already name it (see below). |
 | Guides × 5 | All of Fix 3: photos, credential pruning, the "Guides in" line, removals and 301s, the homepage quote attribution, Sara Hassan's "discerning Japanese travellers" line, and the `/guides` intro check. |
 | Experiences × 6 | The "How this works" notes, unpublishing and 301s, and any listing-card adjustment. Every page carries the neutral caveat instead. Flagged pages: the-empty-plateau, the-empty-museum, the-temple-by-river, the-salt-lakes, tea-on-the-terrace, lunch-under-sail. |
@@ -111,7 +120,7 @@ Build: `npm run build` passes. Type-check: `tsc --noEmit` passes. Lint: `npm run
 
 1. **The Terms and Privacy registered office differs from `ADDRESS`.** All 10 legal files give "Flat 6, Floor 1, Block 1, Panorama Pyramids Building, El-Ahramat St., Giza, Egypt". The footer, contact page and JSON-LD now say "1 Farouk Mahmoud St, Giza, Cairo". Both pages already name *Capital Travel Service, trading as Sillage Égypte, ETAA member no. 2179* as the contracting party and data controller. Terms and Privacy weren't changed. The owner should confirm which address is the registered office.
 2. **Privacy is unfinished.** The effective date is still the placeholder `[EFFECTIVE DATE]` in all 5 locales. It names a data-protection contact, "Mostafa Salah", who appears nowhere else.
-3. **Facts in JSON-LD that aren't in the Inputs** come from an earlier owner-confirmed commit (57e947e): `foundingDate: 2010`, founder "Islam Hussein", and "IATA accredited". They were left as they were. If 2010 is correct, it is also the answer to `OPERATING_SINCE`.
+3. **Facts in JSON-LD that aren't in the Inputs** come from an earlier commit (57e947e): founder "Islam Hussein" and "IATA accredited". They were left as they were. That commit's `foundingDate: 2010` was wrong; the owner has confirmed **2003**, now used for both `foundingDate` and `OPERATING_SINCE`.
 4. **"Japanese" outside the guides pages.** It appears in JSON-LD `contactPoint.availableLanguage` and `knowsLanguage: "ja"`, in `public/llms.txt` ("guides in English, Arabic, French, and Japanese"), and in `public/llms-full.txt`. All of these depend on Sara Hassan's input and weren't changed.
 5. **Exclusivity claims beyond the experience pages** stay until the experience inputs arrive, per the rule for a `{{…}}` input. The `/experiences` meta description in all 5 locales says "the Giza plateau to yourselves, the Grand Egyptian Museum out of hours". The homepage lede says "with access the convoys never reach", and the homepage contrast list says "Kom Ombo at dusk, emptied". The "Certified Egyptologists" pillar and the About hero ("We are Egyptologists, historians…") depend on the guide inputs.
 6. **Brand remnants:** `package.json` / `package-lock.json` `"name": "luxurious-egypt"`, the README title history, and `reference/luxurious_egypt.original.html`. None of them is served.

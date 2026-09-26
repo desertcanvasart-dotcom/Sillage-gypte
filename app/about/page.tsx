@@ -67,13 +67,14 @@ export default async function AboutPage() {
                 {t.block1TitlePost}
               </h2>
               <p className="why-body">{t.block1Body}</p>
-              {/* TODO(trust-fixes): write the full "Who stands behind Sillage" story
-                  once RELATIONSHIP_LINE and OPERATING_SINCE are confirmed. Shown in
-                  development only, so it cannot ship to visitors. */}
+              <p className="why-body">{t.block1Since}</p>
+              {/* TODO(trust-fixes): add the relationship line (what Sillage is to
+                  Capital Travel Service) and the "why a separate house" paragraph
+                  once RELATIONSHIP_LINE is confirmed. Shown in development only. */}
               {process.env.NODE_ENV !== "production" && (
                 <p className="why-body" style={{ border: "1px dashed #b33", padding: "12px", color: "#b33" }}>
-                  TODO (trust fixes): add what Sillage is and who operates it (RELATIONSHIP_LINE),
-                  and what that means for the traveller (OPERATING_SINCE). Waiting on the owner.
+                  TODO (trust fixes): add what Sillage is to Capital Travel Service (RELATIONSHIP_LINE)
+                  and why it is a separate house for private journeys. Waiting on the owner.
                 </p>
               )}
               <Link href={p("/guides")} className="btn-outline">
