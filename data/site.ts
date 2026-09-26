@@ -10,10 +10,10 @@ export const site = {
     "Private journeys designed around you, guided by experts who know every layer of this country.",
   url: "https://sillage-egypte.com",
   email: "hello@sillage-egypte.com",
-  phoneDisplay: "+20 109 847 1928",
-  phoneHref: "+201098471928",
+  phoneDisplay: "+20 115 801 1600",
+  phoneHref: "+201158011600",
   whatsappDisplay: "WhatsApp enquiries welcome",
-  whatsappHref: "https://wa.me/201098471928",
+  whatsappHref: "https://wa.me/201158011600",
   responsePromise: "A journey designer replies within 24 hours.",
   social: {
     instagram: "https://instagram.com/sillage-egypte",
