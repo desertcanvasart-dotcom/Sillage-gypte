@@ -17,7 +17,7 @@ import WarmMasthead from "@/components/warm/WarmMasthead";
 import WarmFooter from "@/components/warm/WarmFooter";
 import { getLocale, localePath } from "@/lib/i18n";
 import { getDict } from "@/lib/dictionaries";
-import { getMetaDict, localeAlternates } from "@/lib/meta-dict";
+import { getMetaDict } from "@/lib/meta-dict";
 import Script from "next/script";
 import CookieConsent from "@/components/CookieConsent";
 
@@ -63,14 +63,9 @@ const jost = Jost({
 });
 
 /* ─── METADATA (SEO + social/GEO) ─────────────────────────────────────── */
-const OG_LOCALES: Record<string, string> = {
-  en: "en_US",
-  es: "es_ES",
-  fr: "fr_FR",
-  nl: "nl_NL",
-  de: "de_DE",
-};
-
+/* Site-wide defaults only. Each page supplies its own canonical, hreflang,
+   OpenGraph and Twitter tags through pageMetadata() (lib/meta-dict.ts), so no
+   page inherits the homepage's URL, title or description. */
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const m = getMetaDict(locale);
@@ -81,39 +76,7 @@ export async function generateMetadata(): Promise<Metadata> {
       template: "%s · Sillage Égypte",
     },
     description: m.root.description,
-    keywords: [
-      "luxury Egypt tours",
-      "private Egypt travel",
-      "Nile journey",
-      "Egyptologist guided tours",
-      "bespoke Egypt itinerary",
-      "Cairo Luxor private tour",
-      "White Desert expedition",
-    ],
     authors: [{ name: "Sillage Égypte" }],
-    alternates: localeAlternates(locale, "/"),
-    openGraph: {
-      type: "website",
-      locale: OG_LOCALES[locale],
-      url: SITE_URL,
-      siteName: "Sillage Égypte",
-      title: m.root.title,
-      description: m.ogDescription,
-      images: [
-        {
-          url: "/og-image.jpg",
-          width: 1200,
-          height: 630,
-          alt: "Sillage Égypte — private journeys across Egypt",
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: m.root.title,
-      description: m.ogDescription,
-      images: ["/og-image.jpg"],
-    },
     robots: {
       index: true,
       follow: true,

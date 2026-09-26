@@ -1,7 +1,7 @@
 export const dynamic = "force-dynamic";
 import type { Metadata } from "next";
 import { getLocale } from "@/lib/i18n";
-import { localeAlternates, localizedUrl } from "@/lib/meta-dict";
+import { pageMetadata } from "@/lib/meta-dict";
 import { loadContent } from "@/lib/content";
 
 interface Legal { title: string; description: string; bodyHtml: string }
@@ -12,14 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const title = doc?.title ?? "Privacy & Cookie Policy";
   const description = doc?.description;
   return {
-    title,
-    description,
-    alternates: localeAlternates(locale, "/privacy"),
-    openGraph: {
-      title,
-      description,
-      url: localizedUrl(locale, "/privacy"),
-    },
+    ...pageMetadata({ locale, path: "/privacy", title, description }),
     robots: { index: true, follow: true },
   };
 }

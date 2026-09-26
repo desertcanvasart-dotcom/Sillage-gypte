@@ -4,16 +4,18 @@ import EnquiryForm from "@/components/EnquiryForm";
 import { site, operator } from "@/data/site";
 import { getDict } from "@/lib/dictionaries";
 import { getLocale, localePath } from "@/lib/i18n";
-import { getMetaDict, localeAlternates } from "@/lib/meta-dict";
+import { getMetaDict, pageMetadata } from "@/lib/meta-dict";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const m = getMetaDict(locale).contact;
-  return {
+  return pageMetadata({
+    locale,
+    path: "/contact",
     title: m.title,
     description: m.description,
-    alternates: localeAlternates(locale, "/contact"),
-  };
+    image: "dest-aswan",
+  });
 }
 
 const COPY = {

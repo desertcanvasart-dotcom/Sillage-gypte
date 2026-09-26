@@ -4,17 +4,19 @@ import PageHero from "@/components/PageHero";
 import CtaBand from "@/components/CtaBand";
 import { ArrowRight } from "@/components/icons";
 import { getLocale, localePath } from "@/lib/i18n";
-import { getMetaDict, localeAlternates } from "@/lib/meta-dict";
+import { getMetaDict, pageMetadata } from "@/lib/meta-dict";
 import { getGuidesAboutDict } from "@/lib/guides-about-dict";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const m = getMetaDict(locale).about;
-  return {
+  return pageMetadata({
+    locale,
+    path: "/about",
     title: m.title,
     description: m.description,
-    alternates: localeAlternates(locale, "/about"),
-  };
+    image: "dest-cairo",
+  });
 }
 
 export default async function AboutPage() {

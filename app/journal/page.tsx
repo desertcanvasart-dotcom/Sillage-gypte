@@ -6,18 +6,20 @@ import CtaBand from "@/components/CtaBand";
 import { ArrowRight } from "@/components/icons";
 import { sortedJournal } from "@/data/journal";
 import { getLocale, localePath } from "@/lib/i18n";
-import { getMetaDict, localeAlternates } from "@/lib/meta-dict";
+import { getMetaDict, pageMetadata } from "@/lib/meta-dict";
 import { loadContent } from "@/lib/content";
 import { getPagesDict } from "@/lib/pages-dict";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const m = getMetaDict(locale).journal;
-  return {
+  return pageMetadata({
+    locale,
+    path: "/journal",
     title: m.title,
     description: m.description,
-    alternates: localeAlternates(locale, "/journal"),
-  };
+    image: "journal-when-to-go-to-egypt",
+  });
 }
 
 export default async function JournalPage() {

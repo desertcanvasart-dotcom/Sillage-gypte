@@ -4,17 +4,19 @@ import TourCard from "@/components/TourCard";
 import CtaBand from "@/components/CtaBand";
 import { tours } from "@/data/tours";
 import { getLocale } from "@/lib/i18n";
-import { getMetaDict, localeAlternates } from "@/lib/meta-dict";
+import { getMetaDict, pageMetadata } from "@/lib/meta-dict";
 import { getPagesDict } from "@/lib/pages-dict";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const m = getMetaDict(locale).tours;
-  return {
+  return pageMetadata({
+    locale,
+    path: "/tours",
     title: m.title,
     description: m.description,
-    alternates: localeAlternates(locale, "/tours"),
-  };
+    image: "tour-complete-egypt",
+  });
 }
 
 export default async function ToursPage() {

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { destinations } from "@/data/destinations";
 import { getLocale } from "@/lib/i18n";
-import { localeAlternates, localizedUrl } from "@/lib/meta-dict";
+import { pageMetadata } from "@/lib/meta-dict";
 import { loadContent } from "@/lib/content";
 
 interface Guide {
@@ -27,16 +27,13 @@ export async function generateMetadata({
   const locale = await getLocale();
   const g = await loadContent<Guide>("destinations", slug, locale);
   if (!g) return { title: "Destination not found" };
-  return {
+  return pageMetadata({
+    locale,
+    path: `/destinations/${slug}`,
     title: g.title,
     description: g.description,
-    alternates: localeAlternates(locale, `/destinations/${slug}`),
-    openGraph: {
-      title: g.title,
-      description: g.description,
-      url: localizedUrl(locale, `/destinations/${slug}`),
-    },
-  };
+    image: g.imgVars?.["--img-hero"],
+  });
 }
 
 export default async function DestinationGuidePage({

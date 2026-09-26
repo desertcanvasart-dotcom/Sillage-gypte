@@ -9,7 +9,7 @@ import JsonLd from "@/components/JsonLd";
 import { ArrowRight } from "@/components/icons";
 import { journal, getPost, sortedJournal } from "@/data/journal";
 import { getLocale, localePath } from "@/lib/i18n";
-import { localeAlternates } from "@/lib/meta-dict";
+import { pageMetadata } from "@/lib/meta-dict";
 import { loadContent } from "@/lib/content";
 import { SITE_URL, orgRef } from "@/lib/structured-data";
 
@@ -29,19 +29,16 @@ export async function generateMetadata({
   if (!post) return { title: "Article not found" };
   const locale = await getLocale();
   const doc = await loadContent<Bespoke>("journal", slug, locale);
-  return {
+  return pageMetadata({
+    locale,
+    path: `/journal/${post.slug}`,
     title: doc?.seoTitle ?? post.seo.title,
     description: doc?.description ?? post.seo.description,
-    alternates: localeAlternates(locale, `/journal/${post.slug}`),
-    openGraph: {
-      type: "article",
-      title: doc?.seoTitle ?? post.seo.title,
-      description: doc?.description ?? post.seo.description,
-      url: `${SITE_URL}/journal/${post.slug}`,
-      publishedTime: post.date,
-      authors: [post.author],
-    },
-  };
+    image: doc?.img ?? `journal-${post.slug}`,
+    type: "article",
+    publishedTime: post.date,
+    authors: [post.author],
+  });
 }
 
 export default async function ArticlePage({

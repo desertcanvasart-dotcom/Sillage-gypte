@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Photo from "@/components/Photo";
 import TourCard from "@/components/TourCard";
@@ -6,10 +7,24 @@ import { getTour } from "@/data/tours";
 import { getLocale, localePath } from "@/lib/i18n";
 import { loadContent } from "@/lib/content";
 import { getDict } from "@/lib/dictionaries";
+import { getMetaDict, pageMetadata } from "@/lib/meta-dict";
 
 const HOME_DESTINATIONS = ["luxor", "aswan", "cairo", "abu-simbel"];
 // The three longest journeys, shown with image + price (TourCard handles locale).
 const HOME_JOURNEYS = ["beyond-the-nile", "complete-egypt", "nile-red-sea"];
+
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const m = getMetaDict(locale).root;
+  return pageMetadata({
+    locale,
+    path: "/",
+    title: m.title,
+    description: m.description,
+    image: "home-hero",
+    absoluteTitle: true,
+  });
+}
 
 export default async function HomePage() {
   const locale = await getLocale();
