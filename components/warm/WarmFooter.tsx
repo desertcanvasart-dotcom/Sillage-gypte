@@ -46,8 +46,8 @@ export default async function WarmFooter() {
             {site.whatsappDisplay}
           </a>
           <p className="operator" data-operator-line>
-            {t.footer.operatedBy} {operator.name} · ETAA {operator.etaa} · {operator.address}
-            {operator.motLicence ? ` · ${t.footer.motLicence} ${operator.motLicence}` : ""}
+            {`${t.footer.operatedBy} ${operator.name} · ETAA ${operator.etaa} · ${operator.address}` +
+              (operator.motLicence ? ` · ${t.footer.motLicence} ${operator.motLicence}` : "")}
           </p>
         </div>
         <div className="legal">

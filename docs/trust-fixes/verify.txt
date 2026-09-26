@@ -1,0 +1,205 @@
+verify-trust-fixes · 2026-09-26T17:52:58.049Z
+base: http://localhost:3100
+old-phone check: off (PHONE_DECISION not REPLACE)
+
+sitemap.xml: HTTP 200, 190 URLs
+sitemap: 38 pages × 5 locales, hreflang alternates complete
+
+routes:
+  ok   https://sillage-egypte.com  —  Sillage Égypte — Private Journeys Across Egypt
+  ok   https://sillage-egypte.com/es  —  Sillage Égypte — Viajes privados por Egipto
+  ok   https://sillage-egypte.com/fr  —  Sillage Égypte — Voyages privés à travers l'Égypte
+  ok   https://sillage-egypte.com/nl  —  Sillage Égypte — Privéreizen door Egypte
+  ok   https://sillage-egypte.com/de  —  Sillage Égypte — Private Reisen durch Ägypten
+  ok   https://sillage-egypte.com/tours  —  Private Journeys Across Egypt · Sillage Égypte
+  ok   https://sillage-egypte.com/es/tours  —  Viajes privados por Egipto · Sillage Égypte
+  ok   https://sillage-egypte.com/fr/tours  —  Voyages privés à travers l'Égypte · Sillage Égypte
+  ok   https://sillage-egypte.com/nl/tours  —  Privéreizen door Egypte · Sillage Égypte
+  ok   https://sillage-egypte.com/de/tours  —  Private Reisen durch Ägypten · Sillage Égypte
+  ok   https://sillage-egypte.com/destinations  —  Destinations in Egypt · Sillage Égypte
+  ok   https://sillage-egypte.com/es/destinations  —  Destinos en Egipto · Sillage Égypte
+  ok   https://sillage-egypte.com/fr/destinations  —  Destinations en Égypte · Sillage Égypte
+  ok   https://sillage-egypte.com/nl/destinations  —  Bestemmingen in Egypte · Sillage Égypte
+  ok   https://sillage-egypte.com/de/destinations  —  Reiseziele in Ägypten · Sillage Égypte
+  ok   https://sillage-egypte.com/experiences  —  Signature Experiences in Egypt · Sillage Égypte
+  ok   https://sillage-egypte.com/es/experiences  —  Experiencias exclusivas en Egipto · Sillage Égypte
+  ok   https://sillage-egypte.com/fr/experiences  —  Expériences signature en Égypte · Sillage Égypte
+  ok   https://sillage-egypte.com/nl/experiences  —  Bijzondere ervaringen in Egypte · Sillage Égypte
+  ok   https://sillage-egypte.com/de/experiences  —  Besondere Erlebnisse in Ägypten · Sillage Égypte
+  ok   https://sillage-egypte.com/guides  —  Our Guides — Egyptologists & Specialists · Sillage Égypte
+  ok   https://sillage-egypte.com/es/guides  —  Nuestros guías — egiptólogos y especialistas · Sillage Égypte
+  ok   https://sillage-egypte.com/fr/guides  —  Nos guides — égyptologues et spécialistes · Sillage Égypte
+  ok   https://sillage-egypte.com/nl/guides  —  Onze gidsen — egyptologen en specialisten · Sillage Égypte
+  ok   https://sillage-egypte.com/de/guides  —  Unsere Guides — Ägyptologen und Spezialisten · Sillage Égypte
+  ok   https://sillage-egypte.com/journal  —  The Journal — Travel Notes on Egypt · Sillage Égypte
+  ok   https://sillage-egypte.com/es/journal  —  El diario — notas de viaje sobre Egipto · Sillage Égypte
+  ok   https://sillage-egypte.com/fr/journal  —  Le journal — notes de voyage sur l'Égypte · Sillage Égypte
+  ok   https://sillage-egypte.com/nl/journal  —  Het journaal — reisnotities over Egypte · Sillage Égypte
+  ok   https://sillage-egypte.com/de/journal  —  Das Journal — Reisenotizen über Ägypten · Sillage Égypte
+  ok   https://sillage-egypte.com/about  —  About us · Sillage Égypte
+  ok   https://sillage-egypte.com/es/about  —  Quiénes somos · Sillage Égypte
+  ok   https://sillage-egypte.com/fr/about  —  À propos · Sillage Égypte
+  ok   https://sillage-egypte.com/nl/about  —  Over ons · Sillage Égypte
+  ok   https://sillage-egypte.com/de/about  —  Über uns · Sillage Égypte
+  ok   https://sillage-egypte.com/plan  —  Plan Your Journey · Sillage Égypte
+  ok   https://sillage-egypte.com/es/plan  —  Planifica tu viaje · Sillage Égypte
+  ok   https://sillage-egypte.com/fr/plan  —  Composez votre voyage · Sillage Égypte
+  ok   https://sillage-egypte.com/nl/plan  —  Stel uw reis samen · Sillage Égypte
+  ok   https://sillage-egypte.com/de/plan  —  Stellen Sie Ihre Reise zusammen · Sillage Égypte
+  ok   https://sillage-egypte.com/contact  —  Contact us · Sillage Égypte
+  ok   https://sillage-egypte.com/es/contact  —  Contacto · Sillage Égypte
+  ok   https://sillage-egypte.com/fr/contact  —  Contact · Sillage Égypte
+  ok   https://sillage-egypte.com/nl/contact  —  Contact · Sillage Égypte
+  ok   https://sillage-egypte.com/de/contact  —  Kontakt · Sillage Égypte
+  ok   https://sillage-egypte.com/privacy  —  Privacy & Cookie Policy · Sillage Égypte
+  ok   https://sillage-egypte.com/es/privacy  —  Política de Privacidad y Cookies · Sillage Égypte
+  ok   https://sillage-egypte.com/fr/privacy  —  Politique de Confidentialité et de Cookies · Sillage Égypte
+  ok   https://sillage-egypte.com/nl/privacy  —  Privacy- en Cookiebeleid · Sillage Égypte
+  ok   https://sillage-egypte.com/de/privacy  —  Datenschutz- und Cookie-Richtlinie · Sillage Égypte
+  ok   https://sillage-egypte.com/terms  —  Terms & Conditions · Sillage Égypte
+  ok   https://sillage-egypte.com/es/terms  —  Términos y Condiciones · Sillage Égypte
+  ok   https://sillage-egypte.com/fr/terms  —  Conditions Générales · Sillage Égypte
+  ok   https://sillage-egypte.com/nl/terms  —  Algemene Voorwaarden · Sillage Égypte
+  ok   https://sillage-egypte.com/de/terms  —  Allgemeine Geschäftsbedingungen · Sillage Égypte
+  ok   https://sillage-egypte.com/tours/cairo-two-views  —  Cairo, Two Views — 4 Days · Sillage Égypte
+  ok   https://sillage-egypte.com/es/tours/cairo-two-views  —  El Cairo, Dos Miradas — 4 Días · Sillage Égypte
+  ok   https://sillage-egypte.com/fr/tours/cairo-two-views  —  Le Caire, deux panoramas — 4 jours · Sillage Égypte
+  ok   https://sillage-egypte.com/nl/tours/cairo-two-views  —  Caïro, twee aanzichten — 4 dagen · Sillage Égypte
+  ok   https://sillage-egypte.com/de/tours/cairo-two-views  —  Kairo, zwei Ausblicke — 4 Tage · Sillage Égypte
+  ok   https://sillage-egypte.com/tours/egypt-in-brief  —  Egypt in Brief — 6 Days · Sillage Égypte
+  ok   https://sillage-egypte.com/es/tours/egypt-in-brief  —  Egipto en Esencia — 6 Días · Sillage Égypte
+  ok   https://sillage-egypte.com/fr/tours/egypt-in-brief  —  L'Égypte en bref — 6 jours · Sillage Égypte
+  ok   https://sillage-egypte.com/nl/tours/egypt-in-brief  —  Egypte in het kort — 6 dagen · Sillage Égypte
+  ok   https://sillage-egypte.com/de/tours/egypt-in-brief  —  Ägypten im Überblick — 6 Tage · Sillage Égypte
+  ok   https://sillage-egypte.com/tours/grand-tour  —  The Grand Tour — 10 Days · Sillage Égypte
+  ok   https://sillage-egypte.com/es/tours/grand-tour  —  El Gran Tour — 10 Días · Sillage Égypte
+  ok   https://sillage-egypte.com/fr/tours/grand-tour  —  Le Grand Tour — 10 jours · Sillage Égypte
+  ok   https://sillage-egypte.com/nl/tours/grand-tour  —  De Grand Tour — 10 dagen · Sillage Égypte
+  ok   https://sillage-egypte.com/de/tours/grand-tour  —  Die große Rundreise — 10 Tage · Sillage Égypte
+  ok   https://sillage-egypte.com/tours/complete-egypt  —  The Complete Egypt — 13 Days · Sillage Égypte
+  ok   https://sillage-egypte.com/es/tours/complete-egypt  —  El Egipto Completo — 13 Días · Sillage Égypte
+  ok   https://sillage-egypte.com/fr/tours/complete-egypt  —  L'Égypte intégrale — 13 jours · Sillage Égypte
+  ok   https://sillage-egypte.com/nl/tours/complete-egypt  —  Het Complete Egypte — 13 dagen · Sillage Égypte
+  ok   https://sillage-egypte.com/de/tours/complete-egypt  —  Das vollständige Ägypten — 13 Tage · Sillage Égypte
+  ok   https://sillage-egypte.com/tours/nile-red-sea  —  The Nile & the Red Sea — 12 Days · Sillage Égypte
+  ok   https://sillage-egypte.com/es/tours/nile-red-sea  —  El Nilo y el Mar Rojo — 12 Días · Sillage Égypte
+  ok   https://sillage-egypte.com/fr/tours/nile-red-sea  —  Le Nil & la mer Rouge — 12 jours · Sillage Égypte
+  ok   https://sillage-egypte.com/nl/tours/nile-red-sea  —  De Nijl & de Rode Zee — 12 dagen · Sillage Égypte
+  ok   https://sillage-egypte.com/de/tours/nile-red-sea  —  Der Nil & das Rote Meer — 12 Tage · Sillage Égypte
+  ok   https://sillage-egypte.com/tours/beyond-the-nile  —  Beyond the Nile — 16 Days · Sillage Égypte
+  ok   https://sillage-egypte.com/es/tours/beyond-the-nile  —  Más Allá del Nilo — 16 Días · Sillage Égypte
+  ok   https://sillage-egypte.com/fr/tours/beyond-the-nile  —  Au-delà du Nil — 16 jours · Sillage Égypte
+  ok   https://sillage-egypte.com/nl/tours/beyond-the-nile  —  Beyond the Nile — 16 dagen · Sillage Égypte
+  ok   https://sillage-egypte.com/de/tours/beyond-the-nile  —  Jenseits des Nils — 16 Tage · Sillage Égypte
+  ok   https://sillage-egypte.com/destinations/cairo  —  Cairo — Destination Guide · Sillage Égypte
+  ok   https://sillage-egypte.com/es/destinations/cairo  —  El Cairo — Guía de destino · Sillage Égypte
+  ok   https://sillage-egypte.com/fr/destinations/cairo  —  Le Caire — Guide de destination · Sillage Égypte
+  ok   https://sillage-egypte.com/nl/destinations/cairo  —  Caïro — Bestemmingsgids · Sillage Égypte
+  ok   https://sillage-egypte.com/de/destinations/cairo  —  Kairo — Reiseführer · Sillage Égypte
+  ok   https://sillage-egypte.com/destinations/luxor  —  Luxor — Destination Guide · Sillage Égypte
+  ok   https://sillage-egypte.com/es/destinations/luxor  —  Luxor — Guía de destino · Sillage Égypte
+  ok   https://sillage-egypte.com/fr/destinations/luxor  —  Louxor — Guide de destination · Sillage Égypte
+  ok   https://sillage-egypte.com/nl/destinations/luxor  —  Luxor — Bestemmingsgids · Sillage Égypte
+  ok   https://sillage-egypte.com/de/destinations/luxor  —  Luxor — Reiseführer · Sillage Égypte
+  ok   https://sillage-egypte.com/destinations/aswan  —  Aswan — Destination Guide · Sillage Égypte
+  ok   https://sillage-egypte.com/es/destinations/aswan  —  Asuán — Guía de destino · Sillage Égypte
+  ok   https://sillage-egypte.com/fr/destinations/aswan  —  Assouan — Guide de destination · Sillage Égypte
+  ok   https://sillage-egypte.com/nl/destinations/aswan  —  Aswan — Bestemmingsgids · Sillage Égypte
+  ok   https://sillage-egypte.com/de/destinations/aswan  —  Assuan — Reiseführer · Sillage Égypte
+  ok   https://sillage-egypte.com/destinations/abu-simbel  —  Abu Simbel — Destination Guide · Sillage Égypte
+  ok   https://sillage-egypte.com/es/destinations/abu-simbel  —  Abu Simbel — Guía de destino · Sillage Égypte
+  ok   https://sillage-egypte.com/fr/destinations/abu-simbel  —  Abu Simbel — Guide de destination · Sillage Égypte
+  ok   https://sillage-egypte.com/nl/destinations/abu-simbel  —  Abu Simbel — Bestemmingsgids · Sillage Égypte
+  ok   https://sillage-egypte.com/de/destinations/abu-simbel  —  Abu Simbel — Reiseführer · Sillage Égypte
+  ok   https://sillage-egypte.com/destinations/sharm-el-sheikh  —  Sharm el-Sheikh — Destination Guide · Sillage Égypte
+  ok   https://sillage-egypte.com/es/destinations/sharm-el-sheikh  —  Sharm el-Sheikh — Guía de destino · Sillage Égypte
+  ok   https://sillage-egypte.com/fr/destinations/sharm-el-sheikh  —  Sharm el-Sheikh — Guide de destination · Sillage Égypte
+  ok   https://sillage-egypte.com/nl/destinations/sharm-el-sheikh  —  Sharm el-Sheikh — Bestemmingsgids · Sillage Égypte
+  ok   https://sillage-egypte.com/de/destinations/sharm-el-sheikh  —  Sharm el-Sheikh — Reiseführer · Sillage Égypte
+  ok   https://sillage-egypte.com/destinations/alexandria  —  Alexandria — Destination Guide · Sillage Égypte
+  ok   https://sillage-egypte.com/es/destinations/alexandria  —  Alejandría — Guía de destino · Sillage Égypte
+  ok   https://sillage-egypte.com/fr/destinations/alexandria  —  Alexandrie — Guide de destination · Sillage Égypte
+  ok   https://sillage-egypte.com/nl/destinations/alexandria  —  Alexandrië — Bestemmingsgids · Sillage Égypte
+  ok   https://sillage-egypte.com/de/destinations/alexandria  —  Alexandria — Reiseführer · Sillage Égypte
+  ok   https://sillage-egypte.com/destinations/hurghada  —  Hurghada — Destination Guide · Sillage Égypte
+  ok   https://sillage-egypte.com/es/destinations/hurghada  —  Hurghada — Guía de destino · Sillage Égypte
+  ok   https://sillage-egypte.com/fr/destinations/hurghada  —  Hurghada — Guide de destination · Sillage Égypte
+  ok   https://sillage-egypte.com/nl/destinations/hurghada  —  Hurghada — Bestemmingsgids · Sillage Égypte
+  ok   https://sillage-egypte.com/de/destinations/hurghada  —  Hurghada — Reiseführer · Sillage Égypte
+  ok   https://sillage-egypte.com/experiences/the-empty-plateau  —  The Empty Plateau — Private Access to Giza · Sillage Égypte
+  ok   https://sillage-egypte.com/es/experiences/the-empty-plateau  —  La Meseta Vacía — Acceso Privado a Guiza · Sillage Égypte
+  ok   https://sillage-egypte.com/fr/experiences/the-empty-plateau  —  Le Plateau désert — Accès privé à Gizeh · Sillage Égypte
+  ok   https://sillage-egypte.com/nl/experiences/the-empty-plateau  —  Het Lege Plateau — Privétoegang tot Gizeh · Sillage Égypte
+  ok   https://sillage-egypte.com/de/experiences/the-empty-plateau  —  Das leere Plateau — Privater Zugang zu Gizeh · Sillage Égypte
+  ok   https://sillage-egypte.com/experiences/the-empty-museum  —  The Empty Museum — Private Entry to the Grand Egyptian Museum · Sillage Égypte
+  ok   https://sillage-egypte.com/es/experiences/the-empty-museum  —  El Museo Vacío — Entrada Privada al Gran Museo Egipcio · Sillage Égypte
+  ok   https://sillage-egypte.com/fr/experiences/the-empty-museum  —  Le Musée désert — Entrée privée au Grand Musée égyptien · Sillage Égypte
+  ok   https://sillage-egypte.com/nl/experiences/the-empty-museum  —  Het Lege Museum — Privétoegang tot het Grand Egyptian Museum · Sillage Égypte
+  ok   https://sillage-egypte.com/de/experiences/the-empty-museum  —  Das leere Museum — Privater Zugang zum Großen Ägyptischen Museum · Sillage Égypte
+  ok   https://sillage-egypte.com/experiences/the-temple-by-river  —  The Temple by River — Sailing to Dendera · Sillage Égypte
+  ok   https://sillage-egypte.com/es/experiences/the-temple-by-river  —  El Templo por el Río — Navegar hasta Dendera · Sillage Égypte
+  ok   https://sillage-egypte.com/fr/experiences/the-temple-by-river  —  Le Temple par le fleuve — Naviguer vers Dendérah · Sillage Égypte
+  ok   https://sillage-egypte.com/nl/experiences/the-temple-by-river  —  De Tempel over de Rivier — Varen naar Dendera · Sillage Égypte
+  ok   https://sillage-egypte.com/de/experiences/the-temple-by-river  —  Der Tempel am Fluss — Mit dem Segelboot nach Dendera · Sillage Égypte
+  ok   https://sillage-egypte.com/experiences/the-salt-lakes  —  The Salt Lakes — Floating in Siwa · Sillage Égypte
+  ok   https://sillage-egypte.com/es/experiences/the-salt-lakes  —  Los Lagos de Sal — Flotar en Siwa · Sillage Égypte
+  ok   https://sillage-egypte.com/fr/experiences/the-salt-lakes  —  Les Lacs salés — Flotter à Siwa · Sillage Égypte
+  ok   https://sillage-egypte.com/nl/experiences/the-salt-lakes  —  De Zoutmeren — Drijven in Siwa · Sillage Égypte
+  ok   https://sillage-egypte.com/de/experiences/the-salt-lakes  —  Die Salzseen — Schweben in Siwa · Sillage Égypte
+  ok   https://sillage-egypte.com/experiences/tea-on-the-terrace  —  Tea on the Terrace — Aswan · Sillage Égypte
+  ok   https://sillage-egypte.com/es/experiences/tea-on-the-terrace  —  Té en la Terraza — Asuán · Sillage Égypte
+  ok   https://sillage-egypte.com/fr/experiences/tea-on-the-terrace  —  Le Thé sur la terrasse — Assouan · Sillage Égypte
+  ok   https://sillage-egypte.com/nl/experiences/tea-on-the-terrace  —  Thee op het Terras — Aswan · Sillage Égypte
+  ok   https://sillage-egypte.com/de/experiences/tea-on-the-terrace  —  Tee auf der Terrasse — Assuan · Sillage Égypte
+  ok   https://sillage-egypte.com/experiences/lunch-under-sail  —  Lunch Under Sail — A Felucca in Cairo · Sillage Égypte
+  ok   https://sillage-egypte.com/es/experiences/lunch-under-sail  —  Almuerzo a Vela — Una Falúa en El Cairo · Sillage Égypte
+  ok   https://sillage-egypte.com/fr/experiences/lunch-under-sail  —  Déjeuner sous voile — Une felouque au Caire · Sillage Égypte
+  ok   https://sillage-egypte.com/nl/experiences/lunch-under-sail  —  Lunch onder Zeil — Een Felucca in Caïro · Sillage Égypte
+  ok   https://sillage-egypte.com/de/experiences/lunch-under-sail  —  Mittagessen unter Segeln — Eine Feluke in Kairo · Sillage Égypte
+  ok   https://sillage-egypte.com/guides/khaled-amin  —  Dr. Khaled Amin — Senior Egyptologist & Journey Designer · Sillage Égypte
+  ok   https://sillage-egypte.com/es/guides/khaled-amin  —  Dr. Khaled Amin — Egiptólogo sénior y diseñador de viajes · Sillage Égypte
+  ok   https://sillage-egypte.com/fr/guides/khaled-amin  —  Dr. Khaled Amin — Égyptologue principal et concepteur de voyages · Sillage Égypte
+  ok   https://sillage-egypte.com/nl/guides/khaled-amin  —  Dr. Khaled Amin — Senior egyptoloog en reisontwerper · Sillage Égypte
+  ok   https://sillage-egypte.com/de/guides/khaled-amin  —  Dr. Khaled Amin — Senior-Ägyptologe und Reisegestalter · Sillage Égypte
+  ok   https://sillage-egypte.com/guides/sara-hassan  —  Sara Hassan — Cultural Historian & Desert Guide · Sillage Égypte
+  ok   https://sillage-egypte.com/es/guides/sara-hassan  —  Sara Hassan — Historiadora cultural y guía del desierto · Sillage Égypte
+  ok   https://sillage-egypte.com/fr/guides/sara-hassan  —  Sara Hassan — Historienne de la culture et guide du désert · Sillage Égypte
+  ok   https://sillage-egypte.com/nl/guides/sara-hassan  —  Sara Hassan — Cultuurhistorica en woestijngids · Sillage Égypte
+  ok   https://sillage-egypte.com/de/guides/sara-hassan  —  Sara Hassan — Kulturhistorikerin und Wüstenführerin · Sillage Égypte
+  ok   https://sillage-egypte.com/guides/mostafa-ramzy  —  Dr. Mostafa Ramzy — Egyptologist — Aswan & the South · Sillage Égypte
+  ok   https://sillage-egypte.com/es/guides/mostafa-ramzy  —  Dr. Mostafa Ramzy — Egiptólogo — Asuán y el Sur · Sillage Égypte
+  ok   https://sillage-egypte.com/fr/guides/mostafa-ramzy  —  Dr. Mostafa Ramzy — Égyptologue — Assouan et le Sud · Sillage Égypte
+  ok   https://sillage-egypte.com/nl/guides/mostafa-ramzy  —  Dr. Mostafa Ramzy — Egyptoloog — Aswan en het Zuiden · Sillage Égypte
+  ok   https://sillage-egypte.com/de/guides/mostafa-ramzy  —  Dr. Mostafa Ramzy — Ägyptologe — Assuan und der Süden · Sillage Égypte
+  ok   https://sillage-egypte.com/guides/hany-abdel-latif  —  Hany Abdel-Latif — Desert Expedition Guide · Sillage Égypte
+  ok   https://sillage-egypte.com/es/guides/hany-abdel-latif  —  Hany Abdel-Latif — Guía de expediciones por el desierto · Sillage Égypte
+  ok   https://sillage-egypte.com/fr/guides/hany-abdel-latif  —  Hany Abdel-Latif — Guide d'expéditions dans le désert · Sillage Égypte
+  ok   https://sillage-egypte.com/nl/guides/hany-abdel-latif  —  Hany Abdel-Latif — Gids voor woestijnexpedities · Sillage Égypte
+  ok   https://sillage-egypte.com/de/guides/hany-abdel-latif  —  Hany Abdel-Latif — Leiter von Wüstenexpeditionen · Sillage Égypte
+  ok   https://sillage-egypte.com/guides/farida-naguib  —  Farida Naguib — Cultural Historian — Cairo · Sillage Égypte
+  ok   https://sillage-egypte.com/es/guides/farida-naguib  —  Farida Naguib — Historiadora cultural — El Cairo · Sillage Égypte
+  ok   https://sillage-egypte.com/fr/guides/farida-naguib  —  Farida Naguib — Historienne de la culture — Le Caire · Sillage Égypte
+  ok   https://sillage-egypte.com/nl/guides/farida-naguib  —  Farida Naguib — Cultuurhistorica — Caïro · Sillage Égypte
+  ok   https://sillage-egypte.com/de/guides/farida-naguib  —  Farida Naguib — Kulturhistorikerin — Kairo · Sillage Égypte
+  ok   https://sillage-egypte.com/journal/when-to-go-to-egypt  —  When to go to Egypt — The Journal · Sillage Égypte
+  ok   https://sillage-egypte.com/es/journal/when-to-go-to-egypt  —  Cuándo viajar a Egipto — El Diario · Sillage Égypte
+  ok   https://sillage-egypte.com/fr/journal/when-to-go-to-egypt  —  Quand partir en Égypte — Le Journal · Sillage Égypte
+  ok   https://sillage-egypte.com/nl/journal/when-to-go-to-egypt  —  Wanneer naar Egypte — Het Journaal · Sillage Égypte
+  ok   https://sillage-egypte.com/de/journal/when-to-go-to-egypt  —  Wann man nach Ägypten reisen sollte — Das Journal · Sillage Égypte
+  ok   https://sillage-egypte.com/journal/a-morning-on-the-west-bank  —  A morning on the west bank — The Journal · Sillage Égypte
+  ok   https://sillage-egypte.com/es/journal/a-morning-on-the-west-bank  —  Una mañana en la orilla oeste — El Diario · Sillage Égypte
+  ok   https://sillage-egypte.com/fr/journal/a-morning-on-the-west-bank  —  Un matin sur la rive ouest — Le Journal · Sillage Égypte
+  ok   https://sillage-egypte.com/nl/journal/a-morning-on-the-west-bank  —  Een ochtend op de westoever — Het Journaal · Sillage Égypte
+  ok   https://sillage-egypte.com/de/journal/a-morning-on-the-west-bank  —  Ein Morgen am Westufer — Das Journal · Sillage Égypte
+  ok   https://sillage-egypte.com/journal/why-we-will-sometimes-talk-you-out-of-a-trip  —  Why we'll sometimes talk you out of a trip — The Journal · Sillage Égypte
+  ok   https://sillage-egypte.com/es/journal/why-we-will-sometimes-talk-you-out-of-a-trip  —  Por qué a veces te disuadiremos de un viaje — El Diario · Sillage Égypte
+  ok   https://sillage-egypte.com/fr/journal/why-we-will-sometimes-talk-you-out-of-a-trip  —  Pourquoi il nous arrive de vous dissuader d'un voyage — Le Journal · Sillage Égypte
+  ok   https://sillage-egypte.com/nl/journal/why-we-will-sometimes-talk-you-out-of-a-trip  —  Waarom wij u soms een reis afraden — Het Journaal · Sillage Égypte
+  ok   https://sillage-egypte.com/de/journal/why-we-will-sometimes-talk-you-out-of-a-trip  —  Warum wir Ihnen manchmal von einer Reise abraten — Das Journal · Sillage Égypte
+
+duplicate <title> values: 1
+  note "Contact · Sillage Égypte" on https://sillage-egypte.com/fr/contact, https://sillage-egypte.com/nl/contact
+
+removed URLs (must 301): none — no guide or experience was unpublished
+
+RESULT: all 190 routes pass
