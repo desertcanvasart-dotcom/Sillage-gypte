@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import EnquiryForm from "@/components/EnquiryForm";
-import { site } from "@/data/site";
+import { site, operator } from "@/data/site";
+import { getDict } from "@/lib/dictionaries";
 import { getLocale, localePath } from "@/lib/i18n";
 import { getMetaDict, localeAlternates } from "@/lib/meta-dict";
 
@@ -33,6 +34,11 @@ const COPY = {
     sendTitleLead: "Or tell us about your ",
     sendTitleEm: "trip.",
     responsePromise: "A journey designer replies within 24 hours.",
+    operatorLabel: "The operator",
+    operatorBody:
+      "Sillage Égypte is operated by Capital Travel Service, a member of the Egyptian Travel Agents Association (ETAA 2179).",
+    operatorAddressLabel: "Address",
+    operatorCountry: "Egypt",
   },
   es: {
     eyebrow: "Contacto",
@@ -51,6 +57,11 @@ const COPY = {
     sendTitleLead: "O cuéntenos sobre su ",
     sendTitleEm: "viaje.",
     responsePromise: "Un diseñador de viajes le responderá en menos de 24 horas.",
+    operatorLabel: "El operador",
+    operatorBody:
+      "Sillage Égypte está operada por Capital Travel Service, miembro de la Asociación Egipcia de Agentes de Viajes (ETAA 2179).",
+    operatorAddressLabel: "Dirección",
+    operatorCountry: "Egipto",
   },
   fr: {
     eyebrow: "Contact",
@@ -69,6 +80,11 @@ const COPY = {
     sendTitleLead: "Ou parlez-nous de votre ",
     sendTitleEm: "voyage.",
     responsePromise: "Un concepteur de voyages vous répond sous 24 heures.",
+    operatorLabel: "L’opérateur",
+    operatorBody:
+      "Sillage Égypte est exploitée par Capital Travel Service, membre de l’Association égyptienne des agents de voyages (ETAA 2179).",
+    operatorAddressLabel: "Adresse",
+    operatorCountry: "Égypte",
   },
   nl: {
     eyebrow: "Contact",
@@ -87,6 +103,11 @@ const COPY = {
     sendTitleLead: "Of vertel ons over uw ",
     sendTitleEm: "reis.",
     responsePromise: "Een reisontwerper antwoordt binnen 24 uur.",
+    operatorLabel: "De exploitant",
+    operatorBody:
+      "Sillage Égypte wordt beheerd door Capital Travel Service, lid van de Egyptische Vereniging van Reisagenten (ETAA 2179).",
+    operatorAddressLabel: "Adres",
+    operatorCountry: "Egypte",
   },
   de: {
     eyebrow: "Kontakt",
@@ -105,12 +126,18 @@ const COPY = {
     sendTitleLead: "Oder erzählen Sie uns von Ihrer ",
     sendTitleEm: "Reise.",
     responsePromise: "Ein Reisegestalter antwortet innerhalb von 24 Stunden.",
+    operatorLabel: "Der Betreiber",
+    operatorBody:
+      "Sillage Égypte wird von Capital Travel Service betrieben, Mitglied des Ägyptischen Reisebüroverbands (ETAA 2179).",
+    operatorAddressLabel: "Adresse",
+    operatorCountry: "Ägypten",
   },
 } as const;
 
 export default async function ContactPage() {
   const locale = await getLocale();
   const t = COPY[locale];
+  const f = getDict(locale).footer;
 
   return (
     <main>
@@ -161,6 +188,22 @@ export default async function ContactPage() {
               <span className="contact-method-label">{t.labelWhatsapp}</span>
               <span className="contact-method-value">{t.messageUs}</span>
             </a>
+          </div>
+          <div className="contact-operator reveal" data-operator-block>
+            <span className="contact-method-label">{t.operatorLabel}</span>
+            <p className="contact-operator-body">{t.operatorBody}</p>
+            <p className="contact-operator-address">
+              <span className="contact-method-label">{t.operatorAddressLabel}</span>
+              {operator.name}
+              <br />
+              {operator.address}, {t.operatorCountry}
+              {operator.motLicence && (
+                <>
+                  <br />
+                  {f.motLicence} {operator.motLicence}
+                </>
+              )}
+            </p>
           </div>
         </div>
       </section>

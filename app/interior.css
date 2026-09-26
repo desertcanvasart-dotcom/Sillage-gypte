@@ -616,6 +616,20 @@
   transition: color 0.2s;
 }
 a.contact-method:hover .contact-method-value { color: var(--teal); }
+.contact-operator {
+  background: white;
+  padding: 28px 32px;
+  margin-top: 2px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 48px;
+  align-items: start;
+}
+.contact-operator > .contact-method-label { grid-column: 1 / -1; }
+.contact-operator-body,
+.contact-operator-address { font-size: 15px; line-height: 1.7; color: var(--ink); margin: 0; }
+.contact-operator-address .contact-method-label { display: block; margin-bottom: 4px; }
+@media (max-width: 760px) { .contact-operator { grid-template-columns: 1fr; } }
 
 /* ─── ARTICLE / PROSE (journal detail, legal) ───────────────────────── */
 .prose { max-width: 720px; margin: 0 auto; }

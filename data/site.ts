@@ -31,7 +31,7 @@ export const site = {
 export const brand = {
   alternateName: "Sillage Égypte — Private Journeys",
   /** The operating company; Sillage Égypte is its trading name. */
-  legalName: "Capital Travel Services",
+  legalName: "Capital Travel Service",
   foundingDate: "2010",
   founders: [{ name: "Islam Hussein", jobTitle: "Founder" }],
   address: {
@@ -54,9 +54,27 @@ export const brand = {
   ],
   areaServed: ["Egypt", "Cairo", "Luxor", "Aswan", "Sinai", "Western Desert"],
   memberships: [
-    "Egyptian Travel Agents Association (ETAA) — 2179",
-    "IATA accredited",
+    {
+      name: "Egyptian Travel Agents Association (ETAA)",
+      identifier: "2179" as string | undefined,
+    },
+    { name: "IATA accredited", identifier: undefined as string | undefined },
   ],
+};
+
+/**
+ * The licensed operator behind Sillage Égypte, shown in the footer and on the
+ * contact page. Only confirmed facts belong here; `motLicence` stays undefined
+ * until the Ministry of Tourism licence number is confirmed, and the line then
+ * picks it up on its own.
+ */
+export const operator = {
+  name: "Capital Travel Service",
+  etaa: "2179",
+  address: "1 Farouk Mahmoud St, Giza, Cairo",
+  phoneDisplay: "+20 115 801 1600",
+  phoneHref: "+201158011600",
+  motLicence: undefined as string | undefined,
 };
 
 // Navigation lives in the components that render it — WarmMasthead and

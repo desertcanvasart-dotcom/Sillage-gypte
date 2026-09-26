@@ -1,6 +1,6 @@
 import Link from "next/link";
 import CookieSettingsLink from "@/components/CookieSettingsLink";
-import { site } from "@/data/site";
+import { site, operator } from "@/data/site";
 import { getLocale, localePath } from "@/lib/i18n";
 import { getDict } from "@/lib/dictionaries";
 
@@ -45,6 +45,10 @@ export default async function WarmFooter() {
           <a href={site.whatsappHref} target="_blank" rel="noopener noreferrer">
             {site.whatsappDisplay}
           </a>
+          <p className="operator" data-operator-line>
+            {t.footer.operatedBy} {operator.name} · ETAA {operator.etaa} · {operator.address}
+            {operator.motLicence ? ` · ${t.footer.motLicence} ${operator.motLicence}` : ""}
+          </p>
         </div>
         <div className="legal">
           <span>© 2026 {site.name}. {t.footer.rights}</span>
