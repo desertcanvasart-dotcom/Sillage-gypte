@@ -1210,7 +1210,11 @@ nav.main .wbtn { flex-shrink: 0; white-space: nowrap; }
 .wfooter .col a { display: block; font-size: 0.92rem; color: var(--eau); margin-bottom: 0.5rem; }
 .wfooter .col a:hover { color: var(--or-pale); }
 .wfooter .col .operator { max-width: 22em; margin-top: 1.1rem; font-size: 0.72rem; line-height: 1.6; color: var(--eau); opacity: 0.62; }
-.wfooter .legal { width: 100%; margin-top: 3rem; padding-top: 1.4rem; border-top: 1px solid rgba(191, 161, 95, 0.14); font-family: var(--font-label), sans-serif; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.wfooter .wfooter-legal { width: 100%; margin-top: 3rem; padding-top: 1.4rem; border-top: 1px solid rgba(191, 161, 95, 0.14); font-family: var(--font-label), sans-serif; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.wfooter .wfooter-legal nav { display: flex; flex-wrap: wrap; gap: 0.6rem 1.6rem; }
+.wfooter .wfooter-legal a, .wfooter .wfooter-legal .cookie-settings { color: var(--eau); text-decoration: none; }
+.wfooter .wfooter-legal .cookie-settings { font: inherit; text-transform: inherit; letter-spacing: inherit; }
+.wfooter .wfooter-legal a:hover, .wfooter .wfooter-legal a:focus-visible { color: var(--or-pale); }
 
 /* ═══════════════════════════════════════════════════════════════════════
    SUBTLE MOTION — buttons and tour cards.

@@ -50,13 +50,16 @@ export default async function WarmFooter() {
               (operator.motLicence ? ` · ${t.footer.motLicence} ${operator.motLicence}` : "")}
           </p>
         </div>
-        <div className="legal">
+        {/* Not "legal": that class belongs to the legal pages' stylesheet, which
+            restyled this row dark-on-dark once it loaded. */}
+        <div className="wfooter-legal">
           <span>© 2026 {site.name}. {t.footer.rights}</span>
-          <span>
-            <Link href={p("/privacy")}>{t.footer.privacy}</Link> ·{" "}
-            <Link href={p("/terms")}>{t.footer.terms}</Link> ·{" "}
+          <nav aria-label={t.footer.legalNav}>
+            <Link href={p("/privacy")}>{t.footer.privacy}</Link>
+            <Link href={p("/terms")}>{t.footer.terms}</Link>
+            <Link href={`${p("/privacy")}#cookies`}>{t.footer.cookiePolicy}</Link>
             <CookieSettingsLink label={t.footer.cookies} />
-          </span>
+          </nav>
         </div>
       </div>
     </footer>

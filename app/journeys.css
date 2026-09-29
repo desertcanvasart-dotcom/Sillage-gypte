@@ -152,6 +152,7 @@
 .jny .know p a, .jny .know li a, .jny .day .dbody a { text-decoration: underline; text-decoration-color: var(--or); text-underline-offset: 3px; }
 .jny .know ol { margin: 1.1em 0 0 1.3em; font-size: 1.04rem; color: #3f4842; }
 .jny .know ol li + li { margin-top: 0.55em; }
+.jny .know ol + p { margin-top: 1.1em; }
 .jny .know + .know { padding-top: 0; }
 
 /* cta — full-bleed image */
