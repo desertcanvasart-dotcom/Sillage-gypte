@@ -1,6 +1,6 @@
 import Link from "next/link";
 import CookieSettingsLink from "@/components/CookieSettingsLink";
-import { site, operator } from "@/data/site";
+import { site, operatorLine } from "@/data/site";
 import { getLocale, localePath } from "@/lib/i18n";
 import { getDict } from "@/lib/dictionaries";
 
@@ -46,8 +46,7 @@ export default async function WarmFooter() {
             {site.whatsappDisplay}
           </a>
           <p className="operator" data-operator-line>
-            {`${t.footer.operatedBy} ${operator.name} · ETAA ${operator.etaa} · ${operator.address}` +
-              (operator.motLicence ? ` · ${t.footer.motLicence} ${operator.motLicence}` : "")}
+            {operatorLine(t.footer.operatedBy)}
           </p>
         </div>
         {/* Not "legal": that class belongs to the legal pages' stylesheet, which

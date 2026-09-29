@@ -79,19 +79,26 @@ export default async function GuidesPage() {
                 href={p(`/guides/${guide.slug}`)}
                 className={`person-card reveal${i % 3 > 0 ? ` reveal-delay-${i % 3}` : ""}`}
               >
-                <div className={`person-avatar media-grad--${guide.gradient}`}>
-                  <span>{guide.initials}</span>
-                </div>
+                {/* Photo and biography areas stay hidden until the profile is supplied. */}
+                {!guide.profilePending && (
+                  <div className={`person-avatar media-grad--${guide.gradient}`}>
+                    <span>{guide.initials}</span>
+                  </div>
+                )}
                 <p className="person-name">{guide.name}</p>
                 <p className="person-title">{guide.title}</p>
-                <p className="person-bio">{guide.shortBio}</p>
-                <div className="tag-row">
-                  {guide.specialisms.map((s) => (
-                    <span className="tag" key={s}>
-                      {s}
-                    </span>
-                  ))}
-                </div>
+                {!guide.profilePending && (
+                  <>
+                    <p className="person-bio">{guide.shortBio}</p>
+                    <div className="tag-row">
+                      {guide.specialisms.map((s) => (
+                        <span className="tag" key={s}>
+                          {s}
+                        </span>
+                      ))}
+                    </div>
+                  </>
+                )}
                 <span className="feature-card-link" style={{ marginTop: "22px" }}>
                   {t.readProfile}
                   <ArrowRight size={12} />

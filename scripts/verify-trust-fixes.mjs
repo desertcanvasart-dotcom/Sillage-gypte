@@ -10,8 +10,8 @@
  * completeness against the pages found in the data files.
  *
  * Environment:
- *   PHONE_DECISION=REPLACE     also fail on any appearance of the old phone number
- *                              (the phone was replaced; always pass this now)
+ *   PHONE_DECISION=REPLACE     also fail on any appearance of a retired phone number
+ *                              (+20 109 847 1928 or +20 115 801 1600; always pass this now)
  *   REMOVED_URLS="/a,/b"       locale-neutral paths that must now 301 (all locales)
  */
 
@@ -19,8 +19,9 @@ const BASE = (process.argv[2] || "http://localhost:3100").replace(/\/$/, "");
 const SITE = "https://sillage-egypte.com";
 const LOCALES = ["en", "es", "fr", "nl", "de"];
 const HREFLANGS = [...LOCALES, "x-default"];
-const OPERATOR_LINE = /Capital Travel Service · ETAA 2179 · 1 Farouk Mahmoud St, Giza, Cairo/;
-const OLD_PHONE = /\+?20 ?109 ?847 ?1928|201098471928/;
+const OPERATOR_LINE = /Capital Travel Service · ETAA 2179 · Giza/;
+// Both retired numbers; the site's number is +20 101 360 0484 (data/site.ts).
+const OLD_PHONE = /\+?20 ?109 ?847 ?1928|201098471928|\+?20 ?115 ?801 ?1600|201158011600/;
 const OLD_ADDRESS = /Panorama Pyramids|El-Ahramat/;
 const REPLACE_PHONE = (process.env.PHONE_DECISION || "").toUpperCase() === "REPLACE";
 const REMOVED = (process.env.REMOVED_URLS || "").split(",").map((s) => s.trim()).filter(Boolean);

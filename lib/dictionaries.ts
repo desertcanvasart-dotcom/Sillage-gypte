@@ -25,7 +25,7 @@ export interface Dict {
     whereEyebrow: string; destH2: string; allDest: string; destEyebrows: Record<string, string>;
     howEyebrow: string; jourH2: string; allJour: string;
     pillarsEyebrow: string; pillarsH2: string; pillars: { h: string; p: string }[];
-    quote: string; quoteCite: string;
+    quote: string; /** Empty when the quote has no confirmed attribution. */ quoteCite: string;
     nameWord: string; namePron: string; nameBody: string;
     ctaEyebrow: string; ctaH2a: string; ctaH2em: string; ctaP: string; ctaBtn: string; ctaNote: string;
   };
@@ -49,7 +49,7 @@ const en: Dict = {
     themLabel: "The convoy", themH3: "How most of Egypt is sold",
     themItems: ["A cabin on a ship of a hundred and fifty", "The same temple at the same crowded hour as a dozen other groups", "A guide who meets you at the gate and leaves at the next", "A fixed schedule that answers to the timetable, not the light", "The standard ticket, the standard route, the standard photograph"],
     usLabel: "Sillage", usH3: "How we travel instead",
-    usItems: ["Your own boat, your own car, your own itinerary", "The Valley of the Kings at opening; Kom Ombo at dusk, emptied", "One Egyptologist, with you from the first day to the last", "Everything timed to the hour the light is best and the crowds are gone", "Access beyond the standard route — Nefertari, Seti I, a mooring with no name"],
+    usItems: ["Your own boat, your own car, your own itinerary", "The Valley of the Kings at opening; Kom Ombo at dusk, emptied", "One Egyptologist, with you from the first day to the last", "Everything timed to the hour the light is best and the crowds are gone", "Seti I, and the tombs that rarely open, when they do."],
     whereEyebrow: "Where we go", destH2: "Destinations", allDest: "All destinations →",
     destEyebrows: { luxor: "West & East Bank", aswan: "The frontier", cairo: "Four thousand years", "abu-simbel": "The deep south" },
     howEyebrow: "How to travel", jourH2: "Signature journeys", allJour: "All journeys →",
@@ -61,7 +61,7 @@ const en: Dict = {
       { h: "Honest counsel", p: "We will tell you what isn't worth your time, and which journey isn't right for you. Advice, not a sales pitch." },
     ],
     quote: "Most people are shown the Valley of the Kings in an hour and moved on. Give it a morning, with someone who can actually read the walls, and a tomb stops being a corridor of pictures — it becomes the most ambitious thing a civilisation ever attempted.",
-    quoteCite: "Dr. Khaled Amin — Senior Egyptologist",
+    quoteCite: "",
     nameWord: "Sillage", namePron: "see-YAZH · French",
     nameBody: "The trail a boat leaves on still water — and the trace of something fine that lingers after it has passed. The name we travel under, and the impression we hope a journey leaves.",
     ctaEyebrow: "Begin the conversation", ctaH2a: "See Egypt, ", ctaH2em: "properly", ctaP: "Tell us your dates and what matters most to you. A journey designer will shape a private proposal, built around you — with no obligation.",
@@ -87,7 +87,7 @@ const es: Dict = {
     themLabel: "La caravana", themH3: "Cómo se vende casi todo Egipto",
     themItems: ["Un camarote en un barco de ciento cincuenta personas", "El mismo templo, a la misma hora abarrotada, junto a otra docena de grupos", "Un guía que te recibe en la entrada y se va en la siguiente", "Un horario fijo que obedece al reloj, no a la luz", "La entrada estándar, la ruta estándar, la fotografía estándar"],
     usLabel: "Sillage", usH3: "Cómo viajamos nosotros",
-    usItems: ["Tu propio barco, tu propio coche, tu propio itinerario", "El Valle de los Reyes al abrir; Kom Ombo al atardecer, vacío", "Un solo egiptólogo, contigo del primer día al último", "Todo medido a la hora en que la luz es mejor y las multitudes ya se han ido", "Acceso más allá de la ruta estándar — Nefertari, Seti I, un amarre sin nombre"],
+    usItems: ["Tu propio barco, tu propio coche, tu propio itinerario", "El Valle de los Reyes al abrir; Kom Ombo al atardecer, vacío", "Un solo egiptólogo, contigo del primer día al último", "Todo medido a la hora en que la luz es mejor y las multitudes ya se han ido", "Seti I, y las tumbas que rara vez abren, cuando lo hacen."],
     whereEyebrow: "Dónde vamos", destH2: "Destinos", allDest: "Todos los destinos →",
     destEyebrows: { luxor: "Orilla oeste y este", aswan: "La frontera", cairo: "Cuatro mil años", "abu-simbel": "El profundo sur" },
     howEyebrow: "Cómo viajar", jourH2: "Viajes emblemáticos", allJour: "Todos los viajes →",
@@ -99,7 +99,7 @@ const es: Dict = {
       { h: "Consejo honesto", p: "Te diremos qué no merece tu tiempo y qué viaje no es para ti. Consejo, no una venta." },
     ],
     quote: "A casi todos les enseñan el Valle de los Reyes en una hora y siguen adelante. Dedícale una mañana, con alguien que sepa leer de verdad los muros, y una tumba deja de ser un pasillo de imágenes — se convierte en lo más ambicioso que una civilización intentó jamás.",
-    quoteCite: "Dr. Khaled Amin — Egiptólogo sénior",
+    quoteCite: "",
     nameWord: "Sillage", namePron: "si-YASH · francés",
     nameBody: "La estela que deja un barco sobre el agua quieta — y el rastro de algo bello que perdura cuando ya ha pasado. El nombre con el que viajamos, y la impresión que esperamos que deje un viaje.",
     ctaEyebrow: "Comencemos la conversación", ctaH2a: "Conoce Egipto, ", ctaH2em: "como es debido", ctaP: "Cuéntanos tus fechas y lo que más te importa. Un diseñador de viajes dará forma a una propuesta privada, hecha a tu medida — sin compromiso.",
@@ -125,7 +125,7 @@ const fr: Dict = {
     themLabel: "Le convoi", themH3: "Comment on vend presque toute l'Égypte",
     themItems: ["Une cabine sur un navire de cent cinquante personnes", "Le même temple, à la même heure bondée, avec une douzaine d'autres groupes", "Un guide qui vous accueille à l'entrée et vous quitte à la suivante", "Un programme fixe qui obéit à l'horaire, pas à la lumière", "Le billet standard, l'itinéraire standard, la photographie standard"],
     usLabel: "Sillage", usH3: "Comment nous voyageons",
-    usItems: ["Votre propre bateau, votre propre voiture, votre propre itinéraire", "La Vallée des Rois à l'ouverture ; Kom Ombo au crépuscule, déserté", "Un seul égyptologue, avec vous du premier jour au dernier", "Tout réglé sur l'heure où la lumière est la plus belle et les foules parties", "Un accès au-delà de l'itinéraire standard — Néfertari, Séthi Ier, un mouillage sans nom"],
+    usItems: ["Votre propre bateau, votre propre voiture, votre propre itinéraire", "La Vallée des Rois à l'ouverture ; Kom Ombo au crépuscule, déserté", "Un seul égyptologue, avec vous du premier jour au dernier", "Tout réglé sur l'heure où la lumière est la plus belle et les foules parties", "Séthi Ier, et les tombes qui ouvrent rarement, quand elles ouvrent."],
     whereEyebrow: "Où nous allons", destH2: "Destinations", allDest: "Toutes les destinations →",
     destEyebrows: { luxor: "Rive ouest et est", aswan: "La frontière", cairo: "Quatre mille ans", "abu-simbel": "Le grand sud" },
     howEyebrow: "Comment voyager", jourH2: "Voyages emblématiques", allJour: "Tous les voyages →",
@@ -137,7 +137,7 @@ const fr: Dict = {
       { h: "Un conseil honnête", p: "Nous vous dirons ce qui ne vaut pas votre temps, et quel voyage n'est pas pour vous. Un conseil, pas un argumentaire." },
     ],
     quote: "On montre à la plupart des gens la Vallée des Rois en une heure, puis on passe à autre chose. Accordez-lui une matinée, avec quelqu'un qui sait vraiment lire les murs, et une tombe cesse d'être un couloir d'images — elle devient la chose la plus ambitieuse qu'une civilisation ait jamais tentée.",
-    quoteCite: "Dr Khaled Amin — Égyptologue principal",
+    quoteCite: "",
     nameWord: "Sillage", namePron: "si-yaj · français",
     nameBody: "Le sillage qu'un bateau laisse sur l'eau calme — et la trace de quelque chose de beau qui demeure après son passage. Le nom sous lequel nous voyageons, et l'impression qu'un voyage, nous l'espérons, laisse derrière lui.",
     ctaEyebrow: "Commençons la conversation", ctaH2a: "Voyez l'Égypte, ", ctaH2em: "comme il se doit", ctaP: "Indiquez-nous vos dates et ce qui compte le plus pour vous. Un concepteur de voyages façonnera une proposition privée, bâtie autour de vous — sans engagement.",
@@ -163,7 +163,7 @@ const nl: Dict = {
     themLabel: "Het konvooi", themH3: "Hoe het grootste deel van Egypte wordt verkocht",
     themItems: ["Een hut op een schip met honderdvijftig passagiers", "Dezelfde tempel op hetzelfde drukke uur als een dozijn andere groepen", "Een gids die u bij de poort ontvangt en bij de volgende weer verlaat", "Een vast schema dat de dienstregeling volgt, niet het licht", "Het standaardticket, de standaardroute, de standaardfoto"],
     usLabel: "Sillage", usH3: "Hoe wij in plaats daarvan reizen",
-    usItems: ["Uw eigen boot, uw eigen auto, uw eigen route", "Het Dal der Koningen bij opening; Kom Ombo bij schemering, verlaten", "Eén egyptoloog, bij u van de eerste tot de laatste dag", "Alles afgestemd op het uur waarop het licht het mooist is en de drukte verdwenen", "Toegang voorbij de standaardroute — Nefertari, Seti I, een aanlegplaats zonder naam"],
+    usItems: ["Uw eigen boot, uw eigen auto, uw eigen route", "Het Dal der Koningen bij opening; Kom Ombo bij schemering, verlaten", "Eén egyptoloog, bij u van de eerste tot de laatste dag", "Alles afgestemd op het uur waarop het licht het mooist is en de drukte verdwenen", "Seti I, en de graven die zelden opengaan, als ze dat doen."],
     whereEyebrow: "Waar we naartoe gaan", destH2: "Bestemmingen", allDest: "Alle bestemmingen →",
     destEyebrows: { luxor: "West- en oostoever", aswan: "De grens", cairo: "Vierduizend jaar", "abu-simbel": "Het diepe zuiden" },
     howEyebrow: "Hoe te reizen", jourH2: "Kenmerkende reizen", allJour: "Alle reizen →",
@@ -175,7 +175,7 @@ const nl: Dict = {
       { h: "Eerlijk advies", p: "Wij zeggen u wat uw tijd niet waard is, en welke reis niet bij u past. Advies, geen verkooppraatje." },
     ],
     quote: "De meeste mensen krijgen het Dal der Koningen in een uur te zien en reizen weer verder. Gun het een ochtend, met iemand die de muren werkelijk kan lezen, en een graf houdt op een gang vol afbeeldingen te zijn — het wordt het meest ambitieuze dat een beschaving ooit heeft ondernomen.",
-    quoteCite: "Dr. Khaled Amin — Senior-egyptoloog",
+    quoteCite: "",
     nameWord: "Sillage", namePron: "sie-JAZJ · Frans",
     nameBody: "Het spoor dat een boot achterlaat op stil water — en het zweem van iets verfijnds dat blijft hangen nadat het voorbij is. De naam waaronder wij reizen, en de indruk die een reis naar wij hopen nalaat.",
     ctaEyebrow: "Begin het gesprek", ctaH2a: "Zie Egypte, ", ctaH2em: "zoals het hoort", ctaP: "Vertel ons uw data en wat voor u het belangrijkst is. Een reisontwerper geeft vorm aan een persoonlijk voorstel, gebouwd rond u — geheel vrijblijvend.",
@@ -201,7 +201,7 @@ const de: Dict = {
     themLabel: "Der Konvoi", themH3: "Wie der größte Teil Ägyptens verkauft wird",
     themItems: ["Eine Kabine auf einem Schiff mit hundertfünfzig Reisenden", "Derselbe Tempel zur selben überfüllten Stunde wie ein Dutzend andere Gruppen", "Ein Führer, der Sie am Tor empfängt und beim nächsten wieder verlässt", "Ein fester Zeitplan, der dem Fahrplan gehorcht, nicht dem Licht", "Das Standardticket, die Standardroute, das Standardfoto"],
     usLabel: "Sillage", usH3: "Wie wir stattdessen reisen",
-    usItems: ["Ihr eigenes Boot, Ihr eigener Wagen, Ihre eigene Route", "Das Tal der Könige bei Öffnung; Kom Ombo in der Dämmerung, menschenleer", "Ein Ägyptologe, an Ihrer Seite vom ersten bis zum letzten Tag", "Alles abgestimmt auf die Stunde, in der das Licht am schönsten und die Menge verschwunden ist", "Zugang jenseits der Standardroute — Nefertari, Sethos I., ein Liegeplatz ohne Namen"],
+    usItems: ["Ihr eigenes Boot, Ihr eigener Wagen, Ihre eigene Route", "Das Tal der Könige bei Öffnung; Kom Ombo in der Dämmerung, menschenleer", "Ein Ägyptologe, an Ihrer Seite vom ersten bis zum letzten Tag", "Alles abgestimmt auf die Stunde, in der das Licht am schönsten und die Menge verschwunden ist", "Sethos I., und die Gräber, die selten öffnen, wenn sie es tun."],
     whereEyebrow: "Wohin wir reisen", destH2: "Reiseziele", allDest: "Alle Reiseziele →",
     destEyebrows: { luxor: "West- und Ostufer", aswan: "Die Grenze", cairo: "Viertausend Jahre", "abu-simbel": "Der tiefe Süden" },
     howEyebrow: "Wie man reist", jourH2: "Charakteristische Reisen", allJour: "Alle Reisen →",
@@ -213,7 +213,7 @@ const de: Dict = {
       { h: "Ehrlicher Rat", p: "Wir sagen Ihnen, was Ihre Zeit nicht wert ist und welche Reise nicht zu Ihnen passt. Rat, kein Verkaufsgespräch." },
     ],
     quote: "Den meisten Menschen zeigt man das Tal der Könige in einer Stunde und reist dann weiter. Gönnen Sie ihm einen Morgen, mit jemandem, der die Wände wirklich lesen kann, und ein Grab hört auf, ein Gang voller Bilder zu sein — es wird zum Ehrgeizigsten, was eine Zivilisation je unternommen hat.",
-    quoteCite: "Dr. Khaled Amin — Leitender Ägyptologe",
+    quoteCite: "",
     nameWord: "Sillage", namePron: "ßi-JASCH · Französisch",
     nameBody: "Die Spur, die ein Boot auf stillem Wasser hinterlässt — und der Hauch von etwas Feinem, der zurückbleibt, nachdem es vorübergezogen ist. Der Name, unter dem wir reisen, und der Eindruck, den eine Reise, wie wir hoffen, hinterlässt.",
     ctaEyebrow: "Beginnen Sie das Gespräch", ctaH2a: "Sehen Sie Ägypten, ", ctaH2em: "wie es sein soll", ctaP: "Nennen Sie uns Ihre Daten und was Ihnen am meisten am Herzen liegt. Ein Reisegestalter formt einen privaten Vorschlag, ganz um Sie herum gebaut — völlig unverbindlich.",

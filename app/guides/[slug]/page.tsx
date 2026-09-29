@@ -33,7 +33,7 @@ export async function generateMetadata({
     locale,
     path: `/guides/${guide.slug}`,
     title: `${guide.name} — ${c?.title ?? guide.title}`,
-    description: c?.shortBio ?? guide.shortBio,
+    description: (c?.shortBio ?? guide.shortBio) || `${guide.name}, ${c?.title ?? guide.title}.`,
   });
 }
 
@@ -73,9 +73,10 @@ export default async function GuideDetailPage({
     "@type": "Person",
     name: guide.name,
     jobTitle: title,
-    description: shortBio,
-    knowsLanguage: guide.languages,
-    knowsAbout: specialisms,
+    // Omit what the profile does not yet state.
+    ...(shortBio ? { description: shortBio } : {}),
+    ...(guide.languages.length ? { knowsLanguage: guide.languages } : {}),
+    ...(specialisms.length ? { knowsAbout: specialisms } : {}),
     worksFor: orgRef,
     url: `${SITE_URL}/guides/${guide.slug}`,
   };
@@ -100,6 +101,9 @@ export default async function GuideDetailPage({
         <div className="container">
           <div className="detail-layout">
             <div>
+              {/* Biography, credentials and specialisms stay hidden until supplied. */}
+              {!guide.profilePending && (
+              <>
               <div className="detail-block reveal">
                 <h2 className="detail-h">{t.about(firstName)}</h2>
                 <p className="detail-p">{fullBio}</p>
@@ -127,6 +131,8 @@ export default async function GuideDetailPage({
                   ))}
                 </div>
               </div>
+              </>
+              )}
             </div>
 
             <aside>
@@ -136,10 +142,12 @@ export default async function GuideDetailPage({
                   <span>{t.role}</span>
                   <span>{title.split(" ")[0]}</span>
                 </div>
-                <div className="book-row">
-                  <span>{t.languages}</span>
-                  <span>{guide.languages.join(", ")}</span>
-                </div>
+                {guide.languages.length > 0 && (
+                  <div className="book-row">
+                    <span>{t.languages}</span>
+                    <span>{guide.languages.join(", ")}</span>
+                  </div>
+                )}
                 <p className="book-note">{t.bookNote(firstName)}</p>
                 <Link href={p("/plan")} className="btn-primary">
                   {t.request(firstName)}

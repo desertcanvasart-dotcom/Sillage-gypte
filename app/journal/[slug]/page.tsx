@@ -6,7 +6,6 @@ import PageHero from "@/components/PageHero";
 import Photo from "@/components/Photo";
 import CtaBand from "@/components/CtaBand";
 import JsonLd from "@/components/JsonLd";
-import { ArrowRight } from "@/components/icons";
 import { journal, getPost, sortedJournal } from "@/data/journal";
 import { getLocale, localePath } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/meta-dict";

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import EnquiryForm from "@/components/EnquiryForm";
 import { site, operator } from "@/data/site";
+import { BRAND_NAME, OPERATOR_NAME, ETAA_NUMBER } from "@/data/site";
 import { getDict } from "@/lib/dictionaries";
 import { getLocale, localePath } from "@/lib/i18n";
 import { getMetaDict, pageMetadata } from "@/lib/meta-dict";
@@ -38,7 +39,7 @@ const COPY = {
     responsePromise: "A journey designer replies within 24 hours.",
     operatorLabel: "The operator",
     operatorBody:
-      "Sillage Égypte is operated by Capital Travel Service, a member of the Egyptian Travel Agents Association (ETAA 2179).",
+      `${BRAND_NAME} is operated by ${OPERATOR_NAME}, a member of the Egyptian Travel Agents Association (ETAA ${ETAA_NUMBER}).`,
     operatorAddressLabel: "Address",
     operatorCountry: "Egypt",
   },
@@ -61,7 +62,7 @@ const COPY = {
     responsePromise: "Un diseñador de viajes le responderá en menos de 24 horas.",
     operatorLabel: "El operador",
     operatorBody:
-      "Sillage Égypte está operada por Capital Travel Service, miembro de la Asociación Egipcia de Agentes de Viajes (ETAA 2179).",
+      `${BRAND_NAME} está operada por ${OPERATOR_NAME}, miembro de la Asociación Egipcia de Agentes de Viajes (ETAA ${ETAA_NUMBER}).`,
     operatorAddressLabel: "Dirección",
     operatorCountry: "Egipto",
   },
@@ -84,7 +85,7 @@ const COPY = {
     responsePromise: "Un concepteur de voyages vous répond sous 24 heures.",
     operatorLabel: "L’opérateur",
     operatorBody:
-      "Sillage Égypte est exploitée par Capital Travel Service, membre de l’Association égyptienne des agents de voyages (ETAA 2179).",
+      `${BRAND_NAME} est exploitée par ${OPERATOR_NAME}, membre de l’Association égyptienne des agents de voyages (ETAA ${ETAA_NUMBER}).`,
     operatorAddressLabel: "Adresse",
     operatorCountry: "Égypte",
   },
@@ -107,7 +108,7 @@ const COPY = {
     responsePromise: "Een reisontwerper antwoordt binnen 24 uur.",
     operatorLabel: "De exploitant",
     operatorBody:
-      "Sillage Égypte wordt beheerd door Capital Travel Service, lid van de Egyptische Vereniging van Reisagenten (ETAA 2179).",
+      `${BRAND_NAME} wordt beheerd door ${OPERATOR_NAME}, lid van de Egyptische Vereniging van Reisagenten (ETAA ${ETAA_NUMBER}).`,
     operatorAddressLabel: "Adres",
     operatorCountry: "Egypte",
   },
@@ -130,7 +131,7 @@ const COPY = {
     responsePromise: "Ein Reisegestalter antwortet innerhalb von 24 Stunden.",
     operatorLabel: "Der Betreiber",
     operatorBody:
-      "Sillage Égypte wird von Capital Travel Service betrieben, Mitglied des Ägyptischen Reisebüroverbands (ETAA 2179).",
+      `${BRAND_NAME} wird von ${OPERATOR_NAME} betrieben, Mitglied des Ägyptischen Reisebüroverbands (ETAA ${ETAA_NUMBER}).`,
     operatorAddressLabel: "Adresse",
     operatorCountry: "Ägypten",
   },
