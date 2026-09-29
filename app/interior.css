@@ -826,36 +826,41 @@ a.contact-method:hover .contact-method-value { color: var(--teal); }
   .guide-portrait { order: -1; max-width: 420px; margin-bottom: 0; }
 }
 
+/* Tag hover colour: not motion, so shown even with reduced motion. */
+.tag:hover {
+  color: var(--ink);
+  border-color: var(--sand);
+  background-color: rgba(191, 161, 95, 0.1);
+}
+
 /* Subtle motion on guide profiles: the portrait settles in as it reveals and
    drifts closer on hover; specialism tags rise in one after another and warm
    to gold on hover. */
 @media (prefers-reduced-motion: no-preference) {
   .guide-portrait .media-photo {
-    transform: scale(1.08);
+    transform: scale(1.12);
     transition: transform 1.8s cubic-bezier(0.2, 0.7, 0.2, 1);
   }
   .guide-portrait.visible .media-photo { transform: scale(1); }
   .guide-portrait.visible:hover .media-photo {
-    transform: scale(1.035);
-    transition-duration: 1.2s;
+    transform: scale(1.06);
+    transition-duration: 0.9s;
   }
 
   .tag {
     transition: color 0.3s, border-color 0.3s, background-color 0.3s,
-      transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+      transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.35s;
   }
   .tag:hover {
-    color: var(--ink);
-    border-color: var(--sand);
-    background-color: rgba(191, 161, 95, 0.08);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(191, 161, 95, 0.18);
   }
 
   /* Entrance as an animation (fill: backwards) so it never holds the hover transform. */
   .detail-block.reveal .tag { opacity: 0; }
   .detail-block.reveal.visible .tag {
     opacity: 1;
-    animation: tag-rise 0.6s var(--ease-out) backwards;
+    animation: tag-rise 0.7s var(--ease-out) backwards;
   }
   .detail-block.reveal.visible .tag:nth-child(1) { animation-delay: 0.25s; }
   .detail-block.reveal.visible .tag:nth-child(2) { animation-delay: 0.33s; }
@@ -866,6 +871,6 @@ a.contact-method:hover .contact-method-value { color: var(--teal); }
 }
 
 @keyframes tag-rise {
-  from { opacity: 0; transform: translateY(8px); }
+  from { opacity: 0; transform: translateY(14px); }
   to   { opacity: 1; transform: translateY(0); }
 }
