@@ -84,7 +84,7 @@ export default async function AboutPage() {
             <div className="why-image reveal reveal-delay-2">
               <div className="why-image-inner">
                 <div className="why-image-bg media-grad--desert" />
-                <Photo k="about-team-rabab" alt={`Rabab, of the ${BRAND_NAME} team`} />
+                <Photo k="about-team-rabab" alt={`Rabab, Head of Operations at ${BRAND_NAME}`} />
               </div>
               <div className="why-image-accent" />
             </div>
