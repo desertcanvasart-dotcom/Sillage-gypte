@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import EnquiryForm from "@/components/EnquiryForm";
 import { site, operator } from "@/data/site";
-import { BRAND_NAME, OPERATOR_NAME, ETAA_NUMBER } from "@/data/site";
+import { BRAND_NAME, OPERATOR_NAME, MOT_LICENCE_NUMBER } from "@/data/site";
 import { getDict } from "@/lib/dictionaries";
 import { getLocale, localePath } from "@/lib/i18n";
 import { getMetaDict, pageMetadata } from "@/lib/meta-dict";
@@ -39,7 +39,7 @@ const COPY = {
     responsePromise: "A journey designer replies within 24 hours.",
     operatorLabel: "The operator",
     operatorBody:
-      `${BRAND_NAME} is operated by ${OPERATOR_NAME}, a member of the Egyptian Travel Agents Association (ETAA ${ETAA_NUMBER}).`,
+      `${BRAND_NAME} is operated by ${OPERATOR_NAME}, officially licensed by the Egyptian Ministry of Tourism (licence no. ${MOT_LICENCE_NUMBER}) and a member of the Egyptian Travel Agents Association (ETAA).`,
     operatorAddressLabel: "Address",
     operatorCountry: "Egypt",
   },
@@ -62,7 +62,7 @@ const COPY = {
     responsePromise: "Un diseñador de viajes le responderá en menos de 24 horas.",
     operatorLabel: "El operador",
     operatorBody:
-      `${BRAND_NAME} está operada por ${OPERATOR_NAME}, miembro de la Asociación Egipcia de Agentes de Viajes (ETAA ${ETAA_NUMBER}).`,
+      `${BRAND_NAME} está operada por ${OPERATOR_NAME}, con licencia oficial del Ministerio de Turismo de Egipto (licencia n.º ${MOT_LICENCE_NUMBER}) y miembro de la Asociación Egipcia de Agentes de Viajes (ETAA).`,
     operatorAddressLabel: "Dirección",
     operatorCountry: "Egipto",
   },
@@ -85,7 +85,7 @@ const COPY = {
     responsePromise: "Un concepteur de voyages vous répond sous 24 heures.",
     operatorLabel: "L’opérateur",
     operatorBody:
-      `${BRAND_NAME} est exploitée par ${OPERATOR_NAME}, membre de l’Association égyptienne des agents de voyages (ETAA ${ETAA_NUMBER}).`,
+      `${BRAND_NAME} est exploitée par ${OPERATOR_NAME}, officiellement agréée par le ministère égyptien du Tourisme (licence n° ${MOT_LICENCE_NUMBER}) et membre de l’Association égyptienne des agents de voyages (ETAA).`,
     operatorAddressLabel: "Adresse",
     operatorCountry: "Égypte",
   },
@@ -108,7 +108,7 @@ const COPY = {
     responsePromise: "Een reisontwerper antwoordt binnen 24 uur.",
     operatorLabel: "De exploitant",
     operatorBody:
-      `${BRAND_NAME} wordt beheerd door ${OPERATOR_NAME}, lid van de Egyptische Vereniging van Reisagenten (ETAA ${ETAA_NUMBER}).`,
+      `${BRAND_NAME} wordt beheerd door ${OPERATOR_NAME}, officieel erkend door het Egyptische ministerie van Toerisme (vergunning nr. ${MOT_LICENCE_NUMBER}) en lid van de Egyptische Vereniging van Reisagenten (ETAA).`,
     operatorAddressLabel: "Adres",
     operatorCountry: "Egypte",
   },
@@ -131,7 +131,7 @@ const COPY = {
     responsePromise: "Ein Reisegestalter antwortet innerhalb von 24 Stunden.",
     operatorLabel: "Der Betreiber",
     operatorBody:
-      `${BRAND_NAME} wird von ${OPERATOR_NAME} betrieben, Mitglied des Ägyptischen Reisebüroverbands (ETAA ${ETAA_NUMBER}).`,
+      `${BRAND_NAME} wird von ${OPERATOR_NAME} betrieben, offiziell lizenziert vom ägyptischen Tourismusministerium (Lizenz Nr. ${MOT_LICENCE_NUMBER}) und Mitglied des Ägyptischen Reisebüroverbands (ETAA).`,
     operatorAddressLabel: "Adresse",
     operatorCountry: "Ägypten",
   },

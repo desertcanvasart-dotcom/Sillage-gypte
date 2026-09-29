@@ -46,7 +46,7 @@ export default async function WarmFooter() {
             {site.whatsappDisplay}
           </a>
           <p className="operator" data-operator-line>
-            {operatorLine(t.footer.operatedBy)}
+            {operatorLine(t.footer.operatedBy, t.footer.motLicence, t.footer.etaaMember)}
           </p>
         </div>
         {/* Not "legal": that class belongs to the legal pages' stylesheet, which

@@ -5,7 +5,7 @@
  * `@id` into a single knowledge graph rather than isolated islands.
  */
 
-import { site, brand, PHONE_E164, EMAIL, FOUNDER } from "@/data/site";
+import { site, brand, PHONE_E164, EMAIL, FOUNDER, MOT_LICENCE_NUMBER } from "@/data/site";
 import { faqs } from "@/data/faq";
 
 export const SITE_URL = site.url;
@@ -59,6 +59,13 @@ export const organizationSchema = {
     ...(m.identifier ? { identifier: m.identifier } : {}),
   })),
   priceRange: brand.priceRange,
+  hasCredential: {
+    "@type": "EducationalOccupationalCredential",
+    credentialCategory: "license",
+    name: "Travel agency licence",
+    identifier: MOT_LICENCE_NUMBER,
+    recognizedBy: { "@type": "GovernmentOrganization", name: "Egyptian Ministry of Tourism" },
+  },
   // No aggregateRating or review: the site publishes no verified reviews.
 };
 

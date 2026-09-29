@@ -1,5 +1,5 @@
 import type { Locale } from "./i18n";
-import { BRAND_NAME, OPERATOR_NAME, ETAA_NUMBER, FOUNDED_YEAR } from "@/data/site";
+import { BRAND_NAME, OPERATOR_NAME, MOT_LICENCE_NUMBER, FOUNDED_YEAR } from "@/data/site";
 
 /** UI copy for the About, Guides index, and Guide detail pages. */
 export interface GuidesAboutDict {
@@ -97,7 +97,7 @@ const en: GuidesAboutDict = {
     // TODO(trust-fixes): the relationship sentence of "Who stands behind Sillage"
     // and the "why a separate house" paragraph wait on RELATIONSHIP_LINE.
     block1Body:
-      `${BRAND_NAME} is operated by ${OPERATOR_NAME}, a member of the Egyptian Travel Agents Association (ETAA ${ETAA_NUMBER}).`,
+      `${BRAND_NAME} is operated by ${OPERATOR_NAME}, officially licensed by the Egyptian Ministry of Tourism (licence no. ${MOT_LICENCE_NUMBER}) and a member of the Egyptian Travel Agents Association (ETAA).`,
     block1Since:
       `${OPERATOR_NAME} has worked on the ground in Egypt since ${FOUNDED_YEAR}. That means local contracts, and people here who are accountable when something needs putting right.`,
     block1Btn: "Meet our guides",
@@ -183,7 +183,7 @@ const es: GuidesAboutDict = {
     // TODO(trust-fixes): the relationship sentence of "Who stands behind Sillage"
     // and the "why a separate house" paragraph wait on RELATIONSHIP_LINE.
     block1Body:
-      `${BRAND_NAME} está operada por ${OPERATOR_NAME}, miembro de la Asociación Egipcia de Agentes de Viajes (ETAA ${ETAA_NUMBER}).`,
+      `${BRAND_NAME} está operada por ${OPERATOR_NAME}, con licencia oficial del Ministerio de Turismo de Egipto (licencia n.º ${MOT_LICENCE_NUMBER}) y miembro de la Asociación Egipcia de Agentes de Viajes (ETAA).`,
     block1Since:
       `${OPERATOR_NAME} trabaja sobre el terreno en Egipto desde ${FOUNDED_YEAR}. Eso significa contratos locales, y personas aquí que responden cuando algo necesita arreglarse.`,
     block1Btn: "Conozca a nuestros guías",
@@ -269,7 +269,7 @@ const fr: GuidesAboutDict = {
     // TODO(trust-fixes): the relationship sentence of "Who stands behind Sillage"
     // and the "why a separate house" paragraph wait on RELATIONSHIP_LINE.
     block1Body:
-      `${BRAND_NAME} est exploitée par ${OPERATOR_NAME}, membre de l’Association égyptienne des agents de voyages (ETAA ${ETAA_NUMBER}).`,
+      `${BRAND_NAME} est exploitée par ${OPERATOR_NAME}, officiellement agréée par le ministère égyptien du Tourisme (licence n° ${MOT_LICENCE_NUMBER}) et membre de l’Association égyptienne des agents de voyages (ETAA).`,
     block1Since:
       `${OPERATOR_NAME} travaille sur le terrain en Égypte depuis ${FOUNDED_YEAR}. Cela signifie des contrats locaux, et des personnes sur place qui répondent de ce qui doit être rectifié.`,
     block1Btn: "Rencontrez nos guides",
@@ -355,7 +355,7 @@ const nl: GuidesAboutDict = {
     // TODO(trust-fixes): the relationship sentence of "Who stands behind Sillage"
     // and the "why a separate house" paragraph wait on RELATIONSHIP_LINE.
     block1Body:
-      `${BRAND_NAME} wordt beheerd door ${OPERATOR_NAME}, lid van de Egyptische Vereniging van Reisagenten (ETAA ${ETAA_NUMBER}).`,
+      `${BRAND_NAME} wordt beheerd door ${OPERATOR_NAME}, officieel erkend door het Egyptische ministerie van Toerisme (vergunning nr. ${MOT_LICENCE_NUMBER}) en lid van de Egyptische Vereniging van Reisagenten (ETAA).`,
     block1Since:
       `${OPERATOR_NAME} werkt sinds ${FOUNDED_YEAR} ter plaatse in Egypte. Dat betekent lokale contracten, en mensen hier die aanspreekbaar zijn als er iets moet worden rechtgezet.`,
     block1Btn: "Maak kennis met onze gidsen",
@@ -441,7 +441,7 @@ const de: GuidesAboutDict = {
     // TODO(trust-fixes): the relationship sentence of "Who stands behind Sillage"
     // and the "why a separate house" paragraph wait on RELATIONSHIP_LINE.
     block1Body:
-      `${BRAND_NAME} wird von ${OPERATOR_NAME} betrieben, Mitglied des Ägyptischen Reisebüroverbands (ETAA ${ETAA_NUMBER}).`,
+      `${BRAND_NAME} wird von ${OPERATOR_NAME} betrieben, offiziell lizenziert vom ägyptischen Tourismusministerium (Lizenz Nr. ${MOT_LICENCE_NUMBER}) und Mitglied des Ägyptischen Reisebüroverbands (ETAA).`,
     block1Since:
       `${OPERATOR_NAME} arbeitet seit ${FOUNDED_YEAR} vor Ort in Ägypten. Das bedeutet lokale Verträge — und Menschen hier, die dafür einstehen, wenn etwas in Ordnung gebracht werden muss.`,
     block1Btn: "Lernen Sie unsere Reiseführer kennen",
