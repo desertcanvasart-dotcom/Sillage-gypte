@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
     path: "/tours",
     title: m.title,
     description: m.description,
-    image: "tour-complete-egypt",
+    image: "hero-tours",
   });
 }
 
@@ -35,7 +35,7 @@ export default async function ToursPage() {
         subtitle={t.subtitle}
         gradient="nile"
         imageLabel="A felucca on the Nile at golden hour"
-        imageKey="tour-complete-egypt"
+        imageKey="hero-tours"
         crumbs={[{ href: locale === "es" ? "/es" : "/", label: getPagesDict(locale).crumbHome }, { label: t.eyebrow }]}
       />
 

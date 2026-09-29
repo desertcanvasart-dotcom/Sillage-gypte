@@ -10,8 +10,9 @@ import { getDict } from "@/lib/dictionaries";
 import { getMetaDict, pageMetadata } from "@/lib/meta-dict";
 
 const HOME_DESTINATIONS = ["luxor", "aswan", "cairo", "abu-simbel"];
-// The three longest journeys, shown with image + price (TourCard handles locale).
-const HOME_JOURNEYS = ["beyond-the-nile", "complete-egypt", "nile-red-sea"];
+// Three featured journeys, shown with image + price (TourCard handles locale).
+// The festive journey leads while its dates are ahead (21 Dec 2026 – 3 Jan 2027).
+const HOME_JOURNEYS = ["christmas-new-year-nile", "complete-egypt", "nile-red-sea"];
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
