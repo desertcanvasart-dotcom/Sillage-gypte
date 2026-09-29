@@ -10,8 +10,10 @@
 
 export const BRAND_NAME = "Sillage Égypte";
 export const OPERATOR_NAME = "Capital Travel Service";
-export const ETAA_NUMBER = "2179";
-export const MOT_LICENCE_NUMBER = "2197";
+/** Egyptian Ministry of Tourism licence number. */
+export const MOT_LICENCE_NUMBER = "2179";
+/** Member of the Egyptian Travel Agents Association; no membership number is published. */
+export const ETAA_MEMBER = true;
 export const FOUNDED_YEAR = "2003";
 export const FOUNDER = { name: "Islam Hussein", jobTitle: "Executive Director" };
 export const EMAIL = "hello@sillage-egypte.com";
@@ -31,9 +33,12 @@ export const ADDRESS = {
 export const ADDRESS_LINE = `${ADDRESS.street}, ${ADDRESS.locality}, ${ADDRESS.region}`;
 /** "1 Farouk Mahmoud St, Giza, Cairo, Egypt" */
 export const ADDRESS_FULL = `${ADDRESS_LINE}, ${ADDRESS.country}`;
-/** Shown in the shared footer on every page. `prefix` is localised there. */
-export const operatorLine = (prefix = "Operated by") =>
-  `${prefix} ${OPERATOR_NAME} · ETAA ${ETAA_NUMBER} · ${ADDRESS.locality}`;
+/** Shown in the shared footer on every page; the labels are localised there. */
+export const operatorLine = (
+  prefix = "Operated by",
+  licenceLabel = "Ministry of Tourism licence",
+  etaaLabel = "ETAA member"
+) => `${prefix} ${OPERATOR_NAME} · ${licenceLabel} ${MOT_LICENCE_NUMBER} · ${etaaLabel} · ${ADDRESS.locality}`;
 
 /**
  * Placeholders the content JSON may use; lib/content.ts replaces them on load
@@ -42,7 +47,6 @@ export const operatorLine = (prefix = "Operated by") =>
 export const contentTokens: Record<string, string> = {
   BRAND_NAME,
   OPERATOR_NAME,
-  ETAA_NUMBER,
   MOT_LICENCE_NUMBER,
   FOUNDED_YEAR,
   FOUNDER_NAME: FOUNDER.name,
@@ -106,7 +110,7 @@ export const brand = {
   memberships: [
     {
       name: "Egyptian Travel Agents Association (ETAA)",
-      identifier: ETAA_NUMBER as string | undefined,
+      identifier: undefined as string | undefined,
     },
     { name: "IATA accredited", identifier: undefined as string | undefined },
   ],
@@ -115,7 +119,6 @@ export const brand = {
 /** The licensed operator behind Sillage Égypte (footer, contact page, schema). */
 export const operator = {
   name: OPERATOR_NAME,
-  etaa: ETAA_NUMBER,
   address: ADDRESS_LINE,
   phoneDisplay: PHONE_DISPLAY,
   phoneHref: PHONE_E164,

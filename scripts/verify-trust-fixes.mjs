@@ -19,7 +19,7 @@ const BASE = (process.argv[2] || "http://localhost:3100").replace(/\/$/, "");
 const SITE = "https://sillage-egypte.com";
 const LOCALES = ["en", "es", "fr", "nl", "de"];
 const HREFLANGS = [...LOCALES, "x-default"];
-const OPERATOR_LINE = /Capital Travel Service · ETAA 2179 · Giza/;
+const OPERATOR_LINE = /Capital Travel Service · Ministry of Tourism licence 2179 · ETAA member · Giza/;
 // Both retired numbers; the site's number is +20 101 360 0484 (data/site.ts).
 const OLD_PHONE = /\+?20 ?109 ?847 ?1928|201098471928|\+?20 ?115 ?801 ?1600|201158011600/;
 const OLD_ADDRESS = /Panorama Pyramids|El-Ahramat/;
