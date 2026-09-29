@@ -23,7 +23,6 @@ export default function Photo({
   return (
     <picture>
       {webp !== src && <source srcSet={webp} type="image/webp" />}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={src} alt={alt} className={className} loading="lazy" decoding="async" />
     </picture>
   );

@@ -14,27 +14,25 @@ export interface Guide {
   specialisms: string[];
   gradient: GradientVariant;
   featured: boolean;
+  /** Biography and photo not yet supplied: pages show only name and title. */
+  profilePending?: boolean;
 }
 
 export const guides: Guide[] = [
   {
-    slug: "khaled-amin",
-    initials: "KA",
-    name: "Dr. Khaled Amin",
-    title: "Senior Egyptologist & Journey Designer",
-    shortBio:
-      "PhD in Archaeology from Cairo University. Twenty-two years leading private expeditions across the Valley of the Kings, Luxor, and the Western Desert. Specialist in New Kingdom funerary architecture.",
-    fullBio:
-      "Khaled has spent more than two decades in the field, much of it in the Theban necropolis where he worked on several documentation projects before turning to private guiding. He reads hieroglyphs fluently and has a rare gift for making a tomb wall speak — not as a list of names and dates, but as the record of people who lived, built, and believed. He designs and leads our Nile and Luxor journeys.",
-    credentials: [
-      "PhD in Archaeology, Cairo University",
-      "Twenty-two years of field and guiding experience",
-      "Published on New Kingdom funerary architecture",
-    ],
-    languages: ["English", "Arabic", "German"],
-    specialisms: ["New Kingdom", "The Valley of the Kings", "Hieroglyphs"],
+    slug: "azmi-salama",
+    initials: "AS",
+    name: "Dr. Azmi Salama",
+    title: "Egyptologist",
+    // Biography, credentials, languages and photo to follow — left empty rather than guessed.
+    shortBio: "",
+    fullBio: "",
+    credentials: [],
+    languages: [],
+    specialisms: [],
     gradient: "oasis",
     featured: true,
+    profilePending: true,
   },
   {
     slug: "sara-hassan",

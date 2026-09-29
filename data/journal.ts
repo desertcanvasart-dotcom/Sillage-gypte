@@ -1,6 +1,7 @@
 /** Journal (editorial). Drives /journal and /journal/[slug]. Primary SEO/GEO engine. */
 
 import type { GradientVariant } from "./tours";
+import { FOUNDER } from "./site";
 
 export interface ContentBlock {
   type: "heading" | "paragraph";
@@ -36,7 +37,7 @@ export const journal: JournalPost[] = [
     date: "2026-09-29",
     dateLabel: "September 2026",
     readTime: "16 minute read",
-    author: "Islam Hussein",
+    author: FOUNDER.name,
     gradient: "nile",
     heroLabel: "Camels resting before the Pyramids of Giza",
     content: [],

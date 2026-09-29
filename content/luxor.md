@@ -73,8 +73,6 @@ Two days covers the headline sites without rushing. Three to four days lets you 
 ## A guide's perspective
 
 > "Most people are shown the Valley of the Kings in an hour and moved on. Give it a morning, with someone who can actually read the walls, and a tomb stops being a corridor of pictures — it becomes the most ambitious thing a civilisation ever attempted."
->
-> — **Dr. Khaled Amin**, Senior Egyptologist
 
 ---
 

@@ -34,6 +34,10 @@
 .xp .hero .kicker { display: block; margin-bottom: 1.4rem; font-size: 0.66rem; }
 .xp .hero h1 { font-size: clamp(2.8rem, 8vw, 6rem); letter-spacing: 0.04em; color: var(--papyrus); }
 .xp .hero p.lede { max-width: 33em; margin-top: 1.5rem; font-size: 1.28rem; line-height: 1.55; font-style: italic; color: var(--eau); }
+.xp .hero p.permit { max-width: 38em; margin-top: 1rem; font-size: 0.95rem; line-height: 1.55; color: var(--eau); opacity: 0.85; }
+/* The permit note adds a line under the lede; lift the gold rule by the same
+   amount so it keeps its usual place above the text. */
+.xp .hero:has(p.permit)::after { bottom: calc(21vh + 2.5rem); }
 
 /* ledger */
 .xp .ledger { background: var(--nuit); color: var(--papyrus); border-top: 1px solid var(--hairline-d); }

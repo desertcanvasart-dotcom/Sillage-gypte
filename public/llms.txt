@@ -9,7 +9,7 @@ North America, and Japan.
 
 ## Core pages
 
-- [Home](/): Brand overview, signature journeys, guides, and reviews.
+- [Home](/): Brand overview, signature journeys and guides.
 - [Journeys](/tours): All private journeys (the starting frameworks we tailor).
 - [The Private Nile](/tours/private-nile): 7-day private felucca journey, Aswan to Luxor.
 - [Desert & Oasis](/tours/desert-oasis): 5-day White Desert and Siwa expedition.

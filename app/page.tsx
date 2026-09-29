@@ -179,7 +179,7 @@ export default async function HomePage() {
       <section className="quote">
         <div className="wrap">
           <blockquote>{t.home.quote}</blockquote>
-          <cite>{t.home.quoteCite}</cite>
+          {t.home.quoteCite && <cite>{t.home.quoteCite}</cite>}
         </div>
       </section>
 

@@ -1,13 +1,12 @@
 /**
  * JSON-LD structured data for SEO + GEO (Generative Engine Optimization).
- * Everything is built from the data layer (data/site, data/faq, data/reviews)
+ * Everything is built from the data layer (data/site, data/faq)
  * so the schema always matches the visible content. Entities are linked by
  * `@id` into a single knowledge graph rather than isolated islands.
  */
 
-import { site, brand } from "@/data/site";
+import { site, brand, PHONE_E164, EMAIL, FOUNDER } from "@/data/site";
 import { faqs } from "@/data/faq";
-import { reviews, aggregateRating } from "@/data/reviews";
 
 export const SITE_URL = site.url;
 
@@ -28,15 +27,11 @@ export const organizationSchema = {
   logo: `${SITE_URL}/logo.svg`,
   image: `${SITE_URL}/og-image.jpg`,
   description:
-    "Sillage Égypte is a private tour operator offering bespoke Nile journeys, desert expeditions, and cultural experiences across Egypt for international travellers.",
+    `${site.name} is a private tour operator offering bespoke Nile journeys, desert expeditions, and cultural experiences across Egypt for international travellers.`,
   legalName: brand.legalName,
   // Omit rather than emit an empty value for anything not yet verified.
   ...(brand.foundingDate ? { foundingDate: brand.foundingDate } : {}),
-  founder: brand.founders.map((f) => ({
-    "@type": "Person",
-    name: f.name,
-    jobTitle: f.jobTitle,
-  })),
+  founder: { "@type": "Person", name: FOUNDER.name, jobTitle: FOUNDER.jobTitle },
   address: {
     "@type": "PostalAddress",
     streetAddress: brand.address.streetAddress,
@@ -45,13 +40,13 @@ export const organizationSchema = {
     ...(brand.address.postalCode ? { postalCode: brand.address.postalCode } : {}),
     addressCountry: brand.address.addressCountry,
   },
-  telephone: site.phoneDisplay,
-  email: site.email,
+  telephone: PHONE_E164,
+  email: EMAIL,
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "Customer service",
-    email: site.email,
-    telephone: site.phoneDisplay,
+    email: EMAIL,
+    telephone: PHONE_E164,
     availableLanguage: ["English", "Arabic", "French", "Japanese"],
   },
   sameAs: [site.social.instagram, site.social.facebook, site.social.youtube],
@@ -64,34 +59,7 @@ export const organizationSchema = {
     ...(m.identifier ? { identifier: m.identifier } : {}),
   })),
   priceRange: brand.priceRange,
-  // Ratings and reviews are claimed only when real ones exist. Asserting them
-  // otherwise is against Google's structured-data policy, and review stars are
-  // exactly what it shows in results — see data/reviews.ts.
-  ...(aggregateRating
-    ? {
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: aggregateRating.ratingValue,
-          reviewCount: aggregateRating.reviewCount,
-          bestRating: aggregateRating.bestRating,
-        },
-      }
-    : {}),
-  ...(reviews.length
-    ? {
-        review: reviews.map((r) => ({
-          "@type": "Review",
-          author: { "@type": "Person", name: r.author },
-          datePublished: r.datePublished,
-          reviewBody: r.quote,
-          reviewRating: {
-            "@type": "Rating",
-            ratingValue: r.rating,
-            bestRating: 5,
-          },
-        })),
-      }
-    : {}),
+  // No aggregateRating or review: the site publishes no verified reviews.
 };
 
 export const websiteSchema = {
