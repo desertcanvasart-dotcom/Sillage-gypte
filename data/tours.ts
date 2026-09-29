@@ -188,6 +188,7 @@ export const tours: Tour[] = [
     guideSlug: "khaled-amin",
     galleryLabels: [],
     route: "Cairo · Luxor · the Nile · Aswan · Abu Simbel",
+    fromPrice: 9999,
     bespoke: true,
     seo: { title: "Christmas & New Year on the Nile — 14 Days", description: "Fourteen private days over Christmas and New Year, 21 December 2026 to 3 January 2027 — Christmas under sail on a chartered dahabiya, New Year in Aswan, Abu Simbel at dawn, and the Pyramids kept for last." },
   },
