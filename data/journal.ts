@@ -38,7 +38,7 @@ export const journal: JournalPost[] = [
     readTime: "16 minute read",
     author: "Islam Hussein",
     gradient: "nile",
-    heroLabel: "A felucca on the Nile in winter light",
+    heroLabel: "Camels resting before the Pyramids of Giza",
     content: [],
     bespoke: true,
     seo: {
