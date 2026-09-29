@@ -6,10 +6,12 @@ import PageHero from "@/components/PageHero";
 import CtaBand from "@/components/CtaBand";
 import TourCard from "@/components/TourCard";
 import JsonLd from "@/components/JsonLd";
+import Photo from "@/components/Photo";
 import { ArrowRight, CheckIcon } from "@/components/icons";
 import { guides, getGuide } from "@/data/guides";
 import { tours } from "@/data/tours";
 import { SITE_URL, orgRef } from "@/lib/structured-data";
+import { getImage } from "@/lib/images";
 import { getLocale, localePath } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/meta-dict";
 import { loadContent } from "@/lib/content";
@@ -75,6 +77,7 @@ export default async function GuideDetailPage({
     jobTitle: title,
     // Omit what the profile does not yet state.
     ...(shortBio ? { description: shortBio } : {}),
+    ...(guide.photo && getImage(guide.photo) ? { image: `${SITE_URL}${getImage(guide.photo)}` } : {}),
     ...(guide.languages.length ? { knowsLanguage: guide.languages } : {}),
     ...(specialisms.length ? { knowsAbout: specialisms } : {}),
     worksFor: orgRef,
@@ -106,9 +109,14 @@ export default async function GuideDetailPage({
               <>
               <div className="detail-block reveal">
                 <h2 className="detail-h">{t.about(firstName)}</h2>
-                <p className="detail-p">{fullBio}</p>
+                {fullBio.split(/\n\s*\n/).map((para, i) => (
+                  <p className="detail-p" key={i}>
+                    {para}
+                  </p>
+                ))}
               </div>
 
+              {credentials.length > 0 && (
               <div className="detail-block reveal">
                 <h2 className="detail-h">{t.credentials}</h2>
                 <ul className="tick-list">
@@ -120,7 +128,9 @@ export default async function GuideDetailPage({
                   ))}
                 </ul>
               </div>
+              )}
 
+              {specialisms.length > 0 && (
               <div className="detail-block reveal">
                 <h2 className="detail-h">{t.specialisms}</h2>
                 <div className="tag-row" style={{ marginTop: 0 }}>
@@ -131,16 +141,22 @@ export default async function GuideDetailPage({
                   ))}
                 </div>
               </div>
+              )}
               </>
               )}
             </div>
 
             <aside>
+              {guide.photo && (
+                <div className="guide-portrait reveal">
+                  <Photo k={guide.photo} alt={`${guide.name}, ${title}`} />
+                </div>
+              )}
               <div className="book-card reveal">
                 <p className="book-card-label">{t.travelWith(firstName)}</p>
                 <div className="book-row">
                   <span>{t.role}</span>
-                  <span>{title.split(" ")[0]}</span>
+                  <span>{title.split(/[\s,—]/)[0]}</span>
                 </div>
                 {guide.languages.length > 0 && (
                   <div className="book-row">

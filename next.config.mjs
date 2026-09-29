@@ -29,7 +29,7 @@ const nextConfig = {
         destination: "https://sillage-egypte.com/:path*",
         permanent: true,
       },
-      // The former Egyptologist's profile now points to Dr. Azmi Salama's.
+      // The former Egyptologist's profile now points to Dr. Azmy Salama's.
       { source: "/guides/khaled-amin", destination: "/guides/azmi-salama", permanent: true },
       { source: "/:locale(es|fr|nl|de)/guides/khaled-amin", destination: "/:locale/guides/azmi-salama", permanent: true },
     ];

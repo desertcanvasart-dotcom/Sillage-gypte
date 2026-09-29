@@ -8,12 +8,15 @@ export interface Guide {
   name: string;
   title: string;
   shortBio: string;
+  /** Paragraphs separated by a blank line. */
   fullBio: string;
   credentials: string[];
   languages: string[];
   specialisms: string[];
   gradient: GradientVariant;
   featured: boolean;
+  /** Portrait key in data/image-manifest.json. */
+  photo?: string;
   /** Biography and photo not yet supplied: pages show only name and title. */
   profilePending?: boolean;
 }
@@ -22,17 +25,23 @@ export const guides: Guide[] = [
   {
     slug: "azmi-salama",
     initials: "AS",
-    name: "Dr. Azmi Salama",
-    title: "Egyptologist",
-    // Biography, credentials, languages and photo to follow — left empty rather than guessed.
-    shortBio: "",
-    fullBio: "",
+    name: "Dr. Azmy Salama",
+    title: "Egyptologist, Archaeologist & Private Guide",
+    photo: "guide-azmi-salama",
+    shortBio:
+      "Egyptian Egyptologist and archaeologist with a particularly deep connection to Saqqara, the Memphite necropolis and the world of the Old Kingdom.",
+    fullBio: [
+      "Dr. Azmy Salama is an Egyptian Egyptologist and archaeologist whose relationship with ancient Egypt extends far beyond the monuments themselves. His academic work and field experience have given him a particularly deep connection with the archaeology of Saqqara, the Memphite necropolis, and the world of the Old Kingdom.",
+      "For Sillage Égypte, what makes Azmy exceptional is not simply the depth of his knowledge, but the way he shares it. A visit with him feels less like a guided tour and more like spending the day with a scholar who knows how to make archaeology human. He moves naturally between history, belief, architecture, daily life and the stories revealed by tombs, reliefs and inscriptions, allowing each site to unfold gradually rather than reducing it to a list of facts.",
+      "His familiarity with places such as Saqqara, Memphis, Dahshur and Giza makes him especially suited to travellers who want to look beyond the famous highlights and understand how these landscapes developed, how archaeologists interpret them, and what they reveal about the people who once lived around them.",
+      "Thoughtful, engaging and deeply rooted in his subject, Azmy is the kind of guide we choose for travellers who are genuinely curious about Egypt and want their journey to feel personal, intelligent and authentic.",
+    ].join("\n\n"),
+    // Not yet supplied — left empty rather than guessed; the page hides empty sections.
     credentials: [],
     languages: [],
-    specialisms: [],
+    specialisms: ["Saqqara", "Memphis", "Dahshur", "Giza", "The Old Kingdom"],
     gradient: "oasis",
     featured: true,
-    profilePending: true,
   },
   {
     slug: "sara-hassan",
