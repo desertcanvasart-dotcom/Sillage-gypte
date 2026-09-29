@@ -23,11 +23,11 @@ export interface Guide {
 
 export const guides: Guide[] = [
   {
-    slug: "azmi-salama",
+    slug: "azmy-salama",
     initials: "AS",
     name: "Dr. Azmy Salama",
     title: "Egyptologist, Archaeologist & Private Guide",
-    photo: "guide-azmi-salama",
+    photo: "guide-azmy-salama",
     shortBio:
       "Egyptian Egyptologist and archaeologist with a particularly deep connection to Saqqara, the Memphite necropolis and the world of the Old Kingdom.",
     fullBio: [
