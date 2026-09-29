@@ -61,6 +61,28 @@
 .jp .article ul li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 6px; height: 6px; border-radius: 50%; background: var(--or); }
 .jp .article ul li b { font-weight: 600; }
 /* in-body internal links — make them legible without disturbing the prose */
+/* long-form guides: section headings, numbered lists, tables, FAQ, author box */
+.jp .article .byline { font-family: var(--font-label), sans-serif; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: #6a7069; line-height: 1.9; margin-bottom: 2.2rem; }
+.jp .article h2 { font-family: var(--font-display), serif; font-weight: 400; font-size: 1.9rem; line-height: 1.2; letter-spacing: 0.02em; margin: 3.2rem 0 1rem; scroll-margin-top: 5rem; }
+.jp .article p.byline::first-letter, .jp .article .faq p::first-letter, .jp .article .aside p::first-letter { float: none; font-family: inherit; font-size: inherit; line-height: inherit; padding: 0; color: inherit; }
+.jp .article .byline + h2 + .lead::first-letter { font-family: var(--font-display), serif; font-size: 3.8em; float: left; line-height: 0.8; padding: 0.05em 0.12em 0 0; color: var(--or); }
+.jp .article h3 { scroll-margin-top: 5rem; }
+.jp .article ol { margin: 0 0 1.35em 1.3em; }
+.jp .article ol li { padding-left: 0.3rem; margin-bottom: 0.7em; }
+.jp .article ol li::marker { color: var(--or); font-family: var(--font-display), serif; }
+.jp .article ol li b { font-weight: 600; }
+.jp .tbl { overflow-x: auto; margin: 0.4rem 0 2rem; -webkit-overflow-scrolling: touch; }
+.jp .tbl table { width: 100%; border-collapse: collapse; font-size: 0.92rem; line-height: 1.5; }
+.jp .tbl th, .jp .tbl td { text-align: left; vertical-align: top; padding: 0.75rem 0.9rem 0.75rem 0; border-bottom: 1px solid rgba(20, 30, 26, 0.12); }
+.jp .tbl thead th { font-family: var(--font-label), sans-serif; font-weight: 400; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--or); border-bottom-color: var(--or); }
+.jp .tbl tbody th { font-weight: 600; }
+@media (max-width: 600px) { .jp .tbl table:not(.facts) { min-width: 560px; } }
+.jp .tbl .facts th { width: 34%; }
+.jp .faq h3 { font-size: 1.22rem; margin-top: 1.8rem; }
+.jp .aside { background: var(--sable, #efe6d4); padding: 1.8rem 2rem 0.6rem; margin-top: 1rem; font-size: 0.95rem; }
+.jp .aside h3 { font-size: 1.15rem; margin-top: 0; }
+.jp .aside h3 + p, .jp .aside h3 + ul { margin-top: 0.6rem; }
+.jp .aside ul + h3, .jp .aside p + h3 { margin-top: 1.6rem; }
 .jp .article a { color: #7d6a2f; text-decoration: underline; text-underline-offset: 2px; }
 .jp .article a:hover { color: var(--or); }
 

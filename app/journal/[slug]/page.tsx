@@ -11,9 +11,16 @@ import { journal, getPost, sortedJournal } from "@/data/journal";
 import { getLocale, localePath } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/meta-dict";
 import { loadContent } from "@/lib/content";
-import { SITE_URL, orgRef } from "@/lib/structured-data";
+import { SITE_URL, orgRef, buildBreadcrumb } from "@/lib/structured-data";
 
-interface Bespoke { seoTitle?: string; description?: string; img: string; bodyHtml: string }
+interface Bespoke {
+  seoTitle?: string;
+  description?: string;
+  img: string;
+  bodyHtml: string;
+  /** Question/answer pairs shown in the article; emitted as FAQPage JSON-LD. */
+  faq?: { question: string; answer: string }[];
+}
 
 export function generateStaticParams() {
   return journal.map((p) => ({ slug: p.slug }));
@@ -69,9 +76,28 @@ export default async function ArticlePage({
   if (post.bespoke) {
     const doc = await loadContent<Bespoke>("journal", slug, locale);
     if (doc) {
+      const faqSchema = doc.faq?.length
+        ? {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            inLanguage: locale,
+            mainEntity: doc.faq.map((f) => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: { "@type": "Answer", text: f.answer },
+            })),
+          }
+        : null;
+      const breadcrumb = buildBreadcrumb([
+        { label: "Home", href: localePath(locale, "/") },
+        { label: "The Journal", href: localePath(locale, "/journal") },
+        { label: post.title },
+      ]);
       return (
         <main>
           <JsonLd data={articleSchema} />
+          <JsonLd data={breadcrumb} />
+          {faqSchema && <JsonLd data={faqSchema} />}
           <div
             className="jp"
             style={{ ["--img-hero" as string]: `url("${doc.img}")` }}

@@ -28,6 +28,26 @@ export interface JournalPost {
 
 export const journal: JournalPost[] = [
   {
+    slug: "christmas-and-new-year-in-egypt",
+    title: "A luxury Christmas and New Year in Egypt",
+    excerpt:
+      "Securing the best boats and suites — what the festive weeks are really like, where to spend 25 and 31 December, and what sells out first.",
+    category: "Planning",
+    date: "2026-09-29",
+    dateLabel: "September 2026",
+    readTime: "16 minute read",
+    author: "Islam Hussein",
+    gradient: "nile",
+    heroLabel: "A felucca on the Nile in winter light",
+    content: [],
+    bespoke: true,
+    seo: {
+      title: "Luxury Christmas & New Year in Egypt: Boats & Suites",
+      description:
+        "Christmas and New Year in Egypt: weather, crowds, where to spend 25 and 31 December, Coptic Christmas, and how to secure the best dahabiyas and suites.",
+    },
+  },
+  {
     slug: "when-to-go-to-egypt",
     title: "When to go to Egypt",
     excerpt:
