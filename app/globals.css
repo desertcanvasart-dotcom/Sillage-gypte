@@ -672,6 +672,12 @@ a { color: inherit; text-decoration: none; }
   transition: gap 0.2s, color 0.2s;
 }
 .tour-card-link:hover { gap: 12px; color: var(--sand); }
+/* Stretch the card's one link over the whole card, so the photo, title and
+   text all open the journey (the card already looks clickable: pointer and
+   hover lift). One link keeps a single tab stop and screen-reader entry. */
+.tour-card-link::after { content: ""; position: absolute; inset: 0; z-index: 2; }
+.tour-card:hover .tour-card-link { gap: 12px; color: var(--sand); }
+.tour-card:has(.tour-card-link:focus-visible) { outline: 1px solid var(--sand); outline-offset: 3px; }
 
 /* ─── WHY SECTION ───────────────────────────────────────────────────── */
 .why-section { background: white; }
