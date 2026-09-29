@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
     path: "/about",
     title: m.title,
     description: m.description,
-    image: "dest-cairo",
+    image: "hero-about",
   });
 }
 
@@ -39,7 +39,7 @@ export default async function AboutPage() {
         subtitle={t.subtitle}
         gradient="ancient"
         imageLabel="An Egyptologist studying carvings on a temple wall"
-        imageKey="dest-cairo"
+        imageKey="hero-about"
         crumbs={[{ href: p("/"), label: d.crumbHome }, { label: t.crumb }]}
       />
 
