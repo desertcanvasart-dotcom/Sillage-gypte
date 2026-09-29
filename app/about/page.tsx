@@ -3,7 +3,7 @@ import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import CtaBand from "@/components/CtaBand";
 import Photo from "@/components/Photo";
-import { FOUNDER } from "@/data/site";
+import { BRAND_NAME, FOUNDER } from "@/data/site";
 import { ArrowRight } from "@/components/icons";
 import { getLocale, localePath } from "@/lib/i18n";
 import { getMetaDict, pageMetadata } from "@/lib/meta-dict";
@@ -83,7 +83,8 @@ export default async function AboutPage() {
           <div className="why-grid reversed">
             <div className="why-image reveal reveal-delay-2">
               <div className="why-image-inner">
-                <div className="why-image-bg media-grad--desert" role="img" aria-label="A private desert camp at dusk" />
+                <div className="why-image-bg media-grad--desert" />
+                <Photo k="about-team-rabab" alt={`Rabab, Head of Operations at ${BRAND_NAME}`} />
               </div>
               <div className="why-image-accent" />
             </div>
