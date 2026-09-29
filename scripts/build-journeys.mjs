@@ -23,7 +23,7 @@ const I = (f) => `url("/images/${f}")`;
 const POSTS = [
   {
     slug: "cairo-two-views", file: "cairo-two-views-journey.html",
-    regions: ["cairo"], guideSlug: "azmi-salama", gradient: "ancient", featured: true, price: 2190,
+    regions: ["cairo"], guideSlug: "azmy-salama", gradient: "ancient", featured: true, price: 2190,
     img: { hero: "dest-cairo.jpg", days: "exp-felucca-at-sunset.jpg", cta: "exp-dawn-at-the-pyramids.jpg", h1: "dest-cairo-1.jpg", h2: "dest-cairo-2.jpg" },
   },
   {
@@ -33,12 +33,12 @@ const POSTS = [
   },
   {
     slug: "grand-tour", file: "grand-tour-journey.html",
-    regions: ["cairo", "luxor", "aswan", "abu-simbel"], guideSlug: "azmi-salama", gradient: "nile", featured: true, price: 5850,
+    regions: ["cairo", "luxor", "aswan", "abu-simbel"], guideSlug: "azmy-salama", gradient: "nile", featured: true, price: 5850,
     img: { hero: "tour-the-complete-egypt-2.jpg", days: "exp-felucca-at-sunset.jpg", cta: "dest-abu-simbel.jpg", h1: "dest-cairo-1.jpg", h2: "dest-luxor-1.jpg", h3: "dest-aswan-2.jpg", h4: "dest-abu-simbel-1.jpg" },
   },
   {
     slug: "complete-egypt", file: "complete-egypt-journey.html",
-    regions: ["cairo", "luxor", "aswan", "abu-simbel", "the-nile"], guideSlug: "azmi-salama", gradient: "nile", featured: false, price: 7500,
+    regions: ["cairo", "luxor", "aswan", "abu-simbel", "the-nile"], guideSlug: "azmy-salama", gradient: "nile", featured: false, price: 7500,
     img: { hero: "tour-the-complete-egypt.jpg", days: "tour-private-nile.jpg", cta: "tour-the-complete-egypt-1.jpg", h1: "dest-cairo.jpg", h2: "dest-luxor.jpg", h3: "dest-aswan-2.jpg", h4: "dest-abu-simbel.jpg" },
   },
   {
@@ -48,7 +48,7 @@ const POSTS = [
   },
   {
     slug: "beyond-the-nile", file: "beyond-the-nile-journey.html",
-    regions: ["cairo", "luxor", "aswan", "abu-simbel", "the-nile"], guideSlug: "azmi-salama", gradient: "desert", featured: false, price: 11650,
+    regions: ["cairo", "luxor", "aswan", "abu-simbel", "the-nile"], guideSlug: "azmy-salama", gradient: "desert", featured: false, price: 11650,
     img: { hero: "tour-nubia-and-the-south.jpg", days: "tour-private-nile-1.jpg", cta: "dest-abu-simbel.jpg", h1: "dest-cairo.jpg", h2: "dest-luxor.jpg", h3: "dest-aswan-2.jpg", h4: "dest-abu-simbel-1.jpg" },
   },
 ];

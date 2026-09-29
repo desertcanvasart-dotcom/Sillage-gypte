@@ -3,6 +3,7 @@ import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import CtaBand from "@/components/CtaBand";
 import { ArrowRight } from "@/components/icons";
+import Photo from "@/components/Photo";
 import { guides } from "@/data/guides";
 import { getLocale, localePath } from "@/lib/i18n";
 import { getMetaDict, pageMetadata } from "@/lib/meta-dict";
@@ -83,6 +84,7 @@ export default async function GuidesPage() {
                 {!guide.profilePending && (
                   <div className={`person-avatar media-grad--${guide.gradient}`}>
                     <span>{guide.initials}</span>
+                    {guide.photo && <Photo k={guide.photo} alt="" className="media-photo person-photo" />}
                   </div>
                 )}
                 <p className="person-name">{guide.name}</p>
