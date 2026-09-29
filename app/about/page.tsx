@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import CtaBand from "@/components/CtaBand";
+import Photo from "@/components/Photo";
+import { FOUNDER } from "@/data/site";
 import { ArrowRight } from "@/components/icons";
 import { getLocale, localePath } from "@/lib/i18n";
 import { getMetaDict, pageMetadata } from "@/lib/meta-dict";
@@ -55,7 +57,8 @@ export default async function AboutPage() {
           <div className="why-grid" style={{ marginBottom: "120px" }}>
             <div className="why-image reveal">
               <div className="why-image-inner">
-                <div className="why-image-bg media-grad--oasis" role="img" aria-label="A guide and traveller at a quiet ancient site" />
+                <div className="why-image-bg media-grad--oasis" />
+                <Photo k="about-founder" alt={`${FOUNDER.name}, ${FOUNDER.jobTitle}`} />
               </div>
               <div className="why-image-accent" />
             </div>
@@ -68,15 +71,7 @@ export default async function AboutPage() {
               </h2>
               <p className="why-body">{t.block1Body}</p>
               <p className="why-body">{t.block1Since}</p>
-              {/* TODO(trust-fixes): add the relationship line (what Sillage is to
-                  Capital Travel Service) and the "why a separate house" paragraph
-                  once RELATIONSHIP_LINE is confirmed. Shown in development only. */}
-              {process.env.NODE_ENV !== "production" && (
-                <p className="why-body" style={{ border: "1px dashed #b33", padding: "12px", color: "#b33" }}>
-                  TODO (trust fixes): add what Sillage is to Capital Travel Service (RELATIONSHIP_LINE)
-                  and why it is a separate house for private journeys. Waiting on the owner.
-                </p>
-              )}
+              {/* The relationship line (what Sillage is to the operator) is still to come from the owner. */}
               <Link href={p("/guides")} className="btn-outline">
                 {t.block1Btn}
                 <ArrowRight size={14} />
