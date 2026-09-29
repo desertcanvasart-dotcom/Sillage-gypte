@@ -40,6 +40,8 @@
   background-position: center;
 }
 .jp .ahead .wrap { position: relative; z-index: 2; padding-bottom: 7vh; text-align: center; }
+/* a bright hero photo (sky, sand) needs a deeper veil behind the crumb and kicker */
+.jp .ahead--bright { background-image: linear-gradient(180deg, rgba(11, 21, 18, 0.5) 0%, rgba(11, 21, 18, 0.42) 40%, rgba(11, 21, 18, 0.72) 72%, rgba(12, 23, 20, 0.96) 100%), var(--img-hero); }
 .jp .ahead .crumb { font-family: var(--font-label), sans-serif; font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--eau); margin-bottom: 1.8rem; }
 .jp .ahead .crumb a { text-decoration: none; color: var(--eau); }
 .jp .ahead .crumb a:hover { color: var(--or-pale); }
