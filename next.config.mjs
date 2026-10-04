@@ -29,6 +29,9 @@ const nextConfig = {
         destination: "https://sillage-egypte.com/:path*",
         permanent: true,
       },
+      // Replaced guide profile; retain links in every supported language.
+      { source: "/guides/hany-abdel-latif", destination: "/guides/mohamed-sayed-elhelw", permanent: true },
+      { source: "/:locale(es|fr|nl|de)/guides/hany-abdel-latif", destination: "/:locale/guides/mohamed-sayed-elhelw", permanent: true },
       // The former Egyptologist's profile now points to Dr. Azmy Salama's.
       { source: "/guides/khaled-amin", destination: "/guides/azmy-salama", permanent: true },
       { source: "/:locale(es|fr|nl|de)/guides/khaled-amin", destination: "/:locale/guides/azmy-salama", permanent: true },

@@ -59,6 +59,7 @@ export default async function GuideDetailPage({
     shortBio?: string;
     credentials?: string[];
     specialisms?: string[];
+    languages?: string[];
   }>("guides", guide.slug, locale);
 
   const title = c?.title ?? guide.title;
@@ -66,6 +67,7 @@ export default async function GuideDetailPage({
   const shortBio = c?.shortBio ?? guide.shortBio;
   const credentials = c?.credentials ?? guide.credentials;
   const specialisms = c?.specialisms ?? guide.specialisms;
+  const languages = c?.languages ?? guide.languages;
 
   const led = tours.filter((tr) => tr.guideSlug === guide.slug).slice(0, 3);
   const firstName = guide.name.replace(/^Dr\.?\s/, "").split(" ")[0];
@@ -158,10 +160,10 @@ export default async function GuideDetailPage({
                   <span>{t.role}</span>
                   <span>{title.split(/[\s,—]/)[0]}</span>
                 </div>
-                {guide.languages.length > 0 && (
+                {languages.length > 0 && (
                   <div className="book-row">
                     <span>{t.languages}</span>
-                    <span>{guide.languages.join(", ")}</span>
+                    <span>{languages.join(", ")}</span>
                   </div>
                 )}
                 <p className="book-note">{t.bookNote(firstName)}</p>
