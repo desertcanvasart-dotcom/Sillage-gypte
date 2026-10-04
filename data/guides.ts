@@ -82,23 +82,26 @@ export const guides: Guide[] = [
     featured: true,
   },
   {
-    slug: "hany-abdel-latif",
-    initials: "HA",
-    name: "Hany Abdel-Latif",
-    title: "Desert Expedition Guide",
-    shortBio:
-      "Bedouin guide and naturalist who has crossed the Western Desert and Sinai for over twenty-five years. Reads the dunes the way others read a map.",
-    fullBio:
-      "Hany grew up in the desert and has guided expeditions across the White Desert, Siwa, and the mountains of Sinai for more than twenty-five years. He knows where the water is, where the silence is deepest, and how to set a camp that feels like the most comfortable place on earth. He leads our desert and Sinai expeditions, and our travellers rarely stop talking about him.",
+    slug: "mohamed-sayed-elhelw",
+    initials: "MS",
+    name: "Mohamed Sayed Elhelw",
+    title: "Spanish-speaking Tour Guide",
+    shortBio: "Egyptian tour guide with more than 26 years of experience organising tours and accompanying Spanish-speaking travellers through Egypt.",
+    fullBio: "Mohamed has spent more than 26 years organising tours and accompanying Spanish-speaking travellers through Egypt. His knowledge of the country’s history, archaeology and culture brings context to each visit and reveals the connections between ancient Egypt and life today.\n\nWith him, every place becomes an opportunity to understand the country more deeply and see it from a new perspective.",
     credentials: [
-      "Twenty-five years of desert and Sinai expeditions",
-      "Trained in desert safety and navigation",
-      "Specialist in Bedouin culture and ecology",
+      "More than 26 years of guiding experience"
     ],
-    languages: ["English", "Arabic"],
-    specialisms: ["The White Desert", "Siwa", "Sinai"],
-    gradient: "night",
+    specialisms: [
+      "Egyptian history",
+      "Archaeology",
+      "Egyptian culture"
+    ],
+    languages: [
+      "Spanish"
+    ],
+    gradient: "ancient",
     featured: false,
+    photo: "guide-mohamed-sayed-elhelw"
   },
   {
     slug: "farida-naguib",
