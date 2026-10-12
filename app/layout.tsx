@@ -19,6 +19,7 @@ import { getLocale, localePath } from "@/lib/i18n";
 import { getDict } from "@/lib/dictionaries";
 import { getMetaDict } from "@/lib/meta-dict";
 import Script from "next/script";
+import { headers } from "next/headers";
 import CookieConsent from "@/components/CookieConsent";
 
 /* Locale is resolved per request (middleware → x-locale header), so the whole
@@ -97,6 +98,15 @@ export default async function RootLayout({
 }) {
   const locale = await getLocale();
   const t = getDict(locale);
+  // The admin renders bare: no site chrome, consent banner or analytics.
+  const isAdmin = ((await headers()).get("x-pathname") ?? "").startsWith("/admin");
+  if (isAdmin) {
+    return (
+      <html lang="en" className={dmSans.variable}>
+        <body>{children}</body>
+      </html>
+    );
+  }
   return (
     <html
       lang={locale}
