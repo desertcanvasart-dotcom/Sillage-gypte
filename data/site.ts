@@ -102,7 +102,6 @@ export const brand = {
     "Nile river journeys",
     "Egyptology",
     "Luxury travel",
-    "White Desert expeditions",
     "Ancient Egyptian history",
     "Bespoke itinerary design",
   ],

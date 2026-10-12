@@ -8,9 +8,11 @@ import CtaBand from "@/components/CtaBand";
 import JsonLd from "@/components/JsonLd";
 import { journal, getPost, sortedJournal } from "@/data/journal";
 import { getLocale, localePath } from "@/lib/i18n";
-import { pageMetadata } from "@/lib/meta-dict";
+import { pageMetadata, heroImage, localizedUrl } from "@/lib/meta-dict";
+import { getPagesDict } from "@/lib/pages-dict";
 import { loadContent } from "@/lib/content";
 import { SITE_URL, orgRef, buildBreadcrumb } from "@/lib/structured-data";
+import { FOUNDER } from "@/data/site";
 
 interface Bespoke {
   seoTitle?: string;
@@ -56,24 +58,30 @@ export default async function ArticlePage({
   const post = getPost(slug);
   if (!post) notFound();
   const locale = await getLocale();
+  const doc = await loadContent<Bespoke & { title?: string }>("journal", slug, locale);
 
+  // Schema must describe this locale's page: its own headline, summary, URL and hero image.
+  const image = heroImage(doc?.img ?? `journal-${post.slug}`);
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: post.title,
-    description: post.seo.description,
+    headline: doc?.title ?? post.title,
+    description: doc?.description ?? post.seo.description,
     datePublished: post.date,
     dateModified: post.date,
     inLanguage: locale,
-    image: `${SITE_URL}/og-image.jpg`,
-    author: { "@type": "Person", name: post.author },
+    image: image ? (image.startsWith("http") ? image : `${SITE_URL}${image}`) : `${SITE_URL}/og-image.jpg`,
+    // Brand-written posts are authored by the organisation, not a person of that name.
+    author:
+      post.author === FOUNDER.name
+        ? { "@type": "Person", name: FOUNDER.name, jobTitle: FOUNDER.jobTitle, worksFor: orgRef }
+        : orgRef,
     publisher: orgRef,
     isPartOf: orgRef,
-    mainEntityOfPage: `${SITE_URL}/journal/${post.slug}`,
+    mainEntityOfPage: localizedUrl(locale, `/journal/${post.slug}`),
   };
 
   if (post.bespoke) {
-    const doc = await loadContent<Bespoke>("journal", slug, locale);
     if (doc) {
       const faqSchema = doc.faq?.length
         ? {
@@ -88,9 +96,9 @@ export default async function ArticlePage({
           }
         : null;
       const breadcrumb = buildBreadcrumb([
-        { label: "Home", href: localePath(locale, "/") },
-        { label: "The Journal", href: localePath(locale, "/journal") },
-        { label: post.title },
+        { label: getPagesDict(locale).crumbHome, href: localePath(locale, "/") },
+        { label: getPagesDict(locale).journal.eyebrow, href: localePath(locale, "/journal") },
+        { label: doc.title ?? post.title },
       ]);
       return (
         <main>

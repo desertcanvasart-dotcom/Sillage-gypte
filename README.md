@@ -145,6 +145,29 @@ Replace these with verified facts before launch — schema must match reality:
 add languages later: hreflang alternates, localized URLs, translated schema
 values, and per-language sitemap entries.
 
+## Admin (`/admin`)
+
+A password-protected editor for the `content/**/*.json` files (journeys,
+destinations, experiences, journal, legal pages, and guide translations), in all
+five languages. It edits text only: fields cannot be added, removed or renamed,
+and slugs are fixed. English guide profiles and which guides are shown live in
+`data/guides.ts` and are still edited in code.
+
+Set these on the host (see `.env.example`):
+
+| Variable | |
+| --- | --- |
+| `ADMIN_PASSWORD` | Required. Sign in at `/admin/login`. Without it the admin is disabled. |
+| `ADMIN_GITHUB_TOKEN` | Production. Fine-grained token, *Contents: read and write* on this repo only. |
+| `ADMIN_GITHUB_REPO` | `desertcanvasart-dotcom/Sillage-gypte` |
+| `ADMIN_GITHUB_BRANCH` | Branch the host deploys from (default `main`). |
+| `ADMIN_SESSION_SECRET` | Optional; defaults to one derived from the password. |
+
+With the GitHub token set, each save is a commit to that branch, so the edit
+survives redeploys and the host rebuilds the site from it. Without it (local
+`npm run dev`), saves write straight to the files on disk; commit them yourself.
+Sessions last 12 hours; five wrong passwords lock a client out for 15 minutes.
+
 ## Hosting
 
 Deploys cleanly to **Vercel** (zero config), Netlify, Cloudflare Pages, or any
