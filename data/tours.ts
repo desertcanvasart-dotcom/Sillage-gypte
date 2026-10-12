@@ -149,7 +149,7 @@ export const tours: Tour[] = [
     type: "Grand journey",
     title: "The Nile & the Red Sea",
     tagline: "Thirteen private days in two halves — Egypt's greatest monuments by river, and then four days of doing nothing by the sea, which is the half most itineraries forget to give you.",
-    description: "Twelve private days in two halves — Cairo, the Pyramids and the temples of the Nile by luxury cruiser, then four unhurried days on the Red Sea.",
+    description: "Thirteen private days in two halves — Cairo, the Pyramids and the temples of the Nile by luxury cruiser, then four unhurried days on the Red Sea.",
     intro: "Thirteen private days in two halves — Egypt's greatest monuments by river, and then four days of doing nothing by the sea, which is the half most itineraries forget to give you.",
     durationDays: 13,
     duration: "13 days / 12 nights",
@@ -166,7 +166,7 @@ export const tours: Tour[] = [
     route: "Cairo · Aswan to Luxor · Red Sea",
     fromPrice: 7999,
     bespoke: true,
-    seo: { title: "The Nile & the Red Sea — 12 Days", description: "Twelve private days in two halves — Cairo, the Pyramids and the temples of the Nile by luxury cruiser, then four unhurried days on the Red Sea." },
+    seo: { title: "The Nile & the Red Sea — 13 Days", description: "Thirteen private days in two halves — Cairo, the Pyramids and the temples of the Nile by luxury cruiser, then four unhurried days on the Red Sea." },
   },
   {
     slug: "christmas-new-year-nile",

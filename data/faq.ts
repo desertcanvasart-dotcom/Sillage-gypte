@@ -30,7 +30,7 @@ export const faqs: FaqItem[] = [
   {
     question: "What destinations does Sillage Égypte cover?",
     answer:
-      "We design journeys across all major Egyptian destinations: the Nile from Aswan to Cairo, the Valley of the Kings and Luxor temples, the White Desert and Siwa Oasis, Islamic Cairo, and private access to sites not on standard itineraries.",
+      "We design journeys across all major Egyptian destinations: Cairo and the Pyramids, Luxor and the Valley of the Kings, Aswan and Abu Simbel, the Nile between them, Alexandria, Siwa Oasis, and the Red Sea and Sinai coasts — with private access to sites not on standard itineraries.",
   },
   {
     question: "How much does a private Egypt tour cost?",
