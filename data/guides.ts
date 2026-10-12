@@ -19,9 +19,11 @@ export interface Guide {
   photo?: string;
   /** Biography and photo not yet supplied: pages show only name and title. */
   profilePending?: boolean;
+  /** Not yet ready to publish: no listing, no profile page, not in the sitemap. */
+  hidden?: boolean;
 }
 
-export const guides: Guide[] = [
+const allGuides: Guide[] = [
   {
     slug: "azmy-salama",
     initials: "AS",
@@ -45,6 +47,8 @@ export const guides: Guide[] = [
   },
   {
     slug: "sara-hassan",
+    // Hidden until a portrait and verified biography are supplied.
+    hidden: true,
     initials: "SH",
     name: "Sara Hassan",
     title: "Cultural Historian & Desert Guide",
@@ -64,6 +68,8 @@ export const guides: Guide[] = [
   },
   {
     slug: "mostafa-ramzy",
+    // Hidden until a portrait and verified biography are supplied.
+    hidden: true,
     initials: "MR",
     name: "Dr. Mostafa Ramzy",
     title: "Egyptologist — Aswan & the South",
@@ -105,6 +111,8 @@ export const guides: Guide[] = [
   },
   {
     slug: "farida-naguib",
+    // Hidden until a portrait and verified biography are supplied.
+    hidden: true,
     initials: "FN",
     name: "Farida Naguib",
     title: "Cultural Historian — Cairo",
@@ -123,6 +131,9 @@ export const guides: Guide[] = [
     featured: false,
   },
 ];
+
+/** Published guides only; hidden profiles are kept above for when they are ready. */
+export const guides = allGuides.filter((g) => !g.hidden);
 
 export const getGuide = (slug: string) => guides.find((g) => g.slug === slug);
 export const featuredGuides = guides.filter((g) => g.featured);
