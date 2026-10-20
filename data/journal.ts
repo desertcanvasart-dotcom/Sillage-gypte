@@ -39,7 +39,7 @@ export const journal: JournalPost[] = [
     readTime: "13 minute read",
     author: FOUNDER.name,
     gradient: "night",
-    heroLabel: "The Nile at Luxor under a low sun",
+    heroLabel: "The sun's corona during totality",
     content: [],
     bespoke: true,
     seo: {
