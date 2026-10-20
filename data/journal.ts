@@ -29,6 +29,26 @@ export interface JournalPost {
 
 export const journal: JournalPost[] = [
   {
+    slug: "six-journeys-compared",
+    title: "Which Egypt itinerary is right for you? Our six private journeys, compared",
+    excerpt:
+      "Six private luxury journeys from four to sixteen days, from €2,190 to €11,650 per person. Which one fits your days, your season and your kind of Egypt — including which is the wrong answer for whom.",
+    category: "Planning",
+    date: "2026-10-20",
+    dateLabel: "October 2026",
+    readTime: "11 minute read",
+    author: FOUNDER.name,
+    gradient: "nile",
+    heroLabel: "A dahabiya under sail on the Nile",
+    content: [],
+    bespoke: true,
+    seo: {
+      title: "Which Egypt Itinerary Is Right for You? Six Private Journeys Compared",
+      description:
+        "Six private luxury Egypt journeys from 4 to 16 days, from €2,190 to €11,650 per person. Which one fits your days, your season and your kind of Egypt, including which is the wrong answer for whom.",
+    },
+  },
+  {
     slug: "2027-total-solar-eclipse-luxor-dahabiya",
     title: "The 2027 total solar eclipse from a private dahabiya",
     excerpt:
