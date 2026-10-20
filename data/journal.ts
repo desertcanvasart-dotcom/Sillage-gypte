@@ -29,6 +29,26 @@ export interface JournalPost {
 
 export const journal: JournalPost[] = [
   {
+    slug: "2027-total-solar-eclipse-luxor-dahabiya",
+    title: "The 2027 total solar eclipse from a private dahabiya",
+    excerpt:
+      "The moon has fixed the date, the hour and the six minutes. This is how to be standing on a private dahabiya on the Nile at Luxor when they arrive.",
+    category: "Planning",
+    date: "2026-10-20",
+    dateLabel: "October 2026",
+    readTime: "13 minute read",
+    author: FOUNDER.name,
+    gradient: "night",
+    heroLabel: "The Nile at Luxor under a low sun",
+    content: [],
+    bespoke: true,
+    seo: {
+      title: "2027 Total Solar Eclipse in Egypt: From a Private Dahabiya in Luxor",
+      description:
+        "On 2 August 2027 a total solar eclipse crosses Luxor for about six minutes and twenty-two seconds. How to watch it from a private dahabiya, with the real times, the heat, and the booking window.",
+    },
+  },
+  {
     slug: "christmas-and-new-year-in-egypt",
     title: "A luxury Christmas and New Year in Egypt",
     excerpt:
