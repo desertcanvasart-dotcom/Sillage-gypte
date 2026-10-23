@@ -1185,6 +1185,30 @@ nav.main .wbtn { flex-shrink: 0; white-space: nowrap; }
   nav.main a { letter-spacing: 0.16em; }
 }
 @media (max-width: 860px) { nav.main { display: none; } }
+
+/* mobile menu (components/warm/MobileNav) — replaces nav.main at ≤860px */
+.mnav-toggle { display: none; }
+.mnav { display: none; }
+@media (max-width: 860px) {
+  .masthead .wrap { padding-top: 1.4rem; padding-bottom: 1.4rem; }
+  .masthead .logo { position: relative; z-index: 2; }
+  .mnav-toggle { position: relative; z-index: 2; display: inline-flex; flex-direction: column; justify-content: center; gap: 7px; width: 44px; height: 44px; margin-right: -10px; padding: 0 10px; background: none; border: 0; cursor: pointer; }
+  .mnav-toggle span { display: block; height: 1px; background: var(--papyrus); transition: transform 0.35s var(--ease-out), background 0.3s; }
+  .mnav-toggle.open span { background: var(--or); }
+  .mnav-toggle.open span:first-child { transform: translateY(4px) rotate(45deg); }
+  .mnav-toggle.open span:last-child { transform: translateY(-4px) rotate(-45deg); }
+
+  .mnav { position: fixed; inset: 0; z-index: 1; display: flex; flex-direction: column; justify-content: space-between; padding: 7.5rem 6vw 2.5rem; overflow-y: auto; background: var(--nuit); opacity: 0; visibility: hidden; transition: opacity 0.35s, visibility 0.35s; }
+  .mnav.open { opacity: 1; visibility: visible; }
+  .mnav nav { display: flex; flex-direction: column; }
+  .mnav nav a { font-family: var(--font-display), serif; font-size: 1.65rem; letter-spacing: 0.04em; color: var(--papyrus); padding: 0.85rem 0; border-bottom: 1px solid rgba(191, 161, 95, 0.16); }
+  .mnav nav a:active, .mnav nav a:hover { color: var(--or-pale); }
+  .mnav-foot { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 2.5rem; }
+  .mnav-foot .wbtn { flex: 1; text-align: center; padding: 1rem 1.2rem; font-size: 0.66rem; }
+  .mnav .langswitch-btn { padding: 0.95rem 0.9rem; }
+  .mnav .langswitch-menu { top: auto; bottom: calc(100% + 0.5rem); }
+  html.mnav-lock, html.mnav-lock body { overflow: hidden; }
+}
 /* language switcher (dropdown, in masthead nav) */
 .langswitch { position: relative; }
 .langswitch-btn { display: inline-flex; align-items: center; gap: 0.4rem; font-family: var(--font-label), sans-serif; font-size: 0.68rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--papyrus); background: none; border: 1px solid rgba(244, 237, 220, 0.28); padding: 0.5rem 0.85rem; cursor: pointer; opacity: 0.9; transition: opacity 0.3s, color 0.3s, border-color 0.3s; }
@@ -1254,4 +1278,9 @@ nav.main .wbtn { flex-shrink: 0; white-space: nowrap; }
   .tour-card:hover .tour-card-link svg {
     transform: translateX(4px);
   }
+}
+
+/* Phones: the photo crops tall, so darken more of it behind the hero copy. */
+@media (max-width: 600px) {
+  .hero-scrim { background: linear-gradient(180deg, rgba(7, 21, 16, 0.5) 0%, rgba(7, 21, 16, 0.55) 40%, rgba(7, 21, 16, 0.88) 100%); }
 }

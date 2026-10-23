@@ -112,3 +112,20 @@
 .warm .namesec .word { font-family: var(--font-marcellus), serif; font-size: clamp(2.4rem, 5vw, 3.4rem); letter-spacing: 0.18em; text-transform: uppercase; color: var(--encre); }
 .warm .namesec .pron { font-family: var(--font-jost), sans-serif; font-size: 0.62rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--or); margin: 1rem 0 2rem; }
 .warm .namesec p { font-style: italic; color: #5a635d; font-size: 1.15rem; line-height: 1.6; }
+
+/* ─── phones: hero fits the screen, lede stays legible over the photo,
+       buttons stack, and section padding is trimmed. ─── */
+@media (max-width: 600px) {
+  .warm .hhero { min-height: 100svh; }
+  .warm .hhero::after { display: none; }
+  .warm .hhero .wrap { padding-top: 6.5rem; padding-bottom: 4.5rem; }
+  .warm .hhero .kicker { margin-bottom: 1.4rem; font-size: 0.6rem; letter-spacing: 0.26em; }
+  .warm .hhero p.lede { margin-top: 1.3rem; font-size: 1.12rem; color: var(--papyrus); text-shadow: 0 1px 14px rgba(0, 0, 0, 0.6); }
+  .warm .hhero .acts { flex-direction: column; align-items: stretch; gap: 0.8rem; max-width: 20rem; margin: 2.2rem auto 0; }
+  .warm .hhero .acts .wbtn { text-align: center; padding: 1rem 1.2rem; }
+  .warm .scrollcue { bottom: 1.4rem; }
+  .warm .contrast .head { padding: 4rem 6vw 2.6rem; }
+  .warm .side { padding: 3.4rem 6vw 3.8rem; }
+  .warm .side h3 { margin-bottom: 1.6rem; }
+  .warm .pillar { padding: 2rem 1.5rem; }
+}

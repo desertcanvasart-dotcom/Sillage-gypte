@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getLocale, localePath } from "@/lib/i18n";
 import { getDict } from "@/lib/dictionaries";
 import LangSwitcher from "@/components/LangSwitcher";
+import MobileNav from "@/components/warm/MobileNav";
 
 /** Warm-design masthead (papyrus/gold) — global site header, locale-aware. */
 export default async function WarmMasthead() {
@@ -26,6 +27,20 @@ export default async function WarmMasthead() {
             {t.nav.plan}
           </Link>
         </nav>
+        <MobileNav
+          links={[
+            { href: p("/tours"), label: t.nav.journeys },
+            { href: p("/destinations"), label: t.nav.destinations },
+            { href: p("/experiences"), label: t.nav.experiences },
+            { href: p("/guides"), label: t.footer.guides },
+            { href: p("/journal"), label: t.nav.journal },
+            { href: p("/about"), label: t.footer.about },
+            { href: p("/contact"), label: t.footer.contact },
+          ]}
+          plan={{ href: p("/plan"), label: t.nav.plan }}
+          menuLabel={t.nav.menu}
+          closeLabel={t.nav.close}
+        />
       </div>
     </header>
   );

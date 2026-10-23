@@ -115,3 +115,8 @@
 .warm .reassure { background: var(--nuit); color: var(--papyrus); text-align: center; padding: 6rem 0; }
 .warm .reassure blockquote { max-width: 38em; margin: 0 auto; font-family: var(--font-marcellus), serif; font-size: clamp(1.4rem, 2.6vw, 1.9rem); line-height: 1.45; letter-spacing: 0.01em; }
 .warm .reassure blockquote em { font-family: var(--font-eb-garamond), serif; font-style: italic; color: var(--or); }
+
+@media (max-width: 600px) {
+  .warm .phero .wrap { padding-top: 7rem; padding-bottom: 3.5rem; }
+  .warm .phero p.lede { font-size: 1.1rem; color: var(--papyrus); opacity: 0.92; }
+}
