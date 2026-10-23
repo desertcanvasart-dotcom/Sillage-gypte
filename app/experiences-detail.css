@@ -139,3 +139,14 @@
 .xp .cta h2 em { color: var(--or); font-style: italic; font-family: var(--font-body), serif; }
 .xp .cta p { max-width: 34em; margin: 1.4rem auto 2.8rem; color: var(--eau); }
 .xp .cta .note { margin-top: 1.6rem; font-family: var(--font-label), sans-serif; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--or); }
+
+/* ─── phones ─── */
+@media (max-width: 600px) {
+  .xp section { padding: 4.5rem 0; }
+  .xp .cta { padding: 5rem 0; }
+  .xp .hero { min-height: 88svh; background-image: linear-gradient(180deg, rgba(11,21,18,.45) 0%, rgba(11,21,18,.4) 30%, rgba(11,21,18,.82) 60%, rgba(12,23,20,.97) 100%), var(--img-hero, linear-gradient(180deg, #0C1212, #15110B)); }
+  .xp .hero::after { display: none; }
+  .xp .hero .wrap { padding-top: 7rem; padding-bottom: 3.5rem; }
+  .xp .hero .crumb { margin-bottom: 1.4rem; line-height: 1.8; }
+  .xp .hero p.lede { font-size: 1.1rem; color: var(--papyrus); opacity: 0.92; }
+}

@@ -392,3 +392,18 @@
   .warm .dcard .media-photo { transition: transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1); }
   .warm .dcard:hover .media-photo { transform: scale(1.05); }
 }
+
+/* ─── phones: tighter vertical rhythm and a hero that clears the masthead ─── */
+@media (max-width: 600px) {
+  .warm section { padding: 4.5rem 0; }
+  .warm .sec-head { margin-bottom: 2.2rem; }
+  .warm .yours { padding-bottom: 4.5rem; }
+  .warm .yours .wrap { padding-top: 3.4rem; }
+  .warm .cta { padding: 5rem 0; }
+  .warm .whero { min-height: 88svh; }
+  .warm .whero::after { display: none; }
+  .warm .whero .wrap { padding-top: 7rem; padding-bottom: 3.5rem; }
+  .warm .whero .crumb { margin-bottom: 1.4rem; }
+  .warm .whero p.lede { font-size: 1.1rem; }
+  .warm .journeybar .wbtn { padding: 0.55rem 1rem; }
+}
