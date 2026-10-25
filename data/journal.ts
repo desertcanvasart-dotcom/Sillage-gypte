@@ -29,6 +29,26 @@ export interface JournalPost {
 
 export const journal: JournalPost[] = [
   {
+    slug: "how-many-days-in-egypt",
+    title: "How many days do you need in Egypt? A private journey answer",
+    excerpt:
+      "Ten days for a first full journey, four to six for one or two cities, thirteen to sixteen for the river, the sea or the desert — what each length of Egypt trip honestly covers.",
+    category: "Planning",
+    date: "2026-10-25",
+    dateLabel: "October 2026",
+    readTime: "11 minute read",
+    author: FOUNDER.name,
+    gradient: "desert",
+    heroLabel: "The great hypostyle hall at Karnak",
+    content: [],
+    bespoke: true,
+    seo: {
+      title: "How Many Days Do You Need in Egypt? A Private Luxury Journey Answer",
+      description:
+        "Ten days for a first full journey, four to six for one or two cities, thirteen to sixteen for the river, the sea or the desert. What each length of Egypt trip honestly covers.",
+    },
+  },
+  {
     slug: "six-journeys-compared",
     title: "Which Egypt itinerary is right for you? Our six private journeys, compared",
     excerpt:
