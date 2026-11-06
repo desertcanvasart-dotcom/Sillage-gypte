@@ -5,12 +5,15 @@ import { tours } from "@/data/tours";
 import { guides } from "@/data/guides";
 import { experiences } from "@/data/experiences";
 import { destinations } from "@/data/destinations";
-import { journal } from "@/data/journal";
+import { getPublishedJournal } from "@/data/journal";
+
+export const dynamic = "force-dynamic";
 
 type Route = {
   path: string;
   priority: number;
   changeFrequency: NonNullable<MetadataRoute.Sitemap[number]["changeFrequency"]>;
+  lastModified?: Date;
 };
 
 /**
@@ -46,7 +49,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...destinations.map((d) => ({ path: `/destinations/${d.slug}`, priority: 0.7, changeFrequency: "monthly" as const })),
     ...experiences.map((e) => ({ path: `/experiences/${e.slug}`, priority: 0.6, changeFrequency: "monthly" as const })),
     ...guides.map((g) => ({ path: `/guides/${g.slug}`, priority: 0.5, changeFrequency: "yearly" as const })),
-    ...journal.map((p) => ({ path: `/journal/${p.slug}`, priority: 0.6, changeFrequency: "yearly" as const })),
+    ...getPublishedJournal().map((p) => ({ path: `/journal/${p.slug}`, priority: 0.6, changeFrequency: "yearly" as const, lastModified: p.publishAt ? new Date(p.publishAt) : undefined })),
   ];
 
   // Every page is served in all five locales (see middleware.ts), so each gets
@@ -55,7 +58,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [...staticRoutes, ...dynamicRoutes].flatMap((r) =>
     locales.map((locale) => ({
       url: abs(locale, r.path),
-      lastModified,
+      lastModified: r.lastModified ?? lastModified,
       priority: r.priority,
       changeFrequency: r.changeFrequency,
       alternates: {

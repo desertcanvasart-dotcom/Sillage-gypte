@@ -6,7 +6,8 @@ import PageHero from "@/components/PageHero";
 import Photo from "@/components/Photo";
 import CtaBand from "@/components/CtaBand";
 import JsonLd from "@/components/JsonLd";
-import { journal, getPost, sortedJournal } from "@/data/journal";
+import { getPost, getPublishedJournal } from "@/data/journal";
+import { hideUnpublishedJournalLinks } from "@/lib/journal-publication.mjs";
 import { getLocale, localePath } from "@/lib/i18n";
 import { pageMetadata, heroImage, localizedUrl } from "@/lib/meta-dict";
 import { getPagesDict } from "@/lib/pages-dict";
@@ -18,13 +19,10 @@ interface Bespoke {
   seoTitle?: string;
   description?: string;
   img: string;
+  imageAlt?: string;
   bodyHtml: string;
   /** Question/answer pairs shown in the article; emitted as FAQPage JSON-LD. */
   faq?: { question: string; answer: string }[];
-}
-
-export function generateStaticParams() {
-  return journal.map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({
@@ -34,7 +32,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const post = getPost(slug);
-  if (!post) return { title: "Article not found" };
+  if (!post) notFound();
   const locale = await getLocale();
   const doc = await loadContent<Bespoke>("journal", slug, locale);
   return pageMetadata({
@@ -43,8 +41,9 @@ export async function generateMetadata({
     title: doc?.seoTitle ?? post.seo.title,
     description: doc?.description ?? post.seo.description,
     image: doc?.img ?? `journal-${post.slug}`,
+    imageAlt: doc?.imageAlt ?? post.heroLabel,
     type: "article",
-    publishedTime: post.date,
+    publishedTime: post.publishAt ?? post.date,
     authors: [post.author],
   });
 }
@@ -67,8 +66,8 @@ export default async function ArticlePage({
     "@type": "Article",
     headline: doc?.title ?? post.title,
     description: doc?.description ?? post.seo.description,
-    datePublished: post.date,
-    dateModified: post.date,
+    datePublished: post.publishAt ?? post.date,
+    dateModified: post.publishAt ?? post.date,
     inLanguage: locale,
     image: image ? (image.startsWith("http") ? image : `${SITE_URL}${image}`) : `${SITE_URL}/og-image.jpg`,
     // Brand-written posts are authored by the organisation, not a person of that name.
@@ -108,14 +107,14 @@ export default async function ArticlePage({
           <div
             className="jp"
             style={{ ["--img-hero" as string]: `url("${doc.img}")` }}
-            dangerouslySetInnerHTML={{ __html: doc.bodyHtml }}
+            dangerouslySetInnerHTML={{ __html: hideUnpublishedJournalLinks(doc.bodyHtml, getPublishedJournal().map((p) => p.slug)) }}
           />
         </main>
       );
     }
   }
 
-  const more = sortedJournal.filter((p) => p.slug !== post.slug).slice(0, 2);
+  const more = getPublishedJournal().filter((p) => p.slug !== post.slug).slice(0, 2);
   return (
     <main>
       <JsonLd data={articleSchema} />

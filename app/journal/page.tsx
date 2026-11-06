@@ -4,11 +4,13 @@ import PageHero from "@/components/PageHero";
 import Photo from "@/components/Photo";
 import CtaBand from "@/components/CtaBand";
 import { ArrowRight } from "@/components/icons";
-import { sortedJournal } from "@/data/journal";
+import { getPublishedJournal } from "@/data/journal";
 import { getLocale, localePath } from "@/lib/i18n";
 import { getMetaDict, pageMetadata } from "@/lib/meta-dict";
 import { loadContent } from "@/lib/content";
 import { getPagesDict } from "@/lib/pages-dict";
+
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
@@ -28,7 +30,7 @@ export default async function JournalPage() {
   const p = (path: string) => localePath(locale, path);
   const read = locale === "es" ? "Leer" : locale === "fr" ? "Lire" : "Read";
   const cards = await Promise.all(
-    sortedJournal.map(async (post) => {
+    getPublishedJournal().map(async (post) => {
       const c = await loadContent<{ title?: string; excerpt?: string; category?: string; dateLabel?: string; readTime?: string }>("journal", post.slug, locale);
       return { ...post, title: c?.title ?? post.title, excerpt: c?.excerpt ?? post.excerpt, category: c?.category ?? post.category, dateLabel: c?.dateLabel ?? post.dateLabel, readTime: c?.readTime ?? post.readTime };
     })

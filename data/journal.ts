@@ -2,6 +2,8 @@
 
 import type { GradientVariant } from "./tours";
 import { FOUNDER } from "./site";
+import scheduled from "./journal-scheduled.json";
+import { isJournalPublished, publishedJournal } from "../lib/journal-publication.mjs";
 
 export interface ContentBlock {
   type: "heading" | "paragraph";
@@ -14,6 +16,9 @@ export interface JournalPost {
   excerpt: string;
   category: string;
   date: string; // ISO
+  /** An explicit UTC offset prevents host timezone and Cairo DST ambiguity. */
+  publishAt?: string;
+  status?: "draft" | "scheduled";
   dateLabel: string;
   readTime: string;
   author: string;
@@ -170,8 +175,8 @@ export const journal: JournalPost[] = [
   },
 ];
 
-export const getPost = (slug: string) => journal.find((p) => p.slug === slug);
-// Newest first, by date string (ISO sorts lexically).
-export const sortedJournal = [...journal].sort((a, b) =>
-  a.date < b.date ? 1 : -1
-);
+journal.push(...(scheduled as JournalPost[]));
+
+export const getPost = (slug: string, now = Date.now()) =>
+  journal.find((p) => p.slug === slug && isJournalPublished(p, now));
+export const getPublishedJournal = (now = Date.now()): JournalPost[] => publishedJournal(journal, now);
