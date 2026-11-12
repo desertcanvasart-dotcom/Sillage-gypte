@@ -1,10 +1,16 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { enquiryReference, sendLeadToAutoura, toAutouraLead } from "@/lib/autoura-lead";
 
 /**
  * Enquiry endpoint. Validates the submission and delivers it by email via
  * Resend. Configure RESEND_API_KEY, ENQUIRY_FROM and ENQUIRY_TO in .env.local.
  * The "from" address must be on a Resend-verified domain.
+ *
+ * Each valid enquiry is ALSO sent into Autoura as a lead in the Sillage
+ * company (lib/autoura-lead.ts; AUTOURA_LEAD_WEBHOOK_URL +
+ * AUTOURA_WEBHOOK_SECRET). Fire-and-forget: it never delays or fails the
+ * visitor's request, and it runs whether or not the email goes out.
  */
 
 function esc(value: unknown): string {
@@ -42,6 +48,12 @@ export async function POST(request: Request) {
       { status: 422 }
     );
   }
+
+  // Into Autoura as a lead (never awaited; logs only on failure).
+  const reference = enquiryReference();
+  void sendLeadToAutoura(toAutouraLead(reference, body, request.headers.get("referer"))).then((r) => {
+    if (r.status === "failed") console.error("[enquiry] not delivered to Autoura", reference, r.httpStatus, JSON.stringify(r.response)?.slice(0, 300));
+  });
 
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.ENQUIRY_FROM;
@@ -123,7 +135,7 @@ export async function POST(request: Request) {
       from,
       to: to.split(",").map((s) => s.trim()).filter(Boolean),
       replyTo: email,
-      subject: `New enquiry — ${name}`,
+      subject: `New enquiry — ${name} (${reference})`,
       html,
       text,
     });
