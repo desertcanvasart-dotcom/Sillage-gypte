@@ -4,10 +4,13 @@ The series contains 22 English articles: the supplied final White Desert PDF,
 then source posts 09–29. Source 08 was not supplied and is not included.
 The existing locale fallback serves English where no translation exists.
 
-White Desert is available from 6 November 2026 at 20:00 Cairo time (on deployment
-if deployed after that time). The remaining articles release daily at 09:00
-Africa/Cairo, 7–27 November. November uses UTC+02:00; timestamps include the
-offset explicitly. The authoritative schedule is `data/journal-scheduled.json`.
+As of 20 November 2026, 14 articles are already published; their dates remain
+unchanged. No further articles release in November because the monthly limit
+of 12 has already been exceeded. The remaining eight release every three days
+at 09:00 Africa/Cairo, from 1 through 22 December 2026 (UTC+02:00). Keep future
+schedules at least three days apart and at no more than 12 posts per month,
+counting any other posts published that month. The authoritative schedule is
+`data/journal-scheduled.json`.
 `november-2026-schedule.json` records the source files and image choices.
 
 ## Editing the schedule

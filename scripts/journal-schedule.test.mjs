@@ -61,3 +61,21 @@ test("every article has real images, SEO fields, complete body and matching visi
     }
   }
 });
+
+test("remaining November posts move to a three-day December schedule within the monthly cap", () => {
+  assert.equal(publishedJournal(posts, Date.parse("2026-11-30T23:59:59+02:00")).length, 14);
+  const remaining = posts.slice(14);
+  assert.equal(remaining.length, 8);
+  const months = new Map();
+  remaining.forEach((post, i) => {
+    const date = "2026-12-" + String(1 + i * 3).padStart(2, "0");
+    assert.equal(post.publishAt, date + "T09:00:00+02:00");
+    assert.equal(post.date, date);
+    assert.equal(post.dateLabel, "December 2026");
+    const doc = JSON.parse(readFileSync(new URL("../content/journal/" + post.slug + ".json", import.meta.url)));
+    assert.ok(doc.bodyHtml.includes('<time datetime="' + post.publishAt + '">' + (1 + i * 3) + ' December 2026</time>'));
+    const month = post.date.slice(0, 7);
+    months.set(month, (months.get(month) || 0) + 1);
+  });
+  for (const count of months.values()) assert.ok(count <= 12);
+});
